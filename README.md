@@ -1072,22 +1072,451 @@ En esta sección se presentan las historias de usuario que describen las necesid
 
 ## Capítulo IV: Product Design  
 ### 4.1. Style Guidelines
+Esta sección establece un conjunto de directrices visuales y de interacción coherentes que funcionarán como fuente central de referencia para el equipo de diseño, desarrollo y comunicación de TravelMatch.
+El objetivo es garantizar una presentación unificada, profesional y alineada con la esencia de la marca: conectar a turistas con experiencias auténticas, de manera simple y confiable.
+
 #### 4.1.1. General Style Guidelines 
+
+
+- _Branding:_    
+    - La identidad visual de TravelMatch es moderna, cercana y confiable. El logotipo incorpora dos figuras humanas estilizadas unidas en un gesto de conexión, lo que simboliza el espíritu colaborativo y humano de la plataforma.
+    - Uso del logotipo: El logotipo debe usarse preferentemente sobre fondos claros (beige, blanco o pastel neutro). En fondos oscuros, se permite una versión monocromática blanca o en azul marino (#1C1F2B).
+    - No se permite:
+        - Rotar el logotipo.
+        - Aplicar sombras, contornos o degradados.
+        - Cambiar la tipografía original de la palabra TravelMatch.
+
+<p align="center">
+    <img src="assets/logos/TravelMatchLogo.png" alt="travel-match-logo" width=200px/>
+</p>
+
+- _Typography:_
+    - La tipografía utilizada en el logotipo es una fuente sans-serif geométrica, amigable y legible. Para mantener coherencia, se adoptará un sistema tipográfico similar en toda la aplicación.
+
+    - Fuente primaria: Nunito Sans
+        - Uso: Títulos, botones, navegación.
+        - Estilos permitidos: Regular, SemiBold, Bold.
+
+    - Fuente secundaria: Inter
+        - Uso: Cuerpos de texto largos, formularios.
+
+    - Tamaños recomendados:
+        - Título principal (H1): 32px / 700
+        - Subtítulo (H2): 24px / 600
+        - Texto normal: 16px / 400
+        - Nota o ayuda: 12px / 400
+
+<div align="center">    
+
+| Nombre de fuente | Tipografia |
+|:----------------:|:----------:|
+| Nunito Sans | <img src="assets/recursos/nunito-sans-font.png" alt="nunito-sans-font" width=200px/> |
+| Inter | <img src="assets/recursos/inter-font.png" alt="inter-font" width=200px/> |  
+    
+</div>      
+              
+- _Colors:_
+    - La paleta de TravelMatch se basa en contrastes suaves y un color protagonista: azul marino profundo, que transmite confianza y estabilidad. Se acompaña de colores neutros y un acento cálido para llamados a la acción
+
+<div align="center">    
+
+| Color | Hex | Uso Principal | 
+|:-----:|:---:|:-------------:|
+|Azul Marino| #1C1F2B | Texto principal, logotipo, botones|
+|Beige Claro| #F5F0E6 | Fondo base|
+|Gris Suave| #B3B3B3 | Bordes, textos secundarios|
+|Azul Claro| #3A71C1 | Enlaces, botones secundarios|
+|Amarillo Arena| #FFD479| Llamado a la acción / iconos |
+|Blanco| #FFFFFF|Fondos, tarjetas, formularios|
+
+</div>
+
+<p align="center">
+    <img src="assets/recursos/system-colors.png"/ width=70%>
+</p>
+
+- _Spacing:_
+    - La coherencia en el espaciado es clave para una interfaz limpia y clara.
+        - Espaciado entre secciones principales: 32px
+        - Margen interno de botones y campos: 12px vertical / 20px horizontal
+        - Separación entre elementos repetitivos (cards, ítems): 16px
+        - Padding general de contenedores: 24px
+
+- _Tono de comunicación y lenguaje:_
+    - El tono de TravelMatch es cercano, entusiasta y profesional.
+
+<div align="center">    
+
+| Estilo de redacción | Tono predominante |
+|---------------------|-------------------|
+| 1. Amigable y claro <br> 2. Sin tecnicismos innecesarios <br> 3. Verbos en voz activa <br> 4. Enfocado en beneficios (“Descubre experiencias únicas”, “Reserva en segundos”)| 1. Formal-casual: Respetuoso, pero no rígido. <br> 2. Entusiasta: Inspirador, motivador, acogedor. <br> 3. Directo: Frases cortas y llamadas a la acción claras. |
+
+</div>
+
 #### 4.1.2. Web Style Guidelines
+
+- _Responsive Design Standards:_  
+    TravelMatch está diseñado como una aplicación web mobile-first, adaptándose fluidamente a diferentes dispositivos:
+
+    - **Mobile (360px - 768px):**  
+        - Navegación tipo hamburguesa.  
+        - Cards apiladas en columna.  
+        - Botones grandes y legibles.  
+
+    - **Tablet (769px - 1024px):**  
+        - Layout en 2 columnas.  
+        - Menú lateral colapsable.  
+
+    - **Desktop (1025px en adelante):**  
+        - Menú principal visible.  
+        - Layout de 3 columnas donde sea posible.  
+
+    Todos los componentes deben utilizar **flexbox/grid** con puntos de quiebre en 768px y 1024px.
+
+- _Interactivity:_  
+    - **Botones:**  
+        - Bordes redondeados (border-radius: 12px).  
+        - Hover: cambio de fondo o sombra suave (box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1)).  
+        - Feedback claro al clic (cambio de color, animación sutil).  
+
+    - **Transiciones y animaciones:**  
+        - Duración: 200–300ms.  
+        - Usar ease-in-out.  
+        - Aplicables en sliders, modales, tooltips y feedback de formularios.
+
+- _Accessibility:_  
+    - Contrastes de texto cumplen con **WCAG AA** como mínimo.  
+    - Todo ícono debe tener alternativa textual (aria-label o alt).  
+    - Navegación compatible con teclado (Tab, Enter, Esc).  
+    - Uso de role, aria-expanded, aria-hidden en componentes dinámicos.  
+    - Fuente mínima: 16px.
+
+- _UI Consistency:_  
+    - Uso de un sistema de componentes reutilizables: botones, tarjetas, inputs, modales.  
+    - Evitar cambios de estilo arbitrarios entre páginas.  
+    - Todos los formularios deben compartir un estilo común:  
+        - Etiqueta arriba, campo debajo, mensaje de error abajo.  
+        - Validaciones claras y mensajes amigables.
+
 #### 4.1.3. Mobile Style Guidelines
 #### 4.1.3.1. iOS Mobile Style Guidelines
 #### 4.1.3.2. Android Mobile Style Guidelines
 
 ### 4.2. Information Architecture
+La arquitectura de la información de TravelMatch está diseñada para asegurar que tanto visitantes nuevos como usuarios recurrentes puedan encontrar, descubrir e interactuar con el contenido de manera natural e intuitiva. Esta estructura se adapta a las necesidades específicas de cada entorno (Landing Page, Aplicación Web y Aplicación Móvil) manteniendo consistencia visual, semántica y funcional.
+
+Los sistemas de organización, etiquetado, navegación y búsqueda han sido definidos considerando la diversidad de usuarios, el volumen de información creciente y la importancia de una experiencia centrada en el usuario.
+
 #### 4.2.1. Organization Systems
+La estructura de organización de contenido en TravelMatch combina distintas estrategias según el tipo de información presentada y la etapa del recorrido del usuario:
+
+- _Visual Hierarchy (Jerarquía Visual)_
+
+    Se utilizará ampliamente en todas las interfaces (Landing Page, Home de la App, Detalles de experiencia) para facilitar la comprensión inmediata del contenido. La disposición jerárquica prioriza los elementos según su importancia relativa, estableciendo tamaños, colores y posiciones diferenciadas para:    
+
+    - Títulos y encabezados principales.
+    - Imágenes destacadas (experiencias recomendadas, destinos top).
+    - Llamados a la acción (botones de "Reservar", "Explorar", "Ver más").
+
+    Esto permitirá que el usuario escanee el contenido rápidamente y entienda qué acciones tomar en cada momento.
+
+- _Sequential Organization (Organización Secuencial)_
+
+    Se aplicará principalmente en los flujos de interacción del usuario, especialmente en procesos donde se requiere una acción paso a paso, como:
+
+    - Registro de usuario y onboarding personalizado.
+    - Filtros para construir recomendaciones de experiencia.
+    - Proceso de reserva y confirmación.
+    - Creación de perfil o preferencias de viaje.
+
+    Cada uno de estos pasos se presentará de forma clara y continua, indicando el progreso del usuario y minimizando fricciones en la interacción.
+
+- _Matricial (Matrix Organization)_
+
+    Este sistema será utilizado en secciones donde el usuario debe explorar múltiples opciones simultáneamente, sin un orden específico, como:
+
+    - Búsqueda de experiencias por filtros combinables.
+    - Exploración de destinos por tipo de actividad (gastronomía, aventura, cultura, etc.).
+    - Vista de resultados personalizados o tendencias.
+
+    Los usuarios podrán elegir entre distintos atributos (ubicación, duración, tipo de experiencia, nivel de actividad, etc.) y la interfaz responderá dinámicamente.
+
+- _Categorización de Contenido_
+
+    Para optimizar la navegación y la personalización de la experiencia del usuario, TravelMatch adopta una categorización estratégica que responde tanto a las expectativas de los turistas como a las necesidades operativas de la plataforma. Los esquemas de categorización se aplicarán según el contexto de uso y el tipo de información, permitiendo al usuario filtrar, explorar y decidir con facilidad.
+
+    - **Por tópicos:** Las experiencias se agruparán por categorías temáticas (Ej. “Aventura al aire libre”, “Gastronomía local”, “Arte y cultura”).
+    - **Por audiencia:** Algunas secciones estarán personalizadas para distintos perfiles de usuario (parejas, viajeros solitarios, familias, etc.).
+    - **Cronológico:** Se utilizará en listas de reservas pasadas y próximas, así como en contenido destacado por temporada o eventos locales.
+    - **Alfabético:** Aplicable para listados largos como ciudades, destinos o idiomas disponibles en preferencias.
+
 #### 4.2.2. Labeling Systems
+En TravelMatch, el sistema de etiquetado ha sido diseñado para maximizar la claridad y minimizar la carga cognitiva del usuario. Todas las etiquetas empleadas en la plataforma —tanto en la navegación como en el contenido— están orientadas a la simplicidad, consistencia semántica y a un lenguaje cercano, inclusivo y fácil de comprender, sin sacrificar la precisión funcional.
+
+- _Principios clave del sistema de etiquetado:_  
+    - **Claridad ante todo:**  
+        Las etiquetas evitarán tecnicismos o ambigüedades. Se utilizarán palabras comunes para que cualquier usuario —sin importar su nivel de experiencia digital o cultural— pueda entenderlas.  
+    - **Consistencia terminológica:**  
+        Un mismo concepto se nombrará de la misma forma en todos los entornos (web, móvil, comunicaciones, emails transaccionales).  
+    - **Longitud mínima:**  
+        Se privilegiará el uso de etiquetas cortas (1 a 3 palabras), pero descriptivas.  
+    - **Prioridad visual:**  
+        Se jerarquizará tipográficamente cada tipo de etiqueta, destacando acciones o categorías principales con estilos tipográficos definidos en la guía de estilo.
+
+- _Etiquetas principales por área:_  
+    - **Navegación global:**  
+        - Explorar  
+        - Mi Perfil  
+        - Favoritos  
+        - Recomendaciones  
+        - Mis Reservas  
+        - Ayuda  
+
+    - **Landing Page:**  
+        - Encuentra tu próxima aventura  
+        - ¿Cómo funciona TravelMatch?  
+        - Experiencias destacadas  
+        - Únete como agencia  
+        - Testimonios  
+
+    - **Filtrado y búsqueda:**  
+        - Tipo de experiencia (Ej. “Cultural”, “Aventura”, “Relax”)  
+        - Duración (Ej. “Medio día”, “1 día completo”, “Fin de semana”)  
+        - Nivel de actividad (Ej. “Baja”, “Moderada”, “Alta”)  
+        - Destino  
+        - Precio  
+
+    - **Acciones del usuario:**  
+        - Reservar ahora  
+        - Guardar experiencia  
+        - Compartir  
+        - Ver más detalles  
+        - Editar perfil  
+        - Cerrar sesión  
+
+    - **Agencias (vista especial):**  
+        - Publicar nueva experiencia  
+        - Gestionar reservas  
+        - Estadísticas  
+        - Planes y visibilidad  
+        - Mensajes recibidos  
+
+- _Asociaciones entre etiquetas:_  
+    - Se utilizarán etiquetas compuestas en ciertos casos para clarificar relaciones entre conceptos, como:  
+        - “Experiencia recomendada”  
+        - “Destino popular”  
+        - “Nuevo mensaje”  
+        - “Agencia verificada”  
+
+    - Las etiquetas de acciones estarán siempre acompañadas de íconos representativos para reforzar la asociación visual y acelerar la comprensión.  
+    - En formularios y filtros, los campos estarán precedidos por etiquetas que indiquen claramente qué se espera del usuario (Ej. “Selecciona una fecha”, “Elige un destino”).
+
 #### 4.2.3. SEO Tags and Meta Tags
+Para TravelMatch, contar con una estructura sólida de SEO y metadatos es esencial para maximizar la visibilidad orgánica en motores de búsqueda y mejorar la experiencia al compartir enlaces en redes sociales y otras plataformas. A continuación, se definen los valores clave que serán implementados tanto en la Landing Page como en la Web Application, alineados con nuestra propuesta de valor y el tono de la marca.
+
+- _Landing Page:_  
+    - **Title:**  
+        TravelMatch | Conecta con tu próxima experiencia de viaje personalizada  
+    - **Meta Description:**  
+        Descubre viajes únicos con agencias locales verificadas. En TravelMatch conectamos turistas con experiencias a medida, sin complicaciones.  
+    - **Meta Keywords:**  
+        viajes personalizados, agencias locales, experiencias de viaje, turismo inteligente, tours recomendados, actividades, destinos  
+    - **Meta Author:**  
+        TravelMatch Team  
+    - **Open Graph Tags (para redes sociales):**  
+        ```html
+        <meta property="og:title" content="TravelMatch | Conecta con tu próxima experiencia de viaje personalizada" />
+        <meta property="og:description" content="Descubre viajes únicos con agencias locales verificadas. En TravelMatch conectamos turistas con experiencias a medida, sin complicaciones." />
+        <meta property="og:image" content="https://travelmatch.app/assets/social-preview.jpg" />
+        <meta property="og:url" content="https://travelmatch.app" />
+        <meta property="og:type" content="website" />
+        ```
+    - **Twitter Cards (formato enriquecido):**  
+        ```html
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TravelMatch | Conecta con tu próxima experiencia de viaje personalizada" />
+        <meta name="twitter:description" content="Descubre viajes únicos con agencias locales verificadas. En TravelMatch conectamos turistas con experiencias a medida, sin complicaciones." />
+        <meta name="twitter:image" content="https://travelmatch.app/assets/social-preview.jpg" />
+        ```
+
+- _Web Application (post-login):_  
+    - **Title:**  
+        TravelMatch | Tu espacio de viajes personalizados  
+    - **Meta Description:**  
+        Gestiona tus experiencias, descubre nuevas aventuras y mantente en contacto con agencias confiables. Todo en un solo lugar.  
+    - **Meta Keywords:**  
+        perfil viajero, gestionar reservas, recomendaciones de viaje, experiencias favoritas, viajes a medida  
+    - **Meta Author:**  
+        TravelMatch Platform  
+    - **Canonical URL:**  
+        Las páginas clave de la app tendrán URLs canónicas bien definidas para evitar problemas de contenido duplicado, especialmente en vistas filtradas.
+
+- _Consideraciones adicionales:_  
+    - Se implementarán etiquetas dinámicas en la web app para experiencias individuales y perfiles de agencia, lo cual permitirá SEO personalizado por contenido.  
+    - Se aplicarán **alt attributes** descriptivos y útiles en todas las imágenes, especialmente aquellas que se vinculen con experiencias o destinos.  
+    - Se cuidará el rendimiento de carga (**Core Web Vitals**) como parte del SEO técnico, priorizando tiempos rápidos de respuesta en dispositivos móviles. 
+
 #### 4.2.4. Searching Systems
+El sistema de búsqueda de TravelMatch está diseñado para facilitar a los usuarios la localización rápida y eficiente de experiencias turísticas relevantes. El objetivo es minimizar la frustración del usuario y maximizar la descubribilidad del contenido, aún ante grandes volúmenes de información y diversidad de ofertas.
+
+- _Turistas: Búsqueda de experiencias:_  
+    Los turistas acceden a un motor de búsqueda central ubicado en la vista principal de la plataforma. Este sistema incluirá:  
+    - **Barra de búsqueda por palabra clave:**  
+        - Autocompletado inteligente para sugerir términos relevantes.  
+    - **Filtros dinámicos combinables:**  
+        - Tipo de actividad (aventura, cultural, gastronómica, relajación, etc.).  
+        - Ubicación geográfica (país, ciudad, región).  
+        - Precio (rango mínimo y máximo).  
+        - Duración estimada de la experiencia.  
+        - Idioma del guía.  
+        - Fecha de disponibilidad.  
+        - Valoración promedio.  
+    - **Sistema de etiquetado (tags):**  
+        Los resultados podrán filtrarse también por etiquetas asignadas por agencias o derivadas del comportamiento de otros usuarios (ej. “para familias”, “eco-friendly”, “pet-friendly”).  
+
+    Los resultados serán presentados en formato de tarjetas visuales, que incluirán:  
+    - Imagen destacada.  
+    - Nombre de la experiencia.  
+    - Ubicación.  
+    - Duración.  
+    - Precio base.  
+    - Valoración promedio.  
+
+    Además, se ofrecerán opciones para:  
+    - Ordenar los resultados por relevancia, precio, popularidad o evaluación.  
+    - Guardar filtros personalizados para futuras búsquedas.  
+
+- _Agencias: Búsqueda en publicaciones y reservas:_  
+    Las agencias contarán con una funcionalidad de búsqueda interna dentro del panel de administración:  
+    - **Búsqueda por nombre de experiencia publicada.**  
+    - **Filtros por estado:**  
+        - Activa, inactiva, pendiente de revisión.  
+    - **Filtro por número de reservas recibidas.**  
+    - **Búsqueda en histórico de reservas:**  
+        - Por fecha, turista, experiencia o estado de pago.  
+
+    Este sistema permitirá una gestión ágil de contenido y facilitará la toma de decisiones basada en información organizada y accesible.
+
+- _Resultados adaptables y responsivos:_  
+    Todos los resultados de búsqueda están diseñados para ser responsive y adaptables a dispositivos móviles, manteniendo legibilidad, interactividad y consistencia visual. El sistema incluye:  
+    - Vista en cuadrícula o lista, según preferencia del usuario.  
+    - Indicadores visuales para destacar promociones o nuevos lanzamientos.  
+
+- _Mejoras futuras:_  
+    Está prevista la integración de un sistema de búsqueda semántica e inteligencia artificial, que permitirá sugerencias personalizadas basadas en:  
+    - Historial de navegación.  
+    - Comportamiento previo.  
+    - Perfiles similares.  
+
+    Esto enriquecerá la experiencia del usuario y aumentará la conversión de búsquedas en reservas concretadas.  
+
 #### 4.2.5.  Navigation Systems
+La navegación en TravelMatch está diseñada para ser intuitiva, fluida y centrada en la experiencia del usuario, tanto en la Landing Page como en la Web Application. El objetivo es que cada tipo de usuario —turista o agencia— pueda alcanzar sus metas con el menor número de clics y sin fricción.
+
+- _Landing Page:_  
+    La navegación principal está orientada a captar y guiar nuevos visitantes. Se estructura mediante una barra superior fija con los siguientes elementos:  
+    - **Logo**  
+    - **Cómo Funciona**  
+    - **Explorar**
+    - **Para Agencias**  
+    - **Nosotros**
+    - **Iniciar sesión / Registrarse** (con botón destacado)  
+
+    Se emplea una navegación jerárquica horizontal con anclas que guían a secciones específicas del mismo sitio (scroll suave), y una estructura de **one-page design** para mantener la continuidad narrativa.  
+
+    Además, en la sección inferior se encuentra un footer informativo, con accesos a:  
+    - **Política de privacidad**  
+    - **Términos y condiciones**  
+    - **Contacto**  
+    - **Redes sociales**  
+
+- _Web Application (Post-login):_  
+    Una vez autenticado, el usuario accede a un entorno altamente funcional, que prioriza la usabilidad y eficiencia en la navegación.  
+
+    - **Para Turistas:**  
+        Barra lateral con:  
+        - 🏠 Inicio  
+        - 🔍 Buscar experiencias  
+        - ❤️ Mis favoritos  
+        - 🧾 Mis reservas  
+        - 👤 Perfil  
+        - 🚪 Cerrar sesión  
+
+    - **Para Agencias:**  
+        Barra lateral con:  
+        - 🏠 Panel de control  
+        - ✍️ Publicar experiencia  
+        - 📈 Mis publicaciones  
+        - 📥 Reservas recibidas  
+        - 👤 Perfil de agencia  
+        - 🚪 Cerrar sesión  
+
+    Se utilizará una navegación persistente y contextual:  
+    - **Breadcrumbs:** Se mostrarán en vistas con múltiples niveles para reforzar el contexto.  
+    - **Accesos rápidos:** Las acciones importantes estarán disponibles a través de FAB (Floating Action Button) o menús flotantes en dispositivos móviles.  
+    - **Diseño responsive:** La navegación lateral se adaptará a un menú hamburguesa en dispositivos móviles, sin perder funcionalidad.  
+
+- _Comportamientos adicionales:_  
+    - **Estado activo:** El ítem de navegación actual se resaltará para reforzar el contexto del usuario.  
+    - **Transiciones suaves:** Se aplicarán animaciones ligeras en los cambios de vista, favoreciendo la comprensión del flujo.  
+    - **Redirección inteligente:** Después del login, el usuario será redirigido al dashboard o sección de interés dependiendo de su rol (turista o agencia).  
+
 
 ### 4.3. Landing Page UI Design
+El Landing Page de TravelMatch representa la materialización visual de las decisiones tomadas en torno a la arquitectura de información, la identidad de marca y las guías de estilo establecidas previamente.
+
+El diseño del Landing Page ha sido pensado para captar la atención de los visitantes desde el primer momento, comunicar de forma clara el valor diferencial de la plataforma, y facilitar una navegación intuitiva y responsiva hacia los distintos componentes clave del sitio.
+
+Este diseño refleja:
+
+- La jerarquía visual establecida en los Organization Systems, priorizando elementos como el mensaje principal, el buscador de experiencias, y los llamados a la acción (CTAs).
+
+- La coherencia con el Design System de TravelMatch, respetando la paleta cromática corporativa inspirada en su logotipo, el uso tipográfico moderno y legible, y los principios de accesibilidad e inclusión.
+
+- Una arquitectura de información que orienta al usuario de manera fluida, reduciendo la carga cognitiva y facilitando la conversión desde la primera interacción.
+
+- La incorporación de patrones reconocibles en UI/UX para generar confianza, claridad y familiaridad con la experiencia.
+
 #### 4.3.1. Landing Page Wireframe
+Los wireframes del Landing Page de TravelMatch definen la estructura base de la interfaz, enfocándose en la distribución de contenido y elementos interactivos antes de aplicar el diseño visual definitivo. Se han diseñado versiones específicas para navegadores de escritorio y navegadores móviles, con el objetivo de garantizar una experiencia consistente, accesible y optimizada para cada tipo de dispositivo.
+Principios Aplicados
+
+- Jerarquía visual clara: Se priorizan los elementos esenciales como el hero section, buscador de experiencias, CTA de registro, y testimonios. Esto facilita la exploración progresiva del contenido por parte del usuario.
+
+- Diseño inclusivo: Las estructuras propuestas contemplan contrastes adecuados, fuentes legibles y navegación intuitiva tanto por clic como por scroll.
+
+- Consistencia estructural: Se respeta la arquitectura de información definida, agrupando secciones por tópicos (e.g., ¿cómo funciona?, beneficios para agencias, beneficios para turistas, etc.).
+
+- Adaptabilidad: Los wireframes aseguran una transición fluida entre vistas de escritorio y móviles mediante una disposición responsiva, donde los elementos se reorganizan verticalmente sin perder prioridad visual.
+
+**Desktop:**
+
+<p align="center">
+    <img src="assets/recursos/landing-page-wireframe-desktop.png" alt="landing-page-wireframe-desktop" width=80%/>
+</p>
+
+**Mobile:**
+
+<p align="center">
+    <img src="assets/recursos/landing-page-wireframe-mobile.png" alt="landing-page-wireframe-mobile" width=20%/>
+</p>
+
 #### 4.3.2. Landing Page Mock-up
+
+Los mock-ups de la Landing Page de TravelMatch representan la traducción visual completa del wireframe, incorporando la identidad visual, la paleta cromática, la tipografía, iconografía y todos los elementos del Design System previamente definido. Estos mock-ups ofrecen una vista precisa de cómo lucirá el producto final en navegadores web de escritorio y dispositivos móviles.
+
+**Desktop:**
+
+<p align="center">
+    <img src="assets/recursos/landing-page-mockup-desktop.png" alt="landing-page-mockup-desktop" width=80%/>
+</p>
+
+**Mobile:**
+
+<p align="center">
+    <img src="assets/recursos/landing-page-mockup-mobile.png" alt="landing-page-mockup-mobile" width=20%/>
+</p>
+
 
 ### 4.4. Mobile Applications UX/UI Design
 #### 4.4.1. Mobile Applications Wireframes
@@ -1101,24 +1530,190 @@ En esta sección se presentan las historias de usuario que describen las necesid
 
 ### 4.6. Web Applications UX/UI Design
 #### 4.6.1. Web Applications Wireframes
+
+<p align="center">
+    <img src="assets/recursos/travelmatch-frontend.png" alt="travelmatch-frontend" width=80%/>
+</p>
+
 #### 4.6.2. Web Applications Wireflow Diagrams
+
+<p align="center">
+    <img src="assets/recursos/travelmatch-frontend-wireflow.png" alt="travelmatch-frontend-wireflow" width=80%/>
+</p>
+
 #### 4.6.3. Web Applications Mock-ups
+
+<p align="center">
+    <img src="assets/recursos/TravelMatchFrontend.png" alt="travelmatch-frontend-mockup" width=80%/>
+</p>
+
 #### 4.6.4. Web Applications User Flow Diagrams
+<p align="center">
+    <img src="assets/recursos/TravelMatchFrontendWireflow.png" alt="travelmatch-frontend-mockup-wireflow" width=80%/>
+</p>
+
+Enlace al Figma de desarrollo de Web Application: https://www.figma.com/design/GYNFGzIxOsYoaH4UDZpRne/TravelMatch---Frontend?node-id=2039-83&t=MJXW7lJoEYDmKuW2-1
 
 ### 4.7. Web Applications Prototyping
 
+- Usuario encuentra un paquete turistico y accede a la operacion de compra
+
+    - El usuario inicia en la vista home de la pagina principal:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-1.png" alt="front-user-flow-1" width=80%/>
+        </p>
+    
+    - El usuario desciende hasta la zona de experiencias filtradas por categoria. Cuando se interesa en una experiencia, hace clic sobre una de ellas para revisar mas detalles:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-2.png" alt="front-user-flow-2" width=80%/>
+        </p>
+
+    - El usuario accede a la vista detalla en donde se muestra informacion detallada sobre la experiencia:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-3.png" alt="front-user-flow-3" width=80%/>
+        </p>
+
+    - El usuario visualiza una seccion con el precio y el boton "Revisar disponibilidad" que redirige a una seccion para que filtre resultados de paquetes turisticos:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-4.png" alt="front-user-flow-4" width=80%/>
+        </p>
+
+    - El usuario ingresa valores para ambos campos y presiona el boton revisar disponibilidad:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-5.png" alt="front-user-flow-5" width=80%/>
+        </p>
+
+    - Se muestran los resultados obtenidos y se brinda la opcion de agregar el paquete a un carrito de compras:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-6.png" alt="front-user-flow-6" width=80%/>
+        </p>
+
+    - El usuario accede a la vista del carrito de compras donde decide que hara con el paquete elegido:
+        <p align="center">
+            <img src="assets/recursos/front-user-flow-7.png" alt="front-user-flow-7" width=80%/>
+        </p>
+
+
+    Enlace a la prueba de prototipo: [upc-pre-202510-1asi0729-4328-Pandora-prototype-navigation-sprint-1](https://youtu.be/a66X-oEHVRI)
+
 ### 4.8. Domain-Driven Software Architecture
 #### 4.8.1. Software Architecture Context Diagram
+<p align="center">
+    <img src="assets/recursos/diagrama_contexto.png" alt="Diagrama de Contexto"/>
+</p>
+
 #### 4.8.2. Software Architecture Container Diagrams
+
+<p align="center">
+ <img src="assets/recursos/diagrama_contenedores.png" alt="Diagrama de Contenedores"/>
+</p>
+
 #### 4.8.3. Software Architecture Components Diagrams
 
+- Bounded Context IAM
+
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_iam.png" alt="Diagrama de Componentes IAM Bounded Context"/>
+</p>
+
+- Bounded Context Profiles
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_profiles.png" alt="Diagrama de Componentes Profiles Bounded Context"/>
+</p>
+
+- Bounded Context Agencies
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_agencies.png" alt="Diagrama de Componentes Agencies Bounded Context"/>
+</p>
+
+- Bounded Context Experiences
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_experiences.jpg" alt="Diagrama de Componentes Experiences Bounded Context"/>
+</p>
+
+- Bounded Context Bookings
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_bookings.png" alt="Diagrama de Componentes Bookings Bounded Context"/>
+</p>
+
+- Bounded Context Events
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_events.png" alt="Diagrama de Componentes Events Bounded Context"/>
+</p>
+
+- Bounded Context Geolocalization
+<p align="center">
+    <img src="assets/recursos/diagrama_componentes_geolocalization.png" alt="Diagrama de Componentes Geolocalization Bounded Context"/>
+</p>
+
 ### 4.9. Software Object-Oriented Design
+La orientación a objetos será fundamental en nuestro proyecto. Organizamos el software siguiendo nuestras reglas de negocio, lo que nos permite desarrollar componentes claros para su implementación en un sistema real, además de facilitar su adaptación y mantenimiento.
+
 #### 4.9.1. Class Diagrams
+<p align="center">
+    <img src="assets/recursos/uml_class_diagram.jpeg" alt="Diagrama de Clases UML"/>
+</p>
+
+Enlace del diagrama de clases elaborado en Lucidchart: https://lucid.app/lucidchart/5c82ad83-e062-47f4-8289-d3979877fb1e/edit?invitationId=inv_38e8006a-95da-4b3f-86b2-2d30cfb7cd0b
+
+
 #### 4.9.2. Class Dictionary
 
+
+| **Clase** | **Nombre de atributo** | **Descripción** | **Tipo de dato**
+|:---------:|:----------------------:|:---------------:|:----------------:|
+| Usuario | id | Identificador único | String |
+| Usuario | nombre | Nombre de usuario | String |
+| Usuario | email | Correo electrónicio del usuario | String |
+| Usuario | contrasenia | Contraseña encriptada | String |
+| Usuario | telefono | Contacto opcional | String |
+| Turista | nacionalidad | País de origen | String |
+| Turista | pasaporte | Número de documento | String |
+| ViajeroCorporativo | empresa | Nombre de la compañía | String |
+| ViajeroCorporativo | ruc | Identificador fiscal | String |
+| AgenciaTurismo | ruc | Identificador fiscal | String |
+| AgenciaTurismo | direccionLegal | Domicilio registrado | String |
+| AgenciaTurismo | licenciaTuristica | Número de autorización | String |
+| Reserva | fechaCreacion | Fecha de registro | Date |
+| Reserva | fechaServicio | Fecha agendada | Date |
+| Reserva | estado | El estado de la reserva (Pendiente/Confirmada/Cancelada) | ENUM |
+| Reserva | montoTotal | Precio final | Float |
+| Pago | metodo | El método de pago usado en la reserva (Tarjeta/Transferencia/Efectivo) | ENUM |
+| Pago | monto | Valor pagado | Float |
+| Pago | fecha | Fecha de realización del pago | Date |
+| Pago | estado | Estado del pago (Pendiente/Confirmado/Denegado) | ENUM |
+| Disponibilidad | fechaInicio | Fecha del inicio del rango disponible | Date |
+| Disponibilidad | fechaFin | Fecha del fin del rango disponible | Date |
+| Disponibilidad | cuposDisponibles | Cantidad restante de cupos | Int |
+| ServicioTuristico | nombre | Título del servicio | String |
+| ServicioTuristico | descripcion | Descripción concisa del servicio | String |
+| ServicioTuristico | precioBase | Precio del servicio | Float |
+| Ubicacion | direccion | Ubicación exacta | String |
+| Ubicacion | coordenadas | Latitud/Longitud | String |
+| Notificacion | fecha | Fecha de generación de la notificación | Date |
+| Notificacion | contenido | Texto personalizado | String |
+| Notificacion | canal | Medio en el que se envían las notificaciones (Email/SMS) | ENUM |
+| Notificacion | estado | Estado de la notificación (Enviada, Pendiente, Fallida) | ENUM |
+| PlantillaNotificacion | asunto | Línea de asunto | String |
+| PlantillaNotificacion | cuerpo | Texto base con placeholders | String |
+| PlantillaNotificacion | tipo | Tipo de notificación enviada (Mantenimiento, Noticias) | ENUM |
+
+
 ### 4.10. Database Design
+
+El diseño de base de datos es fundamental para estructurar y almacenar todos los datos a utilizar en el proyecto. Su propósito principal es el de organizar los datos de forma lógica y cohesiva, permitiendo el recuperar, modificar o borrar según las acciones de los usuarios.
+
+
 #### 4.10.1. Relational/Non-Relational Database Diagram
 
+<p align="center">
+    <img src="assets/recursos/database_diagram.png" alt="Database-Diagram"/>
+</p>
+
+Enlace del diagrama elaborado en Lucidchart: 
+https://lucid.app/lucidchart/6497903f-9318-4fee-af17-767b96f4ed6d/edit?viewport_loc=-1038%2C173%2C4955%2C1796%2C0_0&invitationId=inv_65a78cce-432f-486d-aaa1-6ab80aae3a48
+
+<hr>
 
 ## Capítulo V: Product Implementation 
 ### 5.1. Software Configuration Management
