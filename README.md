@@ -131,6 +131,193 @@ TP | | |
     - [5.1.2. Source Code Management](#512-source-code-management)
     - [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-    
-[Capitulo VI: Product Verification & Validation ]
-[Capitulo VII: DevOps Practices]
+  - [5.2. Product Implementation & Development](#52-software-implementation-development)
+    - [5.2.1. Sprint Backlogs](#521-sprint-backlog)
+    - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
+    - [5.2.3. Implemented Frontend Web Application Evidence](#523-implemented-frontend-web-application-evidence)
+    - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio-saas)
+    - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
+    - [5.2.6. Implemented RESTful API and/or Serveless Backend Evidence](#526-implemented-restful-api-serveless-backend-evidence)
+    - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+    - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
+- [5.3. Video About-the-Product](#53-video-about-the-product)
+
+[Capitulo VI: Product Verification & Validation ](#capitulo-vi-product-verification--validation)
+- [6.1. Testing Suites & Validation](#61-testing-suites--validation)
+    - [6.1.1. Core Entities Unit Test](#611-core-entities-unit-test)
+    - [6.1.2. Core Integration Test](#612-core-integration-test)
+    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+    - [6.1.4. Core System Test](#614-core-system-test)
+
+[Capitulo VII: DevOps Practices](#capitulo-vii-devops-practices)
+- [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.1.1. Tools and Practices](#711-tools-and-practices)
+    - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
+- [7.2. Continuous Integration](#72-continuous-integration)
+    - [7.2.1. Tools and Practices](#721-tools-and-practices)
+    - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
+- [7.3. Continuous deployment](#73-continuous-deployment)
+    - [7.3.1. Tools and Practices](#731-tools-and-practices)
+    - [7.3.2. Production Deployment Pipeline Components](#732-production-deployemnte-pipeline-component)
+
+[Conclusiones](#conclusiones)
+  - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
+
+[Bibliografía](#bibliografía)
+
+[Anexos](#anexos)
+
+
+<hr>
+
+## Student Outcome
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+**ABET – EAC - Student Outcome 4**
+
+Criterio:  La capacidad de reconocer responsabilidades éticas y profesionales en 
+situaciones de ingeniería y hacer juicios informados, que deben considerar el 
+impacto de las soluciones de ingeniería en contextos globales, económicos, 
+ambientales y sociales. 
+
+| <div style="width:100px">Criterio específico</div> | <div align="center" style="width:250px">Acciones Realizadas</div> | <div align="center" style="width:250px">Conclusiones</div> |
+|:-------------------:|-------------------|------------|
+|Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software |a|a |
+|Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | a |a| 
+
+<hr>
+
+## Capítulo I: Introducción 
+
+### 1.1. Startup Profile
+#### 1.1.1. Descripción de la Startup
+#### 1.1.2. Perfiles de integrantes del equipo
+
+### 1.2. Solution Profile
+#### 1.2.1. Antecedentes y problemática 
+#### 1.2.2. Lean UX Process
+#### 1.2.2.1. Lean UX Problem Statements
+#### 1.2.2.2. Lean UX Assumptions
+#### 1.2.2.3. Lean UX Hypothesis Statements
+#### 1.2.2.4. Lean UX Canvas
+
+### 1.3. Segmentos objetivo
+
+## Capítulo II: Requirements Elicitation & Analysis
+### 2.1. Competidores
+#### 2.1.1. Análisis competitivo
+#### 2.1.2. Estrategias y tácticas frente a competidores
+
+### 2.2. Entrevistas
+#### 2.2.1. Diseño de entrevistas
+#### 2.2.2. Registro de entrevistas
+#### 2.2.3. Análisis de entrevistas
+
+### 2.3. Needfinding
+#### 2.3.1. User Personas
+#### 2.3.2. User Task Matrix
+#### 2.3.3. User Journey Mapping
+#### 2.3.4. Empathy Mapping
+#### 2.3.5. As-is Scenario Mapping
+
+### 2.4. Ubiquitous Language
+
+## Capítulo III:  Requirements Specification 
+### 3.1. To-Be Scenario Mapping
+### 3.2. User Stories
+### 3.3. Product Backlog
+### 3.4. Impact Mapping
+
+## Capítulo IV: Product Design  
+### 4.1. Style Guidelines
+#### 4.1.1. General Style Guidelines 
+#### 4.1.2. Web Style Guidelines
+#### 4.1.3. Mobile Style Guidelines
+#### 4.1.3.1. iOS Mobile Style Guidelines
+#### 4.1.3.2. Android Mobile Style Guidelines
+
+### 4.2. Information Architecture
+#### 4.2.1. Organization Systems
+#### 4.2.2. Labeling Systems
+#### 4.2.3. SEO Tags and Meta Tags
+#### 4.2.4. Searching Systems
+#### 4.2.5.  Navigation Systems
+
+### 4.3. Landing Page UI Design
+#### 4.3.1. Landing Page Wireframe
+#### 4.3.2. Landing Page Mock-up
+
+### 4.4. Mobile Applications UX/UI Design
+#### 4.4.1. Mobile Applications Wireframes
+#### 4.4.2. Mobile Applications Wireflow Diagrams
+#### 4.4.3. Mobile Applications Mock-ups
+#### 4.4.4. Mobile Applications User Flow Diagrams
+
+### 4.5. Mobile Applications Prototyping
+#### 4.5.1. Android Mobile Applications Prototyping
+#### 4.5.2. iOS Mobile Applications Prototyping
+
+### 4.6. Web Applications UX/UI Design
+#### 4.6.1. Web Applications Wireframes
+#### 4.6.2. Web Applications Wireflow Diagrams
+#### 4.6.3. Web Applications Mock-ups
+#### 4.6.4. Web Applications User Flow Diagrams
+
+### 4.7. Web Applications Prototyping
+
+### 4.8. Domain-Driven Software Architecture
+#### 4.8.1. Software Architecture Context Diagram
+#### 4.8.2. Software Architecture Container Diagrams
+#### 4.8.3. Software Architecture Components Diagrams
+
+### 4.9. Software Object-Oriented Design
+#### 4.9.1. Class Diagrams
+#### 4.9.2. Class Dictionary
+
+### 4.10. Database Design
+#### 4.10.1. Relational/Non-Relational Database Diagram
+
+
+## Capítulo V: Product Implementation 
+### 5.1. Software Configuration Management
+#### 5.1.1. Software Development Environment Configuration
+#### 5.1.2. Source Code Management
+#### 5.1.3. Source Code Style Guide & Conventions
+#### 5.1.4. Software Deployment Configuration
+
+### 5.2. Product Implementation & Deployment
+#### 5.2.1. Sprint Backlogs
+#### 5.2.2. Implemented Landing Page Evidence
+#### 5.2.3. Implemented Frontend-Web Application Evidence
+#### 5.2.4. Acuerdo de Servicio - SaaS
+#### 5.2.5. Implemented Native-Mobile Application Evidence
+#### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+#### 5.2.7. RESTful API documentation
+#### 5.2.8. Team Collaboration Insights
+
+### 5.3. Video About-the-Product
+
+## Capítulo VI:  Product Verification & Validation 
+### 6.1. Testing Suites & Validation
+#### 6.1.1. Core Entities Unit Tests
+#### 6.1.2. Core Integration Tests
+#### 6.1.3. Core Behavior-Driven Development
+#### 6.1.4. Core System Tests
+
+## Capítulo VII: DevOps Practices 
+### 7.1. Continuous Integration
+#### 7.1.1. Tools and Practices
+#### 7.1.2. Build & Test Suite Pipeline Components
+
+### 7.2. Continuous Delivery
+#### 7.2.1. Tools and Practices
+#### 7.2.2. Stages Deployment Pipeline Components
+
+### 7.3. Continuous deployment
+#### 7.3.1. Tools and Practices
+#### 7.3.2. Production Deployment Pipeline Components
+
+## Conclusiones
+## BIbliografía
+## Anexos
