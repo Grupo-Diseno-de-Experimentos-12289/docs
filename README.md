@@ -29,7 +29,7 @@
 | <div style="width:500px">Alumno</div> | <div style="width:200px">Código</div> |
 |:-------------------------------------:|:-------------------------------------:|
 |        Tenorio Medina, Piero Francesco        |              u202318731               |
-
+|        Geronimo Quispe,Pablo Antonio       |              u202314304               |
 </div>
 
 <div align="center"> Mayo 2026 </div>
