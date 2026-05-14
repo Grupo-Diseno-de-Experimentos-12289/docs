@@ -44,6 +44,7 @@
 |:-------:|:-----:|:-----------------------------------------:|-------------------------------------------------------------|
 TP | 14/05/2026 | Tenorio Medina Piero Francesco| Se cambió y modificó uno de los .feature del bc de Experiences.
 TP | 14/05/2026 | Morales Venegas David Joel | Documentación y pruebas BDD para IAM y Geolocation.
+TP | 14/05/2026 | Jorge Enrique Guevara Tejada | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
 
 <hr>
 
