@@ -32,6 +32,7 @@
 |    Geronimo Quispe, Pablo Antonio     |              u202314304               |
 |       Alejos Jesus, Anyelo Bill       |              u20231d149               |
 |     Morales Venegas, David Joel       |              u20231b504               |
+|Jorge Enrique Guevara Tejada | U202316057|
 </div>
 
 <div align="center"> Mayo 2026 </div>
@@ -51,7 +52,7 @@ TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pr
 
 ## Tabla de Contenidos
 
-[Registro de Versiones del Informe] 
+
 
 [Tabla de Contenidos](#tabla-de-contenidos)
 
@@ -13948,9 +13949,11 @@ El proyecto está integrado con SonarQube usando el plugin sonar-maven-plugin 5.
 </sonar.exclusions>
 
 
-imagen checkstyle
+Para comprobar la implementacion de Checkstyle, se uso la herramienta de Jenkins:
 
-Métricas analizadas:
+<img src="assets/images/checkstyle.png">
+
+**Métricas analizadas:**
 
 Code Coverage: mínimo 80% de instrucciones (enforced por JaCoCo).
 Code Smells: detectados en clases de servicio y controladores.
@@ -13976,7 +13979,12 @@ Checkstyle con las reglas de Google (google_checks.xml) para verificar convencio
 JUnit 5 + Mockito para pruebas unitarias.
 JaCoCo para reporte de cobertura de código (umbral mínimo: 80% de instrucciones).
 
-imagensonarqub
+- Pruebas Generales
+<img src="assets/sonar/sonar1.png">
+- Pruebas a Nivel de Estructura
+<img src="assets/sonar/sonar2.png">
+- Prubeas a Nivel de Bounded Context
+<img src="assets/sonar/sonar 3.png">
 
 #### 7.1.1. Tools and Practices
 
@@ -13991,6 +13999,7 @@ Para el desarrollo de esta sección, se utilizó la herramienta de Jenkins. Esat
 #### 7.1.2. Build & Test Suite Pipeline Components
 
 El Jenkinsfile define el siguiente pipeline declarativo:
+
 pipeline {
     agent any
     tools {
@@ -14055,3 +14064,19 @@ Esta evolución del proyecto desde una landing page hacia una aplicación web co
 <hr>
 
 ## Anexos
+
+Enlace de la Organización: https://github.com/Grupo-Diseno-de-Experimentos-12289
+
+Enlace del LucidChart (Diagrama de Clases): https://lucid.app/lucidchart/5c82ad83-e062-47f4-8289-d3979877fb1e/edit?invitationId=inv_38e8006a-95da-4b3f-86b2-2d30cfb7cd0b&page=HWEp-vi-RSFO#
+
+Enlace del LucidChart (Diagrama de Base de Datos): https://lucid.app/lucidchart/6497903f-9318-4fee-af17-767b96f4ed6d/edit?invitationId=inv_65a78cce-432f-486d-aaa1-6ab80aae3a48&page=0_0#
+
+Enlace del Video About The Product: https://www.youtube.com/watch?v=zy340YfRT58
+
+Enlace de la Documentación:https://github.com/Grupo-Diseno-de-Experimentos-12289/docs
+
+Enlace de la Landing Page: https://github.com/Grupo-Diseno-de-Experimentos-12289/landing
+
+Enlace del Frontend: https://github.com/Grupo-Diseno-de-Experimentos-12289/frontend
+
+Enlace del Backend: https://github.com/Grupo-Diseno-de-Experimentos-12289/backend
