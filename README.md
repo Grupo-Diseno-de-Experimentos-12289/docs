@@ -42,9 +42,10 @@
 
 | Versión | Fecha | <div style="width:250px">Autor(es) </div> | <div align="center" style="width:400px">Descripción de la modificación</div> |
 |:-------:|:-----:|:-----------------------------------------:|-------------------------------------------------------------|
-TP | 14/05/2026 | Tenorio Medina Piero Francesco| Se cambió y modificó uno de los .feature del bc de Experiences.
-TP | 14/05/2026 | Morales Venegas David Joel | Documentación y pruebas BDD para IAM y Geolocation.
-TP | 14/05/2026 | Jorge Enrique Guevara Tejada | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
+TP | 14/05/2026 |      Tenorio Medina Piero Francesco       | Se cambió y modificó uno de los .feature del bc de Experiences.
+TP | 14/05/2026 |        Morales Venegas David Joel         | Documentación y pruebas BDD para IAM y Geolocation.
+TP | 14/05/2026 |         Alejos Jesu, Anyelo Bill          | Documentación y pruebas BDD para experiences, chekstyle para experiences, sonarqube test.
+TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
 
 <hr>
 
