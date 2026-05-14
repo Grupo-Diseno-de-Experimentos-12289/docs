@@ -1951,12 +1951,142 @@ La configuración de despliegue para TravelMatch contempla mecanismos organizado
 - Se establecerán pruebas manuales básicas post-despliegue para verificar la disponibilidad y funcionalidad de los servicios.  
 - Si el tiempo lo permite, se evaluará la incorporación de **GitHub Actions** para automatizar los flujos de despliegue continuo (CI/CD).
 
+### 5.2 Product Implementation & Deployment
+#### 5.2.1 Sprint Backlogs
+
+ **Sprint Planning 2**
+
+En este segundo sprint, el equipo se reunió para planificar la implementación del backend del sistema TravelMatch. El objetivo principal fue desarrollar los Web Services RESTful que soportan los bounded contexts de IAM, Geolocation, Experiences, Agencies, Profiles y Bookings & Payments, estableciendo así la lógica de negocio central de la plataforma y exponiéndola a través de endpoints documentados con OpenAPI/Swagger.
+
+| Sprint # | Sprint 2 |
+|---|---|
+| Date | 2025-05-15 |
+| Time | 7:00 PM |
+| Location | Virtual - Meet |
+| Prepared By | Jhon Galvez |
+| Attendees (to planning meeting) | Jhon Galvez, Mathias Aspajo, Farid Briceño, Jorge Guevara, Cesar Linares |
+
+Sprint n - 1 Review Summary
+
+En el Sprint 1 se completó la implementación del Landing Page con sus secciones principales, formularios de contacto, navegación responsive y despliegue en GitHub Pages. Se dejaron pendientes las secciones de equipo y misión para este sprint.
+
+ Sprint n - 1 Retrospective Summary
+
+El equipo identificó la necesidad de establecer convenciones más claras para la estructura de los bounded contexts antes de iniciar la implementación del backend, con el fin de mantener consistencia entre los módulos.
+
+ Sprint 2 Goal
+
+Nuestro enfoque es ofrecer una API RESTful funcional y documentada que soporte los procesos core del negocio: autenticación, gestión de destinos, experiencias, agencias y reservas con pagos. Creemos que esto permite a los desarrolladores frontend integrar todas las funcionalidades del sistema. Esto se confirmará cuando los endpoints estén desplegados, documentados en Swagger y cubiertos con pruebas unitarias que pasen el umbral de cobertura del 80%.
+
+| Sprint 2 Velocity | 50 story points |
+|---|---|
+| Sum of Story Points | 48 story points |
 
 
-### 5.2. Product Implementation & Deployment
-#### 5.2.1. Sprint Backlogs
-#### 5.2.2. Implemented Landing Page Evidence
+
+
+<p align="center">
+    <img src="assets/5.2.1.png" alt="About The Product" width=60% >
+</p>
+
+---
+
+ Aspect Leaders and Collaborators
+
+En el Sprint 2 se definieron los siguientes aspectos clave para la implementación del backend:
+
+- IAM & Authentication
+- Agencies Bounded Context
+- Bookings & Payments Bounded Context
+- Experiences Bounded Context
+- Profiles Bounded Context
+- Geolocation Bounded Context
+- Testing & CI Pipeline
+
+| Team Member | GitHub Username | IAM & Auth | Agencies BC | Bookings & Payments BC | Experiences BC | Profiles BC | Geolocation BC | Testing & CI |
+|---|---|---|---|---|---|---|---|---|
+| Aspajo Alvarez, Mathias | AdeXzz | C | C | C | L | C | C | C |
+| Galvez Chambi, Jhon | Chaomeum | L | C | C | C | C | C | C |
+| Briceño, Farid | — | C | C | C | C | L | C | C |
+| Guevara Tejada, Jorge | Jorgito170 | C | C | C | C | C | L | C |
+| Linares Bernable, Cesar | Cesar-Linares | C | L | L | C | C | C | L |
+
+> **L** = Leader  
+> **C** = Collaborator
+
+---
+
+Sprint Backlog 2
+
+El Sprint Backlog 2 contiene las tareas priorizadas para la implementación del backend RESTful de TravelMatch. El foco principal está en los bounded contexts de Agencies y Bookings & Payments, que constituyen el core del modelo de negocio de la plataforma.
+
+| User Story | Work-Item / Task ID | Title | Description | Estimation (Hrs) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| TS-01 Autenticación de usuarios | T01-1 | Implementar Sign Up | Crear endpoint POST `/api/v1/authentication/sign-up` con validaciones | 3 | Galvez Chambi, Jhon | Done |
+| TS-01 Autenticación de usuarios | T01-2 | Implementar Sign In con JWT | Crear endpoint POST `/api/v1/authentication/sign-in` retornando token JWT | 3 | Galvez Chambi, Jhon | Done |
+| TS-02 Gestión de agencias | T02-1 | CRUD de Agency | Implementar endpoints POST, GET, PUT, DELETE para `/api/v1/agencies` | 4 | Linares Bernable, Cesar | Done |
+| TS-02 Gestión de agencias | T02-2 | CRUD de AgencyDocument | Implementar endpoints para `/api/v1/agencies/{id}/documents` | 3 | Linares Bernable, Cesar | Done |
+| TS-02 Gestión de agencias | T02-3 | CRUD de AgencyStaff | Implementar endpoints para `/api/v1/agencies/{id}/staff` | 3 | Linares Bernable, Cesar | Done |
+| TS-03 Gestión de destinos | T03-1 | CRUD de Destination | Implementar endpoints para `/api/v1/destinations` con validaciones | 3 | Guevara Tejada, Jorge | Done |
+| TS-04 Gestión de experiencias | T04-1 | CRUD de Experience | Implementar endpoints para `/api/v1/experiences` | 4 | Aspajo Alvarez, Mathias | Done |
+| TS-04 Gestión de experiencias | T04-2 | Gestión de Availability | Implementar endpoints para availabilities y ticket types | 3 | Aspajo Alvarez, Mathias | Done |
+| TS-04 Gestión de experiencias | T04-3 | Gestión de ExperienceMedia | Implementar endpoints para experience-media | 2 | Aspajo Alvarez, Mathias | Done |
+| TS-05 Gestión de reservas | T05-1 | Crear Booking | Implementar POST `/api/v1/bookings` con validación de stock | 4 | Linares Bernable, Cesar | Done |
+| TS-05 Gestión de reservas | T05-2 | Cancelar Booking | Implementar POST `/api/v1/bookings/{id}/cancel` | 2 | Linares Bernable, Cesar | Done |
+| TS-05 Gestión de reservas | T05-3 | Integración con Stripe | Implementar POST `/api/v1/bookings/{id}/payments/initiate` con PaymentIntent | 4 | Linares Bernable, Cesar | Done |
+| TS-05 Gestión de reservas | T05-4 | Webhook de Stripe | Implementar POST `/api/v1/stripe/webhook` para confirmar pagos | 3 | Linares Bernable, Cesar | Done |
+| TS-05 Gestión de reservas | T05-5 | Iniciar Refund | Implementar POST `/api/v1/bookings/{id}/refunds` | 2 | Linares Bernable, Cesar | Done |
+| TS-06 Gestión de perfiles | T06-1 | CRUD de Favorites | Implementar endpoints para `/api/v1/favorites` | 2 | Briceño, Farid | Done |
+| TS-06 Gestión de perfiles | T06-2 | Gestión de Cart | Implementar endpoints para `/api/v1/carts` con items | 3 | Briceño, Farid | Done |
+| TS-06 Gestión de perfiles | T06-3 | Gestión de Reviews | Implementar endpoints para `/api/v1/reviews` | 2 | Briceño, Farid | Done |
+| TS-07 Pipeline CI/CD | T07-1 | Configurar Jenkinsfile | Crear pipeline con stages: compile, checkstyle, test, jacoco, package | 3 | Linares Bernable, Cesar | Done |
+| TS-07 Pipeline CI/CD | T07-2 | Configurar SonarQube | Integrar análisis estático de calidad con SonarQube | 2 | Linares Bernable, Cesar | Done |
+
+---
+
+ #### 5.2.2. Implemented Landing Page Evidence
+
+La landing page de TravelMatch fue desarrollada e implementada en el Sprint 1. Se trata de un sitio web estático construido con HTML5, CSS3 y JavaScript, desplegado mediante GitHub Pages. Incluye secciones diferenciadas para viajeros y agencias, formularios de contacto, testimonios y una presentación del modelo de monetización.
+
+**URL del Landing Page desplegado:**  
+https://g2-aplicaciones-open-source.github.io/landing-page-v2/
+
+ Commits del repositorio Landing Page
+
+| Repository | Branch | Commit ID | Commit Message | Committed on (Date) |
+|---|---|---|---|---|
+| G2-Aplicaciones-Open-Source/Landing-Page | develop | a859949 | feat: Implementación de contenido en las secciones de la landing page | 23/04/2025 |
+| G2-Aplicaciones-Open-Source/Landing-Page | develop | 645844c | feat: Implementación de navegación y redireccionamientos | 23/04/2025 |
+| G2-Aplicaciones-Open-Source/Landing-Page | develop | 5265378 | feat: Mejora de responsividad y funcionalidades interactivas | 23/04/2025 |
+| G2-Aplicaciones-Open-Source/Landing-Page | develop | 7ab1366 | feat: Implementación de las vistas para el registro e inicio de sesión | 23/04/2025 |
+
+Para el detalle completo de la implementación, capturas y evidencias de despliegue, referirse a la sección 5.2.1.7 del Sprint 1.
+
+---
+
 #### 5.2.3. Implemented Frontend-Web Application Evidence
+
+La aplicación web frontend de TravelMatch fue desarrollada utilizando Vue.js con el framework PrimeVue como biblioteca de componentes de UI, siguiendo las guías de estilo definidas en el Capítulo IV. Consume los endpoints del RESTful API implementado en este sprint.
+
+ Principales vistas implementadas
+
+- Vista de autenticación: Login y registro de usuarios con roles (turista / agencia staff).
+- Vista de exploración de experiencias: Listado, filtros por categoría y detalle de experiencia.
+- Vista de gestión de agencia: Dashboard para crear y administrar experiencias, disponibilidades y documentos.
+- Vista de reserva: Flujo completo de selección de disponibilidad, ticket type, confirmación y pago.
+- Vista de perfil de usuario: Favoritos, carrito, historial de reservas y reseñas.
+
+ Commits del repositorio Frontend
+
+| Repository | Branch | Commit ID | Commit Message | Committed on (Date) |
+|---|---|---|---|---|
+| G2-Aplicaciones-Open-Source/frontend | develop | — | feat: implementación de vistas de autenticación | 2025-05-20 |
+| G2-Aplicaciones-Open-Source/frontend | develop | — | feat: implementación de exploración de experiencias | 2025-05-22 |
+| G2-Aplicaciones-Open-Source/frontend | develop | — | feat: implementación de flujo de reserva y pago | 2025-05-25 |
+
+
+
+---
 #### 5.2.4. Acuerdo de Servicio - SaaS
 Esta sección establece los derechos, obligaciones y restricciones aplicables a los usuarios de la plataforma **TravelMatch**, garantizando transparencia en el uso del servicio bajo el modelo Software as a Service (SaaS). Este acuerdo cumple con los criterios de claridad, accesibilidad y cumplimiento normativo exigidos por la legislación peruana.
 
@@ -2002,8 +2132,171 @@ El presente servicio se rige bajo las siguientes normas peruanas:
 * **8.2. Atención al Cliente:** Se pone a disposición el Libro de Reclamaciones Virtual y el correo soporte@travelmatch.app para la atención de incidencias.
 
 #### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
-#### 5.2.7. RESTful API documentation
-#### 5.2.8. Team Collaboration Insights
+
+El backend de TravelMatch fue implementado como un RESTful API utilizando Spring Boot 3.5.0 con Java 21, siguiendo la arquitectura de Domain-Driven Design (DDD) con bounded contexts bien delimitados. La API corre en `http://localhost:8091` y está documentada con Swagger/OpenAPI.
+
+ Bounded contexts implementados y sus endpoints principales
+
+ IAM (Identity & Access Management)
+
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/authentication/sign-up` | POST | Registro de nuevo usuario |
+| `/api/v1/authentication/sign-in` | POST | Inicio de sesión, retorna JWT |
+| `/api/v1/users` | GET | Listar todos los usuarios |
+| `/api/v1/users/{userId}` | GET | Obtener usuario por ID |
+| `/api/v1/roles` | GET | Listar roles disponibles |
+
+Agencies
+
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/agencies` | POST | Crear agencia |
+| `/api/v1/agencies` | GET | Listar todas las agencias |
+| `/api/v1/agencies/{agencyId}` | GET | Obtener agencia por ID |
+| `/api/v1/agencies/{agencyId}` | PUT | Actualizar agencia |
+| `/api/v1/agencies/{agencyId}` | DELETE | Eliminar agencia |
+| `/api/v1/agencies/{agencyId}/documents` | POST | Crear documento de agencia |
+| `/api/v1/agencies/{agencyId}/documents` | GET | Listar documentos por agencia |
+| `/api/v1/agencies/{agencyId}/documents/{documentId}` | PUT | Actualizar documento |
+| `/api/v1/agencies/{agencyId}/documents/{documentId}` | DELETE | Eliminar documento |
+| `/api/v1/agencies/{agencyId}/staff` | POST | Crear staff de agencia |
+| `/api/v1/agencies/{agencyId}/staff` | GET | Listar staff por agencia |
+| `/api/v1/agencies/{agencyId}/staff/{staffId}` | PUT | Actualizar staff |
+| `/api/v1/agencies/{agencyId}/staff/{staffId}` | DELETE | Eliminar staff |
+
+ Bookings & Payments
+
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/bookings` | POST | Crear booking (valida stock disponible) |
+| `/api/v1/bookings/{bookingId}/cancel` | POST | Cancelar booking en estado PENDING |
+| `/api/v1/bookings/{bookingId}/payments/initiate` | POST | Iniciar pago con Stripe (retorna clientSecret) |
+| `/api/v1/bookings/fail-payment` | POST | Marcar pago como fallido |
+| `/api/v1/bookings/{bookingId}/refunds` | POST | Iniciar reembolso |
+| `/api/v1/stripe/webhook` | POST | Webhook de Stripe para confirmar pagos |
+
+Experiences
+
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/experiences/{agencyId}/experiences` | POST | Crear experiencia |
+| `/api/v1/experiences` | GET | Listar todas las experiencias |
+| `/api/v1/experiences/{experienceId}` | GET / PUT / DELETE | CRUD de experiencia |
+| `/api/v1/experiences/{experienceId}/availabilities` | POST | Crear disponibilidad |
+| `/api/v1/availabilities` | GET | Listar disponibilidades |
+| `/api/v1/availabilities/{availabilityId}` | PUT / DELETE | Actualizar / eliminar disponibilidad |
+| `/api/v1/availabilities/{availabilityId}/ticket-types` | POST | Asociar ticket type |
+| `/api/v1/experience-media/experiences/{experienceId}/media` | POST | Agregar media |
+| `/api/v1/categories` | GET | Listar categorías |
+| `/api/v1/ticket-types` | GET | Listar tipos de tickets |
+
+ Profiles
+
+| Endpoint | Método | Descripción |
+|---|---|---|
+| `/api/v1/favorites` | POST | Crear favorito |
+| `/api/v1/favorites/by-user/{userId}` | GET | Listar favoritos por usuario |
+| `/api/v1/favorites/users/{userId}/experience/{experienceId}` | DELETE | Eliminar favorito |
+| `/api/v1/carts` | POST | Crear carrito |
+| `/api/v1/carts/{userId}/items` | POST / PUT / DELETE | Gestión de items del carrito |
+| `/api/v1/carts/{userId}` | GET / DELETE | Ver / vaciar carrito |
+| `/api/v1/reviews` | POST | Crear reseña |
+| `/api/v1/reviews/{reviewId}` | PUT | Actualizar reseña |
+| `/api/v1/reviews/by-user/{userId}` | GET | Reseñas por usuario |
+
+Commits del repositorio Backend
+
+| Repository | Branch | Commit ID | Commit Message | Committed on (Date) |
+|---|---|---|---|---|
+| G2-Aplicaciones-Open-Source/backend | feat/iam | — | feat: implement sign-up and sign-in endpoints with JWT | 2025-05-15 |
+| G2-Aplicaciones-Open-Source/backend | feat/agencies | — | feat: implement agency CRUD with RUC and email validation | 2025-05-17 |
+| G2-Aplicaciones-Open-Source/backend | feat/agencies | — | feat: implement agency documents and staff management | 2025-05-18 |
+| G2-Aplicaciones-Open-Source/backend | feat/bookings | — | feat: implement booking creation with stock validation | 2025-05-20 |
+| G2-Aplicaciones-Open-Source/backend | feat/bookings | — | feat: integrate Stripe payment intent and webhook | 2025-05-22 |
+| G2-Aplicaciones-Open-Source/backend | feat/bookings | — | feat: implement refund and cancel booking flows | 2025-05-23 |
+| G2-Aplicaciones-Open-Source/backend | develop | — | ci: add Jenkinsfile with compile, test, coverage and package stages | 2025-05-25 |
+
+
+---
+
+### 5.2.7. RESTful API Documentation
+
+La documentación de la API fue generada automáticamente utilizando OpenAPI Specification (OAS 3.0) a través de Springdoc OpenAPI y visualizada con Swagger UI.
+
+**URL de la documentación:**  
+`http://localhost:8091/swagger-ui/index.html`
+
+La documentación incluye todos los endpoints agrupados por Tag (bounded context), con descripción de cada operación, parámetros requeridos, cuerpos de request con ejemplos y los posibles códigos de respuesta HTTP.
+
+ Tags documentados
+
+| Tag | Descripción |
+|---|---|
+| Authentication | Endpoints de registro e inicio de sesión |
+| Users | Gestión de usuarios |
+| Roles | Consulta de roles disponibles |
+| Agencies | CRUD completo de agencias |
+| Agency Documents | Gestión de documentos de agencia |
+| Agency Staff | Gestión del personal de agencia |
+| Destinations | Gestión de destinos geográficos |
+| Experiences | Gestión de experiencias turísticas |
+| Availabilities | Gestión de disponibilidades y ticket types |
+| Experience Media | Gestión de archivos multimedia |
+| Categories | Consulta de categorías |
+| Ticket Types | Consulta de tipos de ticket |
+| Bookings | Gestión de reservas y pagos |
+| Favorites | Gestión de experiencias favoritas |
+| Carts | Gestión del carrito de compras |
+| Reviews | Gestión de reseñas |
+
+ 
+ Seguridad
+
+Todos los endpoints (excepto `/api/v1/authentication/**`) requieren autenticación mediante Bearer Token JWT, configurado en el esquema de seguridad de Swagger con el botón **Authorize**.
+
+
+
+### 5.2.8. Team Collaboration Insights
+
+Durante este Sprint, el equipo colaboró en la implementación del backend de TravelMatch siguiendo las prácticas de GitFlow, Conventional Commits y revisión de código mediante Pull Requests en GitHub.
+
+Estrategia de colaboración empleada
+
+- Cada bounded context se desarrolló en su propia rama `feat/<bounded-context>`, creada a partir de `develop`.
+- Se aplicó Conventional Commits: `feat:`, `fix:`, `test:`, `ci:`, `refactor:` para mantener trazabilidad en el historial.
+- Pull Requests obligatorias revisadas por al menos un miembro antes de fusionar a `develop`.
+- Al finalizar el sprint, un merge de `develop` a `main` precedido de una revisión general del equipo.
+- El pipeline de Jenkins valida automáticamente cada push: compilación, checkstyle, tests y cobertura.
+
+  Distribución de commits por miembro
+
+| Miembro | Bounded Context principal | Contribución |
+|---|---|---|
+| Galvez Chambi, Jhon | IAM, Configuración general | Sign-up, Sign-in, JWT, Seed de roles |
+| Linares Bernable, Cesar | Agencies, Bookings & Payments, CI | CRUD Agencies/Documents/Staff, Booking lifecycle, Stripe, Jenkins, SonarQube |
+| Aspajo Alvarez, Mathias | Experiences | Experiences, Availabilities, Ticket Types, ExperienceMedia |
+| Guevara Tejada, Jorge | Geolocation | Destinations CRUD |
+| Briceño, Farid | Profiles | Favorites, Cart, Reviews |
+
+
+
+
+<p align="center">
+    <img src="assets/5.2.2.png" alt="About The Product" width=60% >
+</p>
+
+
+<p align="center">
+    <img src="assets/5.2.3.png" alt="About The Product" width=60% >
+</p>
+
+
+<p align="center">
+    <img src="assets/5.2.4.png" alt="About The Product" width=60% >
+</p>
+
+
 
 ### 5.3. Video About-the-Product
 n esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
