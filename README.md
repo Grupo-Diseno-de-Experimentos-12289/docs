@@ -47,7 +47,7 @@ TP | 14/05/2026 |      Tenorio Medina Piero Francesco       | Se cambió y modif
 TP | 14/05/2026 |        Morales Venegas David Joel         | Documentación y pruebas BDD para IAM y Geolocation.
 TP | 14/05/2026 |         Alejos Jesu, Anyelo Bill          | Documentación y pruebas BDD para experiences, chekstyle para experiences, sonarqube test.
 TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
-
+TP | 14/05/2026 |       GeronimoQuispe Pablo Antonio       | Documentación, pruebas bounded context agencies,bookings, checkstyle general, sonarqube test.
 <hr>
 
 ## Tabla de Contenidos
