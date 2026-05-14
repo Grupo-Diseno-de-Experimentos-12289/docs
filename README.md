@@ -29,7 +29,7 @@
 | <div style="width:500px">Alumno</div> | <div style="width:200px">Código</div> |
 |:-------------------------------------:|:-------------------------------------:|
 |        Tenorio Medina, Piero Francesco        |              u202318731               |
-
+|        Geronimo Quispe,Pablo Antonio       |              u202314304               |
 </div>
 
 <div align="center"> Mayo 2026 </div>
@@ -183,9 +183,8 @@ ambientales y sociales.
 
 | <div style="width:100px">Criterio específico</div> | <div align="center" style="width:250px">Acciones Realizadas</div> | <div align="center" style="width:250px">Conclusiones</div> |
 |:-------------------:|-------------------|------------|
-|Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software |a|a |
-|Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | a |a| 
-
+| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
 <hr>
 
 ## Capítulo I: Introducción 
@@ -1980,14 +1979,138 @@ La configuración de despliegue para TravelMatch contempla mecanismos organizado
 ## Capítulo VI:  Product Verification & Validation 
 ### 6.1. Testing Suites & Validation
 #### 6.1.1. Core Entities Unit Tests
-#### 6.1.2. Core Integration Tests
-#### 6.1.3. Core Behavior-Driven Development
-#### 6.1.4. Core System Tests
+En esta sección se presentan capturas de pantalla de la implementación de pruebas unitarias realizadas sobre los servicios principales de las entidades del sistema.
+Se implementaron pruebas unitarias para los componentes principales de los bounded contexts Bookings & Payments y Agencies, siguiendo el patrón AAA (Arrange, Act, Assert) con JUnit 5 y Mockito.
+Se incluyen ejemplos visuales tanto del código de las pruebas como de su ejecución exitosa, con el objetivo de validar el correcto funcionamiento lógico de cada unidad de código.
 
+imagen
+
+Resultados: Todos los tests pasan satisfactoriamente con cobertura de instrucciones superior al 80% según el reporte de JaCoCo.
+
+#### 6.1.2. Core Integration Tests
+
+Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/api/v1. Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
+
+A continuación, se muestran evidencias gráficas del desarrollo y ejecución de pruebas de integración para los componentes centrales del sistema.
+Estas pruebas permiten verificar que diferentes módulos del sistema interactúan correctamente entre sí, asegurando la integridad funcional del flujo de trabajo conjunto.
+
+
+ imagen
+
+
+Cada escenario utiliza datos únicos generados con java.util.UUID para evitar colisiones entre ejecuciones. El archivo auth-setup.feature provee un token de autenticación reutilizable para todos los escenarios.
+Los runners (BookingsRunner, AgenciesRunner) permiten ejecutar los features de forma aislada mediante JUnit 5.
+ 
+
+#### 6.1.3. Core Behavior-Driven Development
+
+En esta sección se presentan capturas relacionadas con la implementación de pruebas basadas en el comportamiento (Behavior-Driven Development, BDD) aplicadas al núcleo del sistema.
+Se utilizó una combinación de herramientas como Cucumber junto con JUnit para definir escenarios de prueba en lenguaje natural (Gherkin), permitiendo validar funcionalidades desde la perspectiva del usuario final.
+Los feature files están redactados en Gherkin bajo el estándar Given / When / Then, describiendo los escenarios de negocio desde la perspectiva del usuario
+Estas pruebas ayudan a garantizar que el sistema se comporte de acuerdo con los requisitos funcionales definidos previamente.
+
+
+imagen
+
+Los escenarios cubren happy paths y unhappy paths, validando tanto los status HTTP como los campos del response body mediante las aserciones de Karate (match, ==, '#number')
+
+#### 6.1.4. Core System Tests
+no va alguien eliminelo si quiere 
+
+
+### 6.2.  Static testing & Verification 
+#### 6.2.1. Static Code Analysis 
+##### 6.2.1.1 Coding standard & Code conventions
+
+El proyecto utiliza Checkstyle 10.21.1 configurado mediante el plugin de Maven con las reglas de Google Java Style Guide (google_checks.xml). La configuración en pom.xml establece:
+
+Archivo de reglas: google_checks.xml
+Archivo de supresiones: checkstyle-suppressions.xml (para excluir casos justificados)
+Incluye directorios de tests en el análisis
+Nivel de severidad: warning (no bloquea el build pero reporta en consola)
+
+Las convenciones aplicadas incluyen: indentación de 2 espacios, nombres en camelCase, longitud máxima de línea de 100 caracteres, Javadoc obligatorio en métodos públicos y uso de imports ordenados. Se verificó que todas las clases principales de los bounded contexts Bookings y Agencies cumplen con las reglas definidas.
+imagen de checkstyle
+ ##### 6.2.1.2. Code Quality & Code Security. 
+El proyecto está integrado con SonarQube usando el plugin sonar-maven-plugin 5.0.0.4389. La configuración en pom.xml define:
+
+<sonar.projectKey>travelmatch</sonar.projectKey>
+<sonar.host.url>http://localhost:9000</sonar.host.url>
+<sonar.coverage.jacoco.xmlReportPaths>
+  target/site/jacoco/jacoco.xml
+</sonar.coverage.jacoco.xmlReportPaths>
+<sonar.exclusions>
+  **/domain/model/**,**/infrastructure/**,
+  **/interfaces/rest/resources/**,
+  **/interfaces/rest/transform/**,**/*Application*
+</sonar.exclusions>
+
+
+
+imagen 
+
+Métricas analizadas:
+
+Code Coverage: mínimo 80% de instrucciones (enforced por JaCoCo).
+Code Smells: detectados en clases de servicio y controladores.
+Duplications: análisis de bloques de código duplicado.
+Security Hotspots: revisión de manejo de JWT, passwords hasheados con BCrypt y conexión a Stripe API con clave secreta en application.properties.
+Reliability: análisis de posibles NullPointerExceptions y manejo de Optional.
+
+Las exclusiones están justificadas porque los DTOs, Value Objects y configuraciones de infraestructura son difíciles de probar de forma aislada y no contienen lógica de negocio.
+
+
+
+
+ 
 ## Capítulo VII: DevOps Practices 
 ### 7.1. Continuous Integration
+
+Se implementó un pipeline de Integración Continua utilizando Jenkins con Maven 3.9.15 y JDK 21. El pipeline automatiza el ciclo de verificación del código en cada push al repositorio, garantizando que ningún cambio rompa la calidad del proyecto.
+Herramientas utilizadas:
+
+Jenkins como servidor de CI ejecutando el Jenkinsfile declarativo.
+Maven para compilación, ejecución de tests y empaquetado.
+Checkstyle con las reglas de Google (google_checks.xml) para verificar convenciones de código.
+JUnit 5 + Mockito para pruebas unitarias.
+JaCoCo para reporte de cobertura de código (umbral mínimo: 80% de instrucciones).
+
+imagen
+
 #### 7.1.1. Tools and Practices
+no va creo
 #### 7.1.2. Build & Test Suite Pipeline Components
+
+El Jenkinsfile define el siguiente pipeline declarativo:
+pipeline {
+    agent any
+    tools {
+        maven 'Maven 3.9.15'
+        jdk 'JDK_21'
+    }
+    stages {
+        stage('Compile Project') {
+            steps { bat 'mvn clean compile' }
+        }
+        stage('Validate Checkstyle') {
+            steps { bat 'mvn checkstyle:check' }
+        }
+        stage('Validate Unit Tests') {
+            steps { bat 'mvn test' }
+        }
+        stage('Validate Test Coverage') {
+            steps { bat 'mvn jacoco:report' }
+        }
+        stage('Package Application') {
+            steps { bat 'mvn package' }
+        }
+    }
+}
+
+
+Stages:
+StagePropósitoCompile ProjectVerifica que el código compila sin erroresValidate CheckstyleVerifica convenciones de código con Google StyleValidate Unit TestsEjecuta todos los unit tests con JUnit 5Validate Test CoverageGenera reporte de cobertura con JaCoCoPackage ApplicationEmpaqueta el .jar listo para despliegue
+
 
 ### 7.2. Continuous Delivery
 #### 7.2.1. Tools and Practices
