@@ -183,8 +183,8 @@ ambientales y sociales.
 
 | <div style="width:100px">Criterio específico</div> | <div align="center" style="width:250px">Acciones Realizadas</div> | <div align="center" style="width:250px">Conclusiones</div> |
 |:-------------------:|-------------------|------------|
-| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
-| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Implementé herramientas de análisis de calidad para el bounded context **Profiles and Preferences**, utilizando **Checkstyle** para verificar el cumplimiento de convenciones de codificación y **SonarQube** para analizar mantenibilidad, code smells y posibles vulnerabilidades del proyecto. Estas configuraciones ayudaron a asegurar que el código desarrollado siga buenas prácticas de ingeniería de software y mantenga estándares adecuados de calidad. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Analicé el impacto que tiene la calidad del software en la experiencia de usuario dentro del bounded context **Profiles and Preferences**, utilizando SonarQube para identificar riesgos de seguridad y problemas de mantenibilidad que podrían afectar la estabilidad del sistema. Además, apliqué Checkstyle para mantener un código uniforme y legible, contribuyendo a facilitar el trabajo colaborativo y la mantenibilidad a largo plazo del proyecto. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
 <hr>
 
 ## Capítulo I: Introducción 
@@ -1983,20 +1983,94 @@ En esta sección se presentan capturas de pantalla de la implementación de prue
 Se implementaron pruebas unitarias para los componentes principales de los bounded contexts Bookings & Payments y Agencies, siguiendo el patrón AAA (Arrange, Act, Assert) con JUnit 5 y Mockito.
 Se incluyen ejemplos visuales tanto del código de las pruebas como de su ejecución exitosa, con el objetivo de validar el correcto funcionamiento lógico de cada unidad de código.
 
-imagen
+**Bounded Context Booking:**
+Se implementaron pruebas unitarias para validar la lógica de negocio del bounded context **Bookings & Payments**, incluyendo agregados, entidades, value objects, servicios de aplicación, assemblers y controladores REST. Las pruebas verifican transiciones de estados de bookings, pagos, refunds y payouts, así como validaciones de reglas de negocio, mapeos entre recursos y comandos, y respuestas HTTP esperadas en los endpoints principales.
+
+<p align="center">
+    <img src="assets/testunit1.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit2.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit3.png">
+</p>
+
+**Bounded Context Agencies:**
+Se implementaron pruebas unitarias para el bounded context **Agencies**, cubriendo la lógica de creación, actualización y eliminación de agencias, documentos y staff. Las pruebas validan restricciones como RUC y emails únicos, manejo de excepciones, comportamiento de servicios de aplicación, assemblers y respuestas correctas de los controladores REST.
+
+<p align="center">
+    <img src="assets/testunit4.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit5.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit6.png">
+</p>
+
+**Profiles & Preferences**
+Se realizaron validaciones de calidad para el bounded context **Profiles & Preferences** utilizando herramientas como **Checkstyle** y **SonarQube**, asegurando el cumplimiento de estándares de codificación, mantenibilidad del código y detección temprana de posibles vulnerabilidades o code smells.
+
+<p align="center">
+    <img src="assets/testunit7.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit8.png">
+</p>
+
+<p align="center">
+    <img src="assets/testunit9.png">
+</p>
+
 
 Resultados: Todos los tests pasan satisfactoriamente con cobertura de instrucciones superior al 80% según el reporte de JaCoCo.
 
 #### 6.1.2. Core Integration Tests
 
-Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/api/v1. Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
+Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/swagger-ui/index.html#/    Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
 
 A continuación, se muestran evidencias gráficas del desarrollo y ejecución de pruebas de integración para los componentes centrales del sistema.
 Estas pruebas permiten verificar que diferentes módulos del sistema interactúan correctamente entre sí, asegurando la integridad funcional del flujo de trabajo conjunto.
 
 
- imagen
+**Bookings & Payments**
+Se implementaron pruebas de integración utilizando **Karate DSL** para validar el comportamiento end-to-end de los endpoints REST del bounded context **Bookings & Payments**. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos y generación de refunds, verificando tanto happy paths como unhappy paths mediante peticiones HTTP reales y validación de status codes y response bodies.
 
+<p align="center">
+    <img src="assets/integrationtest1.png">
+</p>
+
+<p align="center">
+    <img src="assets/karatetest1.png">
+</p>
+
+
+
+ **Agencies**
+Se desarrollaron pruebas de integración con **Karate DSL** para verificar el correcto funcionamiento de los endpoints REST del bounded context **Agencies**. Los escenarios cubren operaciones CRUD de agencias, documentos y staff, validando autenticación, respuestas HTTP, persistencia de datos y manejo de errores en diferentes escenarios.
+
+<p align="center">
+    <img src="assets/integrationtest2.png">
+</p>
+
+
+
+<p align="center">
+    <img src="assets/karatetest2.png">
+</p>
+
+**Profiles & Preferences**
+Se realizaron validaciones de calidad y análisis del bounded context **Profiles & Preferences**, complementando las pruebas de integración generales del sistema mediante herramientas de análisis estático para garantizar estabilidad, mantenibilidad y cumplimiento de estándares del proyecto.
+
+<p align="center">
+    <img src="assets/karatetest3.png">
+</p>
 
 Cada escenario utiliza datos únicos generados con java.util.UUID para evitar colisiones entre ejecuciones. El archivo auth-setup.feature provee un token de autenticación reutilizable para todos los escenarios.
 Los runners (BookingsRunner, AgenciesRunner) permiten ejecutar los features de forma aislada mediante JUnit 5.
@@ -2009,13 +2083,36 @@ Se utilizó una combinación de herramientas como Cucumber junto con JUnit para 
 Los feature files están redactados en Gherkin bajo el estándar Given / When / Then, describiendo los escenarios de negocio desde la perspectiva del usuario
 Estas pruebas ayudan a garantizar que el sistema se comporte de acuerdo con los requisitos funcionales definidos previamente.
 
+**Bookings & Payments**
+Se implementaron escenarios BDD para validar el flujo completo de reservas y pagos dentro del bounded context Bookings & Payments. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos, pagos fallidos y generación de refunds, verificando tanto happy paths como unhappy paths mediante validación de status codes y response bodies.
 
-imagen
+<p align="center">
+    <img src="assets/gherkin1.png">
+</p>
+
+
+
+ **Agencies**
+Se desarrollaron pruebas BDD para validar el comportamiento de los endpoints REST relacionados con la gestión de agencias, documentos y staff dentro del bounded context Agencies. Los escenarios implementados verifican operaciones CRUD, autenticación, validaciones de negocio y manejo de errores utilizando peticiones HTTP reales.
+
+<p align="center">
+    <img src="assets/gherkin2.png">
+</p>
+
+
+
+
+**Profiles & Preferences**
+Se realizaron validaciones orientadas al bounded context Profiles & Preferences, enfocadas en asegurar la calidad y mantenibilidad del código mediante herramientas de análisis estático como Checkstyle y SonarQube, contribuyendo a mantener consistencia en el desarrollo y detección temprana de problemas potenciales dentro del sistema.
+
+<p align="center">
+    <img src="assets/gherkin3.png">
+</p>
+
+
 
 Los escenarios cubren happy paths y unhappy paths, validando tanto los status HTTP como los campos del response body mediante las aserciones de Karate (match, ==, '#number')
 
-#### 6.1.4. Core System Tests
-no va alguien eliminelo si quiere 
 
 
 ### 6.2.  Static testing & Verification 
@@ -2047,7 +2144,7 @@ El proyecto está integrado con SonarQube usando el plugin sonar-maven-plugin 5.
 
 
 
-imagen 
+imagen checkstyle
 
 Métricas analizadas:
 
@@ -2075,7 +2172,7 @@ Checkstyle con las reglas de Google (google_checks.xml) para verificar convencio
 JUnit 5 + Mockito para pruebas unitarias.
 JaCoCo para reporte de cobertura de código (umbral mínimo: 80% de instrucciones).
 
-imagen
+imagensonarqub
 
 #### 7.1.1. Tools and Practices
 no va creo
