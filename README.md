@@ -979,10 +979,7 @@ En esta sección se presentan las historias de usuario que describen las necesid
 | US-56 | Edición de disponibilidad de tours | Como agencia, quiero modificar la disponibilidad de mis tours para gestionar el número de visitantes. | - Scenario 1: Edición exitosa. Se puede cambiar fecha, cupos y tipo de ticket. <br> - Scenario 2: Validación. No se permite disponibilidad con fecha pasada. | EP06 |
 | US-57 | Gestión del carrito de compras | Como viajero, quiero agregar y eliminar experiencias del carrito antes de confirmar la reserva. | - Scenario 1: Agregar experiencia. El usuario puede añadir tours al carrito desde la vista de detalle. <br> - Scenario 2: Eliminar del carrito. El usuario puede eliminar tours antes de reservar. | EP07 |
 | US-58 | Contador de ítems en carrito | Como viajero, quiero ver cuántos ítems tengo en mi carrito para estar al tanto de mis próximas reservas. | - Scenario 1: Visualización dinámica. El contador se actualiza cada vez que agrego o elimino ítems. <br> - Scenario 2: Límite visual. Se indica si se alcanza el límite máximo de ítems (si aplica). | EP07 |
-| US-59 | Visualización de medios de experiencias | Como viajero, quiero ver las imágenes y videos relacionados a una experiencia para decidir si se ajusta a mis preferencias. | - Scenario 1: Galería visible. Al entrar a la experiencia, se cargan automáticamente los archivos multimedia. <br> - Scenario 2: Fallback. Si no hay archivos disponibles, se muestra una imagen por defecto. | EP03 |
-
-
-|TS01|API: Registro de usuarios|Como Developer, quiero una API para registrar nuevos usuarios para soportar la funcionalidad de registro de la plataforma.|- Scenario 1: Registro exitoso<br> Dado que recibo una solicitud POST a /api/v1/users/register con email y contraseña válidos,<br> Cuando proceso la solicitud,<br> Entonces la base de datos registra al usuario y la API responde con un 201 Created y los datos del usuario (sin contraseña).<br><br>- Scenario 2: Email duplicado<br> Dado que recibo una solicitud POST a /api/v1/users/register con un email ya registrado,<br> Cuando intento registrar el usuario,<br> Entonces la API responde con un 409 Conflict y un mensaje de error.|EP06|
+| US-59 | Visualización de medios de experiencias | Como viajero, quiero ver las imágenes y videos relacionados a una experiencia para decidir si se ajusta a mis preferencias. | - Scenario 1: Galería visible. Al entrar a la experiencia, se cargan automáticamente los archivos multimedia. <br> - Scenario 2: Fallback. Si no hay archivos disponibles, se muestra una imagen por defecto. | EP03 ||TS01|API: Registro de usuarios|Como Developer, quiero una API para registrar nuevos usuarios para soportar la funcionalidad de registro de la plataforma.|- Scenario 1: Registro exitoso<br> Dado que recibo una solicitud POST a /api/v1/users/register con email y contraseña válidos,<br> Cuando proceso la solicitud,<br> Entonces la base de datos registra al usuario y la API responde con un 201 Created y los datos del usuario (sin contraseña).<br><br>- Scenario 2: Email duplicado<br> Dado que recibo una solicitud POST a /api/v1/users/register con un email ya registrado,<br> Cuando intento registrar el usuario,<br> Entonces la API responde con un 409 Conflict y un mensaje de error.|EP06|
 |TS02|API: Inicio de sesión de usuarios|Como Developer, quiero una API para autenticar usuarios para permitirles acceder a sus perfiles.|- Scenario 1: Inicio de sesión exitoso<br> Dado que recibo una solicitud POST a /api/v1/users/login con credenciales válidas,<br> Cuando verifico las credenciales,<br> Entonces la API responde con un 200 OK y un token de autenticación.<br><br>- Scenario 2: Credenciales inválidas<br> Dado que recibo una solicitud POST a /api/v1/users/login con credenciales incorrectas,<br> Cuando intento autenticar,<br> Entonces la API responde con un 401 Unauthorized y un mensaje de error.|EP06|
 |TS03|API: Gestión de Perfil de Usuario|Como Developer, quiero una API para que los usuarios gestionen sus datos de perfil para permitir la actualización de información personal.|- Scenario 1: Actualización de perfil exitosa<br> Dado que recibo una solicitud PUT a /api/v1/users/{id} con datos válidos de perfil y un token de autenticación,<br> Cuando actualizo el perfil del usuario,<br> Entonces la base de datos se actualiza y la API responde con un 200 OK y el perfil actualizado.<br><br>- Scenario 2: Datos inválidos<br> Dado que recibo una solicitud PUT a /api/v1/users/{id} con datos de perfil inválidos,<br> Cuando intento actualizar el perfil,<br> Entonces la API responde con un 400 Bad Request y un mensaje de error de validación.|EP06|
 |TS04|API: Carga de Tours por Agencia|Como Developer, quiero una API para que las agencias suban información de tours para mostrar su oferta en la plataforma.|- Scenario 1: Carga de tour exitosa<br> Dado que recibo una solicitud POST a /api/v1/agencies/{agency_id}/tours con datos válidos del tour (incluyendo imágenes) y un token de agencia,<br> Cuando creo el registro del tour y proceso las imágenes,<br> Entonces la base de datos registra el tour y la API responde con un 201 Created y los detalles del tour creado.<br><br>- Scenario 2: Datos de tour incompletos<br> Dado que recibo una solicitud POST a /api/v1/agencies/{agency_id}/tours con datos de tour faltantes (ej. sin precio o descripción),<br> Cuando intento crear el tour,<br> Entonces la API responde con un 400 Bad Request y un mensaje indicando los campos requeridos.|EP06|
@@ -1200,9 +1197,6 @@ El objetivo es garantizar una presentación unificada, profesional y alineada co
         - Etiqueta arriba, campo debajo, mensaje de error abajo.  
         - Validaciones claras y mensajes amigables.
 
-#### 4.1.3. Mobile Style Guidelines
-#### 4.1.3.1. iOS Mobile Style Guidelines
-#### 4.1.3.2. Android Mobile Style Guidelines
 
 ### 4.2. Information Architecture
 La arquitectura de la información de TravelMatch está diseñada para asegurar que tanto visitantes nuevos como usuarios recurrentes puedan encontrar, descubrir e interactuar con el contenido de manera natural e intuitiva. Esta estructura se adapta a las necesidades específicas de cada entorno (Landing Page, Aplicación Web y Aplicación Móvil) manteniendo consistencia visual, semántica y funcional.
@@ -1518,17 +1512,6 @@ Los mock-ups de la Landing Page de TravelMatch representan la traducción visual
 <p align="center">
     <img src="assets/recursos/landing-page-mockup-mobile.png" alt="landing-page-mockup-mobile" width=20%/>
 </p>
-
-
-### 4.4. Mobile Applications UX/UI Design
-#### 4.4.1. Mobile Applications Wireframes
-#### 4.4.2. Mobile Applications Wireflow Diagrams
-#### 4.4.3. Mobile Applications Mock-ups
-#### 4.4.4. Mobile Applications User Flow Diagrams
-
-### 4.5. Mobile Applications Prototyping
-#### 4.5.1. Android Mobile Applications Prototyping
-#### 4.5.2. iOS Mobile Applications Prototyping
 
 ### 4.6. Web Applications UX/UI Design
 #### 4.6.1. Web Applications Wireframes
@@ -1972,12 +1955,68 @@ La configuración de despliegue para TravelMatch contempla mecanismos organizado
 #### 5.2.2. Implemented Landing Page Evidence
 #### 5.2.3. Implemented Frontend-Web Application Evidence
 #### 5.2.4. Acuerdo de Servicio - SaaS
-#### 5.2.5. Implemented Native-Mobile Application Evidence
+Esta sección establece los derechos, obligaciones y restricciones aplicables a los usuarios de la plataforma **TravelMatch**, garantizando transparencia en el uso del servicio bajo el modelo Software as a Service (SaaS). Este acuerdo cumple con los criterios de claridad, accesibilidad y cumplimiento normativo exigidos por la legislación peruana.
+
+---
+
+**TÉRMINOS Y CONDICIONES DE USO: TRAVELMATCH**
+
+**1. INFORMACIÓN GENERAL**
+* **1.1. Identificación del Prestador:** El servicio es propiedad de la startup **Pandora**, conformada por estudiantes de la Universidad Peruana de Ciencias Aplicadas (UPC).
+* **1.2. Objeto del Servicio:** TravelMatch es una plataforma tecnológica SaaS que facilita la conexión entre turistas (nacionales, internacionales y corporativos) y agencias de turismo locales certificadas, permitiendo la reserva, personalización y gestión de experiencias turísticas auténticas.
+
+**2. MARCO NORMATIVO APLICABLE**
+El presente servicio se rige bajo las siguientes normas peruanas:
+* **Protección de Datos Personales:** Ley N° 29733 y su Reglamento (D.S. N° 003-2013-JUS).
+* **Sector Turismo:** Ley N° 29408 (Ley General de Turismo) y el Reglamento de Agencias de Viajes y Turismo.
+* **Marco Digital y Consumidor:** Ley N° 30096 (Ley de Delitos Informáticos) y el Código de Protección y Defensa del Consumidor (Ley N° 29571).
+
+**3. CONDICIONES DE USO Y REGISTRO**
+* **3.1. Para Agencias de Turismo:** Deben contar con RUC activo y estar inscritas en el Directorio Nacional de Prestadores de Servicios Turísticos Calificados de MINCETUR. Son responsables de la veracidad de los itinerarios y la disponibilidad publicada.
+* **3.2. Para Turistas:** Deben proporcionar información real para la gestión de reservas. Los usuarios corporativos deberán validar su perfil para acceder a tarifas preferenciales.
+* **3.3. Verificación:** Pandora se reserva el derecho de validar la documentación de las agencias antes de permitir la publicación de experiencias.
+
+**4. PROTECCIÓN DE DATOS Y PRIVACIDAD**
+* **4.1. Tratamiento de Datos:** TravelMatch recopila datos de identificación, geolocalización y preferencias de viaje con la finalidad de personalizar la oferta turística y gestionar las reservas.
+* **4.2. Seguridad Técnica:** La plataforma implementa medidas de seguridad avanzadas, incluyendo autenticación mediante JWT (JSON Web Tokens) y cifrado de datos en infraestructura de nube (Azure).
+* **4.3. Derechos ARCO:** Los usuarios pueden ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición escribiendo a los canales oficiales de soporte.
+
+**5. RESPONSABILIDADES Y LIMITACIONES**
+* **5.1. Responsabilidades de la Plataforma:** Mantener la disponibilidad del sistema, asegurar la integración de las APIs (Google Maps, Stripe, Weather API) y proporcionar soporte técnico a las agencias.
+* **5.2. Limitaciones del Servicio:** TravelMatch es una plataforma de **intermediación tecnológica**. No es el organizador directo de las excursiones ni responsable por incidentes operativos durante la ejecución del tour (transporte, clima o accidentes), los cuales recaen sobre la agencia proveedora.
+* **5.3. Exclusiones:** Pandora no se responsabiliza por la calidad del servicio final prestado por la agencia local, aunque mantiene un sistema de reseñas para auditar la satisfacción del usuario.
+
+**6. MODELO DE NEGOCIO Y PAGOS**
+* **6.1. Facturación:** Las transacciones se procesan mediante pasarelas seguras. La plataforma cobra una comisión por reserva confirmada y ofrece planes de suscripción para agencias.
+* **6.2. Política de Cancelación:** El sistema gestiona reembolsos automáticos si la cancelación se realiza con más de 24 horas de anticipación, sujeto a las políticas específicas de cada experiencia.
+
+**7. PROPIEDAD INTELECTUAL**
+* **7.1. Derechos Reservados:** El código fuente, diseño de interfaz y arquitectura de software son propiedad exclusiva de Pandora.
+* **7.2. Contenido de Usuarios:** Las agencias otorgan una licencia de uso a Pandora para mostrar las imágenes y descripciones de sus tours con fines promocionales.
+
+**8. RESOLUCIÓN DE CONTROVERSIAS**
+* **8.1. Jurisdicción:** Cualquier discrepancia se someterá a la jurisdicción de los tribunales de Lima, Perú.
+* **8.2. Atención al Cliente:** Se pone a disposición el Libro de Reclamaciones Virtual y el correo soporte@travelmatch.app para la atención de incidencias.
+
 #### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 #### 5.2.7. RESTful API documentation
 #### 5.2.8. Team Collaboration Insights
 
 ### 5.3. Video About-the-Product
+n esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
+
+El video incluye una descripción general de Travel Match, enfocándose en cómo nuestra plataforma conecta a turistas con agencias locales, facilitando la búsqueda, comparación y reserva de experiencias turísticas. Se presenta el proceso de uso de la aplicación, destacando la facilidad de navegación y la eficiencia en la gestión de viajes. Además, hemos incluido un testimonio positivo de un usuario que participó en nuestras entrevistas de validación, resaltando su experiencia favorable con la plataforma.
+
+<p align="center">
+    <img src="assets/images/about-the-product.png" alt="About The Product" width=60% >
+</p>
+
+- URL en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323270_upc_edu_pe/EdUp0DAimbJJqBXb20Iorl0B-SvwXoGJ4HidDpyC_jcd_g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=wDMOaB
+
+- URL en YouTube (para incrustar en Landing Page): https://youtu.be/zy340YfRT58
+
+- Duración del Video: [00:02:57]
+
 
 ## Capítulo VI:  Product Verification & Validation 
 ### 6.1. Testing Suites & Validation
@@ -13907,7 +13946,6 @@ El proyecto está integrado con SonarQube usando el plugin sonar-maven-plugin 5.
 </sonar.exclusions>
 
 
-
 imagen checkstyle
 
 Métricas analizadas:
@@ -13939,7 +13977,15 @@ JaCoCo para reporte de cobertura de código (umbral mínimo: 80% de instruccione
 imagensonarqub
 
 #### 7.1.1. Tools and Practices
-no va creo
+
+Para el desarrollo de esta sección, se utilizó la herramienta de Jenkins. Esata es una herramienta de gestión de pipelines que nos ayuda al desarrollo de software con la automatización de procesos de construcción, prueba y despliegue de manera continua, lo que ayuda en la mejora de calidad y velocidad en la entrega de software.  
+
+#### 7.1.1.1 Prueba de Ejecución de Jenkins
+
+<img src="assets/jenkins/jenkins1.png" alt="jenk">
+
+<img src="assets/jenkins/jenkins2.png">
+
 #### 7.1.2. Build & Test Suite Pipeline Components
 
 El Jenkinsfile define el siguiente pipeline declarativo:
@@ -13972,15 +14018,38 @@ pipeline {
 Stages:
 StagePropósitoCompile ProjectVerifica que el código compila sin erroresValidate CheckstyleVerifica convenciones de código con Google StyleValidate Unit TestsEjecuta todos los unit tests con JUnit 5Validate Test CoverageGenera reporte de cobertura con JaCoCoPackage ApplicationEmpaqueta el .jar listo para despliegue
 
-
-### 7.2. Continuous Delivery
-#### 7.2.1. Tools and Practices
-#### 7.2.2. Stages Deployment Pipeline Components
-
-### 7.3. Continuous deployment
-#### 7.3.1. Tools and Practices
-#### 7.3.2. Production Deployment Pipeline Components
-
 ## Conclusiones
+
+### Conclusiones y Recomendaciones
+
+- **Evolución exitosa de la arquitectura del producto:** Durante los Sprints 2 y 3, el equipo logró una transición exitosa desde una landing page estática hacia un ecosistema completo de aplicación web. La implementación del frontend en Angular y el desarrollo del backend con Spring Boot demuestran la capacidad del equipo para escalar la solución y crear una base técnica sólida para funcionalidades avanzadas.
+
+- **Implementación efectiva de la arquitectura Domain-Driven Design:** El desarrollo del backend siguió exitosamente los principios de DDD, implementando bounded contexts claramente definidos (IAM, Profiles, Agencies, Experiences, Bookings, Geolocalization, etc.). Esta arquitectura modular no solo facilita el mantenimiento del código, sino que también permite la escalabilidad futura del sistema y una mejor separación de responsabilidades.
+
+- **Integración completa frontend-backend:** Se logró establecer una comunicación efectiva entre el frontend desarrollado en Angular y los servicios REST del backend en Spring Boot. La documentación completa de endpoints con Swagger y el despliegue exitoso en Azure demuestran una integración robusta que soporta las funcionalidades principales del negocio.
+
+- **Adopción de metodologías ágiles y DevOps:** La implementación de Git Flow, junto con la configuración de CI/CD mediante GitHub Actions y el despliegue automatizado en Azure App Service, estableció un flujo de trabajo profesional que garantiza la calidad del código y facilita las entregas continuas.
+
+- **Validación positiva con usuarios reales:** Las entrevistas de validación confirmaron que la plataforma cumple con las expectativas de los usuarios en todos los segmentos objetivo (agencias, turistas y viajeros corporativos). Los usuarios destacaron la facilidad de uso, la confiabilidad de la información y el ahorro de tiempo en la planificación de viajes.
+
+- **Funcionalidades core del negocio implementadas:** Se completaron exitosamente las funcionalidades esenciales como gestión de experiencias, sistema de favoritos, gestión de carritos de compra, autenticación JWT, y herramientas administrativas para agencias. Esto demuestra que el MVP desarrollado aborda efectivamente las necesidades identificadas en el análisis inicial.
+
+- **Preparación para escalabilidad futura:** La arquitectura implementada, junto con la configuración de base de datos en Azure PostgreSQL y la estructura modular del código, proporciona una base sólida para futuras iteraciones. Las recomendaciones de los usuarios (chat directo, mapas interactivos, reportes automáticos) están alineadas con las capacidades técnicas desarrolladas.
+
+- **Aprendizajes técnicos y colaborativos:** El equipo desarrolló competencias avanzadas en tecnologías modernas (Angular, Spring Boot, Azure, Docker) y mejoró significativamente sus habilidades de trabajo colaborativo, especialmente en la gestión de conflictos de código y la coordinación de entregas multidisciplinarias.
+
+- **Oportunidades de mejora identificadas:** Aunque el producto alcanzó los objetivos principales, las entrevistas de validación revelaron oportunidades concretas de mejora que pueden ser priorizadas en futuros sprints, como la implementación de chat en tiempo real, mapas interactivos y funcionalidades específicas para turismo corporativo.
+
+Esta evolución del proyecto desde una landing page hacia una aplicación web completa demuestra no solo el crecimiento técnico del equipo, sino también la viabilidad de la propuesta de valor de TravelMatch como plataforma de conexión entre turistas y agencias locales.
+
 ## BIbliografía
+
+- Xiang, Z., Du, Q., Ma, Y., & Fan, W. (2021). Digital platforms in tourism: A review. Tourism Management Perspectives, 37, 100831. [https://doi.org/10.1016/j.tmp.2021.100831](https://doi.org/10.1016/j.tmp.2021.100831)
+- Buhalis, D., & Sinarta, Y. (2019). Real-time co-creation and nowness service: Lessons from tourism and hospitality. Journal of Travel & Tourism Marketing, 36(5), 563–582. [https://doi.org/10.1080/10548408.2019.1592059](https://doi.org/10.1080/10548408.2019.1592059)
+- Gutiérrez, J., & Robles, J. (2020). Plataformas colaborativas en el turismo: Oportunidades para pequeñas agencias. Revista de Estudios Sociales, 73, 86–101. [https://www.redalyc.org/articulo.oa?id=81568998006](https://www.redalyc.org/articulo.oa?id=81568998006)
+- Morales, M., & Figueroa, A. (2020). El turismo experiencial como estrategia de diferenciación en destinos emergentes. Revista Mexicana de Ciencias Políticas y Sociales, 65(239), 85–108. [https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-252X2020000200085](https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0188-252X2020000200085)
+- Marín, A., Sánchez, D., & Moreno, J. (2021). Tourism recommender systems: A review. IEEE Access, 9, 92686–92702. [https://ieeexplore.ieee.org/document/9448323](https://ieeexplore.ieee.org/document/9448323)
+- Rodríguez, F., & Camargo, D. (2022). Integración de herramientas digitales para mejorar la competitividad del sector turístico. Revista Facultad de Ciencias Económicas: Investigación y Reflexión, 30(2), 267–283. [https://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0123-59232022000200267](https://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0123-59232022000200267)
+<hr>
+
 ## Anexos
