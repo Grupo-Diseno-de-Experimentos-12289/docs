@@ -28,9 +28,8 @@
 
 | <div style="width:500px">Alumno</div> | <div style="width:200px">Código</div> |
 |:-------------------------------------:|:-------------------------------------:|
-|    Tenorio Medina, Piero Francesco    |              u202318731               |
-|    Geronimo Quispe, Pablo Antonio     |              u202314304               |
-|       Alejos Jesus, Anyelo Bill       |              u20231d149               |
+|        Tenorio Medina, Piero Francesco        |              u202318731               |
+|        Geronimo Quispe,Pablo Antonio       |              u202314304               |
 </div>
 
 <div align="center"> Mayo 2026 </div>
@@ -41,7 +40,7 @@
 
 | Versión | Fecha | <div style="width:250px">Autor(es) </div> | <div align="center" style="width:400px">Descripción de la modificación</div> |
 |:-------:|:-----:|:-----------------------------------------:|-------------------------------------------------------------|
-TP | 14/05/2026 | Tenorio Medina Piero Francesco| Se cambió y modificó uno de los .feature del bc de Experiences.
+TP | | |
 
 <hr>
 
@@ -184,8 +183,8 @@ ambientales y sociales.
 
 | <div style="width:100px">Criterio específico</div> | <div align="center" style="width:250px">Acciones Realizadas</div> | <div align="center" style="width:250px">Conclusiones</div> |
 |:-------------------:|-------------------|------------|
-| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Implementé herramientas de análisis de calidad para el bounded context **Profiles and Preferences**, utilizando **Checkstyle** para verificar el cumplimiento de convenciones de codificación y **SonarQube** para analizar mantenibilidad, code smells y posibles vulnerabilidades del proyecto. Estas configuraciones ayudaron a asegurar que el código desarrollado siga buenas prácticas de ingeniería de software y mantenga estándares adecuados de calidad.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Me enfoqué en salvaguardar la integridad del sistema y la privacidad de los datos trabajando sobre los dominios de **IAM (Identity and Access Management)** y **Experiences**. Para lograrlo, construí mecanismos de validación automatizada orientados a comprobar la correcta autorización de los usuarios y flujos de negocio. Adicionalmente, apliqué pautas estrictas de revisión estática y formato de código para erradicar deuda técnica, garantizando así que nuestro entregable cumpla en todo momento con normativas de desarrollo limpio y ético. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para esta entrega se desarrolló e integró uno de los trabajos usados por uno de los integrantes del actual equipo. Para ello se revisó detenidamente los elementos usados y la información implementada para su trsalado al nuevo documento. Asi mismo se uso herramientas como Jenkins para la ejecución de los test. Esta sección debe ser presentada a los integrantes del equipo de manera constante para su revisión. Para ello se trata de ser lo más responsable y directo con los resultados obtenidos. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
-| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Analicé el impacto que tiene la calidad del software en la experiencia de usuario dentro del bounded context **Profiles and Preferences**, utilizando SonarQube para identificar riesgos de seguridad y problemas de mantenibilidad que podrían afectar la estabilidad del sistema. Además, apliqué Checkstyle para mantener un código uniforme y legible, contribuyendo a facilitar el trabajo colaborativo y la mantenibilidad a largo plazo del proyecto.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Reflexioné sobre las fuertes repercusiones socioeconómicas que un fallo de seguridad o una mala gestión de identidades podría ocasionar tanto a los viajeros como a las empresas turísticas. Por este motivo, prioricé la mitigación de riesgos lógicos en la arquitectura e inspeccioné constantemente el código en busca de posibles brechas o ineficiencias. Estas acciones fomentan un entorno digital transparente, demostrando el compromiso de entregar un producto capaz de operar de manera íntegra y segura en un ecosistema internacional. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para el desarrollo del trabajo , se consideró el impacto que tendría el funcionamiento de una aplicación de este calibre. Como afectaria a los puestos turisticos y cómo impactaría en la economía de un país. Esto se toma a consideración dependiendo del contexto del país y como una solución de este tipo podria impulsar un sector muy importante dentro de nuestra economía. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Geronimo Quispe Pablo Antonio**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
 <hr>
 
 ## Capítulo I: Introducción 
@@ -1984,94 +1983,6806 @@ En esta sección se presentan capturas de pantalla de la implementación de prue
 Se implementaron pruebas unitarias para los componentes principales de los bounded contexts Bookings & Payments y Agencies, siguiendo el patrón AAA (Arrange, Act, Assert) con JUnit 5 y Mockito.
 Se incluyen ejemplos visuales tanto del código de las pruebas como de su ejecución exitosa, con el objetivo de validar el correcto funcionamiento lógico de cada unidad de código.
 
-**Bounded Context Booking:**
-Se implementaron pruebas unitarias para validar la lógica de negocio del bounded context **Bookings & Payments**, incluyendo agregados, entidades, value objects, servicios de aplicación, assemblers y controladores REST. Las pruebas verifican transiciones de estados de bookings, pagos, refunds y payouts, así como validaciones de reglas de negocio, mapeos entre recursos y comandos, y respuestas HTTP esperadas en los endpoints principales.
 
-<p align="center">
-    <img src="assets/testunit1.png">
-</p>
 
-<p align="center">
-    <img src="assets/testunit2.png">
-</p>
 
-<p align="center">
-    <img src="assets/testunit3.png">
-</p>
 
-**Bounded Context Agencies:**
-Se implementaron pruebas unitarias para el bounded context **Agencies**, cubriendo la lógica de creación, actualización y eliminación de agencias, documentos y staff. Las pruebas validan restricciones como RUC y emails únicos, manejo de excepciones, comportamiento de servicios de aplicación, assemblers y respuestas correctas de los controladores REST.
 
-<p align="center">
-    <img src="assets/testunit4.png">
-</p>
+#### Bookings Bounded Context
 
-<p align="center">
-    <img src="assets/testunit5.png">
-</p>
+##### Domain Layer: Aggregates & Entities
+![BookingAggregateTest](assets/BookingAggregateTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Bookings._
 
-<p align="center">
-    <img src="assets/testunit6.png">
-</p>
+1. **markAsSucceeded_fromPending_statusIsSucceeded**(BookingAggregateTest)
 
-**Profiles & Preferences**
-Se realizaron validaciones de calidad para el bounded context **Profiles & Preferences** utilizando herramientas como **Checkstyle** y **SonarQube**, asegurando el cumplimiento de estándares de codificación, mantenibilidad del código y detección temprana de posibles vulnerabilidades o code smells.
+Verifica que el estado de una reserva cambie correctamente de `PENDING` a `SUCCEEDED` cuando se marca como exitosa.
 
-<p align="center">
-    <img src="assets/testunit7.png">
-</p>
+```java
+@Test
+@DisplayName("markAsSucceeded() changes status to SUCCEEDED when booking is PENDING")
+void markAsSucceeded_fromPending_statusIsSucceeded() {
+  // Arrange (Preparar) - Booking is PENDING by default in @BeforeEach
 
-<p align="center">
-    <img src="assets/testunit8.png">
-</p>
+  // Act (Ejecutar)
+  booking.markAsSucceeded();
 
-<p align="center">
-    <img src="assets/testunit9.png">
-</p>
+  // Assert (Verificar)
+  assertEquals(BookingStatus.SUCCEEDED, booking.getBookingStatus());
+}
+```
 
+2. **markAsSucceeded_fromCancelled_throwsIllegalState**(BookingAggregateTest)
+
+Asegura que el sistema lance una excepción si se intenta marcar como exitosa una reserva que ya ha sido cancelada, protegiendo el ciclo de vida del agregado.
+
+```java
+@Test
+@DisplayName("markAsSucceeded() throws when booking is already CANCELLED")
+void markAsSucceeded_fromCancelled_throwsIllegalState() {
+  // Arrange
+  booking.markAsCancelled();
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, booking::markAsSucceeded);
+}
+```
+
+3. **markAsCancelled_fromPending_statusIsCancelled**(BookingAggregateTest)
+
+Valida que una reserva pendiente pueda transicionar correctamente al estado cancelado.
+
+```java
+@Test
+@DisplayName("markAsCancelled() changes status to CANCELLED when booking is PENDING")
+void markAsCancelled_fromPending_statusIsCancelled() {
+  // Arrange
+
+  // Act
+  booking.markAsCancelled();
+
+  // Assert
+  assertEquals(BookingStatus.CANCELLED, booking.getBookingStatus());
+}
+```
+
+4. **markAsCancelled_fromSucceeded_throwsIllegalState**(BookingAggregateTest)
+
+Verifica que el sistema impida cancelar una reserva que ya ha sido procesada exitosamente.
+
+```java
+@Test
+@DisplayName("markAsCancelled() throws when booking is already SUCCEEDED")
+void markAsCancelled_fromSucceeded_throwsIllegalState() {
+  // Arrange
+  booking.markAsSucceeded();
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, booking::markAsCancelled);
+}
+```
+
+5. **markAsFailed_fromPending_statusIsFailed**(BookingAggregateTest)
+
+Prueba que el estado cambie a `FAILED` cuando la reserva no puede completarse (ej. fallo de pago).
+
+```java
+@Test
+@DisplayName("markAsFailed() changes status to FAILED when booking is PENDING")
+void markAsFailed_fromPending_statusIsFailed() {
+  // Arrange – booking PENDING
+
+  // Act
+  booking.markAsFailed();
+
+  // Assert
+  assertEquals(BookingStatus.FAILED, booking.getBookingStatus());
+}
+```
+
+6. **markAsFailed_fromCancelled_throwsIllegalState**(BookingAggregateTest)
+
+Verifica la restricción de transición de estado hacia fallo desde una reserva cancelada.
+
+```java
+@Test
+@DisplayName("markAsFailed() throws when booking is already CANCELLED")
+void markAsFailed_fromCancelled_throwsIllegalState() {
+  // Arrange
+  booking.markAsCancelled();
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, booking::markAsFailed);
+}
+```
+
+7. **newBooking_statusIsPending**(BookingAggregateTest)
+
+Asegura que toda nueva instancia de reserva comience invariablemente en el estado `PENDING`.
+
+```java
+@Test
+@DisplayName("New booking starts with PENDING status")
+void newBooking_statusIsPending() {
+  // Arrange
+  Booking newBooking =
+      new Booking(
+          new UserId(5L),
+          new AvailabilityId(20L),
+          totalPrice,
+          1,
+          BookingStatus.PENDING,
+          Instant.now());
+
+  // Act
+  BookingStatus status = newBooking.getBookingStatus();
+
+  // Assert
+  assertEquals(BookingStatus.PENDING, status);
+}
+```
+
+8. **addPayment_pendingBookingNoPayment_paymentIsLinked**(BookingAggregateTest)
+
+Valida que se pueda asociar un pago a una reserva pendiente que aún no tiene uno vinculado.
+
+```java
+@Test
+@DisplayName("addPayment() links payment when booking is PENDING and has no payment")
+void addPayment_pendingBookingNoPayment_paymentIsLinked() {
+  // Arrange
+  Payment payment = buildPayment("pi_first_001");
+
+  // Act
+  booking.addPayment(payment);
+
+  // Assert
+  assertNotNull(booking.getPayment());
+  assertEquals(payment, booking.getPayment());
+}
+```
+
+9. **addPayment_setsBookingBackReference**(BookingAggregateTest)
+
+Verifica que al añadir un pago se establezca correctamente la referencia bidireccional hacia la reserva.
+
+```java
+@Test
+@DisplayName("addPayment() sets back-reference booking on payment entity")
+void addPayment_setsBookingBackReference() {
+  // Arrange
+  Payment payment = buildPayment("pi_ref_001");
+
+  // Act
+  booking.addPayment(payment);
+
+  // Assert
+  assertEquals(booking, payment.getBooking());
+}
+```
+
+10. **addPayment_alreadyHasPayment_throwsIllegalState**(BookingAggregateTest)
+
+Asegura que el sistema no permita asociar más de un pago a una misma reserva.
+
+```java
+@Test
+@DisplayName("addPayment() throws when a payment already exists on the booking")
+void addPayment_alreadyHasPayment_throwsIllegalState() {
+  // Arrange
+  Payment first = buildPayment("pi_first_001");
+  Payment second = buildPayment("pi_second_002");
+  booking.addPayment(first);
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addPayment(second));
+}
+```
+
+11. **addPayment_bookingSucceeded_throwsIllegalState**(BookingAggregateTest)
+
+Valida que no se puedan añadir pagos a reservas que ya han finalizado exitosamente.
+
+```java
+@Test
+@DisplayName("addPayment() throws when booking is not in PENDING status")
+void addPayment_bookingSucceeded_throwsIllegalState() {
+  // Arrange
+  booking.markAsSucceeded();
+  Payment latePayment = buildPayment("pi_late_003");
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addPayment(latePayment));
+}
+```
+
+12. **addRefund_succeededBooking_refundIsLinked**(BookingAggregateTest)
+
+Prueba que se pueda añadir un reembolso a una reserva que fue procesada correctamente.
+
+```java
+@Test
+@DisplayName("addRefund() links refund when booking is SUCCEEDED")
+void addRefund_succeededBooking_refundIsLinked() {
+  // Arrange
+  booking.markAsSucceeded();
+  Refund refund = buildRefund("Customer request");
+
+  // Act
+  booking.addRefund(refund);
+
+  // Assert
+  assertNotNull(booking.getRefund());
+}
+```
+
+13. **addRefund_cancelledBooking_refundIsLinked**(BookingAggregateTest)
+
+Asegura que las reservas canceladas también admitan la vinculación de un reembolso.
+
+```java
+@Test
+@DisplayName("addRefund() links refund when booking is CANCELLED")
+void addRefund_cancelledBooking_refundIsLinked() {
+  // Arrange
+  booking.markAsCancelled();
+  Refund refund = buildRefund("Cancellation refund");
+
+  // Act
+  booking.addRefund(refund);
+
+  // Assert
+  assertNotNull(booking.getRefund());
+}
+```
+
+14. **addRefund_pendingBooking_throwsIllegalState**(BookingAggregateTest)
+
+Verifica que el sistema bloquee el reembolso para reservas que aún están pendientes de pago inicial.
+
+```java
+@Test
+@DisplayName("addRefund() throws when booking is still PENDING")
+void addRefund_pendingBooking_throwsIllegalState() {
+  // Arrange
+  Refund refund = buildRefund("Too early");
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addRefund(refund));
+}
+```
+
+15. **addRefund_alreadyHasRefund_throwsIllegalState**(BookingAggregateTest)
+
+Asegura la política de "un solo reembolso por reserva" para evitar pagos duplicados al cliente.
+
+```java
+@Test
+@DisplayName("addRefund() throws when a refund already exists")
+void addRefund_alreadyHasRefund_throwsIllegalState() {
+  // Arrange
+  booking.markAsSucceeded();
+  Refund first = buildRefund("First refund");
+  Refund second = buildRefund("Second refund");
+  booking.addRefund(first);
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addRefund(second));
+}
+```
+
+16. **addPayout_succeededBooking_payoutIsLinked**(BookingAggregateTest)
+
+Valida que el pago a la agencia (payout) se vincule correctamente cuando la reserva es exitosa.
+
+```java
+@Test
+@DisplayName("addPayout() links payout when booking is SUCCEEDED")
+void addPayout_succeededBooking_payoutIsLinked() {
+  // Arrange
+  booking.markAsSucceeded();
+  Payout payout = buildPayout();
+
+  // Act
+  booking.addPayout(payout);
+
+  // Assert
+  assertNotNull(booking.getPayout());
+}
+```
+
+17. **addPayout_pendingBooking_throwsIllegalState**(BookingAggregateTest)
+
+Verifica que no se autoricen pagos a agencias para reservas que no han sido liquidadas por el cliente.
+
+```java
+@Test
+@DisplayName("addPayout() throws when booking is PENDING")
+void addPayout_pendingBooking_throwsIllegalState() {
+  // Arrange
+  Payout payout = buildPayout();
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addPayout(payout));
+}
+```
+
+18. **addPayout_alreadyHasPayout_throwsIllegalState**(BookingAggregateTest)
+
+Asegura que no se dupliquen las transferencias a las agencias para una misma reserva.
+
+```java
+@Test
+@DisplayName("addPayout() throws when a payout already exists")
+void addPayout_alreadyHasPayout_throwsIllegalState() {
+  // Arrange
+  booking.markAsSucceeded();
+  Payout first = buildPayout();
+  Payout second = buildPayout();
+  booking.addPayout(first);
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> booking.addPayout(second));
+}
+```
+
+19. **getUserId_returnsExpectedUserId**(BookingAggregateTest)
+
+Verifica la integridad de los datos consultando que el ID de usuario retornado sea el asignado en la construcción.
+
+```java
+@Test
+@DisplayName("getUserId() returns the userId used at construction")
+void getUserId_returnsExpectedUserId() {
+  // Act
+  Long userId = booking.getUserId().userId();
+
+  // Assert
+  assertEquals(1L, userId);
+}
+```
+
+20. **getAvailabilityId_returnsExpectedId**(BookingAggregateTest)
+
+Prueba que el identificador de disponibilidad sea consistente con el modelo de dominio.
+
+```java
+@Test
+@DisplayName("getAvailabilityId() returns the availabilityId used at construction")
+void getAvailabilityId_returnsExpectedId() {
+  // Act
+  Long availabilityId = booking.getAvailabilityId().availabilityId();
+
+  // Assert
+  assertEquals(10L, availabilityId);
+}
+```
+
+21. **getQuantity() returns correct quantity**(BookingAggregateTest)
+
+Verifica que la cantidad de tickets de la reserva se recupere correctamente.
+
+```java
+@Test
+void getQuantity_returnsExpectedQuantity() {
+  // Act
+  int quantity = booking.getQuantity();
+
+  // Assert
+  assertEquals(2, quantity);
+}
+```
+
+22. **getTotalBookingPrice_returnsExpectedMoney**(BookingAggregateTest)
+
+Valida que el cálculo del precio total (monto y moneda) sea preciso basándose en la configuración de la reserva.
+
+```java
+@Test
+@DisplayName("getTotalBookingPrice() returns correct amount and currency")
+void getTotalBookingPrice_returnsExpectedMoney() {
+  // Act
+  Money price = booking.getTotalBookingPrice();
+
+  // Assert
+  assertAll(
+      () -> assertEquals(new BigDecimal("150.00"), price.getAmount()),
+      () -> assertEquals("PEN", price.getCurrency()));
+}
+```
+
+##### Application Layer: Command Services
+![BookingCommandServiceImplTest](assets/BookingCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Bookings._
+
+23. **handle_CreateBooking_ShouldSaveAndReturnId**(BookingCommandServiceImplTest)
+
+Prueba el flujo de creación de reserva: valida disponibilidad, calcula precios y persiste la reserva pendiente.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) saves and returns booking ID")
+void handle_CreateBooking_ShouldSaveAndReturnId() {
+  // Arrange
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.of(availabilityResource));
+  when(bookingRepository.save(any(Booking.class))).thenAnswer(i -> {
+      Booking b = i.getArgument(0);
+      return b;
+  });
+
+  // Act
+  Long id = bookingCommandService.handle(createBookingCommand);
+
+  // Assert
+  verify(bookingRepository).save(any(Booking.class));
+}
+```
+
+24. **handle_CreateBooking_ThrowsWhenAvailabilityNotFound**(BookingCommandServiceImplTest)
+
+Asegura que falle la creación si la disponibilidad de la experiencia no existe.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) throws when availability not found")
+void handle_CreateBooking_ThrowsWhenAvailabilityNotFound() {
+  // Arrange
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.empty());
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> bookingCommandService.handle(createBookingCommand));
+}
+```
+
+25. **handle_CreateBooking_ThrowsWhenNotEnoughCapacity**(BookingCommandServiceImplTest)
+
+Valida que no se permitan reservas si la cantidad solicitada supera el cupo disponible.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) throws when capacity is exceeded")
+void handle_CreateBooking_ThrowsWhenNotEnoughCapacity() {
+  // Arrange
+  var lowCapacityResource = new AvailabilityResource(10L, 1L, Instant.now(), Instant.now(), 1, new ArrayList<>());
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.of(lowCapacityResource));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(createBookingCommand));
+}
+```
+
+26. **handle_CancelBooking_MarksAsCancelled**(BookingCommandServiceImplTest)
+
+Prueba el servicio de cancelación de reserva, verificando el cambio de estado y actualización de disponibilidad externa.
+
+```java
+@Test
+@DisplayName("handle(CancelBookingCommand) cancels booking and returns it")
+void handle_CancelBooking_MarksAsCancelled() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  Optional<Booking> result = bookingCommandService.handle(new CancelBookingCommand(1L, "Reason"));
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(BookingStatus.CANCELLED, result.get().getBookingStatus());
+}
+```
+
+27. **handle_CancelBooking_ThrowsWhenAlreadySucceeded**(BookingCommandServiceImplTest)
+
+Valida que no se pueda cancelar una reserva que ya ha sido completada (estatus SUCCEEDED).
+
+```java
+@Test
+@DisplayName("handle(CancelBookingCommand) throws when booking already SUCCEEDED")
+void handle_CancelBooking_ThrowsWhenAlreadySucceeded() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new CancelBookingCommand(1L, "Reason")));
+}
+```
+
+28. **handle_InitiatePayment_ReturnsClientSecret**(BookingCommandServiceImplTest)
+
+Verifica que al iniciar el pago se genere y retorne el "client secret" necesario para la integración con la pasarela (Stripe).
+
+```java
+@Test
+@DisplayName("handle(InitiatePaymentCommand) returns client secret from gateway")
+void handle_InitiatePayment_ReturnsClientSecret() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+  when(paymentGatewayAdapter.processTransaction(anyString(), anyLong(), any())).thenReturn("secret_123");
+
+  // Act
+  String secret = bookingCommandService.handle(new InitiatePaymentCommand(1L, "card"));
+
+  // Assert
+  assertEquals("secret_123", secret);
+}
+```
+
+29. **handle_InitiatePayment_ThrowsWhenBookingStatusIsCancelled**(BookingCommandServiceImplTest)
+
+Asegura que el sistema prevenga el cobro de una reserva que ya fue cancelada previamente.
+
+```java
+@Test
+@DisplayName("handle(InitiatePaymentCommand) throws when booking status is CANCELLED")
+void handle_cancelledBooking_throwsIllegalState() {
+  // Arrange
+  pendingBooking.markAsCancelled();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new InitiatePaymentCommand(1L, "card")));
+}
+```
+
+30. **handle_InitiatePayment_ThrowsWhenStripeReturnsNull**(BookingCommandServiceImplTest)
+
+Verifica el manejo de errores robusto cuando la pasarela de pagos falla al generar la transacción.
+
+```java
+@Test
+@DisplayName("handle(InitiatePaymentCommand) throws when Stripe returns null")
+void handle_stripeReturnsNull_throwsIllegalState() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+  when(paymentGatewayAdapter.processTransaction(anyString(), anyLong(), any())).thenReturn(null);
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new InitiatePaymentCommand(1L, "card")));
+}
+```
+
+31. **handle_ProcessPayment_MarksBookingSucceeded**(BookingCommandServiceImplTest)
+
+Confirma que tras un pago exitoso, la reserva se marque como `SUCCEEDED` y se persista el cambio.
+
+```java
+@Test
+@DisplayName("handle(ProcessPaymentCommand) marks booking as SUCCEEDED and saves")
+void handle_pendingBooking_bookingMarkedSucceeded() {
+  // Arrange
+  ProcessPaymentCommand command = new ProcessPaymentCommand(1L, "card", new TransactionId("pi_001"));
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  bookingCommandService.handle(command);
+
+  // Assert
+  assertEquals(BookingStatus.SUCCEEDED, pendingBooking.getBookingStatus());
+  verify(bookingRepository).save(pendingBooking);
+}
+```
+
+32. **handle_ProcessPayment_ThrowsWhenBookingNotFound**(BookingCommandServiceImplTest)
+
+Valida que el servicio lance error si se intenta procesar un pago para un ID de reserva inexistente.
+
+```java
+@Test
+@DisplayName("handle(ProcessPaymentCommand) throws IllegalArgumentException when booking not found")
+void handle_bookingNotFound_throwsIllegalArgument() {
+  // Arrange
+  when(bookingRepository.findById(999L)).thenReturn(Optional.empty());
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> bookingCommandService.handle(new ProcessPaymentCommand(999L, "card", new TransactionId("pi_001"))));
+}
+```
+
+33. **handle_ProcessPayment_ThrowsWhenBookingNotPending**(BookingCommandServiceImplTest)
+
+Asegura que solo las reservas en estado `PENDING` puedan procesar transiciones de pago.
+
+```java
+@Test
+@DisplayName("handle(ProcessPaymentCommand) throws when booking is not PENDING")
+void handle_nonPendingBooking_throwsIllegalState() {
+  // Arrange
+  pendingBooking.markAsCancelled();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new ProcessPaymentCommand(1L, "card", new TransactionId("pi_001"))));
+}
+```
+
+34. **handle_FailPayment_MarksBookingFailed**(BookingCommandServiceImplTest)
+
+Verifica que una notificación de fallo de pago cambie correctamente el estado de la reserva a `FAILED`.
+
+```java
+@Test
+@DisplayName("handle(FailPaymentCommand) marks booking as FAILED and returns true")
+void handle_pendingBooking_bookingMarkedFailedReturnsTrue() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  boolean result = bookingCommandService.handle(new FailPaymentCommand(1L, "Insufficient funds"));
+
+  // Assert
+  assertTrue(result);
+  assertEquals(BookingStatus.FAILED, pendingBooking.getBookingStatus());
+}
+```
+
+35. **handle_FailPayment_ThrowsWhenBookingNotFound**(BookingCommandServiceImplTest)
+
+Asegura que el fallo de pago no pueda procesarse si la reserva referenciada no existe.
+
+```java
+@Test
+void handle_bookingNotFound_throwsIllegalArgument_FailPayment() {
+  // Arrange
+  when(bookingRepository.findById(999L)).thenReturn(Optional.empty());
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> bookingCommandService.handle(new FailPaymentCommand(999L, "reason")));
+}
+```
+
+36. **handle_FailPayment_ThrowsWhenSucceeded**(BookingCommandServiceImplTest)
+
+Evita inconsistencias impidiendo que una reserva ya pagada (`SUCCEEDED`) se marque como fallida posteriormente.
+
+```java
+@Test
+void handle_succeededBooking_throwsIllegalState_FailPayment() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new FailPaymentCommand(1L, "Late failure")));
+}
+```
+
+37. **handle_InitiateRefund_CreatesRefundForSucceeded**(BookingCommandServiceImplTest)
+
+Valida que el servicio de aplicación permita iniciar reembolsos para reservas que fueron pagadas exitosamente.
+
+```java
+@Test
+@DisplayName("handle(InitiateRefundCommand) creates refund for SUCCEEDED booking")
+void handle_succeededBooking_refundCreated() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  bookingCommandService.handle(new InitiateRefundCommand(1L, "Customer request"));
+
+  // Assert
+  assertNotNull(pendingBooking.getRefund());
+  verify(bookingRepository).save(pendingBooking);
+}
+```
+
+38. **handle_InitiateRefund_CreatesRefundForCancelled**(BookingCommandServiceImplTest)
+
+Asegura que el servicio soporte reembolsos automáticos derivados de una cancelación previa.
+
+```java
+@Test
+@DisplayName("handle(InitiateRefundCommand) creates refund for CANCELLED booking")
+void handle_cancelledBooking_refundCreated_command() {
+  // Arrange
+  pendingBooking.markAsCancelled();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  bookingCommandService.handle(new InitiateRefundCommand(1L, "Cancellation"));
+
+  // Assert
+  assertNotNull(pendingBooking.getRefund());
+}
+```
+
+39. **handle_InitiateRefund_ThrowsWhenPending**(BookingCommandServiceImplTest)
+
+Verifica que el servicio bloquee intentos de reembolso en reservas que aún no han sido cobradas.
+
+```java
+@Test
+@DisplayName("handle(InitiateRefundCommand) throws when booking is PENDING")
+void handle_pendingBooking_throwsIllegalState_refund() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new InitiateRefundCommand(1L, "Too early")));
+}
+```
+
+40. **handle_InitiateRefund_ThrowsWhenAlreadyExists**(BookingCommandServiceImplTest)
+
+Evita la duplicidad de reembolsos gestionando la integridad del estado del agregado.
+
+```java
+@Test
+@DisplayName("handle(InitiateRefundCommand) throws when refund already exists")
+void handle_refundAlreadyExists_throwsIllegalState_command() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  pendingBooking.addRefund(new Refund(totalPrice, "First", RefundStatus.PENDING, Instant.now()));
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new InitiateRefundCommand(1L, "Second")));
+}
+```
+
+41. **handle_InitiateRefund_ThrowsWhenNotFound**(BookingCommandServiceImplTest)
+
+Valida el manejo de IDs inválidos durante la solicitud de reembolso.
+
+```java
+@Test
+void handle_bookingNotFound_throwsIllegalArgument_refund() {
+  // Arrange
+  when(bookingRepository.findById(999L)).thenReturn(Optional.empty());
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> bookingCommandService.handle(new InitiateRefundCommand(999L, "reason")));
+}
+```
+
+42. **handle_ProcessRefund_SavesSuccessfulRefund**(BookingCommandServiceImplTest)
+
+Verifica que el procesamiento de un reembolso (vía webhook de pasarela) actualice el estatus a `SUCCEEDED`.
+
+```java
+@Test
+@DisplayName("handle(ProcessRefundCommand) updates refund status to SUCCEEDED")
+void handle_validRefund_marksAsSucceeded() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  pendingBooking.addRefund(new Refund(totalPrice, "Reason", RefundStatus.PENDING, Instant.now()));
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  bookingCommandService.handle(new ProcessRefundCommand(1L));
+
+  // Assert
+  assertEquals(RefundStatus.SUCCEEDED, pendingBooking.getRefund().getRefundStatus());
+}
+```
+
+43. **handle_ProcessRefund_ThrowsWhenNoRefundInitiated**(BookingCommandServiceImplTest)
+
+Asegura que falle el procesamiento si no existe una intención de reembolso previa para la reserva.
+
+```java
+@Test
+void handle_noRefundExists_throwsIllegalState() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(new ProcessRefundCommand(1L)));
+}
+```
+
+44. **handle_ProcessPayout_UpdatesPayoutStatus**(BookingCommandServiceImplTest)
+
+Verifica que el servicio actualice el estado de la liquidación a la agencia cuando la transferencia se completa.
+
+```java
+@Test
+@DisplayName("handle(ProcessPayoutCommand) updates payout status to SUCCEEDED")
+void handle_validPayout_marksAsSucceeded() {
+  // Arrange
+  pendingBooking.markAsSucceeded();
+  pendingBooking.addPayout(new Payout(5L, totalPrice, BigDecimal.ZERO, PayoutStatus.PENDING, Instant.now()));
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  bookingCommandService.handle(new ProcessPayoutCommand(1L));
+
+  // Assert
+  assertEquals(PayoutStatus.SUCCEEDED, pendingBooking.getPayout().getPayoutStatus());
+}
+```
+
+##### Application Layer: Query Services
+![BookingQueryServiceImplTest](assets/BookingQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Bookings._
+
+45. **handle_GetBookingById_ReturnsOptional**(BookingQueryServiceImplTest)
+
+Verifica que el servicio de consulta recupere una reserva por su ID, interactuando fielmente con el repositorio de persistencia.
+
+```java
+@Test
+void handle_GetBookingById_ReturnsOptional() {
+  // Arrange
+  GetBookingByIdQuery query = new GetBookingByIdQuery(1L);
+  Booking booking = mock(Booking.class);
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(booking));
+
+  // Act
+  Optional<Booking> result = bookingQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(booking, result.get());
+  verify(bookingRepository).findById(1L);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![BookingsControllerTest](assets/BookingsControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Bookings._
+
+46. **createBooking_returnsCreated_whenSuccess**(BookingsControllerTest)
+
+Valida que el endpoint REST retorne 201 Created y el recurso DTO al crear exitosamente una reserva.
+
+```java
+@Test
+void createBooking_returnsCreated_whenSuccess() {
+  // Arrange
+  CreateBookingResource resource = new CreateBookingResource(1L, 10L, 1L, 2, Instant.now());
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.of(booking));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(2, response.getBody().quantity());
+}
+```
+
+47. **createBooking_returnsNotFound_whenBookingNotRetrieved**(BookingsControllerTest)
+
+Maneja el escenario donde la reserva se crea pero no puede recuperarse inmediatamente para la respuesta.
+
+```java
+@Test
+void createBooking_returnsNotFound_whenBookingNotRetrieved() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+48. **createBooking_returnsBadRequest_whenIllegalArgumentThrown**(BookingsControllerTest)
+
+Valida que errores de validación de negocio se traduzcan en respuestas 400 Bad Request.
+
+```java
+@Test
+void createBooking_returnsBadRequest_whenIllegalArgumentThrown() {
+  // Arrange
+  when(commandService.handle(any())).thenThrow(new IllegalArgumentException("Invalid"));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+49. **createBooking_returnsBadRequest_whenIllegalStateThrown**(BookingsControllerTest)
+
+Asegura que violaciones de reglas de estado (ej. falta de cupo) retornen 400 Bad Request.
+
+```java
+@Test
+void createBooking_returnsBadRequest_whenIllegalStateThrown() {
+  // Arrange
+  when(commandService.handle(any())).thenThrow(new IllegalStateException("Invalid state"));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+50. **cancelBooking_returnsOk_whenSuccess**(BookingsControllerTest)
+
+Verifica que el endpoint de cancelación retorne 200 OK junto con el estado actualizado de la reserva.
+
+```java
+@Test
+void cancelBooking_returnsOk_whenSuccess() {
+  // Arrange
+  when(commandService.handle(any(CancelBookingCommand.class))).thenReturn(Optional.of(booking));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.cancelBooking(1L, cancelResource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+51. **cancelBooking_returnsNotFound_whenServiceReturnsEmpty**(BookingsControllerTest)
+
+Asegura un 404 si se intenta cancelar una reserva con un ID inexistente vía REST.
+
+```java
+@Test
+void cancelBooking_returnsNotFound_whenServiceReturnsEmpty() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.cancelBooking(1L, cancelResource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+52. **cancelBooking_returnsBadRequest_whenIllegalArgumentThrown**(BookingsControllerTest)
+
+Verifica el manejo de errores de validación durante el proceso de cancelación.
+
+```java
+@Test
+void cancelBooking_returnsBadRequest_whenIllegalArgumentThrown() {
+  // Arrange
+  when(commandService.handle(any())).thenThrow(new IllegalArgumentException("Invalid"));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.cancelBooking(1L, cancelResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+53. **initiateRefund_returnsCreated_whenSuccess**(BookingsControllerTest)
+
+Prueba que el endpoint para iniciar reembolsos responda 201 Created y el recurso del reembolso.
+
+```java
+@Test
+void initiateRefund_returnsCreated_whenSuccess() {
+  // Arrange
+  when(commandService.handle(any(InitiateRefundCommand.class))).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.of(bookingWithRefund));
+
+  // Act
+  ResponseEntity<RefundResource> response = controller.initiateRefund(1L, refundResource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+54. **initiateRefund_returnsNotFound_whenBookingMissing**(BookingsControllerTest)
+
+Maneja el error 404 si se solicita reembolso para una reserva que no existe.
+
+```java
+@Test
+void initiateRefund_returnsNotFound_whenBookingMissing() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<RefundResource> response = controller.initiateRefund(1L, refundResource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+55. **initiateRefund_returnsNotFound_whenRefundMissing**(BookingsControllerTest)
+
+Verifica el 404 si tras iniciar el reembolso, este no puede ser localizado en la entidad.
+
+```java
+@Test
+void initiateRefund_returnsNotFound_whenRefundMissing() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.of(bookingWithoutRefund));
+
+  // Act
+  ResponseEntity<RefundResource> response = controller.initiateRefund(1L, refundResource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+56. **initiateRefund_returnsBadRequest_whenIllegalArgumentThrown**(BookingsControllerTest)
+
+Valida el retorno de 400 para solicitudes de reembolso con datos o estados inválidos.
+
+```java
+@Test
+void initiateRefund_returnsBadRequest_whenIllegalArgumentThrown() {
+  // Arrange
+  when(commandService.handle(any())).thenThrow(new IllegalArgumentException("Invalid"));
+
+  // Act
+  ResponseEntity<RefundResource> response = controller.initiateRefund(1L, refundResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+57. **initiatePayment_returnsBadRequest_whenIdMismatch**(BookingsControllerTest)
+
+Verifica la seguridad del endpoint: rechaza peticiones donde el ID de la URL no coincide con el del cuerpo.
+
+```java
+@Test
+void initiatePayment_returnsBadRequest_whenIdMismatch() {
+  // Arrange
+  InitiatePaymentResource res = new InitiatePaymentResource(2L, "card");
+
+  // Act
+  ResponseEntity<String> response = controller.initiatePayment(1L, res);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+58. **initiatePayment_returnsOkWithClientSecret_whenSuccess**(BookingsControllerTest)
+
+Valida que el controlador retorne el token de Stripe (Client Secret) con 200 OK en flujos exitosos.
+
+```java
+@Test
+void initiatePayment_returnsOkWithClientSecret_whenSuccess() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn("secret_xyz");
+
+  // Act
+  ResponseEntity<String> response = controller.initiatePayment(1L, resource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertEquals("secret_xyz", response.getBody());
+}
+```
+
+59. **failPayment_returnsOk_whenSuccess**(BookingsControllerTest)
+
+Prueba que el reporte de fallo de pago retorne 200 OK si el servicio procesa la falla correctamente.
+
+```java
+@Test
+void failPayment_returnsOk_whenSuccess() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(true);
+
+  // Act
+  ResponseEntity<Void> response = controller.failPayment(failResource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+60. **failPayment_returnsBadRequest_whenFailureReported**(BookingsControllerTest)
+
+Asegura un 400 Bad Request si el servicio de aplicación no pudo marcar la reserva como fallida.
+
+```java
+@Test
+void failPayment_returnsBadRequest_whenFailureReported() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(false);
+
+  // Act
+  ResponseEntity<Void> response = controller.failPayment(failResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![BookingResourceFromEntityAssemblerTest](assets/BookingResourceFromEntityAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context Bookings._
+
+61. **toResourceFromEntity_ShouldMapCorrectly**(BookingResourceFromEntityAssemblerTest)
+
+Verifica que la entidad `Booking` se transforme fielmente en su recurso REST, incluyendo estatus y precios.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  Booking entity = mock(Booking.class);
+  when(entity.getId()).thenReturn(1L);
+
+  // Act
+  BookingResource resource = BookingResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+}
+```
+
+62. **toCommandFromResource_ShouldMapCorrectly**(CreateBookingCommandFromResourceAssemblerTest)
+
+Valida que el DTO de entrada se convierta correctamente en el comando interno de creación de reserva.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Act
+  CreateBookingCommand command = CreateBookingCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals(2, command.quantity());
+}
+```
+
+
+#### Experiences Bounded Context
+
+
+##### Domain Layer: Aggregates & Entities
+![AvailabilityTest](assets/AvailabilityTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Experiences._
+
+1. **testAvailabilityConstructorAndGetters**(AvailabilityTest)
+
+Verifica que el constructor de `Availability` inicialice correctamente la experiencia, las fechas de inicio/fin y la capacidad, asegurando que la lista de tipos de tickets comience vacía.
+
+```java
+@Test
+void testAvailabilityConstructorAndGetters() {
+  // Arrange
+  LocalDateTime start = LocalDateTime.now();
+  LocalDateTime end = start.plusHours(2);
+  int capacity = 50;
+
+  // Act
+  Availability availability = new Availability(experience, start, end, capacity);
+
+  // Assert
+  assertEquals(experience, availability.getExperience());
+  assertEquals(start, availability.getStartDateTime());
+  assertEquals(end, availability.getEndDateTime());
+  assertEquals(capacity, availability.getCapacity());
+  assertTrue(availability.getTicketTypes().isEmpty());
+}
+```
+
+2. **testAddTicketType_Successfully**(AvailabilityTest)
+
+Valida que se pueda añadir un tipo de ticket a una disponibilidad con su respectivo precio y stock, verificando la correcta persistencia en la colección interna.
+
+```java
+@Test
+void testAddTicketType_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+  BigDecimal price = new BigDecimal("100.00");
+  int stock = 10;
+
+  // Act
+  availability.addTicketType(ticketType, price, stock);
+
+  // Assert
+  assertEquals(1, availability.getTicketTypes().size());
+  var addedTicket = availability.getTicketTypes().iterator().next();
+  assertEquals(ticketType, addedTicket.getTicketType());
+  assertEquals(price, addedTicket.getPrice());
+  assertEquals(stock, addedTicket.getStock());
+}
+```
+
+3. **testUpdateTicketTypePriceAndStock_Successfully**(AvailabilityTest)
+
+Esta prueba asegura que el sistema permita actualizar el precio y el stock de un tipo de ticket ya asociado a una disponibilidad específica.
+
+```java
+@Test
+void testUpdateTicketTypePriceAndStock_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+  availability.addTicketType(ticketType, new BigDecimal("50.0"), 5);
+  BigDecimal newPrice = new BigDecimal("75.0");
+  int newStock = 15;
+
+  // Act
+  availability.updateTicketTypePriceAndStock(ticketType, newPrice, newStock);
+
+  // Assert
+  var updated = availability.getTicketTypes().iterator().next();
+  assertEquals(newPrice, updated.getPrice());
+  assertEquals(newStock, updated.getStock());
+}
+```
+
+4. **testUpdateTicketType_ThrowsExceptionWhenNotFound**(AvailabilityTest)
+
+Valida que el sistema lance una excepción si se intenta actualizar un tipo de ticket que no existe en la disponibilidad, protegiendo la integridad referencial.
+
+```java
+@Test
+void testUpdateTicketType_ThrowsExceptionWhenNotFound() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+
+  // Act & Assert
+  IllegalStateException exception =
+      assertThrows(
+          IllegalStateException.class,
+          () -> availability.updateTicketTypePriceAndStock(ticketType, BigDecimal.TEN, 10));
+  assertTrue(exception.getMessage().contains("TicketType not found"));
+}
+```
+
+5. **testDecrementStock_Successfully**(AvailabilityTest)
+
+Verifica que el stock de un ticket se reduzca correctamente tras una operación, asegurando que el control de inventario de la disponibilidad sea preciso.
+
+```java
+@Test
+void testDecrementStock_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+  availability.addTicketType(ticketType, new BigDecimal("10.0"), 10);
+
+  // Act
+  availability.decrementStock(ticketType, 3);
+
+  // Assert
+  var ticket = availability.getTicketTypes().iterator().next();
+  assertEquals(7, ticket.getStock());
+}
+```
+
+6. **testUpdateInfo_Successfully**(AvailabilityTest)
+
+Prueba la actualización de la información básica de disponibilidad (fechas y capacidad), confirmando que los cambios se reflejen en los atributos de la entidad.
+
+```java
+@Test
+void testUpdateInfo_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+  LocalDateTime newStart = LocalDateTime.now().plusDays(1);
+  LocalDateTime newEnd = newStart.plusHours(2);
+  int newCapacity = 100;
+
+  // Act
+  availability.updateInfo(newStart, newEnd, newCapacity);
+
+  // Assert
+  assertEquals(newStart, availability.getStartDateTime());
+  assertEquals(newEnd, availability.getEndDateTime());
+  assertEquals(newCapacity, availability.getCapacity());
+}
+```
+
+7. **testMarkAsDeleted_Successfully**(AvailabilityTest)
+
+Valida el borrado lógico de una disponibilidad, verificando que se asigne la fecha de eliminación actual.
+
+```java
+@Test
+void testMarkAsDeleted_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+
+  // Act
+  availability.markAsDeleted();
+
+  // Assert
+  assertNotNull(availability.getDeletedAt());
+}
+```
+
+8. **testExperienceConstructorAndGetters**(ExperienceTest)
+
+Verifica la inicialización completa de un agregado `Experience`, incluyendo título, descripción, agencia, categoría y destino.
+
+```java
+@Test
+void testExperienceConstructorAndGetters() {
+  // Arrange
+  String title = "Machu Picchu Tour";
+  String description = "Full day tour to the Inca citadel";
+  String duration = "12 hours";
+  String meetingPoint = "Main Square Cusco";
+
+  // Act
+  Experience experience =
+      new Experience(
+          title, description, agencyId, category, destinationId, duration, meetingPoint);
+
+  // Assert
+  assertEquals(title, experience.getTitle());
+  assertEquals(description, experience.getDescription());
+  assertEquals(agencyId, experience.getAgencyId());
+  assertEquals(category, experience.getCategory());
+  assertEquals(destinationId, experience.getDestinationId());
+  assertEquals(duration, experience.getDuration());
+  assertEquals(meetingPoint, experience.getMeetingPoint());
+  assertTrue(experience.getAvailabilities().isEmpty());
+  assertTrue(experience.getMedia().isEmpty());
+}
+```
+
+9. **testUpdateInfo_Successfully**(ExperienceTest)
+
+Valida la actualización de los metadatos de una experiencia, asegurando que todos los campos modificables se guarden correctamente.
+
+```java
+@Test
+void testUpdateInfo_Successfully() {
+  // Arrange
+  Experience experience =
+      new Experience("Old Title", "Old Desc", agencyId, category, destinationId, "1h", "Point A");
+  String newTitle = "New Title";
+  String newDescription = "New Description updated";
+  String newDuration = "2h";
+  String newMeetingPoint = "Point B";
+
+  // Act
+  experience.updateInfo(
+      newTitle,
+      newDescription,
+      anotherCategory,
+      anotherDestinationId,
+      newDuration,
+      newMeetingPoint);
+
+  // Assert
+  assertEquals(newTitle, experience.getTitle());
+  assertEquals(newDescription, experience.getDescription());
+  assertEquals(anotherCategory, experience.getCategory());
+  assertEquals(anotherDestinationId, experience.getDestinationId());
+  assertEquals(newDuration, experience.getDuration());
+  assertEquals(newMeetingPoint, experience.getMeetingPoint());
+}
+```
+
+10. **testMarkAsDeleted_Successfully**(ExperienceTest)
+
+Prueba el borrado lógico del agregado `Experience`, marcando la entidad como eliminada para mantener el historial.
+
+```java
+@Test
+void testMarkAsDeleted_Successfully() {
+  // Arrange
+  Experience experience =
+      new Experience("Title", "Desc", agencyId, category, destinationId, "1h", "Point A");
+
+  // Act
+  experience.markAsDeleted();
+
+  // Assert
+  assertNotNull(experience.getDeletedAt());
+}
+```
+
+11. **testNoArgsConstructor_InitializesLists**(ExperienceTest)
+
+Asegura que el constructor sin argumentos (requerido por JPA) inicialice correctamente las listas de disponibilidades y multimedia para evitar errores de puntero nulo.
+
+```java
+@Test
+void testNoArgsConstructor_InitializesLists() {
+  // Act
+  Experience experience = new Experience();
+
+  // Assert
+  assertNotNull(experience.getAvailabilities());
+  assertNotNull(experience.getMedia());
+  assertTrue(experience.getAvailabilities().isEmpty());
+  assertTrue(experience.getMedia().isEmpty());
+}
+```
+
+12. **testAvailabilityTicketTypeConstructorAndGetters**(AvailabilityTicketTypeTest)
+
+Verifica que la entidad de enlace entre disponibilidad y ticket se cree con los valores correctos de precio y stock inicial.
+
+```java
+@Test
+void testAvailabilityTicketTypeConstructorAndGetters() {
+  // Arrange
+  BigDecimal price = new BigDecimal("49.99");
+  int stock = 20;
+
+  // Act
+  AvailabilityTicketType availabilityTicketType =
+      new AvailabilityTicketType(availability, ticketType, price, stock);
+
+  // Assert
+  assertEquals(availability, availabilityTicketType.getAvailability());
+  assertEquals(ticketType, availabilityTicketType.getTicketType());
+  assertEquals(price, availabilityTicketType.getPrice());
+  assertEquals(stock, availabilityTicketType.getStock());
+}
+```
+
+13. **testReduceStock_Successfully**(AvailabilityTicketTypeTest)
+
+Valida la reducción de stock tras una compra, confirmando que la lógica aritmética sea correcta.
+
+```java
+@Test
+void testReduceStock_Successfully() {
+  // Arrange
+  int initialStock = 10;
+  int quantityToReduce = 4;
+  AvailabilityTicketType availabilityTicketType =
+      new AvailabilityTicketType(availability, ticketType, BigDecimal.TEN, initialStock);
+
+  // Act
+  availabilityTicketType.reduceStock(quantityToReduce);
+
+  // Assert
+  assertEquals(6, availabilityTicketType.getStock());
+}
+```
+
+14. **testReduceStock_ThrowsExceptionWhenNotEnoughStock**(AvailabilityTicketTypeTest)
+
+Asegura que el sistema prevenga el sobregiro de stock lanzando una excepción si se intenta reducir más unidades de las disponibles.
+
+```java
+@Test
+void testReduceStock_ThrowsExceptionWhenNotEnoughStock() {
+  // Arrange
+  int initialStock = 5;
+  int quantityToReduce = 10;
+  AvailabilityTicketType availabilityTicketType =
+      new AvailabilityTicketType(availability, ticketType, BigDecimal.TEN, initialStock);
+
+  // Act & Assert
+  IllegalStateException exception =
+      assertThrows(
+          IllegalStateException.class,
+          () -> availabilityTicketType.reduceStock(quantityToReduce));
+
+  assertTrue(exception.getMessage().contains("Not enough stock available"));
+  assertEquals(initialStock, availabilityTicketType.getStock());
+}
+```
+
+15. **testCategoryConstructorAndGetters**(CategoryTest)
+
+Valida que el constructor de la entidad `Category` mapee correctamente el enumerado de categorías del dominio.
+
+```java
+@Test
+void testCategoryConstructorAndGetters() {
+  // Arrange
+  Categories expectedName = Categories.CULTURA;
+
+  // Act
+  Category category = new Category(expectedName);
+
+  // Assert
+  assertEquals(expectedName, category.getName());
+}
+```
+
+16. **testGetCategoryName_ReturnsStringRepresentation**(CategoryTest)
+
+Verifica que el método accesor retorne la representación textual correcta del nombre de la categoría.
+
+```java
+@Test
+void testGetCategoryName_ReturnsStringRepresentation() {
+  // Arrange
+  Category category = new Category(Categories.GASTRONOMIA);
+
+  // Act
+  String name = category.getCategoryName();
+
+  // Assert
+  assertEquals("GASTRONOMIA", name);
+}
+```
+
+17. **testGetDefaultCategory_ReturnsCulturaCategory**(CategoryTest)
+
+Asegura que el sistema proporcione una categoría por defecto válida (`CULTURA`) para experiencias que no especifiquen una.
+
+```java
+@Test
+void testGetDefaultCategory_ReturnsCulturaCategory() {
+  // Act
+  Category defaultCategory = Category.getDefaultCategory();
+
+  // Assert
+  assertNotNull(defaultCategory);
+  assertEquals(Categories.CULTURA, defaultCategory.getName());
+}
+```
+
+18. **testToCategoryFromName_ReturnsCategoryWithCorrectEnum**(CategoryTest)
+
+Prueba el método de factoría estática para convertir un string en una entidad de categoría válida.
+
+```java
+@Test
+void testToCategoryFromName_ReturnsCategoryWithCorrectEnum() {
+  // Arrange
+  String categoryName = "NATURALEZA";
+
+  // Act
+  Category result = Category.toCategoryFromName(categoryName);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(Categories.NATURALEZA, result.getName());
+}
+```
+
+19. **testValidateCategorySet_ReturnsDefaultWhenListIsEmpty**(CategoryTest)
+
+Valida la lógica de negocio que obliga a que toda experiencia tenga al menos una categoría, asignando la de por defecto si la lista está vacía.
+
+```java
+@Test
+void testValidateCategorySet_ReturnsDefaultWhenListIsEmpty() {
+  // Arrange
+  List<Category> emptyList = Collections.emptyList();
+
+  // Act
+  List<Category> result = Category.validateCategorySet(emptyList);
+
+  // Assert
+  assertEquals(1, result.size());
+  assertEquals(Categories.CULTURA, result.get(0).getName());
+}
+```
+
+20. **testValidateCategorySet_ReturnsSameListWhenNotEmpty**(CategoryTest)
+
+Verifica que el validador respete la lista de categorías si ya contiene elementos válidos.
+
+```java
+@Test
+void testValidateCategorySet_ReturnsSameListWhenNotEmpty() {
+  // Arrange
+  Category aventura = new Category(Categories.GASTRONOMIA);
+  List<Category> categoryList = List.of(aventura);
+
+  // Act
+  List<Category> result = Category.validateCategorySet(categoryList);
+
+  // Assert
+  assertEquals(1, result.size());
+  assertEquals(aventura, result.get(0));
+}
+```
+
+21. **testExperienceMediaConstructorAndGetters**(ExperienceMediaTest)
+
+Verifica que la entidad multimedia se cree correctamente con su URL, descripción y relación con la experiencia.
+
+```java
+@Test
+void testExperienceMediaConstructorAndGetters() {
+  // Arrange
+  String mediaUrl = "https://example.com/image.jpg";
+  String caption = "Vista panorámica";
+
+  // Act
+  ExperienceMedia media = new ExperienceMedia(experience, mediaUrl, caption);
+
+  // Assert
+  assertEquals(experience, media.getExperience());
+  assertEquals(mediaUrl, media.getMediaUrl());
+  assertEquals(caption, media.getCaption());
+}
+```
+
+22. **testUpdate_Successfully**(ExperienceMediaTest)
+
+Valida que se puedan actualizar la URL y el pie de foto de un recurso multimedia existente.
+
+```java
+@Test
+void testUpdate_Successfully() {
+  // Arrange
+  ExperienceMedia media = new ExperienceMedia(experience, "old-url.com", "Old Caption");
+  String newUrl = "new-url.com";
+  String newCaption = "New Caption";
+
+  // Act
+  media.update(newUrl, newCaption);
+
+  // Assert
+  assertEquals(newUrl, media.getMediaUrl());
+  assertEquals(newCaption, media.getCaption());
+}
+```
+
+23. **testMarkAsDeleted_Successfully**(ExperienceMediaTest)
+
+Prueba el borrado lógico de una imagen o video asociado a una experiencia.
+
+```java
+@Test
+void testMarkAsDeleted_Successfully() {
+  // Arrange
+  ExperienceMedia media = new ExperienceMedia(experience, "url.com", "Caption");
+
+  // Act
+  media.markAsDeleted();
+
+  // Assert
+  assertNotNull(media.getDeletedAt());
+}
+```
+
+24. **testNoArgsConstructor_InitializesCorrectly**(ExperienceMediaTest)
+
+Verifica que el constructor vacío inicialice los campos en su estado neutro por defecto.
+
+```java
+@Test
+void testNoArgsConstructor_InitializesCorrectly() {
+  // Act
+  ExperienceMedia media = new ExperienceMedia();
+
+  // Assert
+  assertNull(media.getExperience());
+  assertNull(media.getMediaUrl());
+  assertNull(media.getDeletedAt());
+}
+```
+
+25. **testTicketTypeConstructorAndGetters**(TicketTypeTest)
+
+Valida que el constructor de `TicketType` asigne correctamente el tipo de ticket desde el enumerado.
+
+```java
+@Test
+void testTicketTypeConstructorAndGetters() {
+  // Arrange
+  TicketTypes expectedType = TicketTypes.TICKET_VIP;
+
+  // Act
+  TicketType ticketType = new TicketType(expectedType);
+
+  // Assert
+  assertEquals(expectedType, ticketType.getName());
+}
+```
+
+26. **testGetTicketTypeName_ReturnsStringRepresentation**(TicketTypeTest)
+
+Verifica el retorno de la representación en cadena del tipo de ticket para su uso en la capa de interfaces.
+
+```java
+@Test
+void testGetTicketTypeName_ReturnsStringRepresentation() {
+  // Arrange
+  TicketType ticketType = new TicketType(TicketTypes.TICKET_GENERAL);
+
+  // Act
+  String name = ticketType.getTicketTypeName();
+
+  // Assert
+  assertEquals("TICKET_GENERAL", name);
+}
+```
+
+27. **testGetDefaultTicketType_ReturnsTicketGeneral**(TicketTypeTest)
+
+Asegura que el sistema asigne el ticket general por defecto si no se especifica otro tipo.
+
+```java
+@Test
+void testGetDefaultTicketType_ReturnsTicketGeneral() {
+  // Act
+  TicketType defaultType = TicketType.getDefaultTicketType();
+
+  // Assert
+  assertNotNull(defaultType);
+  assertEquals(TicketTypes.TICKET_GENERAL, defaultType.getName());
+}
+```
+
+28. **testToTicketTypeFromName_ReturnsCorrectEnum**(TicketTypeTest)
+
+Prueba la conversión de nombres de tipos de ticket (como "TICKET_VIP") a entidades válidas.
+
+```java
+@Test
+void testToTicketTypeFromName_ReturnsCorrectEnum() {
+  // Arrange
+  String typeName = "TICKET_VIP";
+
+  // Act
+  TicketType result = TicketType.toTicketTypeFromName(typeName);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(TicketTypes.TICKET_VIP, result.getName());
+}
+```
+
+29. **testValidateTicketTypeSet_ReturnsDefaultWhenListIsEmpty**(TicketTypeTest)
+
+Valida que si no se proporcionan tipos de ticket, se asigne automáticamente el tipo general.
+
+```java
+@Test
+void testValidateTicketTypeSet_ReturnsDefaultWhenListIsEmpty() {
+  // Arrange
+  List<TicketType> emptyList = Collections.emptyList();
+
+  // Act
+  List<TicketType> result = TicketType.validateTicketTypeSet(emptyList);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(1, result.size()),
+      () -> assertEquals(TicketTypes.TICKET_GENERAL, result.get(0).getName()));
+}
+```
+
+30. **testValidateTicketTypeSet_ReturnsSameListWhenNotEmpty**(TicketTypeTest)
+
+Verifica que el validador respete la lista de tipos de ticket si ya contiene elementos.
+
+```java
+@Test
+void testValidateTicketTypeSet_ReturnsSameListWhenNotEmpty() {
+  // Arrange
+  TicketType vipType = new TicketType(TicketTypes.TICKET_VIP);
+  List<TicketType> ticketTypeList = List.of(vipType);
+
+  // Act
+  List<TicketType> result = TicketType.validateTicketTypeSet(ticketTypeList);
+
+  // Assert
+  assertAll(() -> assertEquals(1, result.size()), () -> assertEquals(vipType, result.get(0)));
+}
+```
+
+##### Application Layer: Command Services
+![AvailabilityCommandServiceImplTest](assets/AvailabilityCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Experiences._
+
+31. **handle_CreateAvailability_ShouldSave**(AvailabilityCommandServiceImplTest)
+
+Verifica que el servicio de comandos cree una nueva disponibilidad correctamente cuando los datos son válidos, invocando el guardado en el repositorio.
+
+```java
+@Test
+void handle_CreateAvailability_ShouldSave() {
+    // Arrange
+    var command = new CreateAvailabilityCommand(experience, start, end, 50);
+    when(experienceRepository.existsById(any())).thenReturn(true);
+    when(repository.save(any())).thenAnswer(i -> i.getArguments()[0]);
+
+    // Act
+    Long id = service.handle(command);
+
+    // Assert
+    assertNotNull(id);
+    verify(repository).save(any());
+}
+```
+
+32. **handle_CreateAvailability_ShouldThrowException_WhenExperienceNotFound**(AvailabilityCommandServiceImplTest)
+
+Asegura que no se puedan crear disponibilidades para experiencias inexistentes.
+
+```java
+@Test
+void handle_CreateAvailability_ShouldThrowException_WhenExperienceNotFound() {
+    // Arrange
+    var command = new CreateAvailabilityCommand(experience, start, end, 50);
+    when(experienceRepository.existsById(any())).thenReturn(false);
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+33. **updateAvailability_ShouldUpdateFields**(AvailabilityCommandServiceImplTest)
+
+Valida que el servicio actualice correctamente los campos de una disponibilidad existente.
+
+```java
+@Test
+void updateAvailability_ShouldUpdateFields() {
+    // Arrange
+    var existing = new Availability(experience, start, end, 50);
+    var command = new UpdateAvailabilityCommand(1L, start.plusDays(1), end.plusDays(1), 100);
+    when(repository.findById(1L)).thenReturn(Optional.of(existing));
+
+    // Act
+    service.updateAvailability(command);
+
+    // Assert
+    assertEquals(100, existing.getCapacity());
+    verify(repository).save(existing);
+}
+```
+
+34. **deleteAvailability_ShouldMarkAsDeleted**(AvailabilityCommandServiceImplTest)
+
+Prueba que el borrado de una disponibilidad se realice de forma lógica a través del servicio de aplicación.
+
+```java
+@Test
+void deleteAvailability_ShouldMarkAsDeleted() {
+    // Arrange
+    var existing = new Availability(experience, start, end, 50);
+    when(repository.findById(1L)).thenReturn(Optional.of(existing));
+
+    // Act
+    service.deleteAvailability(1L);
+
+    // Assert
+    assertNotNull(existing.getDeletedAt());
+}
+```
+
+35. **handle_AddTicketType_ShouldUpdateAggregate**(AvailabilityTicketTypeCommandServiceImplTest)
+
+Verifica que el servicio de comandos añada correctamente un tipo de ticket a una disponibilidad existente, orquestando la lógica del agregado.
+
+```java
+@Test
+void handle_AddTicketType_ShouldUpdateAggregate() {
+    // Arrange
+    var command = new CreateAvailabilityTicketTypeCommand(1L, 1L, BigDecimal.TEN, 10);
+    when(availabilityRepository.findById(1L)).thenReturn(Optional.of(availability));
+    when(ticketTypeRepository.findById(1L)).thenReturn(Optional.of(ticketType));
+
+    // Act
+    service.handle(command);
+
+    // Assert
+    verify(availabilityRepository).save(availability);
+}
+```
+
+36. **handle_AddTicketType_ShouldThrow_WhenAvailabilityNotFound**(AvailabilityTicketTypeCommandServiceImplTest)
+
+Valida el manejo de errores cuando se intenta asociar un ticket a una disponibilidad que no existe.
+
+```java
+@Test
+void handle_AddTicketType_ShouldThrow_WhenAvailabilityNotFound() {
+    // Arrange
+    var command = new CreateAvailabilityTicketTypeCommand(99L, 1L, BigDecimal.TEN, 10);
+    when(availabilityRepository.findById(99L)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+37. **handle_AddTicketType_ShouldThrow_WhenTicketTypeNotFound**(AvailabilityTicketTypeCommandServiceImplTest)
+
+Asegura que el sistema falle si se intenta usar un tipo de ticket inexistente en la base de datos.
+
+```java
+@Test
+void handle_AddTicketType_ShouldThrow_WhenTicketTypeNotFound() {
+    // Arrange
+    var command = new CreateAvailabilityTicketTypeCommand(1L, 99L, BigDecimal.TEN, 10);
+    when(availabilityRepository.findById(1L)).thenReturn(Optional.of(availability));
+    when(ticketTypeRepository.findById(99L)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+38. **handle_SeedCategories_CreatesMissing**(CategoryCommandServiceImplTest)
+
+Verifica que el servicio de inicialización cargue las categorías base si no están presentes.
+
+```java
+@Test
+void handle_SeedCategories_CreatesMissing() {
+    // Arrange
+    when(repository.existsByName(any())).thenReturn(false);
+
+    // Act
+    service.handle(new SeedCategoriesCommand());
+
+    // Assert
+    verify(repository, atLeastOnce()).save(any());
+}
+```
+
+39. **handle_SeedCategories_SkipsExisting**(CategoryCommandServiceImplTest)
+
+Asegura la idempotencia del seeder de categorías al saltar las que ya existen.
+
+```java
+@Test
+void handle_SeedCategories_SkipsExisting() {
+    // Arrange
+    when(repository.existsByName(any())).thenReturn(true);
+
+    // Act
+    service.handle(new SeedCategoriesCommand());
+
+    // Assert
+    verify(repository, never()).save(any());
+}
+```
+
+40. **handle_CreateExperience_ShouldSave**(ExperienceCommandServiceImplTest)
+
+Valida que el servicio cree una experiencia correctamente, asociándola a una categoría válida.
+
+```java
+@Test
+void handle_CreateExperience_ShouldSave() {
+    // Arrange
+    var command = new CreateExperienceCommand("Title", "Desc", 1L, "CULTURA", 1L, "1h", "Point");
+    when(categoryRepository.findByName(any())).thenReturn(Optional.of(category));
+
+    // Act
+    Long id = service.handle(command);
+
+    // Assert
+    verify(repository).save(any());
+}
+```
+
+41. **handle_CreateExperience_ShouldThrow_WhenCategoryNotFound**(ExperienceCommandServiceImplTest)
+
+Prueba que falle la creación si la categoría proporcionada no está registrada.
+
+```java
+@Test
+void handle_CreateExperience_ShouldThrow_WhenCategoryNotFound() {
+    // Arrange
+    var command = new CreateExperienceCommand("Title", "Desc", 1L, "INVALID", 1L, "1h", "Point");
+    when(categoryRepository.findByName(any())).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+42. **updateExperience_ShouldUpdateFields**(ExperienceCommandServiceImplTest)
+
+Verifica la actualización de los atributos principales de una experiencia a través del servicio.
+
+```java
+@Test
+void updateExperience_ShouldUpdateFields() {
+    // Arrange
+    var existing = new Experience("Old", "Old", new AgencyId(1L), category, new DestinationId(1L), "1h", "P");
+    var command = new UpdateExperienceCommand(1L, "New", "New", "GASTRONOMIA", 1L, "2h", "P2");
+    when(repository.findById(1L)).thenReturn(Optional.of(existing));
+    when(categoryRepository.findByName(any())).thenReturn(Optional.of(new Category(Categories.GASTRONOMIA)));
+
+    // Act
+    service.updateExperience(command);
+
+    // Assert
+    assertEquals("New", existing.getTitle());
+}
+```
+
+43. **deleteExperience_ShouldMarkAsDeleted**(ExperienceCommandServiceImplTest)
+
+Prueba que el borrado de una experiencia se gestione como una eliminación lógica.
+
+```java
+@Test
+void deleteExperience_ShouldMarkAsDeleted() {
+    // Arrange
+    var existing = new Experience();
+    when(repository.findById(1L)).thenReturn(Optional.of(existing));
+
+    // Act
+    service.deleteExperience(1L);
+
+    // Assert
+    assertNotNull(existing.getDeletedAt());
+}
+```
+
+44. **handle_createMedia_experienceExists_mediaIsSaved**(ExperienceMediaCommandServiceImplTest)
+
+Verifica la creación exitosa de un recurso multimedia cuando la experiencia asociada existe.
+
+```java
+@Test
+void handle_createMedia_experienceExists_mediaIsSaved() {
+    // Arrange
+    CreateExperienceMediaCommand command = new CreateExperienceMediaCommand(existingExperience, "url", "caption");
+    when(experienceRepository.findById(any())).thenReturn(Optional.of(existingExperience));
+
+    // Act
+    mediaCommandService.handle(command);
+
+    // Assert
+    verify(mediaRepository).save(any());
+}
+```
+
+45. **handle_createMedia_experienceNotFound_throwsException**(ExperienceMediaCommandServiceImplTest)
+
+Asegura que falle la creación de multimedia si la experiencia referenciada no existe.
+
+```java
+@Test
+void handle_createMedia_experienceNotFound_throwsException() {
+    // Arrange
+    CreateExperienceMediaCommand command = new CreateExperienceMediaCommand(existingExperience, "url", "caption");
+    when(experienceRepository.findById(any())).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> mediaCommandService.handle(command));
+}
+```
+
+46. **handle_updateMedia_validData_returnsUpdatedMedia**(ExperienceMediaCommandServiceImplTest)
+
+Prueba la actualización de un recurso multimedia existente con datos válidos.
+
+```java
+@Test
+void handle_updateMedia_validData_returnsUpdatedMedia() {
+    // Arrange
+    UpdateExperienceMediaCommand command = new UpdateExperienceMediaCommand(1L, "new-url", "new-caption");
+    when(mediaRepository.findById(1L)).thenReturn(Optional.of(existingMedia));
+
+    // Act
+    mediaCommandService.handle(command);
+
+    // Assert
+    assertEquals("new-url", existingMedia.getMediaUrl());
+}
+```
+
+47. **deleteById_mediaExists_marksAsDeleted**(ExperienceMediaCommandServiceImplTest)
+
+Valida el borrado lógico de un recurso multimedia por su ID.
+
+```java
+@Test
+void deleteById_mediaExists_marksAsDeleted() {
+    // Arrange
+    when(mediaRepository.findById(1L)).thenReturn(Optional.of(existingMedia));
+
+    // Act
+    mediaCommandService.deleteById(1L);
+
+    // Assert
+    assertNotNull(existingMedia.getDeletedAt());
+}
+```
+
+48. **testHandleSeedTicketTypesCommand_CreatesMissingTicketTypes**(TicketTypeCommandServiceImplTest)
+
+Verifica que el servicio cargue todos los tipos de tickets definidos en el enumerado si faltan en la DB.
+
+```java
+@Test
+void testHandleSeedTicketTypesCommand_CreatesMissingTicketTypes() {
+    // Arrange
+    when(ticketTypeRepository.existsByName(any())).thenReturn(false);
+
+    // Act
+    ticketTypeCommandService.handle(new SeedTicketTypesCommand());
+
+    // Assert
+    verify(ticketTypeRepository, times(TicketTypes.values().length)).save(any());
+}
+```
+
+49. **testHandleSeedTicketTypesCommand_SkipsExistingTicketTypes**(TicketTypeCommandServiceImplTest)
+
+Asegura que no se dupliquen tipos de tickets si ya están presentes.
+
+```java
+@Test
+void testHandleSeedTicketTypesCommand_SkipsExistingTicketTypes() {
+    // Arrange
+    when(ticketTypeRepository.existsByName(any())).thenReturn(true);
+
+    // Act
+    ticketTypeCommandService.handle(new SeedTicketTypesCommand());
+
+    // Assert
+    verify(ticketTypeRepository, never()).save(any());
+}
+```
+
+##### Application Layer: Query Services
+![AvailabilityQueryServiceImplTest](assets/AvailabilityQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Experiences._
+
+50. **handle_GetAllAvailabilities_ShouldReturnList**(AvailabilityQueryServiceImplTest)
+
+Prueba que el servicio retorne todas las disponibilidades activas consultando al repositorio.
+
+```java
+@Test
+void handle_GetAllAvailabilities_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Availability.class)));
+
+    // Act
+    var result = service.handle(new GetAllAvailabilitiesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+51. **handle_GetAvailabilityById_ShouldReturnOptional**(AvailabilityQueryServiceImplTest)
+
+Verifica la recuperación de una disponibilidad específica por su ID.
+
+```java
+@Test
+void handle_GetAvailabilityById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var result = service.handle(new GetAvailabilityByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+52. **handle_GetAllCategories_ShouldReturnList**(CategoryQueryServiceImplTest)
+
+Valida la obtención del catálogo completo de categorías.
+
+```java
+@Test
+void handle_GetAllCategories_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Category.class)));
+
+    // Act
+    var result = service.handle(new GetAllCategoriesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+53. **handle_GetCategoryById_ShouldReturnOptional**(CategoryQueryServiceImplTest)
+
+Prueba la búsqueda de una categoría individual.
+
+```java
+@Test
+void handle_GetCategoryById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(Category.class)));
+
+    // Act
+    var result = service.handle(new GetCategoryByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+54. **handle_GetAllMedia_ShouldReturnList**(ExperienceMediaQueryServiceImplTest)
+
+Verifica que el servicio liste todos los recursos multimedia registrados.
+
+```java
+@Test
+void handle_GetAllMedia_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var result = service.handle(new GetAllExperienceMediaQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+55. **handle_GetMediaById_ShouldReturnOptional**(ExperienceMediaQueryServiceImplTest)
+
+Prueba la recuperación de un recurso multimedia por su identificador.
+
+```java
+@Test
+void handle_GetMediaById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var result = service.handle(new GetExperienceMediaByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+56. **handle_GetAllExperiences_ShouldReturnList**(ExperienceQueryServiceImplTest)
+
+Valida la consulta masiva de experiencias en el sistema.
+
+```java
+@Test
+void handle_GetAllExperiences_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Experience.class)));
+
+    // Act
+    var result = service.handle(new GetAllExperiencesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+57. **handle_GetExperienceById_ShouldReturnOptional**(ExperienceQueryServiceImplTest)
+
+Verifica la búsqueda de una experiencia detallada por ID.
+
+```java
+@Test
+void handle_GetExperienceById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(5L)).thenReturn(Optional.of(mock(Experience.class)));
+
+    // Act
+    var result = service.handle(new GetExperienceByIdQuery(5L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+58. **handle_GetAllTicketTypes_ShouldReturnList**(TicketTypeQueryServiceImplTest)
+
+Prueba la obtención de todos los tipos de tickets disponibles.
+
+```java
+@Test
+void handle_GetAllTicketTypes_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(TicketType.class)));
+
+    // Act
+    var result = service.handle(new GetAllTicketTypesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+59. **handle_GetTicketTypeById_ShouldReturnOptional**(TicketTypeQueryServiceImplTest)
+
+Valida la recuperación de un tipo de ticket específico.
+
+```java
+@Test
+void handle_GetTicketTypeById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(TicketType.class)));
+
+    // Act
+    var result = service.handle(new GetTicketTypeByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![AvailabilitiesControllerTest](assets/AvailabilitiesControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Experiences._
+
+60. **testCreateAvailability_Created**(AvailabilitiesControllerTest)
+
+Verifica que el controlador responda 201 Created tras crear exitosamente una disponibilidad.
+
+```java
+@Test
+void testCreateAvailability_Created() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(1L);
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var response = controller.createAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+61. **testCreateAvailability_NotFound**(AvailabilitiesControllerTest)
+
+Asegura un 404 si la disponibilidad no puede recuperarse tras su supuesta creación.
+
+```java
+@Test
+void testCreateAvailability_NotFound() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(1L);
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.createAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+62. **testGetAllAvailabilities_Ok**(AvailabilitiesControllerTest)
+
+Valida el listado de todas las disponibilidades con un 200 OK.
+
+```java
+@Test
+void testGetAllAvailabilities_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllAvailabilities();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+63. **testUpdateAvailability_Ok**(AvailabilitiesControllerTest)
+
+Verifica que la actualización de disponibilidad retorne 200 OK y el recurso actualizado.
+
+```java
+@Test
+void testUpdateAvailability_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var response = controller.updateAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+64. **testUpdateAvailability_NotFound**(AvailabilitiesControllerTest)
+
+Asegura un 404 si se intenta actualizar una disponibilidad inexistente.
+
+```java
+@Test
+void testUpdateAvailability_NotFound() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.updateAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+65. **testDeleteAvailability_NoContent**(AvailabilitiesControllerTest)
+
+Valida que el borrado retorne 204 No Content.
+
+```java
+@Test
+void testDeleteAvailability_NoContent() {
+    // Act
+    var response = controller.deleteAvailability(1L);
+
+    // Assert
+    assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+}
+```
+
+66. **testGetAvailabilityById_Ok**(AvailabilitiesControllerTest)
+
+Verifica la obtención exitosa por ID con 200 OK.
+
+```java
+@Test
+void testGetAvailabilityById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var response = controller.getAvailabilityById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+67. **testGetAllCategories_Ok**(CategoriesControllerTest)
+
+Prueba el listado de categorías vía API.
+
+```java
+@Test
+void testGetAllCategories_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllCategories();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+68. **testGetCategoryById_Ok**(CategoriesControllerTest)
+
+Valida la obtención de categoría por ID vía API.
+
+```java
+@Test
+void testGetCategoryById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Category.class)));
+
+    // Act
+    var response = controller.getCategoryById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+69. **testCreateMedia_Created**(ExperienceMediaControllerTest)
+
+Verifica la creación de multimedia con respuesta 201.
+
+```java
+@Test
+void testCreateMedia_Created() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var response = controller.createExperienceMedia(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+70. **testCreateMedia_NotFound**(ExperienceMediaControllerTest)
+
+Maneja el error 404 si el recurso no aparece tras crearse.
+
+```java
+@Test
+void testCreateMedia_NotFound() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.createExperienceMedia(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+71. **testGetAllMedia_Ok**(ExperienceMediaControllerTest)
+
+Prueba el listado de recursos multimedia.
+
+```java
+@Test
+void testGetAllMedia_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllExperienceMedia();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+72. **testUpdateMedia_Ok**(ExperienceMediaControllerTest)
+
+Valida la actualización de multimedia.
+
+```java
+@Test
+void testUpdateMedia_Ok() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var response = controller.updateExperienceMedia(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+73. **testUpdateMedia_NotFound**(ExperienceMediaControllerTest)
+
+Asegura un 404 en actualizaciones fallidas de multimedia.
+
+```java
+@Test
+void testUpdateMedia_NotFound() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.updateExperienceMedia(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+74. **testDeleteMedia_NoContent**(ExperienceMediaControllerTest)
+
+Valida el borrado de multimedia.
+
+```java
+@Test
+void testDeleteMedia_NoContent() {
+    // Act
+    var response = controller.deleteExperienceMedia(1L);
+
+    // Assert
+    assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+}
+```
+
+75. **testGetMediaById_Ok**(ExperienceMediaControllerTest)
+
+Prueba la obtención por ID de multimedia.
+
+```java
+@Test
+void testGetMediaById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var response = controller.getExperienceMediaById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+76. **testCreateExperience_Created**(ExperiencesControllerTest)
+
+Verifica la creación de una experiencia con respuesta 201.
+
+```java
+@Test
+void testCreateExperience_Created() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(10L);
+    when(queryService.handle(any())).thenReturn(Optional.of(experience));
+
+    // Act
+    var response = experiencesController.createExperience(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+77. **testCreateExperience_NotFound**(ExperiencesControllerTest)
+
+Maneja el 404 si la experiencia no se encuentra tras ser creada.
+
+```java
+@Test
+void testCreateExperience_NotFound() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(10L);
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = experiencesController.createExperience(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+78. **testGetAllExperiences_Ok**(ExperiencesControllerTest)
+
+Prueba el listado público de experiencias.
+
+```java
+@Test
+void testGetAllExperiences_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of(experience));
+
+    // Act
+    var response = experiencesController.getAllExperiences();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+79. **testUpdateExperience_Ok**(ExperiencesControllerTest)
+
+Valida la actualización exitosa de una experiencia.
+
+```java
+@Test
+void testUpdateExperience_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(experience));
+
+    // Act
+    var response = experiencesController.updateExperience(10L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+80. **testUpdateExperience_NotFound**(ExperiencesControllerTest)
+
+Asegura el 404 si se intenta actualizar una experiencia inexistente.
+
+```java
+@Test
+void testUpdateExperience_NotFound() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = experiencesController.updateExperience(10L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+81. **testDeleteExperience_NoContent**(ExperiencesControllerTest)
+
+Valida el borrado de una experiencia.
+
+```java
+@Test
+void testDeleteExperience_NoContent() {
+    // Act
+    var response = experiencesController.deleteExperience(10L);
+
+    // Assert
+    assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+}
+```
+
+82. **testGetExperienceById_Ok**(ExperiencesControllerTest)
+
+Prueba la obtención de experiencia por ID.
+
+```java
+@Test
+void testGetExperienceById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(experience));
+
+    // Act
+    var response = experiencesController.getExperienceById(10L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+83. **testGetExperienceById_NotFound**(ExperiencesControllerTest)
+
+Maneja el 404 para búsquedas fallidas de experiencias.
+
+```java
+@Test
+void testGetExperienceById_NotFound() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = experiencesController.getExperienceById(10L);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+84. **testGetAllTicketTypes_Ok**(TicketTypesControllerTest)
+
+Prueba el listado de tipos de tickets.
+
+```java
+@Test
+void testGetAllTicketTypes_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllTicketTypes();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+85. **testGetTicketTypeById_Ok**(TicketTypesControllerTest)
+
+Valida la obtención por ID de tipo de ticket.
+
+```java
+@Test
+void testGetTicketTypeById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(TicketType.class)));
+
+    // Act
+    var response = controller.getTicketTypeById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AvailabilityResourceFromEntityAssemblerTest](assets/AvailabilityResourceFromEntityAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context Experiences._
+
+86. **toResourceFromEntity_ShouldMapCorrectly**(AvailabilityResourceFromEntityAssemblerTest)
+
+Verifica que la entidad `Availability` se transforme correctamente en su DTO de salida.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(Availability.class);
+    when(entity.getId()).thenReturn(1L);
+
+    // Act
+    var resource = AvailabilityResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals(1L, resource.id());
+}
+```
+
+87. **toResourceFromEntity_ShouldMapCorrectly**(CategoryResourceFromEntityAssemblerTest)
+
+Prueba el mapeo de la entidad `Category` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = new Category(Categories.GASTRONOMIA);
+
+    // Act
+    var resource = CategoryResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("GASTRONOMIA", resource.name());
+}
+```
+
+88. **toCommandFromResource_ShouldMapCorrectly**(CreateAvailabilityCommandFromResourceAssemblerTest)
+
+Valida la conversión del recurso de creación a comando interno para disponibilidad.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateAvailabilityCommandFromResourceAssembler.toCommandFromResource(mock(Experience.class), resource);
+
+    // Assert
+    assertNotNull(command);
+}
+```
+
+89. **toCommandFromResource_ShouldMapCorrectly**(CreateAvailabilityTicketTypeCommandFromResourceAssemblerTest)
+
+Verifica el mapeo para la asociación de tipos de tickets.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateAvailabilityTicketTypeCommandFromResourceAssembler.toCommandFromResource(1L, 1L, resource);
+
+    // Assert
+    assertEquals(1L, command.availabilityId());
+}
+```
+
+90. **toCommandFromResource_ShouldMapCorrectly**(CreateExperienceCommandFromResourceAssemblerTest)
+
+Prueba la transformación del recurso de entrada a comando de creación de experiencia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateExperienceCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals("Title", command.title());
+}
+```
+
+91. **toCommandFromResource_ShouldMapCorrectly**(CreateExperienceMediaCommandFromResourceAssemblerTest)
+
+Valida el mapeo para la creación de recursos multimedia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateExperienceMediaCommandFromResourceAssembler.toCommandFromResource(mock(Experience.class), resource);
+
+    // Assert
+    assertNotNull(command);
+}
+```
+
+92. **toResourceFromEntity_ShouldMapCorrectly**(ExperienceMediaResourceFromEntityAssemblerTest)
+
+Verifica que el recurso multimedia se mapee correctamente para la API.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(ExperienceMedia.class);
+    when(entity.getMediaUrl()).thenReturn("url");
+
+    // Act
+    var resource = ExperienceMediaResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("url", resource.mediaUrl());
+}
+```
+
+93. **toResourceFromEntity_ShouldMapCorrectly**(ExperienceResourceFromEntityAssemblerTest)
+
+Prueba el mapeo integral del agregado `Experience` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(Experience.class);
+    when(entity.getTitle()).thenReturn("Title");
+
+    // Act
+    var resource = ExperienceResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("Title", resource.title());
+}
+```
+
+94. **toResourceFromEntity_ShouldMapCorrectly**(TicketTypeResourceFromEntityAssemblerTest)
+
+Verifica el mapeo de la entidad `TicketType` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = new TicketType(TicketTypes.TICKET_VIP);
+
+    // Act
+    var resource = TicketTypeResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("TICKET_VIP", resource.name());
+}
+```
+
+95. **toCommandFromResource_ShouldMapCorrectly**(UpdateExperienceCommandFromResourceAssemblerTest)
+
+Valida la conversión del recurso de actualización a comando para experiencia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = UpdateExperienceCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals(1L, command.experienceId());
+}
+```
+
+96. **toCommandFromResource_ShouldMapCorrectly**(UpdateExperienceMediaCommandFromResourceAssemblerTest)
+
+Verifica el mapeo para la actualización de recursos multimedia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = UpdateExperienceMediaCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals(1L, command.mediaId());
+}
+```
+
+
+#### IAM Bounded Context
+
+
+##### Application Layer: Command Services
+
+1. **handle_SeedRolesCommand_ShouldSaveMissingRoles**(RoleCommandServiceImplTest)
+
+Esta prueba valida que el servicio de inicialización de roles funcione de manera idempotente. Verifica que el sistema identifique qué roles de la enumeración `Roles` (como `ROLE_ADMIN`, `ROLE_TOURIST`, `ROLE_AGENCY_STAFF`) ya existen en la base de datos y proceda a guardar únicamente aquellos que faltan. Esto garantiza que el sistema siempre cuente con los roles base necesarios para su funcionamiento sin generar duplicados.
+
+```java
+@Test
+@DisplayName("handle(SeedRolesCommand) should save all missing roles")
+void handle_SeedRolesCommand_ShouldSaveMissingRoles() {
+  // Arrange
+  final var command = new SeedRolesCommand();
+
+  when(roleRepository.existsByName(Roles.ROLE_ADMIN)).thenReturn(true);
+  when(roleRepository.existsByName(Roles.ROLE_AGENCY_STAFF)).thenReturn(false);
+  when(roleRepository.existsByName(Roles.ROLE_TOURIST)).thenReturn(false);
+
+  // Act
+  roleCommandService.handle(command);
+
+  // Assert
+  verify(roleRepository, atLeastOnce()).existsByName(any());
+  verify(roleRepository, atLeastOnce()).save(any(Role.class));
+}
+```
+
+2. **handle_SignUpCommand_ShouldReturnUser_WhenCreationIsSuccessful**(UserCommandServiceImplTest)
+
+Esta prueba fundamental verifica el flujo completo de registro de un nuevo usuario. Simula un escenario exitoso donde el correo electrónico es único, se recupera el rol de turista por defecto, se cifra la contraseña y finalmente se persiste la entidad. Valida que el objeto retornado coincida con el esperado y que todas las dependencias (repositorios y servicios de seguridad) se invoquen correctamente.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should return User when creation is successful")
+void handle_SignUpCommand_ShouldReturnUser_WhenCreationIsSuccessful() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com", "password123", "John", "Doe", "123456789", new ArrayList<>());
+  var role = new Role(Roles.ROLE_TOURIST);
+  var expectedUser =
+      new User(
+          command.email(),
+          "encodedPassword",
+          command.firstName(),
+          command.lastName(),
+          command.phone(),
+          List.of(role));
+
+  when(userRepository.existsByEmail(command.email())).thenReturn(false);
+  when(roleRepository.findByName(Roles.ROLE_TOURIST)).thenReturn(Optional.of(role));
+  when(hashingService.encode(command.password())).thenReturn("encodedPassword");
+  when(userRepository.findByEmail(command.email())).thenReturn(Optional.of(expectedUser));
+
+  // Act
+  var result = userCommandService.handle(command);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(expectedUser, result.get());
+
+  verify(userRepository).existsByEmail(command.email());
+  verify(roleRepository).findByName(Roles.ROLE_TOURIST);
+  verify(hashingService).encode(command.password());
+  verify(userRepository).save(any(User.class));
+  verify(userRepository).findByEmail(command.email());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+3. **handle_SignUpCommand_ShouldThrowRuntimeException_WhenEmailAlreadyExists**(UserCommandServiceImplTest)
+
+Valida la regla de negocio que impide el registro de múltiples usuarios con la misma dirección de correo electrónico. La prueba asegura que, si el repositorio indica que el email ya existe, el servicio lance una `RuntimeException` con el mensaje adecuado y detenga el proceso inmediatamente sin realizar operaciones costosas como el cifrado de contraseñas.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should throw RuntimeException when email already exists")
+void handle_SignUpCommand_ShouldThrowRuntimeException_WhenEmailAlreadyExists() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com", "password123", "John", "Doe", "123456789", new ArrayList<>());
+  when(userRepository.existsByEmail(command.email())).thenReturn(true);
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "Email already exists");
+
+  verify(userRepository).existsByEmail(command.email());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+4. **handle_SignUpCommand_ShouldThrowRuntimeException_WhenRoleNotFound**(UserCommandServiceImplTest)
+
+Esta prueba verifica el manejo de errores cuando un rol solicitado no está definido en el sistema. Asegura que la integridad del modelo de seguridad se mantenga, lanzando una excepción si se intenta asignar un rol inexistente, lo que evita la creación de usuarios con privilegios corruptos o incompletos.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should throw RuntimeException when role not found")
+void handle_SignUpCommand_ShouldThrowRuntimeException_WhenRoleNotFound() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com",
+          "password123",
+          "John",
+          "Doe",
+          "123456789",
+          List.of(new Role(Roles.ROLE_ADMIN)));
+
+  when(userRepository.existsByEmail(command.email())).thenReturn(false);
+  when(roleRepository.findByName(Roles.ROLE_ADMIN)).thenReturn(Optional.empty());
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "Role not found");
+
+  verify(userRepository).existsByEmail(command.email());
+  verify(roleRepository).findByName(Roles.ROLE_ADMIN);
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+5. **handle_SignInCommand_ShouldReturnUserAndToken_WhenSignInIsSuccessful**(UserCommandServiceImplTest)
+
+Valida el proceso de inicio de sesión exitoso. La prueba simula la búsqueda del usuario por email, la verificación exitosa de la contraseña contra su hash almacenado y la generación de un token JWT. Verifica que el servicio retorne tanto la entidad del usuario como el token de acceso, cumpliendo con el contrato de autenticación del sistema.
+
+```java
+@Test
+@DisplayName("handle(SignInCommand) should return User and Token when sign in is successful")
+void handle_SignInCommand_ShouldReturnUserAndToken_WhenSignInIsSuccessful() {
+  // Arrange
+  var command = new SignInCommand("john.doe@example.com", "password123");
+  var user =
+      new User(
+          "john.doe@example.com",
+          "encodedPassword",
+          "John",
+          "Doe",
+          "123456789",
+          new ArrayList<>());
+  var expectedToken = "jwt-token-123";
+
+  when(userRepository.findByEmail(command.email())).thenReturn(Optional.of(user));
+  when(hashingService.matches(command.password(), "encodedPassword")).thenReturn(true);
+  when(tokenService.generateToken(user.getEmail())).thenReturn(expectedToken);
+
+  // Act
+  var result = userCommandService.handle(command);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(user, result.get().getLeft());
+  assertEquals(expectedToken, result.get().getRight());
+
+  verify(userRepository).findByEmail(command.email());
+  verify(hashingService).matches(command.password(), "encodedPassword");
+  verify(tokenService).generateToken(user.getEmail());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+6. **handle_SignInCommand_ShouldThrowRuntimeException_WhenUserNotFound**(UserCommandServiceImplTest)
+
+Verifica que el sistema maneje correctamente los intentos de inicio de sesión con correos electrónicos no registrados. Valida que se lance una excepción informativa y que el flujo se interrumpa de forma segura sin intentar validar contraseñas o generar tokens para cuentas inexistentes.
+
+```java
+@Test
+@DisplayName("handle(SignInCommand) should throw RuntimeException when user not found")
+void handle_SignInCommand_ShouldThrowRuntimeException_WhenUserNotFound() {
+  // Arrange
+  var command = new SignInCommand("john.doe@example.com", "password123");
+
+  when(userRepository.findByEmail(command.email())).thenReturn(Optional.empty());
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "User not found");
+
+  verify(userRepository).findByEmail(command.email());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+7. **handle_SignInCommand_ShouldThrowRuntimeException_WhenPasswordIsInvalid**(UserCommandServiceImplTest)
+
+Esta prueba asegura que el sistema rechace el acceso cuando la contraseña proporcionada no coincide con la almacenada. Valida que, aunque el usuario sea encontrado, el servicio de hashing detecte la discrepancia y el sistema responda con una excepción de seguridad, protegiendo las cuentas de accesos no autorizados.
+
+```java
+@Test
+@DisplayName("handle(SignInCommand) should throw RuntimeException when password is invalid")
+void handle_SignInCommand_ShouldThrowRuntimeException_WhenPasswordIsInvalid() {
+  // Arrange
+  var command = new SignInCommand("john.doe@example.com", "wrongpassword");
+  var user =
+      new User(
+          "john.doe@example.com",
+          "encodedPassword",
+          "John",
+          "Doe",
+          "123456789",
+          new ArrayList<>());
+
+  when(userRepository.findByEmail(command.email())).thenReturn(Optional.of(user));
+  when(hashingService.matches(command.password(), "encodedPassword")).thenReturn(false);
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "Invalid password");
+
+  verify(userRepository).findByEmail(command.email());
+  verify(hashingService).matches(command.password(), "encodedPassword");
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+##### Application Layer: Query Services
+
+8. **handle_GetAllRolesQuery_ShouldReturnListOfRoles**(RoleQueryServiceImplTest)
+
+Verifica que el servicio de consulta pueda recuperar la lista completa de roles del sistema. Esta prueba es vital para funcionalidades de administración y para que el frontend pueda mostrar las opciones de roles disponibles durante el registro o asignación de permisos.
+
+```java
+@Test
+@DisplayName("handle(GetAllRolesQuery) should return a list of roles")
+void handle_GetAllRolesQuery_ShouldReturnListOfRoles() {
+  // Arrange
+  var query = new GetAllRolesQuery();
+  var mockRole = mock(Role.class);
+  var expectedRoles = List.of(mockRole);
+
+  when(roleRepository.findAll()).thenReturn(expectedRoles);
+
+  // Act
+  var result = roleQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedRoles, result);
+
+  verify(roleRepository).findAll();
+  verifyNoMoreInteractions(roleRepository);
+}
+```
+
+9. **handle_GetRoleByIdQuery_ShouldReturnOptionalRole**(RoleQueryServiceImplTest)
+
+Valida la búsqueda de un rol específico mediante su identificador numérico. Asegura que el servicio retorne un `Optional` conteniendo el rol si existe, facilitando la validación de permisos puntuales basados en el ID del rol.
+
+```java
+@Test
+@DisplayName("handle(GetRoleByIdQuery) should return an Optional of role when found")
+void handle_GetRoleByIdQuery_ShouldReturnOptionalRole() {
+  // Arrange
+  var query = new GetRoleByIdQuery(1L);
+  var mockRole = mock(Role.class);
+
+  when(roleRepository.findById(query.roleId())).thenReturn(Optional.of(mockRole));
+
+  // Act
+  var result = roleQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(mockRole, result.get());
+
+  verify(roleRepository).findById(query.roleId());
+  verifyNoMoreInteractions(roleRepository);
+}
+```
+
+10. **handle_GetAllUsersQuery_ShouldReturnListOfUsers**(UserQueryServiceImplTest)
+
+Esta prueba valida que el sistema sea capaz de listar todos los usuarios registrados. Es una operación fundamental para los paneles de administración donde se requiere visualizar y gestionar el directorio completo de usuarios de la plataforma.
+
+```java
+@Test
+@DisplayName("handle(GetAllUsersQuery) should return a list of users")
+void handle_GetAllUsersQuery_ShouldReturnListOfUsers() {
+  // Arrange
+  var query = new GetAllUsersQuery();
+  var mockUser = mock(User.class);
+  var expectedUsers = List.of(mockUser);
+
+  when(userRepository.findAll()).thenReturn(expectedUsers);
+
+  // Act
+  var result = userQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedUsers, result);
+
+  verify(userRepository).findAll();
+  verifyNoMoreInteractions(userRepository);
+}
+```
+
+11. **handle_GetUserByIdQuery_ShouldReturnOptionalUser**(UserQueryServiceImplTest)
+
+Verifica la recuperación de la información detallada de un usuario mediante su identificador único. Valida que el servicio interactúe correctamente con el repositorio y maneje la posibilidad de que el usuario exista o no, retornando un contenedor seguro.
+
+```java
+@Test
+@DisplayName("handle(GetUserByIdQuery) should return an Optional of user when found")
+void handle_GetUserByIdQuery_ShouldReturnOptionalUser() {
+  // Arrange
+  var query = new GetUserByIdQuery(1L);
+  var mockUser = mock(User.class);
+
+  when(userRepository.findById(query.userId())).thenReturn(Optional.of(mockUser));
+
+  // Act
+  var result = userQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(mockUser, result.get());
+
+  verify(userRepository).findById(query.userId());
+  verifyNoMoreInteractions(userRepository);
+}
+```
+
+12. **handle_GetUserByEmailQuery_ShouldReturnOptionalUser**(UserQueryServiceImplTest)
+
+Esta prueba valida la búsqueda de usuarios por su correo electrónico, una operación común en flujos de recuperación de cuenta o validación de perfiles. Asegura que el servicio mapee correctamente la consulta al método correspondiente del repositorio de persistencia.
+
+```java
+@Test
+@DisplayName("handle(GetUserByEmailQuery) should return an Optional of user when found")
+void handle_GetUserByEmailQuery_ShouldReturnOptionalUser() {
+  // Arrange
+  var query = new GetUserByEmailQuery("john.doe@example.com");
+  var mockUser = mock(User.class);
+
+  when(userRepository.findByEmail(query.email())).thenReturn(Optional.of(mockUser));
+
+  // Act
+  var result = userQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(mockUser, result.get());
+
+  verify(userRepository).findByEmail(query.email());
+  verifyNoMoreInteractions(userRepository);
+}
+```
+
+##### Application Layer: Event Handlers
+
+13. **on_ShouldExecuteSeedRolesCommand**(ApplicationReadyEventHandlerTest)
+
+Verifica que el sistema inicie automáticamente la carga de roles cuando la aplicación está lista (evento `ApplicationReadyEvent`). Esta prueba garantiza que el disparador automático del seeder de roles funcione correctamente al arrancar el servidor, asegurando que la base de datos esté preparada antes de recibir peticiones.
+
+```java
+@Test
+@DisplayName("on should execute SeedRolesCommand")
+void on_ShouldExecuteSeedRolesCommand() {
+  // Arrange
+  when(applicationReadyEvent.getApplicationContext()).thenReturn(applicationContext);
+  when(applicationContext.getId()).thenReturn("TestApplication");
+
+  // Act
+  applicationReadyEventHandler.on(applicationReadyEvent);
+
+  // Assert
+  verify(applicationReadyEvent).getApplicationContext();
+  verify(applicationContext).getId();
+  verify(roleCommandService).handle(any(SeedRolesCommand.class));
+  verifyNoMoreInteractions(roleCommandService, applicationReadyEvent, applicationContext);
+}
+```
+
+##### Interfaces Layer: Anti-Corruption Layer (ACL Facade)
+
+14. **createUser_ShouldReturnZero_WhenEmpty**(IamContextFacadeTest)
+
+Valida que la fachada ACL retorne un valor por defecto (0L) si el servicio de creación de usuarios falla o no puede procesar la solicitud. Esto asegura que los contextos externos (como Perfiles o Reservas) reciban una respuesta controlada en lugar de excepciones inesperadas.
+
+```java
+@Test
+@DisplayName("createUser should return 0L when command service returns empty")
+void createUser_ShouldReturnZero_WhenEmpty() {
+  // Arrange
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.empty());
+
+  // Act
+  Long result =
+      iamContextFacade.createUser(
+          "user@test.com", "pass", "John", "Doe", "999", List.of("ROLE_TOURIST"));
+
+  // Assert
+  assertEquals(0L, result);
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService, userQueryService);
+}
+```
+
+15. **createUser_ShouldReturnUserId_WhenPresent**(IamContextFacadeTest)
+
+Verifica que la fachada ACL propague correctamente el identificador del usuario creado exitosamente hacia los otros contextos. Esta es la vía principal por la cual otros módulos integran la identidad de un nuevo usuario en sus propios modelos de dominio.
+
+```java
+@Test
+@DisplayName("createUser should return user ID when command service returns a user")
+void createUser_ShouldReturnUserId_WhenPresent() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(10L);
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.of(user));
+
+  // Act
+  Long result =
+      iamContextFacade.createUser(
+          "user@test.com", "pass", "John", "Doe", "999", List.of("ROLE_TOURIST"));
+
+  // Assert
+  assertEquals(10L, result);
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService, userQueryService);
+}
+```
+
+16. **fetchUserById_ShouldReturnEmpty_WhenNotFound**(IamContextFacadeTest)
+
+Valida que cuando un contexto externo solicita un usuario por ID que no existe, la fachada retorne un resultado vacío de manera elegante. Asegura que la capa de abstracción maneje las ausencias de datos sin romper el flujo de los módulos clientes.
+
+```java
+@Test
+@DisplayName("fetchUserById should return empty when user is not found")
+void fetchUserById_ShouldReturnEmpty_WhenNotFound() {
+  // Arrange
+  when(userQueryService.handle(new GetUserByIdQuery(99L))).thenReturn(Optional.empty());
+
+  // Act
+  var result = iamContextFacade.fetchUserById(99L);
+
+  // Assert
+  assertTrue(result.isEmpty());
+  verify(userQueryService).handle(new GetUserByIdQuery(99L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+17. **fetchUserById_ShouldReturnResource_WhenFound**(IamContextFacadeTest)
+
+Prueba que la fachada transforme correctamente una entidad de usuario interna en un DTO accesible para otros contextos. Valida que los datos sensibles se filtren o mapeen correctamente al formato de salida compartido, respetando los límites de los bounded contexts.
+
+```java
+@Test
+@DisplayName("fetchUserById should return UserResource when user is found")
+void fetchUserById_ShouldReturnResource_WhenFound() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("john@test.com");
+  when(user.getFirstName()).thenReturn("John");
+  when(user.getLastName()).thenReturn("Doe");
+  when(user.getPhone()).thenReturn("999");
+  when(user.getRoles()).thenReturn(Set.of());
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  var result = iamContextFacade.fetchUserById(1L);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(1L, result.get().id());
+  assertEquals("john@test.com", result.get().email());
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+18. **fetchUserIdByEmail_ShouldReturnZero_WhenNotFound**(IamContextFacadeTest)
+
+Valida la búsqueda de ID por email para integración entre contextos, asegurando que retorne 0L si el email no corresponde a ningún usuario registrado.
+
+```java
+@Test
+@DisplayName("fetchUserIdByEmail should return 0L when user is not found")
+void fetchUserIdByEmail_ShouldReturnZero_WhenNotFound() {
+  // Arrange
+  when(userQueryService.handle(new GetUserByEmailQuery("notfound@test.com")))
+      .thenReturn(Optional.empty());
+
+  // Act
+  Long result = iamContextFacade.fetchUserIdByEmail("notfound@test.com");
+
+  // Assert
+  assertEquals(0L, result);
+  verify(userQueryService).handle(new GetUserByEmailQuery("notfound@test.com"));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+19. **fetchUserIdByEmail_ShouldReturnId_WhenFound**(IamContextFacadeTest)
+
+Confirma que la fachada retorne el ID correcto de un usuario buscado por email, permitiendo que otros contextos referencien identidades basándose en el correo electrónico como clave alternativa.
+
+```java
+@Test
+@DisplayName("fetchUserIdByEmail should return user ID when user is found")
+void fetchUserIdByEmail_ShouldReturnId_WhenFound() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(5L);
+  when(userQueryService.handle(new GetUserByEmailQuery("found@test.com")))
+      .thenReturn(Optional.of(user));
+
+  // Act
+  Long result = iamContextFacade.fetchUserIdByEmail("found@test.com");
+
+  // Assert
+  assertEquals(5L, result);
+  verify(userQueryService).handle(new GetUserByEmailQuery("found@test.com"));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+20. **existsUserByEmailAndIdIsNot_ShouldReturnFalse_WhenNotFound**(IamContextFacadeTest)
+
+Prueba una validación compleja de unicidad para actualizaciones de perfil: verifica que retorne falso si el email que se intenta usar no está registrado en ninguna otra cuenta del sistema.
+
+```java
+@Test
+@DisplayName("existsUserByEmailAndIdIsNot should return false when no user found with email")
+void existsUserByEmailAndIdIsNot_ShouldReturnFalse_WhenNotFound() {
+  // Arrange
+  when(userQueryService.handle(new GetUserByEmailQuery("x@test.com")))
+      .thenReturn(Optional.empty());
+
+  // Act
+  boolean result = iamContextFacade.existsUserByEmailAndIdIsNot("x@test.com", 1L);
+
+  // Assert
+  assertFalse(result);
+  verify(userQueryService).handle(new GetUserByEmailQuery("x@test.com"));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+21. **existsUserByEmailAndIdIsNot_ShouldReturnFalse_WhenSameId**(IamContextFacadeTest)
+
+Valida que la fachada reconozca que un email pertenece al mismo usuario que está realizando la actualización, permitiendo que el usuario mantenga su correo actual sin errores de duplicidad.
+
+```java
+@Test
+@DisplayName("existsUserByEmailAndIdIsNot should return false when found user has the same ID")
+void existsUserByEmailAndIdIsNot_ShouldReturnFalse_WhenSameId() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(7L);
+  when(userQueryService.handle(new GetUserByEmailQuery("same@test.com")))
+      .thenReturn(Optional.of(user));
+
+  // Act
+  boolean result = iamContextFacade.existsUserByEmailAndIdIsNot("same@test.com", 7L);
+
+  // Assert
+  assertFalse(result);
+  verify(userQueryService).handle(new GetUserByEmailQuery("same@test.com"));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+22. **existsUserByEmailAndIdIsNot_ShouldReturnTrue_WhenDifferentId**(IamContextFacadeTest)
+
+Confirma que el sistema detecte intentos de usar un email que ya pertenece a otro usuario diferente durante una actualización, protegiendo la integridad de las cuentas.
+
+```java
+@Test
+@DisplayName("existsUserByEmailAndIdIsNot should return true when found user has a different ID")
+void existsUserByEmailAndIdIsNot_ShouldReturnTrue_WhenDifferentId() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(8L);
+  when(userQueryService.handle(new GetUserByEmailQuery("diff@test.com")))
+      .thenReturn(Optional.of(user));
+
+  // Act
+  boolean result = iamContextFacade.existsUserByEmailAndIdIsNot("diff@test.com", 99L);
+
+  // Assert
+  assertTrue(result);
+  verify(userQueryService).handle(new GetUserByEmailQuery("diff@test.com"));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+23. **existsUserById_ShouldReturnTrue_WhenFound**(IamContextFacadeTest)
+
+Verifica de manera sencilla la existencia de un usuario por ID. Es una operación de soporte crítica para validaciones en otros módulos antes de realizar transacciones.
+
+```java
+@Test
+@DisplayName("existsUserById should return true when user is found")
+void existsUserById_ShouldReturnTrue_WhenFound() {
+  // Arrange
+  var user = mock(User.class);
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  boolean result = iamContextFacade.existsUserById(1L);
+
+  // Assert
+  assertTrue(result);
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+24. **fetchEmailByUserId_ShouldReturnEmpty_WhenNotFound**(IamContextFacadeTest)
+
+Valida que si se solicita el email de un usuario inexistente por su ID, la fachada retorne una cadena vacía en lugar de un valor nulo, evitando errores de puntero nulo en los clientes.
+
+```java
+@Test
+@DisplayName("fetchEmailByUserId should return empty string when user is not found")
+void fetchEmailByUserId_ShouldReturnEmpty_WhenNotFound() {
+  // Arrange
+  when(userQueryService.handle(new GetUserByIdQuery(99L))).thenReturn(Optional.empty());
+
+  // Act
+  String result = iamContextFacade.fetchEmailByUserId(99L);
+
+  // Assert
+  assertTrue(result.isBlank());
+  verify(userQueryService).handle(new GetUserByIdQuery(99L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+25. **fetchEmailByUserId_ShouldReturnEmail_WhenFound**(IamContextFacadeTest)
+
+Verifica la recuperación exitosa del correo electrónico de un usuario por su ID, permitiendo que otros sistemas (como el de notificaciones) obtengan el canal de contacto necesario.
+
+```java
+@Test
+@DisplayName("fetchEmailByUserId should return email when user is found")
+void fetchEmailByUserId_ShouldReturnEmail_WhenFound() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getEmail()).thenReturn("user@test.com");
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  String result = iamContextFacade.fetchEmailByUserId(1L);
+
+  // Assert
+  assertEquals("user@test.com", result);
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+26. **existsUserByRole_ShouldReturnTrue_WhenRoleMatches**(IamContextFacadeTest)
+
+Valida que la fachada pueda verificar si un usuario posee un rol específico de forma rápida. Esta prueba asegura que la lógica de comprobación de permisos a través de la ACL sea precisa.
+
+```java
+@Test
+@DisplayName("existsUserByRole should return true when user has the specified role")
+void existsUserByRole_ShouldReturnTrue_WhenRoleMatches() {
+  // Arrange
+  var role = mock(Role.class);
+  var user = mock(User.class);
+  when(role.getStringName()).thenReturn("ROLE_TOURIST");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  boolean result = iamContextFacade.existsUserByRole(1L, "ROLE_TOURIST");
+
+  // Assert
+  assertTrue(result);
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+27. **existsUserByRole_ShouldReturnFalse_WhenRoleDoesNotMatch**(IamContextFacadeTest)
+
+Asegura que el sistema niegue correctamente la posesión de un rol si el usuario no lo tiene asignado, garantizando que las restricciones de seguridad externas basadas en la ACL se apliquen con rigor.
+
+```java
+@Test
+@DisplayName("existsUserByRole should return false when user does not have the specified role")
+void existsUserByRole_ShouldReturnFalse_WhenRoleDoesNotMatch() {
+  // Arrange
+  var role = mock(Role.class);
+  var user = mock(User.class);
+  when(role.getStringName()).thenReturn("ROLE_ADMIN");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  boolean result = iamContextFacade.existsUserByRole(1L, "ROLE_TOURIST");
+
+  // Assert
+  assertFalse(result);
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+
+28. **signIn_ShouldReturnOkAndResource_WhenSuccessful**(AuthenticationControllerTest)
+
+Valida el endpoint de autenticación desde el punto de vista del protocolo HTTP. Verifica que, ante credenciales válidas, el controlador responda con un estado 200 OK y un cuerpo que incluya la información del usuario y su token de acceso.
+
+```java
+@Test
+@DisplayName("signIn should return 200 OK and AuthenticatedUserResource")
+void signIn_ShouldReturnOkAndResource_WhenSuccessful() {
+  // Arrange
+  var signInResource = new SignInResource("john.doe@example.com", "password");
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+  var token = "jwt-token";
+  var pair = new ImmutablePair<>(userSpy, token);
+
+  when(userCommandService.handle(any(SignInCommand.class))).thenReturn(Optional.of(pair));
+
+  // Act
+  ResponseEntity<AuthenticatedUserResource> response =
+      authenticationController.signIn(signInResource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("jwt-token", response.getBody().token());
+
+  verify(userCommandService).handle(any(SignInCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+29. **signIn_ShouldReturnNotFound_WhenFailed**(AuthenticationControllerTest)
+
+Verifica que el controlador de autenticación maneje los fallos de login (por usuario no encontrado o contraseña inválida) retornando un estado 404 Not Found, ocultando detalles técnicos innecesarios para mejorar la seguridad por oscuridad.
+
+```java
+@Test
+@DisplayName("signIn should return 404 Not Found when user does not exist or invalid")
+void signIn_ShouldReturnNotFound_WhenFailed() {
+  // Arrange
+  var signInResource = new SignInResource("john.doe@example.com", "password");
+
+  when(userCommandService.handle(any(SignInCommand.class))).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<AuthenticatedUserResource> response =
+      authenticationController.signIn(signInResource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(userCommandService).handle(any(SignInCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+30. **signUp_ShouldReturnCreatedAndResource_WhenSuccessful**(AuthenticationControllerTest)
+
+Prueba el endpoint de registro, asegurando que ante datos válidos el sistema cree el usuario y retorne un estado 201 Created junto con la representación del nuevo usuario, siguiendo las convenciones de APIs RESTful.
+
+```java
+@Test
+@DisplayName("signUp should return 201 Created and UserResource")
+void signUp_ShouldReturnCreatedAndResource_WhenSuccessful() {
+  // Arrange
+  var signUpResource =
+      new SignUpResource(
+          "john.doe@example.com", "password", "John", "Doe", "123", new ArrayList<>());
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.of(userSpy));
+
+  // Act
+  ResponseEntity<UserResource> response = authenticationController.signUp(signUpResource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("John", response.getBody().firstName());
+
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+31. **signUp_ShouldReturnBadRequest_WhenFailed**(AuthenticationControllerTest)
+
+Valida que si el proceso de registro falla en la capa de aplicación (por ejemplo, por email duplicado), el controlador lo capture y responda con un 400 Bad Request, indicando al cliente que la solicitud no pudo ser procesada.
+
+```java
+@Test
+@DisplayName("signUp should return 400 Bad Request when failed")
+void signUp_ShouldReturnBadRequest_WhenFailed() {
+  // Arrange
+  var signUpResource =
+      new SignUpResource(
+          "john.doe@example.com", "password", "John", "Doe", "123", new ArrayList<>());
+
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<UserResource> response = authenticationController.signUp(signUpResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+32. **getAllRoles_ShouldReturnOkAndListOfRoleResource**(RolesControllerTest)
+
+Esta prueba de controlador verifica que la obtención masiva de roles sea exitosa. Valida que se devuelva un estado 200 OK y que el listado de roles esté correctamente estructurado, permitiendo que el cliente visualice todas las opciones de permisos.
+
+```java
+@Test
+@DisplayName("getAllRoles should return 200 OK and list of RoleResource")
+void getAllRoles_ShouldReturnOkAndListOfRoleResource() {
+  // Arrange
+  var roleSpy = spy(new Role(Roles.ROLE_ADMIN));
+  when(roleSpy.getId()).thenReturn(1L);
+
+  when(roleQueryService.handle(any(GetAllRolesQuery.class))).thenReturn(List.of(roleSpy));
+
+  // Act
+  ResponseEntity<List<RoleResource>> response = rolesController.getAllRoles();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+
+  verify(roleQueryService).handle(any(GetAllRolesQuery.class));
+  verifyNoMoreInteractions(roleQueryService);
+}
+```
+
+33. **getAllUsers_ShouldReturnOkAndListOfUserResource**(UsersControllerTest)
+
+Valida el endpoint de listado de usuarios, asegurando que se retorne un estado HTTP 200 OK y una lista correctamente mapeada de recursos de usuario. Es fundamental para la gestión de usuarios por parte de perfiles administrativos.
+
+```java
+@Test
+@DisplayName("getAllUsers should return 200 OK and list of UserResource")
+void getAllUsers_ShouldReturnOkAndListOfUserResource() {
+  // Arrange
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+  when(userSpy.getRoles()).thenReturn(Set.of());
+
+  when(userQueryService.handle(any(GetAllUsersQuery.class))).thenReturn(List.of(userSpy));
+
+  // Act
+  ResponseEntity<List<UserResource>> response = usersController.getAllUsers();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+
+  verify(userQueryService).handle(any(GetAllUsersQuery.class));
+  verifyNoMoreInteractions(userQueryService);
+}
+```
+
+34. **getUserById_ShouldReturnOkAndUserResource_WhenFound**(UsersControllerTest)
+
+Prueba la obtención de un usuario individual por su identificador. Verifica que si el usuario existe, el controlador responda con 200 OK y la información detallada del perfil solicitado.
+
+```java
+@Test
+@DisplayName("getUserById should return 200 OK and UserResource when found")
+void getUserById_ShouldReturnOkAndUserResource_WhenFound() {
+  // Arrange
+  var expectedId = 1L;
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(expectedId);
+  when(userSpy.getRoles()).thenReturn(Set.of());
+
+  when(userQueryService.handle(any(GetUserByIdQuery.class))).thenReturn(Optional.of(userSpy));
+
+  // Act
+  ResponseEntity<UserResource> response = usersController.getUserById(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("John", response.getBody().firstName());
+
+  verify(userQueryService).handle(any(GetUserByIdQuery.class));
+  verifyNoMoreInteractions(userQueryService);
+}
+```
+
+35. **getUserById_ShouldReturnNotFound_WhenNotFound**(UsersControllerTest)
+
+Verifica que el controlador responda correctamente (404 Not Found) cuando se intenta acceder a un usuario que no existe en el sistema, cumpliendo con los estándares de diseño de interfaces REST.
+
+```java
+@Test
+@DisplayName("getUserById should return 404 Not Found when not found")
+void getUserById_ShouldReturnNotFound_WhenNotFound() {
+  // Arrange
+  var expectedId = 1L;
+
+  when(userQueryService.handle(any(GetUserByIdQuery.class))).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<UserResource> response = usersController.getUserById(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(userQueryService).handle(any(GetUserByIdQuery.class));
+  verifyNoMoreInteractions(userQueryService);
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+
+36. **toResourceFromEntity_ShouldMapCorrectly**(AuthenticatedUserResourceFromEntityAssemblerTest)
+
+Esta prueba de mapeo asegura que la transformación de la entidad interna de usuario y su token a un recurso de salida para el cliente se realice sin pérdida de datos, incluyendo la conversión de roles a cadenas de texto planas.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map User and token to AuthenticatedUserResource")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var user = mock(User.class);
+  var role = mock(Role.class);
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("user@example.com");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(role.getStringName()).thenReturn("ROLE_TOURIST");
+
+  var token = "jwt-token-123";
+
+  // Act
+  var resource = AuthenticatedUserResourceFromEntityAssembler.toResourceFromEntity(user, token);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("user@example.com", resource.email());
+  assertEquals("jwt-token-123", resource.token());
+  assertEquals(1, resource.roles().size());
+  assertTrue(resource.roles().contains("ROLE_TOURIST"));
+}
+```
+
+37. **toResourceFromEntity_ShouldMapRoleToRoleResource**(RoleResourceFromEntityAssemblerTest)
+
+Valida el mapeo simple de la entidad `Role` a su recurso de salida `RoleResource`, garantizando que la información del rol sea consistente a través de las capas.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map Role to RoleResource correctly")
+void toResourceFromEntity_ShouldMapRoleToRoleResource() {
+  // Arrange
+  var role = mock(Role.class);
+  when(role.getId()).thenReturn(1L);
+  when(role.getStringName()).thenReturn("ROLE_ADMIN");
+
+  // Act
+  var resource = RoleResourceFromEntityAssembler.toResourceFromEntity(role);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("ROLE_ADMIN", resource.name());
+}
+```
+
+38. **toCommandFromResource_ShouldMapSignInResourceToSignInCommand**(SignInCommandFromResourceAssemblerTest)
+
+Prueba la transformación de la entrada del usuario (recurso de inicio de sesión) hacia el comando interno de la aplicación. Es crucial para que los datos lleguen correctamente a los servicios de autenticación.
+
+```java
+@Test
+@DisplayName("toCommandFromResource should map SignInResource to SignInCommand correctly")
+void toCommandFromResource_ShouldMapSignInResourceToSignInCommand() {
+  // Arrange
+  var resource = new SignInResource("user@example.com", "password");
+
+  // Act
+  var command = SignInCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("user@example.com", command.email());
+  assertEquals("password", command.password());
+}
+```
+
+39. **toCommandFromResource_ShouldMapWithRoles**(SignUpCommandFromResourceAssemblerTest)
+
+Valida que el proceso de registro mapee correctamente la lista de roles proporcionada por el cliente hacia el comando interno de registro, permitiendo la creación de usuarios con perfiles específicos desde la API.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map SignUpResource to SignUpCommand correctly when roles are"
+        + " provided")
+void toCommandFromResource_ShouldMapWithRoles() {
+  // Arrange
+  var resource =
+      new SignUpResource(
+          "user@example.com", "password", "John", "Doe", "123", List.of("ROLE_TOURIST"));
+
+  // Act
+  var command = SignUpCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("user@example.com", command.email());
+  assertEquals("password", command.password());
+  assertEquals("John", command.firstName());
+  assertEquals("Doe", command.lastName());
+  assertEquals("123", command.phone());
+  assertEquals(1, command.roles().size());
+}
+```
+
+40. **toCommandFromResource_ShouldMapWithNullRoles**(SignUpCommandFromResourceAssemblerTest)
+
+Verifica que el ensamblador maneje correctamente los casos donde el cliente no proporciona roles, inicializando una lista vacía de forma segura para evitar excepciones de puntero nulo en la capa de aplicación.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map SignUpResource to SignUpCommand correctly when roles are"
+        + " null")
+void toCommandFromResource_ShouldMapWithNullRoles() {
+  // Arrange
+  var resource = new SignUpResource("user@example.com", "password", "John", "Doe", "123", null);
+
+  // Act
+  var command = SignUpCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertTrue(command.roles().isEmpty());
+}
+```
+
+41. **toResourceFromEntity_ShouldMapCorrectly**(UserResourceFromEntityAssemblerTest)
+
+Esta prueba final de mapeo valida la transformación general de la entidad `User` a su representación pública `UserResource`. Asegura que todos los campos del perfil (nombres, apellidos, teléfono) se transfieran fielmente para su visualización en el frontend.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map User to UserResource correctly")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var user = mock(User.class);
+  var role = mock(Role.class);
+
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("user@example.com");
+  when(user.getFirstName()).thenReturn("John");
+  when(user.getLastName()).thenReturn("Doe");
+  when(user.getPhone()).thenReturn("123");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(role.getStringName()).thenReturn("ROLE_TOURIST");
+
+  // Act
+  var resource = UserResourceFromEntityAssembler.toResourceFromEntity(user);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("user@example.com", resource.email());
+  assertEquals("John", resource.firstName());
+  assertEquals("Doe", resource.lastName());
+  assertEquals("123", resource.phone());
+  assertEquals(1, resource.roles().size());
+  assertEquals("ROLE_TOURIST", resource.roles().get(0));
+}
+```
+
+
+
+#### Geolocation Bounded Context
+
+##### Application Layer: Command Services
+
+1. **handle_CreateDestinationCommand_ShouldReturnId_WhenCreatedSuccessfully**(DestinationCommandServiceImplTest)
+
+Esta prueba valida la creación exitosa de un destino turístico. Verifica que el servicio compruebe la unicidad del nombre del destino antes de proceder con el guardado en el repositorio. Asegura que el flujo de persistencia se active correctamente cuando los datos son válidos y no hay duplicados.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should return destination ID when created successfully")
+void handle_CreateDestinationCommand_ShouldReturnId_WhenCreatedSuccessfully() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(false);
+
+  // Act
+  destinationCommandService.handle(command);
+
+  // Assert
+  verify(destinationRepository).existsByName(name);
+  verify(destinationRepository).save(any(Destination.class));
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+2. **handle_CreateDestinationCommand_ShouldThrowException_WhenNameAlreadyExists**(DestinationCommandServiceImplTest)
+
+Asegura que el sistema no permita la creación de destinos duplicados con el mismo nombre. Valida que se lance una `IllegalArgumentException` cuando el repositorio detecta que el nombre ya está registrado, protegiendo la integridad de los datos geográficos.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should throw IllegalArgumentException when name already"
+        + " exists")
+void handle_CreateDestinationCommand_ShouldThrowException_WhenNameAlreadyExists() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(true);
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Destination with name " + name + " already exists");
+
+  verify(destinationRepository).existsByName(name);
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+3. **handle_CreateDestinationCommand_ShouldThrowException_WhenSaveFails**(DestinationCommandServiceImplTest)
+
+Verifica el manejo de errores robusto cuando ocurre un fallo técnico inesperado durante la persistencia (como un error de base de datos). Valida que el servicio capture la excepción original y la relance como una `IllegalArgumentException` informativa para las capas superiores.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should throw IllegalArgumentException when save fails")
+void handle_CreateDestinationCommand_ShouldThrowException_WhenSaveFails() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(false);
+  when(destinationRepository.save(any(Destination.class)))
+      .thenThrow(new RuntimeException("Database error"));
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Error while saving profile: Database error");
+
+  verify(destinationRepository).existsByName(name);
+  verify(destinationRepository).save(any(Destination.class));
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+4. **handle_UpdateDestinationCommand_ShouldReturnUpdatedDestination_WhenSuccessful**(DestinationCommandServiceImplTest)
+
+Prueba el flujo completo de actualización de un destino existente. Verifica que el sistema valide que el nuevo nombre no esté siendo usado por otro destino, recupere la entidad actual, actualice sus atributos y guarde los cambios. Es vital para mantener la información de los destinos al día.
+
+```java
+@Test
+@DisplayName("handle(UpdateDestinationCommand) should return updated destination when successful")
+void handle_UpdateDestinationCommand_ShouldReturnUpdatedDestination_WhenSuccessful() {
+  // Arrange
+  var command =
+      new UpdateDestinationCommand(
+          1L, "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+  var existingDestination = mock(Destination.class);
+
+  when(destinationRepository.existsByNameAndIdIsNot(name, command.destinationId()))
+      .thenReturn(false);
+  when(destinationRepository.findById(command.destinationId()))
+      .thenReturn(Optional.of(existingDestination));
+  when(destinationRepository.save(existingDestination)).thenReturn(existingDestination);
+
+  // Act
+  var result = destinationCommandService.handle(command);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(existingDestination, result.get());
+
+  verify(destinationRepository).existsByNameAndIdIsNot(name, command.destinationId());
+  verify(destinationRepository).findById(command.destinationId());
+  verify(existingDestination)
+      .updateInformation(
+          command.name(),
+          command.address(),
+          command.district(),
+          command.city(),
+          command.state(),
+          command.country());
+  verify(destinationRepository).save(existingDestination);
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+5. **handle_UpdateDestinationCommand_ShouldThrowException_WhenNameExistsForAnotherId**(DestinationCommandServiceImplTest)
+
+Valida la restricción de unicidad de nombres durante las actualizaciones. Asegura que no se pueda renombrar un destino con un nombre que ya pertenece a otra entidad diferente, evitando conflictos en la base de datos geográfica.
+
+```java
+@Test
+@DisplayName(
+    "handle(UpdateDestinationCommand) should throw IllegalArgumentException when name already"
+        + " exists for another ID")
+void handle_UpdateDestinationCommand_ShouldThrowException_WhenNameExistsForAnotherId() {
+  // Arrange
+  var command =
+      new UpdateDestinationCommand(
+          1L, "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByNameAndIdIsNot(name, command.destinationId()))
+      .thenReturn(true);
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Destination with name " + name + " already exists");
+
+  verify(destinationRepository).existsByNameAndIdIsNot(name, command.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+6. **handle_UpdateDestinationCommand_ShouldThrowException_WhenIdDoesNotExist**(DestinationCommandServiceImplTest)
+
+Verifica que el servicio lance una excepción si se intenta actualizar un destino cuyo identificador no se encuentra en el sistema. Esta validación previene inconsistencias y asegura que solo se modifiquen registros válidos.
+
+```java
+@Test
+@DisplayName(
+    "handle(UpdateDestinationCommand) should throw IllegalArgumentException when ID does not"
+        + " exist")
+void handle_UpdateDestinationCommand_ShouldThrowException_WhenIdDoesNotExist() {
+  // Arrange
+  var command =
+      new UpdateDestinationCommand(
+          1L, "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByNameAndIdIsNot(name, command.destinationId()))
+      .thenReturn(false);
+  when(destinationRepository.findById(command.destinationId())).thenReturn(Optional.empty());
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Destination with id 1 does not exist");
+
+  verify(destinationRepository).existsByNameAndIdIsNot(name, command.destinationId());
+  verify(destinationRepository).findById(command.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+7. **handle_DeleteDestinationCommand_ShouldDelete_WhenSuccessful**(DestinationCommandServiceImplTest)
+
+Valida la eliminación lógica de un destino. Verifica que el sistema compruebe la existencia del destino antes de llamar al método de eliminación del repositorio, asegurando un proceso de borrado seguro y controlado.
+
+```java
+@Test
+@DisplayName("handle(DeleteDestinationCommand) should delete destination when successful")
+void handle_DeleteDestinationCommand_ShouldDelete_WhenSuccessful() {
+  // Arrange
+  var command = new DeleteDestinationCommand(1L);
+
+  when(destinationRepository.existsById(command.destinationId())).thenReturn(true);
+
+  // Act
+  destinationCommandService.handle(command);
+
+  // Assert
+  verify(destinationRepository).existsById(command.destinationId());
+  verify(destinationRepository).deleteById(command.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+8. **handle_DeleteDestinationCommand_ShouldThrowException_WhenIdDoesNotExist**(DestinationCommandServiceImplTest)
+
+Esta prueba asegura que el sistema informe adecuadamente cuando se intenta borrar un destino que no existe, evitando operaciones de eliminación innecesarias o erróneas en el repositorio.
+
+```java
+@Test
+@DisplayName(
+    "handle(DeleteDestinationCommand) should throw IllegalArgumentException when ID does not"
+        + " exist")
+void handle_DeleteDestinationCommand_ShouldThrowException_WhenIdDoesNotExist() {
+  // Arrange
+  var command = new DeleteDestinationCommand(1L);
+
+  when(destinationRepository.existsById(command.destinationId())).thenReturn(false);
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Destination with id 1 does not exist");
+
+  verify(destinationRepository).existsById(command.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+9. **handle_DeleteDestinationCommand_ShouldThrowException_WhenDeleteFails**(DestinationCommandServiceImplTest)
+
+Verifica el manejo de excepciones durante la eliminación. Valida que si el repositorio falla al borrar (por ejemplo, debido a restricciones de integridad referencial), el servicio capture el error y proporcione una respuesta clara y manejable.
+
+```java
+@Test
+@DisplayName(
+    "handle(DeleteDestinationCommand) should throw IllegalArgumentException when delete fails")
+void handle_DeleteDestinationCommand_ShouldThrowException_WhenDeleteFails() {
+  // Arrange
+  var command = new DeleteDestinationCommand(1L);
+
+  when(destinationRepository.existsById(command.destinationId())).thenReturn(true);
+  doThrow(new RuntimeException("Database error"))
+      .when(destinationRepository)
+      .deleteById(command.destinationId());
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Error while deleting destination: Database error");
+
+  verify(destinationRepository).existsById(command.destinationId());
+  verify(destinationRepository).deleteById(command.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+##### Application Layer: Query Services
+
+10. **handle_GetAllDestinationsQuery_ShouldReturnListOfDestinations**(DestinationQueryServiceImplTest)
+
+Valida la recuperación masiva de todos los destinos turísticos registrados. Esta consulta es fundamental para que los viajeros puedan explorar todas las opciones de destinos disponibles en la plataforma.
+
+```java
+@Test
+@DisplayName("handle(GetAllDestinationsQuery) should return list of destinations")
+void handle_GetAllDestinationsQuery_ShouldReturnListOfDestinations() {
+  // Arrange
+  var query = new GetAllDestinationsQuery();
+  var destinationMock = mock(Destination.class);
+  var expectedDestinations = List.of(destinationMock);
+
+  when(destinationRepository.findAll()).thenReturn(expectedDestinations);
+
+  // Act
+  var result = destinationQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedDestinations, result);
+
+  verify(destinationRepository).findAll();
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+11. **handle_GetDestinationByDestinationNameQuery_ShouldReturnDestination_WhenFound**(DestinationQueryServiceImplTest)
+
+Prueba la búsqueda de un destino por su nombre exacto. Valida que el servicio mapee correctamente el nombre del destino a su objeto de valor `DestinationName` y recupere la información correspondiente del repositorio.
+
+```java
+@Test
+@DisplayName("handle(GetDestinationByDestinationNameQuery) should return destination when found")
+void handle_GetDestinationByDestinationNameQuery_ShouldReturnDestination_WhenFound() {
+  // Arrange
+  var query = new GetDestinationByDestinationNameQuery("Paris");
+  var destinationName = new DestinationName(query.name());
+  var destinationMock = mock(Destination.class);
+
+  when(destinationRepository.findByName(destinationName))
+      .thenReturn(Optional.of(destinationMock));
+
+  // Act
+  var result = destinationQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(destinationMock, result.get());
+
+  verify(destinationRepository).findByName(destinationName);
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+12. **handle_GetDestinationByIdQuery_ShouldReturnDestination_WhenFound**(DestinationQueryServiceImplTest)
+
+Verifica la recuperación de un destino mediante su identificador único. Esta operación es crucial para mostrar la vista detallada de un destino seleccionado por el usuario en la aplicación.
+
+```java
+@Test
+@DisplayName("handle(GetDestinationByIdQuery) should return destination when found")
+void handle_GetDestinationByIdQuery_ShouldReturnDestination_WhenFound() {
+  // Arrange
+  var query = new GetDestinationByIdQuery(1L);
+  var destinationMock = mock(Destination.class);
+
+  when(destinationRepository.findById(query.destinationId()))
+      .thenReturn(Optional.of(destinationMock));
+
+  // Act
+  var result = destinationQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(destinationMock, result.get());
+
+  verify(destinationRepository).findById(query.destinationId());
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+
+13. **createDestination_ShouldReturnCreatedAndResource_WhenSuccessful**(DestinationsControllerTest)
+
+Valida el endpoint de creación de destinos. Verifica que ante una solicitud válida, el controlador coordine con los servicios de comando y consulta para retornar un estado 201 Created y el recurso del destino recién creado, incluyendo su ID generado.
+
+```java
+@Test
+@DisplayName(
+    "createDestination should return 201 Created and DestinationResource when successful")
+void createDestination_ShouldReturnCreatedAndResource_WhenSuccessful() {
+  // Arrange
+  var createResource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var expectedId = 1L;
+  var destinationSpy =
+      spy(
+          new Destination(
+              "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France"));
+  when(destinationSpy.getId()).thenReturn(expectedId);
+
+  when(destinationCommandService.handle(any(CreateDestinationCommand.class)))
+      .thenReturn(expectedId);
+  when(destinationQueryService.handle(any(GetDestinationByIdQuery.class)))
+      .thenReturn(Optional.of(destinationSpy));
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.createDestination(createResource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("Paris", response.getBody().name());
+
+  verify(destinationCommandService).handle(any(CreateDestinationCommand.class));
+  verify(destinationQueryService).handle(any(GetDestinationByIdQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+14. **createDestination_ShouldReturnBadRequest_WhenCreationFailed**(DestinationsControllerTest)
+
+Verifica que si la creación del destino falla en la lógica de negocio (por ejemplo, nombre duplicado), el controlador responda con un 400 Bad Request, informando al cliente que la operación no pudo completarse.
+
+```java
+@Test
+@DisplayName("createDestination should return 400 Bad Request when creation fails")
+void createDestination_ShouldReturnBadRequest_WhenCreationFailed() {
+  // Arrange
+  var createResource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  when(destinationCommandService.handle(any(CreateDestinationCommand.class))).thenReturn(0L);
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.createDestination(createResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(destinationCommandService).handle(any(CreateDestinationCommand.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+15. **getAllDestinations_ShouldReturnOkAndList**(DestinationsControllerTest)
+
+Prueba el listado público de destinos a través de la API. Asegura que el controlador transforme correctamente la lista de entidades en una lista de recursos DTO y retorne un estado 200 OK.
+
+```java
+@Test
+@DisplayName("getAllDestinations should return 200 OK and list of DestinationResources")
+void getAllDestinations_ShouldReturnOkAndList() {
+  // Arrange
+  var destinationSpy =
+      spy(
+          new Destination(
+              "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France"));
+  when(destinationSpy.getId()).thenReturn(1L);
+
+  when(destinationQueryService.handle(any(GetAllDestinationsQuery.class)))
+      .thenReturn(List.of(destinationSpy));
+
+  // Act
+  ResponseEntity<List<DestinationResource>> response =
+      destinationsController.getAllDestinations();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+  assertEquals("Paris", response.getBody().get(0).name());
+
+  verify(destinationQueryService).handle(any(GetAllDestinationsQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+16. **getDestinationById_ShouldReturnOkAndResource_WhenFound**(DestinationsControllerTest)
+
+Valida la obtención de un destino específico por ID vía REST. Verifica que el controlador retorne la información completa del destino con un estado 200 OK cuando el identificador es válido y existe.
+
+```java
+@Test
+@DisplayName("getDestinationById should return 200 OK and DestinationResource when found")
+void getDestinationById_ShouldReturnOkAndResource_WhenFound() {
+  // Arrange
+  var expectedId = 1L;
+  var destinationSpy =
+      spy(
+          new Destination(
+              "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France"));
+  when(destinationSpy.getId()).thenReturn(expectedId);
+
+  when(destinationQueryService.handle(any(GetDestinationByIdQuery.class)))
+      .thenReturn(Optional.of(destinationSpy));
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.getDestinationById(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("Paris", response.getBody().name());
+
+  verify(destinationQueryService).handle(any(GetDestinationByIdQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+17. **getDestinationById_ShouldReturnBadRequest_WhenNotFound**(DestinationsControllerTest)
+
+Asegura que el controlador responda con 400 Bad Request si se solicita un destino que no existe, manteniendo la consistencia en el manejo de recursos no encontrados en el bounded context de geolocalización.
+
+```java
+@Test
+@DisplayName("getDestinationById should return 400 Bad Request when not found")
+void getDestinationById_ShouldReturnBadRequest_WhenNotFound() {
+  // Arrange
+  var expectedId = 1L;
+
+  when(destinationQueryService.handle(any(GetDestinationByIdQuery.class)))
+      .thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.getDestinationById(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(destinationQueryService).handle(any(GetDestinationByIdQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+18. **updateDestination_ShouldReturnOkAndUpdatedResource**(DestinationsControllerTest)
+
+Valida el endpoint de actualización. Verifica que ante una solicitud de cambio válida, el controlador retorne el recurso actualizado con un estado 200 OK, confirmando al cliente que los cambios se aplicaron con éxito.
+
+```java
+@Test
+@DisplayName("updateDestination should return 200 OK and updated DestinationResource")
+void updateDestination_ShouldReturnOkAndUpdatedResource() {
+  // Arrange
+  var expectedId = 1L;
+  var resource =
+      new DestinationResource(
+          expectedId, "London", "456 Street", "District 2", "London", "England", "UK");
+  var destinationSpy =
+      spy(new Destination("London", "456 Street", "District 2", "London", "England", "UK"));
+  when(destinationSpy.getId()).thenReturn(expectedId);
+
+  when(destinationCommandService.handle(any(UpdateDestinationCommand.class)))
+      .thenReturn(Optional.of(destinationSpy));
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.updateDestination(expectedId, resource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("London", response.getBody().name());
+
+  verify(destinationCommandService).handle(any(UpdateDestinationCommand.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+19. **deleteDestination_ShouldReturnNoContent**(DestinationsControllerTest)
+
+Prueba la eliminación de un destino a través de la API. Verifica que el controlador retorne un estado 204 No Content tras procesar exitosamente la solicitud de borrado, indicando que la operación se realizó correctamente y no hay cuerpo de respuesta.
+
+```java
+@Test
+@DisplayName("deleteDestination should return 204 No Content")
+void deleteDestination_ShouldReturnNoContent() {
+  // Arrange
+  var expectedId = 1L;
+  doNothing().when(destinationCommandService).handle(any(DeleteDestinationCommand.class));
+
+  // Act
+  ResponseEntity<?> response = destinationsController.deleteDestination(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+
+  verify(destinationCommandService).handle(any(DeleteDestinationCommand.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+
+20. **toCommandFromResource_ShouldMapCorrectly**(CreateDestinationCommandFromResourceAssemblerTest)
+
+Verifica la transformación precisa del recurso de entrada para creación hacia el comando interno. Valida que todos los campos geográficos (dirección, distrito, ciudad, etc.) se mapeen correctamente para su procesamiento en la capa de aplicación.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map CreateDestinationResource to CreateDestinationCommand"
+        + " correctly")
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Arrange
+  var resource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  // Act
+  var command = CreateDestinationCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("Paris", command.name());
+  assertEquals("123 Street", command.address());
+  assertEquals("District 1", command.district());
+  assertEquals("Paris", command.city());
+  assertEquals("Ile-de-France", command.state());
+  assertEquals("France", command.country());
+}
+```
+
+21. **toResourceFromEntity_ShouldMapCorrectly**(DestinationResourceFromEntityAssemblerTest)
+
+Esta prueba asegura que la entidad `Destination` (compuesta por múltiples objetos de valor) sea aplanada y mapeada correctamente al recurso de salida `DestinationResource`. Garantiza que los datos mostrados al usuario sean coherentes con el modelo de dominio.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map Destination to DestinationResource correctly")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var destination = mock(Destination.class);
+  when(destination.getId()).thenReturn(1L);
+  when(destination.getName()).thenReturn(new DestinationName("Paris"));
+  when(destination.getAddress()).thenReturn(new DestinationAddress("123 Street"));
+  when(destination.getDistrict()).thenReturn(new District("District 1"));
+  when(destination.getCity()).thenReturn(new City("Paris"));
+  when(destination.getState()).thenReturn(new State("Ile-de-France"));
+  when(destination.getCountry()).thenReturn(new Country("France"));
+
+  // Act
+  var resource = DestinationResourceFromEntityAssembler.toResourceFromEntity(destination);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("Paris", resource.name());
+  assertEquals("123 Street", resource.address());
+  assertEquals("District 1", resource.district());
+  assertEquals("Paris", resource.city());
+  assertEquals("Ile-de-France", resource.state());
+  assertEquals("France", resource.country());
+}
+```
+
+22. **toCommandFromResource_ShouldMapCorrectly**(UpdateDestinationCommandFromResourceAssemblerTest)
+
+Valida el mapeo del recurso de actualización y su ID hacia el comando interno. Asegura que la identidad del destino y sus nuevos atributos se mantengan vinculados correctamente durante la transformación, permitiendo una actualización precisa.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map ID and DestinationResource to UpdateDestinationCommand"
+        + " correctly")
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Arrange
+  var resource =
+      new DestinationResource(
+          1L, "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  // Act
+  var command = UpdateDestinationCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals(1L, command.destinationId());
+  assertEquals("Paris", command.name());
+  assertEquals("123 Street", command.address());
+  assertEquals("District 1", command.district());
+  assertEquals("Paris", command.city());
+  assertEquals("Ile-de-France", command.state());
+  assertEquals("France", command.country());
+}
+```
+
+
+#### Profiles Bounded Context
+
+##### Domain Layer: Aggregates & Entities
+![CartTest](assets/CartTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Profiles._
+
+1. **testCartConstructorAndGetters**(CartTest)
+
+Verifica que el constructor de la entidad `Cart` inicialice correctamente el `UserId` y que la lista de items comience vacía.
+
+```java
+@Test
+void testCartConstructorAndGetters() {
+    // Arrange
+    UserId userId = new UserId(1L);
+
+    // Act
+    Cart cart = new Cart(userId);
+
+    // Assert
+    assertEquals(userId, cart.getUserId());
+    assertTrue(cart.getItems().isEmpty());
+}
+```
+
+2. **testAddItem_Successfully**(CartTest)
+
+Valida que se pueda añadir un item al carrito y que se establezca la relación bidireccional correctamente invocando `setCart`.
+
+```java
+@Test
+void testAddItem_Successfully() {
+    // Arrange
+    Cart cart = new Cart(new UserId(1L));
+
+    // Act
+    cart.addItem(cartItem);
+
+    // Assert
+    assertEquals(1, cart.getItems().size());
+    assertEquals(cartItem, cart.getItems().get(0));
+    verify(cartItem).setCart(cart);
+}
+```
+
+3. **testAddItem_ThrowsExceptionWhenItemAlreadyExists**(CartTest)
+
+Asegura que no se permitan duplicados de la misma disponibilidad (`AvailabilityId`) dentro de un mismo carrito, lanzando una excepción de estado ilegal.
+
+```java
+@Test
+void testAddItem_ThrowsExceptionWhenItemAlreadyExists() {
+    // Arrange
+    Cart cart = new Cart(new UserId(1L));
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    when(cartItem.getAvailabilityId()).thenReturn(availabilityId);
+    when(anotherCartItem.getAvailabilityId()).thenReturn(availabilityId);
+    cart.addItem(cartItem);
+
+    // Act & Assert
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, () -> cart.addItem(anotherCartItem));
+    assertTrue(exception.getMessage().contains("already in the cart"));
+    assertEquals(1, cart.getItems().size());
+}
+```
+
+4. **testRemoveItem_Successfully**(CartTest)
+
+Prueba la eliminación de un item específico del carrito utilizando su `AvailabilityId` y verifica que se limpie la referencia al carrito en el item.
+
+```java
+@Test
+void testRemoveItem_Successfully() {
+    // Arrange
+    Cart cart = new Cart(new UserId(1L));
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    when(cartItem.getAvailabilityId()).thenReturn(availabilityId);
+    cart.addItem(cartItem);
+
+    // Act
+    cart.removeItem(availabilityId);
+
+    // Assert
+    assertTrue(cart.getItems().isEmpty());
+    verify(cartItem).setCart(null);
+}
+```
+
+5. **testRemoveItem_ThrowsExceptionWhenItemNotFound**(CartTest)
+
+Verifica que el sistema lance una excepción si se intenta eliminar un item que no existe en la lista actual del carrito.
+
+```java
+@Test
+void testRemoveItem_ThrowsExceptionWhenItemNotFound() {
+    // Arrange
+    Cart cart = new Cart(new UserId(1L));
+    AvailabilityId availabilityIdInCart = new AvailabilityId(10L);
+    AvailabilityId availabilityIdToRemove = new AvailabilityId(20L);
+    when(cartItem.getAvailabilityId()).thenReturn(availabilityIdInCart);
+    cart.addItem(cartItem);
+
+    // Act & Assert
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, () -> cart.removeItem(availabilityIdToRemove));
+    assertTrue(exception.getMessage().contains("not found in cart"));
+    assertEquals(1, cart.getItems().size());
+}
+```
+
+6. **testFavoriteConstructorAndGetters**(FavoriteTest)
+
+Valida que el agregado `Favorite` almacene correctamente las referencias al usuario y a la experiencia marcada como favorita.
+
+```java
+@Test
+void testFavoriteConstructorAndGetters() {
+    // Act
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    // Assert
+    assertEquals(userId, favorite.getUserId());
+    assertEquals(experienceId, favorite.getExperienceId());
+}
+```
+
+7. **testBelongsTo_ReturnsTrueForMatchingUserId**(FavoriteTest)
+
+Comprueba que el método de lógica de dominio `belongsTo` identifique correctamente al propietario del favorito.
+
+```java
+@Test
+void testBelongsTo_ReturnsTrueForMatchingUserId() {
+    // Arrange
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    // Act & Assert
+    assertTrue(favorite.belongsTo(userId));
+}
+```
+
+8. **testBelongsTo_ReturnsFalseForDifferentUserId**(FavoriteTest)
+
+Asegura que el método `belongsTo` retorne falso cuando se compara con un identificador de usuario distinto al propietario.
+
+```java
+@Test
+void testBelongsTo_ReturnsFalseForDifferentUserId() {
+    // Arrange
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    // Act & Assert
+    assertFalse(favorite.belongsTo(otherUserId));
+}
+```
+
+9. **testReviewConstructorAndGetters**(ReviewTest)
+
+Verifica la correcta inicialización de una reseña, incluyendo el usuario, la experiencia, la calificación y el comentario textual.
+
+```java
+@Test
+void testReviewConstructorAndGetters() {
+    // Arrange
+    String comment = "Great experience!";
+
+    // Act
+    Review review = new Review(userId, experienceId, rating, comment);
+
+    // Assert
+    assertEquals(userId, review.getUserId());
+    assertEquals(experienceId, review.getExperienceId());
+    assertEquals(rating, review.getRating());
+    assertEquals(comment, review.getComment());
+}
+```
+
+10. **testUpdateRating_Successfully**(ReviewTest)
+
+Valida que se pueda actualizar la calificación de una reseña existente.
+
+```java
+@Test
+void testUpdateRating_Successfully() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+
+    // Act
+    review.updateRating(newRating);
+
+    // Assert
+    assertEquals(newRating, review.getRating());
+}
+```
+
+11. **testUpdateRating_ThrowsExceptionWhenNull**(ReviewTest)
+
+Impide que una reseña tenga una calificación nula lanzando la excepción correspondiente.
+
+```java
+@Test
+void testUpdateRating_ThrowsExceptionWhenNull() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> review.updateRating(null));
+    assertTrue(exception.getMessage().contains("Rating cannot be null"));
+}
+```
+
+12. **testUpdateComment_Successfully**(ReviewTest)
+
+Prueba la actualización del texto de un comentario en una reseña.
+
+```java
+@Test
+void testUpdateComment_Successfully() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+    String newComment = "Excellent!";
+
+    // Act
+    review.updateComment(newComment);
+
+    // Assert
+    assertEquals(newComment, review.getComment());
+}
+```
+
+13. **testUpdateComment_ThrowsExceptionWhenNull**(ReviewTest)
+
+Valida que el comentario de una reseña no pueda ser nulo.
+
+```java
+@Test
+void testUpdateComment_ThrowsExceptionWhenNull() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> review.updateComment(null));
+    assertTrue(exception.getMessage().contains("Comment cannot be null or empty"));
+}
+```
+
+14. **testUpdateComment_ThrowsExceptionWhenEmpty**(ReviewTest)
+
+Valida que el comentario de una reseña no pueda estar vacío o compuesto solo por espacios en blanco.
+
+```java
+@Test
+void testUpdateComment_ThrowsExceptionWhenEmpty() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> review.updateComment("   "));
+    assertTrue(exception.getMessage().contains("Comment cannot be null or empty"));
+}
+```
+
+15. **testCartItemConstructorAndGetters**(CartItemTest)
+
+Verifica que la entidad `CartItem` (hijo del agregado Cart) mapee correctamente sus Value Objects internos y comience con referencias nulas a su ID (antes de persistir) y a su carrito padre.
+
+```java
+@Test
+void testCartItemConstructorAndGetters() {
+    // Act
+    CartItem cartItem = new CartItem(availabilityId, quantity, price);
+
+    // Assert
+    assertEquals(availabilityId, cartItem.getAvailabilityId());
+    assertEquals(quantity, cartItem.getQuantity());
+    assertEquals(price, cartItem.getPrice());
+    assertNull(cartItem.getId());
+    assertNull(cartItem.getCart());
+}
+```
+
+16. **testCartItemSetters**(CartItemTest)
+
+Valida la capacidad de modificar la cantidad de un item y asignar su pertenencia a un carrito.
+
+```java
+@Test
+void testCartItemSetters() {
+    // Arrange
+    CartItem cartItem = new CartItem(availabilityId, quantity, price);
+
+    // Act
+    cartItem.setQuantity(newQuantity);
+    cartItem.setCart(newCart);
+
+    // Assert
+    assertEquals(newQuantity, cartItem.getQuantity());
+    assertEquals(newCart, cartItem.getCart());
+}
+```
+
+##### Application Layer: Command Services
+![CartCommandServiceImplTest](assets/CartCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Profiles._
+
+17. **testHandle_CreateCartSuccessfully**(CartCommandServiceImplTest)
+
+Verifica que el servicio cree un carrito exitosamente si el usuario existe en el contexto de IAM.
+
+```java
+@Test
+void testHandle_CreateCartSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    CreateCartCommand command = new CreateCartCommand(userId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(cartRepository.save(any(Cart.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    cartCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(cartRepository, times(1)).save(any(Cart.class));
+}
+```
+
+18. **testHandle_CreateCart_UserNotFound_ThrowsException**(CartCommandServiceImplTest)
+
+Asegura que no se cree un carrito para un usuario inexistente, validando la integridad entre contextos.
+
+```java
+@Test
+void testHandle_CreateCart_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    CreateCartCommand command = new CreateCartCommand(userId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              cartCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("not found"));
+    verify(cartRepository, never()).save(any(Cart.class));
+}
+```
+
+19. **testHandle_ClearCartSuccessfully**(CartCommandServiceImplTest)
+
+Prueba la limpieza completa de todos los items dentro de un carrito de usuario.
+
+```java
+@Test
+void testHandle_ClearCartSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ClearCartCommand command = new ClearCartCommand(userId);
+    Cart cart = new Cart(userId);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(cart));
+    when(cartRepository.save(any(Cart.class))).thenReturn(cart);
+
+    // Act
+    Optional<Cart> result = cartCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertTrue(result.get().getItems().isEmpty());
+    verify(cartRepository, times(1)).findByUserId(userId);
+    verify(cartRepository, times(1)).save(cart);
+}
+```
+
+20. **testHandle_AddCartItemSuccessfully**(CartCommandServiceImplTest)
+
+Valida la adición de un nuevo item al carrito a través del servicio de aplicación.
+
+```java
+@Test
+void testHandle_AddCartItemSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    Quantity quantity = new Quantity(2);
+    AddCartItemCommand command = new AddCartItemCommand(userId, availabilityId, quantity);
+    Cart cart = new Cart(userId);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(cart));
+    when(cartRepository.save(any(Cart.class))).thenReturn(cart);
+
+    // Act
+    Optional<CartItem> result = cartCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(availabilityId, result.get().getAvailabilityId());
+    assertEquals(quantity, result.get().getQuantity());
+    verify(cartRepository, times(1)).findByUserId(userId);
+    verify(cartRepository, times(1)).save(cart);
+}
+```
+
+21. **testHandle_AddCartItem_CartNotFound_ThrowsException**(CartCommandServiceImplTest)
+
+Asegura que no se puedan añadir items a un carrito que no existe para el usuario dado.
+
+```java
+@Test
+void testHandle_AddCartItem_CartNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    Quantity quantity = new Quantity(2);
+    AddCartItemCommand command = new AddCartItemCommand(userId, availabilityId, quantity);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> {
+              cartCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("No cart found"));
+    verify(cartRepository, never()).save(any(Cart.class));
+}
+```
+
+22. **testHandle_RemoveCartItemSuccessfully**(CartCommandServiceImplTest)
+
+Verifica que el servicio procese correctamente la eliminación de un item específico.
+
+```java
+@Test
+void testHandle_RemoveCartItemSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    final RemoveCartItemCommand command = new RemoveCartItemCommand(userId, availabilityId);
+    Cart cart = new Cart(userId);
+    pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money price =
+        new pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money(
+            new java.math.BigDecimal(10), "PEN");
+    CartItem cartItem = new CartItem(availabilityId, new Quantity(1), price);
+    cart.addItem(cartItem);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(cart));
+    when(cartRepository.save(any(Cart.class))).thenReturn(cart);
+
+    // Act
+    Optional<Cart> result = cartCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertTrue(result.get().getItems().isEmpty());
+    verify(cartRepository, times(1)).findByUserId(userId);
+    verify(cartRepository, times(1)).save(cart);
+}
+```
+
+23. **testHandle_UpdateCartItemQuantitySuccessfully**(CartCommandServiceImplTest)
+
+Valida la actualización de la cantidad solicitada de un item ya existente en el carrito.
+
+```java
+@Test
+void testHandle_UpdateCartItemQuantitySuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    Quantity oldQuantity = new Quantity(1);
+    Quantity newQuantity = new Quantity(5);
+    final UpdateCartItemQuantityCommand command =
+        new UpdateCartItemQuantityCommand(userId, availabilityId, newQuantity);
+    Cart cart = new Cart(userId);
+    pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money price =
+        new pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money(
+            new java.math.BigDecimal(10), "PEN");
+    CartItem cartItem = new CartItem(availabilityId, oldQuantity, price);
+    cart.addItem(cartItem);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(cart));
+    when(cartRepository.save(any(Cart.class))).thenReturn(cart);
+
+    // Act
+    Optional<CartItem> result = cartCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(newQuantity, result.get().getQuantity());
+    verify(cartRepository, times(1)).findByUserId(userId);
+    verify(cartRepository, times(1)).save(cart);
+}
+```
+
+24. **testHandle_CreateFavoriteSuccessfully**(FavoriteCommandServiceImplTest)
+
+Verifica la creación de un registro de favorito validando la existencia tanto del usuario como de la experiencia en contextos externos.
+
+```java
+@Test
+void testHandle_CreateFavoriteSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(true);
+    when(favoriteRepository.save(any(Favorite.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    favoriteCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(externalExperienceService, times(1)).existsExperienceById(experienceId);
+    verify(favoriteRepository, times(1)).save(any(Favorite.class));
+}
+```
+
+25. **testHandle_CreateFavorite_UserNotFound_ThrowsException**(FavoriteCommandServiceImplTest)
+
+Asegura que no se cree un favorito si el usuario no es reconocido por el sistema IAM.
+
+```java
+@Test
+void testHandle_CreateFavorite_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              favoriteCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("User with id"));
+    verify(externalExperienceService, never()).existsExperienceById(experienceId);
+    verify(favoriteRepository, never()).save(any(Favorite.class));
+}
+```
+
+26. **testHandle_CreateFavorite_ExperienceNotFound_ThrowsException**(FavoriteCommandServiceImplTest)
+
+Impide marcar como favorita una experiencia inexistente en el catálogo global.
+
+```java
+@Test
+void testHandle_CreateFavorite_ExperienceNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              favoriteCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Experience with id"));
+    verify(favoriteRepository, never()).save(any(Favorite.class));
+}
+```
+
+27. **testHandle_DeleteFavoriteSuccessfully**(FavoriteCommandServiceImplTest)
+
+Prueba la eliminación de un favorito existente para un usuario y experiencia determinados.
+
+```java
+@Test
+void testHandle_DeleteFavoriteSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    DeleteFavoriteCommand command = new DeleteFavoriteCommand(userId, experienceId);
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    when(favoriteRepository.findByUserIdAndExperienceId(userId, experienceId))
+        .thenReturn(Optional.of(favorite));
+
+    // Act
+    favoriteCommandService.handle(command);
+
+    // Assert
+    verify(favoriteRepository, times(1)).findByUserIdAndExperienceId(userId, experienceId);
+    verify(favoriteRepository, times(1)).delete(favorite);
+}
+```
+
+28. **testHandle_DeleteFavorite_NotFound_ThrowsException**(FavoriteCommandServiceImplTest)
+
+Verifica el manejo de errores al intentar eliminar un favorito que no está registrado en el repositorio.
+
+```java
+@Test
+void testHandle_DeleteFavorite_NotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    DeleteFavoriteCommand command = new DeleteFavoriteCommand(userId, experienceId);
+
+    when(favoriteRepository.findByUserIdAndExperienceId(userId, experienceId))
+        .thenReturn(Optional.empty());
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              favoriteCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Favorite not found for user with id"));
+    verify(favoriteRepository, never()).delete(any(Favorite.class));
+}
+```
+
+29. **testHandle_CreateReviewSuccessfully**(ReviewCommandServiceImplTest)
+
+Valida la persistencia de una nueva reseña tras verificar las identidades externas del autor y la experiencia.
+
+```java
+@Test
+void testHandle_CreateReviewSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(true);
+    when(reviewRepository.save(any(Review.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    reviewCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(externalExperienceService, times(1)).existsExperienceById(experienceId);
+    verify(reviewRepository, times(1)).save(any(Review.class));
+}
+```
+
+30. **testHandle_CreateReview_UserNotFound_ThrowsException**(ReviewCommandServiceImplTest)
+
+Asegura que solo usuarios registrados en IAM puedan emitir reseñas sobre experiencias.
+
+```java
+@Test
+void testHandle_CreateReview_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              reviewCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("User with id"));
+    verify(externalExperienceService, never()).existsExperienceById(experienceId);
+    verify(reviewRepository, never()).save(any(Review.class));
+}
+```
+
+31. **testHandle_CreateReview_ExperienceNotFound_ThrowsException**(ReviewCommandServiceImplTest)
+
+Impide dejar comentarios sobre experiencias que no forman parte del catálogo oficial.
+
+```java
+@Test
+void testHandle_CreateReview_ExperienceNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              reviewCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Experience with id"));
+    verify(reviewRepository, never()).save(any(Review.class));
+}
+```
+
+32. **testHandle_UpdateReviewSuccessfully**(ReviewCommandServiceImplTest)
+
+Verifica que se puedan modificar los datos (rating y comentario) de una reseña ya publicada.
+
+```java
+@Test
+void testHandle_UpdateReviewSuccessfully() {
+    // Arrange
+    Long reviewId = 100L;
+    Rating newRating = new Rating(4);
+    String newComment = "Good experience";
+    UpdateReviewCommand command = new UpdateReviewCommand(reviewId, newRating, newComment);
+    Review review =
+        new Review(new UserId(1L), new ExperienceId(10L), new Rating(5), "Great experience!");
+
+    when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(review));
+    when(reviewRepository.save(any(Review.class))).thenReturn(review);
+
+    // Act
+    Optional<Review> result = reviewCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(newRating, result.get().getRating());
+    assertEquals(newComment, result.get().getComment());
+    verify(reviewRepository, times(1)).findById(reviewId);
+    verify(reviewRepository, times(1)).save(review);
+}
+```
+
+33. **testHandle_UpdateReview_NotFound_ReturnsEmpty**(ReviewCommandServiceImplTest)
+
+Valida el comportamiento del servicio cuando se intenta actualizar una reseña inexistente.
+
+```java
+@Test
+void testHandle_UpdateReview_NotFound_ReturnsEmpty() {
+    // Arrange
+    Long reviewId = 100L;
+    Rating newRating = new Rating(4);
+    String newComment = "Good experience";
+    UpdateReviewCommand command = new UpdateReviewCommand(reviewId, newRating, newComment);
+
+    when(reviewRepository.findById(reviewId)).thenReturn(Optional.empty());
+
+    // Act
+    Optional<Review> result = reviewCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isEmpty());
+    verify(reviewRepository, times(1)).findById(reviewId);
+    verify(reviewRepository, never()).save(any(Review.class));
+}
+```
+
+34. **testHandle_DeleteReviewSuccessfully**(ReviewCommandServiceImplTest)
+
+Prueba el flujo de eliminación física/lógica de una reseña por su identificador único.
+
+```java
+@Test
+void testHandle_DeleteReviewSuccessfully() {
+    // Arrange
+    Long reviewId = 100L;
+    DeleteReviewCommand command = new DeleteReviewCommand(reviewId);
+    Review review =
+        new Review(new UserId(1L), new ExperienceId(10L), new Rating(5), "Great experience!");
+
+    when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(review));
+
+    // Act
+    reviewCommandService.handle(command);
+
+    // Assert
+    verify(reviewRepository, times(1)).findById(reviewId);
+    verify(reviewRepository, times(1)).deleteById(reviewId);
+}
+```
+
+35. **testHandle_DeleteReview_NotFound_ThrowsException**(ReviewCommandServiceImplTest)
+
+Verifica que el sistema notifique mediante una excepción si se intenta borrar una reseña que no existe.
+
+```java
+@Test
+void testHandle_DeleteReview_NotFound_ThrowsException() {
+    // Arrange
+    Long reviewId = 100L;
+    DeleteReviewCommand command = new DeleteReviewCommand(reviewId);
+
+    when(reviewRepository.findById(reviewId)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              reviewCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Review with id"));
+    verify(reviewRepository, never()).deleteById(reviewId);
+}
+```
+
+##### Application Layer: Query Services
+![CartQueryServiceImplTest](assets/CartQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Profiles._
+
+36. **testHandle_GetCartByUserId**(CartQueryServiceImplTest)
+
+Recupera el agregado de carrito asociado a un usuario.
+
+```java
+@Test
+void testHandle_GetCartByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    GetCartByUserIdQuery query = new GetCartByUserIdQuery(userId);
+    Cart expectedCart = new Cart(userId);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(expectedCart));
+
+    // Act
+    Optional<Cart> result = cartQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(userId, result.get().getUserId());
+    verify(cartRepository, times(1)).findByUserId(userId);
+}
+```
+
+37. **testHandle_GetCartItemByUserIdAndAvailabilityId**(CartQueryServiceImplTest)
+
+Busca un item específico dentro del carrito basándose en la disponibilidad vinculada.
+
+```java
+@Test
+void testHandle_GetCartItemByUserIdAndAvailabilityId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    GetCartItemByUserIdAndAvailabilityIdQuery query =
+        new GetCartItemByUserIdAndAvailabilityIdQuery(userId, availabilityId);
+
+    pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money price =
+        new pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money(
+            new BigDecimal("10.0"), "PEN");
+    CartItem expectedCartItem = new CartItem(availabilityId, new Quantity(1), price);
+
+    when(cartRepository.findCartItemByUserIdAndAvailabilityId(userId, availabilityId))
+        .thenReturn(Optional.of(expectedCartItem));
+
+    // Act
+    Optional<CartItem> result = cartQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(availabilityId, result.get().getAvailabilityId());
+    verify(cartRepository, times(1)).findCartItemByUserIdAndAvailabilityId(userId, availabilityId);
+}
+```
+
+38. **testHandle_GetCartItemCount**(CartQueryServiceImplTest)
+
+Calcula el número de elementos únicos o totales dentro del carrito de un usuario.
+
+```java
+@Test
+void testHandle_GetCartItemCount() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    GetCartItemCountQuery query = new GetCartItemCountQuery(userId);
+    int expectedCount = 5;
+
+    when(cartRepository.countCartItemsByUserId(userId)).thenReturn(expectedCount);
+
+    // Act
+    int result = cartQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedCount, result);
+    verify(cartRepository, times(1)).countCartItemsByUserId(userId);
+}
+```
+
+39. **testHandle_GetFavoritesByUserId**(FavoriteQueryServiceImplTest)
+
+Lista todas las experiencias marcadas como favoritas por un usuario determinado.
+
+```java
+@Test
+void testHandle_GetFavoritesByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetFavoritesByUserIdQuery query = new GetFavoritesByUserIdQuery(userId);
+    Favorite favorite = new Favorite(userId, experienceId);
+    List<Favorite> expectedFavorites = List.of(favorite);
+
+    when(favoriteRepository.findAllByUserId(userId)).thenReturn(expectedFavorites);
+
+    // Act
+    List<Favorite> result = favoriteQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedFavorites.size(), result.size());
+    assertEquals(userId, result.get(0).getUserId());
+    verify(favoriteRepository, times(1)).findAllByUserId(userId);
+}
+```
+
+40. **testHandle_GetFavoritesByExperienceId**(FavoriteQueryServiceImplTest)
+
+Permite saber qué usuarios han marcado una experiencia específica como favorita (métricas de popularidad).
+
+```java
+@Test
+void testHandle_GetFavoritesByExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetFavoritesByExperienceIdQuery query = new GetFavoritesByExperienceIdQuery(experienceId);
+    Favorite favorite = new Favorite(userId, experienceId);
+    List<Favorite> expectedFavorites = List.of(favorite);
+
+    when(favoriteRepository.findAllByExperienceId(experienceId)).thenReturn(expectedFavorites);
+
+    // Act
+    List<Favorite> result = favoriteQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedFavorites.size(), result.size());
+    assertEquals(experienceId, result.get(0).getExperienceId());
+    verify(favoriteRepository, times(1)).findAllByExperienceId(experienceId);
+}
+```
+
+41. **testHandle_GetFavoriteByUserIdAndExperienceId**(FavoriteQueryServiceImplTest)
+
+Consulta si existe un registro de favorito para la dupla usuario-experiencia.
+
+```java
+@Test
+void testHandle_GetFavoriteByUserIdAndExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetFavoriteByUserIdAndExperienceIdQuery query =
+        new GetFavoriteByUserIdAndExperienceIdQuery(userId, experienceId);
+    Favorite expectedFavorite = new Favorite(userId, experienceId);
+
+    when(favoriteRepository.findByUserIdAndExperienceId(userId, experienceId))
+        .thenReturn(Optional.of(expectedFavorite));
+
+    // Act
+    Optional<Favorite> result = favoriteQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(userId, result.get().getUserId());
+    assertEquals(experienceId, result.get().getExperienceId());
+    verify(favoriteRepository, times(1)).findByUserIdAndExperienceId(userId, experienceId);
+}
+```
+
+42. **testHandle_GetReviewsByUserId**(ReviewQueryServiceImplTest)
+
+Lista todo el historial de reseñas redactadas por un usuario.
+
+```java
+@Test
+void testHandle_GetReviewsByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetReviewsByUserIdQuery query = new GetReviewsByUserIdQuery(userId);
+    Review review = new Review(userId, experienceId, new Rating(5), "Great experience!");
+    List<Review> expectedReviews = List.of(review);
+
+    when(reviewRepository.findAllByUserId(userId)).thenReturn(expectedReviews);
+
+    // Act
+    List<Review> result = reviewQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedReviews.size(), result.size());
+    assertEquals(userId, result.get(0).getUserId());
+    verify(reviewRepository, times(1)).findAllByUserId(userId);
+}
+```
+
+43. **testHandle_GetReviewsByExperienceId**(ReviewQueryServiceImplTest)
+
+Recupera el feedback de todos los usuarios para una experiencia concreta.
+
+```java
+@Test
+void testHandle_GetReviewsByExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetReviewsByExperienceIdQuery query = new GetReviewsByExperienceIdQuery(experienceId);
+    Review review = new Review(userId, experienceId, new Rating(5), "Great experience!");
+    List<Review> expectedReviews = List.of(review);
+
+    when(reviewRepository.findAllByExperienceId(experienceId)).thenReturn(expectedReviews);
+
+    // Act
+    List<Review> result = reviewQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedReviews.size(), result.size());
+    assertEquals(experienceId, result.get(0).getExperienceId());
+    verify(reviewRepository, times(1)).findAllByExperienceId(experienceId);
+}
+```
+
+44. **testHandle_GetReviewByUserIdAndExperienceId**(ReviewQueryServiceImplTest)
+
+Valida si un usuario ya ha calificado previamente una experiencia específica.
+
+```java
+@Test
+void testHandle_GetReviewByUserIdAndExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetReviewByUserIdAndExperienceIdQuery query =
+        new GetReviewByUserIdAndExperienceIdQuery(userId, experienceId);
+    Review expectedReview = new Review(userId, experienceId, new Rating(5), "Great experience!");
+
+    when(reviewRepository.findByUserIdAndExperienceId(userId, experienceId))
+        .thenReturn(Optional.of(expectedReview));
+
+    // Act
+    Optional<Review> result = reviewQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(userId, result.get().getUserId());
+    assertEquals(experienceId, result.get().getExperienceId());
+    verify(reviewRepository, times(1)).findByUserIdAndExperienceId(userId, experienceId);
+}
+```
+
+##### Application Layer: Outbound Services (ACL)
+![ExternalExperienceServiceTest](assets/ExternalExperienceServiceTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Outbound Services (ACL) para el Bounded Context Profiles._
+
+45. **testExistsExperienceById_True**(ExternalExperienceServiceTest)
+
+Verifica la integración con el contexto de Experiencias para confirmar que un ID es válido.
+
+```java
+@Test
+void testExistsExperienceById_True() {
+    // Arrange
+    ExperienceId experienceId = new ExperienceId(1L);
+    when(experiencesContextFacade.existsExperienceById(experienceId.experienceId()))
+        .thenReturn(true);
+
+    // Act
+    boolean result = externalExperienceService.existsExperienceById(experienceId);
+
+    // Assert
+    assertTrue(result);
+    verify(experiencesContextFacade, times(1)).existsExperienceById(experienceId.experienceId());
+}
+```
+
+46. **testExistsExperienceById_False**(ExternalExperienceServiceTest)
+
+Confirma el comportamiento cuando el contexto externo de Experiencias indica que el recurso no existe.
+
+```java
+@Test
+void testExistsExperienceById_False() {
+    // Arrange
+    ExperienceId experienceId = new ExperienceId(1L);
+    when(experiencesContextFacade.existsExperienceById(experienceId.experienceId()))
+        .thenReturn(false);
+
+    // Act
+    boolean result = externalExperienceService.existsExperienceById(experienceId);
+
+    // Assert
+    assertFalse(result);
+    verify(experiencesContextFacade, times(1)).existsExperienceById(experienceId.experienceId());
+}
+```
+
+47. **testFetchUserIdByEmail_Found**(ExternalIamServiceTest)
+
+Valida la recuperación del ID de usuario desde IAM mediante su correo electrónico.
+
+```java
+@Test
+void testFetchUserIdByEmail_Found() {
+    // Arrange
+    String email = "test@example.com";
+    Long expectedUserId = 1L;
+    when(iamContextFacade.fetchUserIdByEmail(email)).thenReturn(expectedUserId);
+
+    // Act
+    Optional<UserId> result = externalIamService.fetchUserIdByEmail(email);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(expectedUserId, result.get().userId());
+    verify(iamContextFacade, times(1)).fetchUserIdByEmail(email);
+}
+```
+
+48. **testFetchUserIdByEmail_NotFound**(ExternalIamServiceTest)
+
+Maneja el escenario donde el email no corresponde a ninguna cuenta en IAM.
+
+```java
+@Test
+void testFetchUserIdByEmail_NotFound() {
+    // Arrange
+    String email = "test@example.com";
+    when(iamContextFacade.fetchUserIdByEmail(email)).thenReturn(0L);
+
+    // Act
+    Optional<UserId> result = externalIamService.fetchUserIdByEmail(email);
+
+    // Assert
+    assertTrue(result.isEmpty());
+    verify(iamContextFacade, times(1)).fetchUserIdByEmail(email);
+}
+```
+
+49. **testExistsUserByEmailAndIdIsNot_True**(ExternalIamServiceTest)
+
+Verifica si un email ya está en uso por otro usuario diferente al actual (validación de unicidad).
+
+```java
+@Test
+void testExistsUserByEmailAndIdIsNot_True() {
+    // Arrange
+    String email = "test@example.com";
+    Long id = 1L;
+    when(iamContextFacade.existsUserByEmailAndIdIsNot(email, id)).thenReturn(true);
+
+    // Act
+    boolean result = externalIamService.existsUserByEmailAndIdIsNot(email, id);
+
+    // Assert
+    assertTrue(result);
+    verify(iamContextFacade, times(1)).existsUserByEmailAndIdIsNot(email, id);
+}
+```
+
+50. **testExistsUserByEmailAndIdIsNot_False**(ExternalIamServiceTest)
+
+Confirma que el email no está duplicado en el sistema IAM para otros usuarios.
+
+```java
+@Test
+void testExistsUserByEmailAndIdIsNot_False() {
+    // Arrange
+    String email = "test@example.com";
+    Long id = 1L;
+    when(iamContextFacade.existsUserByEmailAndIdIsNot(email, id)).thenReturn(false);
+
+    // Act
+    boolean result = externalIamService.existsUserByEmailAndIdIsNot(email, id);
+
+    // Assert
+    assertFalse(result);
+    verify(iamContextFacade, times(1)).existsUserByEmailAndIdIsNot(email, id);
+}
+```
+
+51. **testExistsUserById_True**(ExternalIamServiceTest)
+
+Valida que un ID de usuario sea reconocido como válido por el contexto IAM.
+
+```java
+@Test
+void testExistsUserById_True() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    when(iamContextFacade.existsUserById(userId.userId())).thenReturn(true);
+
+    // Act
+    boolean result = externalIamService.existsUserById(userId);
+
+    // Assert
+    assertTrue(result);
+    verify(iamContextFacade, times(1)).existsUserById(userId.userId());
+}
+```
+
+52. **testExistsUserById_False**(ExternalIamServiceTest)
+
+Escenario donde IAM no encuentra al usuario por el identificador proporcionado.
+
+```java
+@Test
+void testExistsUserById_False() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    when(iamContextFacade.existsUserById(userId.userId())).thenReturn(false);
+
+    // Act
+    boolean result = externalIamService.existsUserById(userId);
+
+    // Assert
+    assertFalse(result);
+    verify(iamContextFacade, times(1)).existsUserById(userId.userId());
+}
+```
+
+53. **testCreateUser_Success**(ExternalIamServiceTest)
+
+Coordina la creación de una nueva identidad en IAM desde el contexto de perfiles.
+
+```java
+@Test
+void testCreateUser_Success() {
+    // Arrange
+    String email = "test@example.com";
+    String password = "password";
+    String firstName = "John";
+    String lastName = "Doe";
+    String phone = "123456789";
+    List<String> roleNames = List.of("ROLE_USER");
+    Long expectedUserId = 1L;
+
+    when(iamContextFacade.createUser(email, password, firstName, lastName, phone, roleNames))
+        .thenReturn(expectedUserId);
+
+    // Act
+    Optional<UserId> result =
+        externalIamService.createUser(email, password, firstName, lastName, phone, roleNames);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(expectedUserId, result.get().userId());
+    verify(iamContextFacade, times(1))
+        .createUser(email, password, firstName, lastName, phone, roleNames);
+}
+```
+
+54. **testCreateUser_Failure**(ExternalIamServiceTest)
+
+Maneja fallos en la creación de usuario dentro de la fachada de IAM.
+
+```java
+@Test
+void testCreateUser_Failure() {
+    // Arrange
+    String email = "test@example.com";
+    String password = "password";
+    String firstName = "John";
+    String lastName = "Doe";
+    String phone = "123456789";
+    List<String> roleNames = List.of("ROLE_USER");
+
+    when(iamContextFacade.createUser(email, password, firstName, lastName, phone, roleNames))
+        .thenReturn(0L);
+
+    // Act
+    Optional<UserId> result =
+        externalIamService.createUser(email, password, firstName, lastName, phone, roleNames);
+
+    // Assert
+    assertTrue(result.isEmpty());
+    verify(iamContextFacade, times(1))
+        .createUser(email, password, firstName, lastName, phone, roleNames);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![CartsControllerTest](assets/CartsControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Profiles._
+
+55. **testCreateCart_Created**(CartsControllerTest)
+
+Valida que el endpoint de creación de carrito responda con 201 Created y el recurso correcto.
+
+```java
+@Test
+void testCreateCart_Created() {
+    // Arrange
+    final CreateCartResource resource = new CreateCartResource(1L);
+    stubCartResourceFields();
+    when(cartCommandService.handle(any(CreateCartCommand.class))).thenReturn(1L);
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.of(cart));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.createCart(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertNotNull(response.getBody());
+}
+```
+
+56. **testCreateCart_NotFound**(CartsControllerTest)
+
+Verifica el manejo de error 404 cuando el carrito creado no puede ser recuperado inmediatamente.
+
+```java
+@Test
+void testCreateCart_NotFound() {
+    // Arrange
+    CreateCartResource resource = new CreateCartResource(1L);
+    when(cartCommandService.handle(any(CreateCartCommand.class))).thenReturn(1L);
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.createCart(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+57. **testAddItem_Created**(CartsControllerTest)
+
+Añade un item al carrito vía REST y comprueba la estructura del `CartItemResource`.
+
+```java
+@Test
+void testAddItem_Created() {
+    // Arrange
+    var price = BigDecimal.valueOf(49.99);
+    AddCartItemResource resource = new AddCartItemResource(101L, 2, price);
+    cartItem = createCartItem(2);
+    when(cartCommandService.handle(any(AddCartItemCommand.class)))
+        .thenReturn(Optional.of(cartItem));
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.addItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertNotNull(response.getBody());
+    assertEquals(101L, response.getBody().availabilityId());
+}
+```
+
+58. **testAddItem_NotFound**(CartsControllerTest)
+
+Maneja el escenario donde el servicio no encuentra el carrito para añadir el item.
+
+```java
+@Test
+void testAddItem_NotFound() {
+    // Arrange
+    AddCartItemResource resource =
+        new AddCartItemResource(101L, 2, java.math.BigDecimal.valueOf(49.99));
+    when(cartCommandService.handle(any(AddCartItemCommand.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.addItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+59. **testAddItem_BadRequest**(CartsControllerTest)
+
+Asegura que el controlador rechace solicitudes con datos de item inválidos (ej. cantidad negativa).
+
+```java
+@Test
+void testAddItem_BadRequest() {
+    // Arrange
+    AddCartItemResource resource =
+        new AddCartItemResource(101L, -1, java.math.BigDecimal.valueOf(49.99));
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.addItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+60. **testUpdateItemQuantity_Ok**(CartsControllerTest)
+
+Actualiza la cantidad de un item y verifica la respuesta 200 OK.
+
+```java
+@Test
+void testUpdateItemQuantity_Ok() {
+    // Arrange
+    UpdateCartItemQuantityResource resource = new UpdateCartItemQuantityResource(101L, 5);
+    cartItem = createCartItem(5);
+    when(cartCommandService.handle(any(UpdateCartItemQuantityCommand.class)))
+        .thenReturn(Optional.of(cartItem));
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.updateItemQuantity(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(5, response.getBody().quantity());
+}
+```
+
+61. **testUpdateItemQuantity_NotFound**(CartsControllerTest)
+
+Retorna 404 si se intenta actualizar un item que no existe en el carrito.
+
+```java
+@Test
+void testUpdateItemQuantity_NotFound() {
+    // Arrange
+    UpdateCartItemQuantityResource resource = new UpdateCartItemQuantityResource(101L, 5);
+    when(cartCommandService.handle(any(UpdateCartItemQuantityCommand.class)))
+        .thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.updateItemQuantity(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+62. **testUpdateItemQuantity_BadRequest**(CartsControllerTest)
+
+Captura excepciones de negocio y las traduce a errores 400 Bad Request.
+
+```java
+@Test
+void testUpdateItemQuantity_BadRequest() {
+    // Arrange
+    UpdateCartItemQuantityResource resource = new UpdateCartItemQuantityResource(101L, 5);
+    when(cartCommandService.handle(any(UpdateCartItemQuantityCommand.class)))
+        .thenThrow(new IllegalStateException("Cart is not in an active state"));
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.updateItemQuantity(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+63. **testRemoveItem_Ok**(CartsControllerTest)
+
+Elimina un item del carrito y devuelve el estado actualizado del mismo.
+
+```java
+@Test
+void testRemoveItem_Ok() {
+    // Arrange
+    RemoveCartItemResource resource = new RemoveCartItemResource(101L);
+    stubCartResourceFields();
+    when(cartCommandService.handle(any(RemoveCartItemCommand.class))).thenReturn(Optional.of(cart));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.removeItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+64. **testRemoveItem_NotFound**(CartsControllerTest)
+
+Falla con 404 al intentar remover un item de un carrito inexistente.
+
+```java
+@Test
+void testRemoveItem_NotFound() {
+    // Arrange
+    RemoveCartItemResource resource = new RemoveCartItemResource(101L);
+    when(cartCommandService.handle(any(RemoveCartItemCommand.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.removeItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+65. **testRemoveItem_BadRequest**(CartsControllerTest)
+
+Maneja errores de validación (item no encontrado en la lista) como peticiones incorrectas.
+
+```java
+@Test
+void testRemoveItem_BadRequest() {
+    // Arrange
+    RemoveCartItemResource resource = new RemoveCartItemResource(101L);
+    when(cartCommandService.handle(any(RemoveCartItemCommand.class)))
+        .thenThrow(new IllegalArgumentException("Item does not exist in cart"));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.removeItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+66. **testClearCart_Ok**(CartsControllerTest)
+
+Vacía el carrito completo del usuario autenticado.
+
+```java
+@Test
+void testClearCart_Ok() {
+    // Arrange
+    stubCartResourceFields();
+    when(cartCommandService.handle(any(ClearCartCommand.class))).thenReturn(Optional.of(cart));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.clearCart(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+67. **testClearCart_NotFound**(CartsControllerTest)
+
+Control de error cuando el proceso de vaciado no encuentra la entidad base.
+
+```java
+@Test
+void testClearCart_NotFound() {
+    // Arrange
+    when(cartCommandService.handle(any(ClearCartCommand.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.clearCart(1L);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+68. **testClearCart_BadRequest**(CartsControllerTest)
+
+Impide vaciar carritos en estados no permitidos (ej. carrito ya vacío o inactivo).
+
+```java
+@Test
+void testClearCart_BadRequest() {
+    // Arrange
+    when(cartCommandService.handle(any(ClearCartCommand.class)))
+        .thenThrow(new IllegalStateException("Cannot clear already empty or inactive cart"));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.clearCart(1L);
+
+    // Assert
+    assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+69. **testGetCart_Ok**(CartsControllerTest)
+
+Consulta el estado actual del carrito por ID de usuario.
+
+```java
+@Test
+void testGetCart_Ok() {
+    // Arrange
+    stubCartResourceFields();
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.of(cart));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.getCart(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+70. **testGetCart_NotFound**(CartsControllerTest)
+
+Responde 404 si el usuario no tiene un carrito inicializado.
+
+```java
+@Test
+void testGetCart_NotFound() {
+    // Arrange
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.getCart(1L);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+71. **testGetCartItemCount_Ok**(CartsControllerTest)
+
+Endpoint ligero para obtener solo el contador de items del carrito.
+
+```java
+@Test
+void testGetCartItemCount_Ok() {
+    // Arrange
+    when(cartQueryService.handle(any(GetCartItemCountQuery.class))).thenReturn(3);
+
+    // Act
+    ResponseEntity<Integer> response = cartsController.getCartItemCount(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(3, response.getBody());
+}
+```
+
+72. **testCreateFavorite_Created**(FavoritesControllerTest)
+
+Registra una nueva experiencia favorita para el usuario.
+
+```java
+@Test
+void testCreateFavorite_Created() {
+    // Arrange
+    CreateFavoriteResource resource = new CreateFavoriteResource(1L, 10L);
+    when(favoriteCommandService.handle(any(CreateFavoriteCommand.class))).thenReturn(1L);
+    when(favoriteQueryService.handle(any(GetFavoriteByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.of(favorite));
+
+    // Act
+    ResponseEntity<FavoriteResource> response = favoritesController.createFavorite(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertEquals(1L, response.getBody().userId());
+    assertEquals(10L, response.getBody().experienceId());
+}
+```
+
+73. **testCreateFavorite_NotFound**(FavoritesControllerTest)
+
+Maneja errores de post-creación en el endpoint de favoritos.
+
+```java
+@Test
+void testCreateFavorite_NotFound() {
+    // Arrange
+    CreateFavoriteResource resource = new CreateFavoriteResource(1L, 10L);
+    when(favoriteCommandService.handle(any(CreateFavoriteCommand.class))).thenReturn(1L);
+    when(favoriteQueryService.handle(any(GetFavoriteByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<FavoriteResource> response = favoritesController.createFavorite(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+74. **testGetFavoritesByUserId_Ok**(FavoritesControllerTest)
+
+Recupera la lista de favoritos de un usuario mapeada a recursos.
+
+```java
+@Test
+void testGetFavoritesByUserId_Ok() {
+    // Arrange
+    when(favoriteQueryService.handle(any(GetFavoritesByUserIdQuery.class)))
+        .thenReturn(List.of(favorite));
+
+    // Act
+    ResponseEntity<List<FavoriteResource>> response = favoritesController.getFavoritesByUserId(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(1, response.getBody().size());
+}
+```
+
+75. **testDeleteFavorite_NoContent**(FavoritesControllerTest)
+
+Valida que la eliminación de un favorito retorne 204 No Content.
+
+```java
+@Test
+void testDeleteFavorite_NoContent() {
+    // Arrange
+    doNothing().when(favoriteCommandService).handle(any(DeleteFavoriteCommand.class));
+
+    // Act
+    ResponseEntity<?> response = favoritesController.deleteFavorite(10L, 1L);
+
+    // Assert
+    assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+    verify(favoriteCommandService, times(1)).handle(any(DeleteFavoriteCommand.class));
+}
+```
+
+76. **testCreateReview_Created**(ReviewsControllerTest)
+
+Crea una reseña y califica una experiencia mediante el controlador REST.
+
+```java
+@Test
+void testCreateReview_Created() {
+    // Arrange
+    CreateReviewResource resource = new CreateReviewResource(1L, 10L, 5, "Great!");
+    when(reviewCommandService.handle(any(CreateReviewCommand.class))).thenReturn(1L);
+    when(reviewQueryService.handle(any(GetReviewByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.of(review));
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.createReview(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertEquals(5, response.getBody().rating());
+}
+```
+
+77. **testCreateReview_NotFound**(ReviewsControllerTest)
+
+Control de errores en el flujo de guardado de reseñas.
+
+```java
+@Test
+void testCreateReview_NotFound() {
+    // Arrange
+    CreateReviewResource resource = new CreateReviewResource(1L, 10L, 5, "Great!");
+    when(reviewCommandService.handle(any(CreateReviewCommand.class))).thenReturn(1L);
+    when(reviewQueryService.handle(any(GetReviewByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.createReview(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+78. **testUpdateReview_Ok**(ReviewsControllerTest)
+
+Actualiza una reseña existente y retorna el recurso modificado.
+
+```java
+@Test
+void testUpdateReview_Ok() {
+    // Arrange
+    UpdateReviewResource resource = new UpdateReviewResource(4, "Good!");
+    Review updatedReview = new Review(userId, experienceId, new Rating(4), "Good!");
+    when(reviewCommandService.handle(any(UpdateReviewCommand.class)))
+        .thenReturn(Optional.of(updatedReview));
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.updateReview(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(4, response.getBody().rating());
+}
+```
+
+79. **testUpdateReview_NotFound**(ReviewsControllerTest)
+
+Retorna 404 al intentar actualizar una reseña que ya no existe o ID incorrecto.
+
+```java
+@Test
+void testUpdateReview_NotFound() {
+    // Arrange
+    UpdateReviewResource resource = new UpdateReviewResource(4, "Good!");
+    when(reviewCommandService.handle(any(UpdateReviewCommand.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.updateReview(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+80. **testGetReviewsByUserId_Ok**(ReviewsControllerTest)
+
+Obtiene todas las reseñas de un usuario en formato REST.
+
+```java
+@Test
+void testGetReviewsByUserId_Ok() {
+    // Arrange
+    when(reviewQueryService.handle(any(GetReviewsByUserIdQuery.class))).thenReturn(List.of(review));
+
+    // Act
+    ResponseEntity<List<ReviewResource>> response = reviewsController.getReviewsByUserId(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(1, response.getBody().size());
+}
+```
+
+81. **testGetReviewsByExperienceId_Ok**(ReviewsControllerTest)
+
+Lista el feedback de la comunidad para una experiencia.
+
+```java
+@Test
+void testGetReviewsByExperienceId_Ok() {
+    // Arrange
+    when(reviewQueryService.handle(any(GetReviewsByExperienceIdQuery.class)))
+        .thenReturn(List.of(review));
+
+    // Act
+    ResponseEntity<List<ReviewResource>> response = reviewsController.getReviewsByExperienceId(10L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(10L, response.getBody().get(0).experienceId());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AddCartItemCommandFromResourceAssemblerTest](assets/AddCartItemCommandFromResourceAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers (Mapping Tests) para el Bounded Context Profiles._
+
+82. **toCommandFromResource_ShouldMapCorrectly**(AddCartItemCommandFromResourceAssemblerTest)
+
+Transforma un recurso de entrada en un comando de adición de item al carrito.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new AddCartItemResource(10L, 5, new BigDecimal("10.0"));
+    var command = AddCartItemCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(10L, command.availabilityId().availabilityId());
+}
+```
+
+83. **toResourceFromEntity_ShouldMapCorrectly**(CartItemResourceFromEntityAssemblerTest)
+
+Mapea un item de entidad a su representación de recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    var entity = new CartItem(new AvailabilityId(10L), new Quantity(2), new Money(new BigDecimal(10), "PEN"));
+    var resource = CartItemResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(10L, resource.availabilityId());
+    assertEquals(2, resource.quantity());
+}
+```
+
+84. **toResourceFromEntityMapsEntityToResourceIncludingItems**(CartResourceFromEntityAssemblerTest)
+
+Valida que el agregado Cart se mapee íntegramente incluyendo su colección de items.
+
+```java
+@Test
+void toResourceFromEntityMapsEntityToResourceIncludingItems() {
+    var price = BigDecimal.valueOf(49.99);
+    when(cartItem.getAvailabilityId()).thenReturn(new AvailabilityId(101L));
+    when(cartItem.getQuantity()).thenReturn(new Quantity(2));
+    when(cartItem.getPrice()).thenReturn(new Money(price, "PEN"));
+    when(entity.getId()).thenReturn(10L);
+    when(entity.getUserId()).thenReturn(new UserId(1L));
+    when(entity.getItems()).thenReturn(List.of(cartItem));
+
+    var resource = CartResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(10L, resource.cartId());
+    assertEquals(1, resource.items().size());
+}
+```
+
+85. **toCommandFromResource_ShouldMapCorrectly**(CreateCartCommandFromResourceAssemblerTest)
+
+Mapea la petición de creación de carrito al comando correspondiente.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateCartResource(1L);
+    var command = CreateCartCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+}
+```
+
+86. **toCommandFromResource_ShouldMapCorrectly**(CreateFavoriteCommandFromResourceAssemblerTest)
+
+Mapea la petición de favorito al comando de creación.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateFavoriteResource(1L, 10L);
+    var command = CreateFavoriteCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(10L, command.experienceId().experienceId());
+}
+```
+
+87. **toCommandFromResource_ShouldMapCorrectly**(CreateReviewCommandFromResourceAssemblerTest)
+
+Transforma los datos de una nueva reseña en un comando de dominio.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateReviewResource(1L, 10L, 5, "Great");
+    var command = CreateReviewCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(5, command.rating().rating());
+}
+```
+
+88. **toResourceFromEntity_ShouldMapCorrectly**(FavoriteResourceFromEntityAssemblerTest)
+
+Mapea la entidad Favorite a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    when(entity.getId()).thenReturn(1L);
+    when(entity.getUserId()).thenReturn(new UserId(10L));
+    when(entity.getExperienceId()).thenReturn(new ExperienceId(20L));
+    var resource = FavoriteResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(1L, resource.favoriteId());
+}
+```
+
+89. **toCommandFromResource_ShouldMapCorrectly**(RemoveCartItemCommandFromResourceAssemblerTest)
+
+Genera el comando de eliminación basándose en el recurso recibido.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new RemoveCartItemResource(10L);
+    var command = RemoveCartItemCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(10L, command.availabilityId().availabilityId());
+}
+```
+
+90. **toResourceFromEntityMapsEntityToResource**(ReviewResourceFromEntityAssemblerTest)
+
+Mapea la entidad Review a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntityMapsEntityToResource() {
+    when(entity.getId()).thenReturn(30L);
+    when(entity.getUserId()).thenReturn(new UserId(1L));
+    when(entity.getExperienceId()).thenReturn(new ExperienceId(50L));
+    when(entity.getRating()).thenReturn(new Rating(5));
+    when(entity.getComment()).thenReturn("Great experience");
+
+    var resource = ReviewResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(30L, resource.reviewId());
+}
+```
+
+91. **toCommandFromResource_ShouldMapCorrectly**(UpdateCartItemQuantityCommandFromResourceAssemblerTest)
+
+Mapea la actualización de cantidad al comando de aplicación.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new UpdateCartItemQuantityResource(10L, 5);
+    var command = UpdateCartItemQuantityCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(5, command.quantity().quantity());
+}
+```
+
+92. **toCommandFromResource_ShouldMapCorrectly**(UpdateReviewCommandFromResourceAssemblerTest)
+
+Mapea la actualización de reseña al comando correspondiente.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new UpdateReviewResource(4, "Good");
+    var command = UpdateReviewCommandFromResourceAssembler.toCommandFromResource(10L, resource);
+    assertEquals(4, command.rating().rating());
+}
+```
 
 Resultados: Todos los tests pasan satisfactoriamente con cobertura de instrucciones superior al 80% según el reporte de JaCoCo.
 
 #### 6.1.2. Core Integration Tests
 
-Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/swagger-ui/index.html#/    Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
+
+
+Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/api/v1. Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
 
 A continuación, se muestran evidencias gráficas del desarrollo y ejecución de pruebas de integración para los componentes centrales del sistema.
 Estas pruebas permiten verificar que diferentes módulos del sistema interactúan correctamente entre sí, asegurando la integridad funcional del flujo de trabajo conjunto.
 
 
-**Bookings & Payments**
-Se implementaron pruebas de integración utilizando **Karate DSL** para validar el comportamiento end-to-end de los endpoints REST del bounded context **Bookings & Payments**. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos y generación de refunds, verificando tanto happy paths como unhappy paths mediante peticiones HTTP reales y validación de status codes y response bodies.
+ imagen
 
-<p align="center">
-    <img src="assets/integrationtest1.png">
-</p>
-
-<p align="center">
-    <img src="assets/karatetest1.png">
-</p>
-
-
-
- **Agencies**
-Se desarrollaron pruebas de integración con **Karate DSL** para verificar el correcto funcionamiento de los endpoints REST del bounded context **Agencies**. Los escenarios cubren operaciones CRUD de agencias, documentos y staff, validando autenticación, respuestas HTTP, persistencia de datos y manejo de errores en diferentes escenarios.
-
-<p align="center">
-    <img src="assets/integrationtest2.png">
-</p>
-
-
-
-<p align="center">
-    <img src="assets/karatetest2.png">
-</p>
-
-**Profiles & Preferences**
-Se realizaron validaciones de calidad y análisis del bounded context **Profiles & Preferences**, complementando las pruebas de integración generales del sistema mediante herramientas de análisis estático para garantizar estabilidad, mantenibilidad y cumplimiento de estándares del proyecto.
-
-<p align="center">
-    <img src="assets/karatetest3.png">
-</p>
 
 Cada escenario utiliza datos únicos generados con java.util.UUID para evitar colisiones entre ejecuciones. El archivo auth-setup.feature provee un token de autenticación reutilizable para todos los escenarios.
 Los runners (BookingsRunner, AgenciesRunner) permiten ejecutar los features de forma aislada mediante JUnit 5.
@@ -2084,36 +8795,13 @@ Se utilizó una combinación de herramientas como Cucumber junto con JUnit para 
 Los feature files están redactados en Gherkin bajo el estándar Given / When / Then, describiendo los escenarios de negocio desde la perspectiva del usuario
 Estas pruebas ayudan a garantizar que el sistema se comporte de acuerdo con los requisitos funcionales definidos previamente.
 
-**Bookings & Payments**
-Se implementaron escenarios BDD para validar el flujo completo de reservas y pagos dentro del bounded context Bookings & Payments. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos, pagos fallidos y generación de refunds, verificando tanto happy paths como unhappy paths mediante validación de status codes y response bodies.
 
-<p align="center">
-    <img src="assets/gherkin1.png">
-</p>
-
-
-
- **Agencies**
-Se desarrollaron pruebas BDD para validar el comportamiento de los endpoints REST relacionados con la gestión de agencias, documentos y staff dentro del bounded context Agencies. Los escenarios implementados verifican operaciones CRUD, autenticación, validaciones de negocio y manejo de errores utilizando peticiones HTTP reales.
-
-<p align="center">
-    <img src="assets/gherkin2.png">
-</p>
-
-
-
-
-**Profiles & Preferences**
-Se realizaron validaciones orientadas al bounded context Profiles & Preferences, enfocadas en asegurar la calidad y mantenibilidad del código mediante herramientas de análisis estático como Checkstyle y SonarQube, contribuyendo a mantener consistencia en el desarrollo y detección temprana de problemas potenciales dentro del sistema.
-
-<p align="center">
-    <img src="assets/gherkin3.png">
-</p>
-
-
+imagen
 
 Los escenarios cubren happy paths y unhappy paths, validando tanto los status HTTP como los campos del response body mediante las aserciones de Karate (match, ==, '#number')
 
+#### 6.1.4. Core System Tests
+no va alguien eliminelo si quiere 
 
 
 ### 6.2.  Static testing & Verification 
@@ -2145,7 +8833,7 @@ El proyecto está integrado con SonarQube usando el plugin sonar-maven-plugin 5.
 
 
 
-imagen checkstyle
+imagen 
 
 Métricas analizadas:
 
@@ -2173,7 +8861,7 @@ Checkstyle con las reglas de Google (google_checks.xml) para verificar convencio
 JUnit 5 + Mockito para pruebas unitarias.
 JaCoCo para reporte de cobertura de código (umbral mínimo: 80% de instrucciones).
 
-imagensonarqub
+imagen
 
 #### 7.1.1. Tools and Practices
 no va creo
