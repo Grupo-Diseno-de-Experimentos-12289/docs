@@ -50,6 +50,49 @@ TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pr
 TP | 14/05/2026 |       GeronimoQuispe Pablo Antonio       | Documentación, pruebas bounded context agencies,bookings, checkstyle general, sonarqube test.
 <hr>
 
+## Project Report Collaboration Insights  
+
+Nuestro Project Report se encuentra en el siguiente repositorio de GitHub: 
+
+🔗[https://github.com/Grupo-Diseno-de-Experimentos-12289/docs](https://github.com/Grupo-Diseno-de-Experimentos-12289/docs).
+
+- **Flujo de trabajo adoptado**
+
+    Durante el desarrollo colaborativo de este repositorio, hemos decidido adoptar el flujo de trabajo GitHub Flow, debido a su simplicidad, escalabilidad y orientación a la integración continua. Este flujo nos ha permitido:
+
+    - Crear ramas individuales por cada integrante y sección asignada.
+    - Realizar pull requests para revisión de cambios antes de integrarlos a la rama principal.
+    - Discutir observaciones mediante comentarios en los commits o PRs.
+    - Asegurar la integración progresiva, ordenada y sin conflictos del contenido en el informe final.
+
+    Además, hemos establecido una convención de nombres para las ramas utilizando el siguiente esquema: cap[numero-capitulo], lo que facilita la identificación de la sección en proceso de edición. Del mismo modo, los mensajes de commit son claros y están formulados siguiendo la semántica de los commits convencionales, lo que mejora la trazabilidad y comprensión del historial de cambios.
+
+### Colaboración por Entrega
+
+- **TBP**
+    En la Entrega Parcial (TP) del Project Report, cada miembro del equipo asumió responsabilidades específicas en la redacción de secciones asignadas. La coordinación se realizó de manera asincrónica, complementada con reuniones breves en línea para consensuar estilos de redacción y criterios de inclusión.
+
+    - Evidencias del trabajo distribuido:
+        - Miembros del equipo en el repositorio:
+        <p align="center">
+            <img src="assets/evidencias/miembros.png" alt="repo-members" width="60%">
+        </p>
+
+
+        - Commits realizados en las ramas principal:
+        <p align="center">
+            <img src="assets/evidencias/pruebas1.png" alt="cap1-branch-commits" width="60%">
+        </p>
+        <p align="center">
+            <img src="assets/evidencias/pruebas2.png" alt="cap1-branch-commits" width="60%">
+        </p>
+        <p align="center">
+            <img src="assets/evidencias/pruebas3.png" alt="cap1-branch-commits" width="60%">
+        </p>
+        <p align="center">
+            <img src="assets/evidencias/pruebas4.png" alt="cap1-branch-commits" width="60%">
+        </p>
+
 ## Tabla de Contenidos
 
 
