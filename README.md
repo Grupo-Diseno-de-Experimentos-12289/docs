@@ -11309,6 +11309,8 @@ void toCommandFromResource_ShouldMapCorrectly() {
 
 Resultados: Todos los tests pasan satisfactoriamente con cobertura de instrucciones superior al 80% según el reporte de JaCoCo.
 
+
+
 #### 6.1.2. Core Integration Tests
 
 Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/swagger-ui/index.html#/    Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
