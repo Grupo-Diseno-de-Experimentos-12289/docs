@@ -5,60 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23a0450c-618b-4ff1-84b2-9e39b8ba3d6d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.vscode/mcp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/public/i18n/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/public/i18n/es.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/server/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/server/routes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/application/learning.store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/domain/model/category.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/domain/model/course.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/categories-api-endpoint.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/categories-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/category-assembler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/course-assembler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/courses-api-endpoint.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/courses-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/infrastructure/learning-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/learning/presentation/learning.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/shared/infrastructure/base-api-endpoint.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/shared/infrastructure/base-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/shared/infrastructure/base-assembler.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/shared/infrastructure/base-entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/app/shared/infrastructure/base-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Downloads/learning-center/learning-center/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/public/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/public/i18n/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/public/i18n/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/public/i18n/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/identity-access/presentation/identity-access.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/identity-access/presentation/identity-access.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/shared/presentation/componentes/dashboard-shell/dashboard-shell.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/app/shared/presentation/componentes/dashboard-shell/dashboard-shell.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/environments/environment.development.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/environments/environment.development.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Downloads/coldtrace-frontend/coldtrace-frontend/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +34,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "develop",

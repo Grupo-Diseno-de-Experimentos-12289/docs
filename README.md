@@ -11311,12 +11311,26 @@ Resultados: Todos los tests pasan satisfactoriamente con cobertura de instruccio
 
 Se implementaron pruebas de integración end-to-end utilizando el framework Karate DSL sobre el servidor corriendo en http://localhost:8091/swagger-ui/index.html#/    Las pruebas validan el flujo completo de cada bounded context a través de HTTP real.
 
-A continuación, se muestran evidencias gráficas del desarrollo y ejecución de pruebas de integración para los componentes centrales del sistema.
-Estas pruebas permiten verificar que diferentes módulos del sistema interactúan correctamente entre sí, asegurando la integridad funcional del flujo de trabajo conjunto.
+A continuación, se muestran evidencias gráficas y el código de los **Runners** de Karate para cada bounded context. Estas pruebas permiten verificar que diferentes módulos del sistema interactúan correctamente entre sí, asegurando la integridad funcional del flujo de trabajo conjunto.
 
+**Bookings**
 
-**Bookings & Payments**
-Se implementaron pruebas de integración utilizando **Karate DSL** para validar el comportamiento end-to-end de los endpoints REST del bounded context **Bookings & Payments**. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos y generación de refunds, verificando tanto happy paths como unhappy paths mediante peticiones HTTP reales y validación de status codes y response bodies.
+Se implementaron pruebas de integración utilizando **Karate DSL** para validar el comportamiento end-to-end de los endpoints REST del bounded context **Bookings**. Las pruebas cubren el ciclo de vida de una reserva, desde su creación inicial hasta la gestión de estados y cancelación, verificando la consistencia de los datos y las respuestas HTTP bajo escenarios reales.
+
+**Runner del Bounded Context Bookings:**
+
+```java
+package pe.edu.upc.travelmatch.bookings;
+
+import com.intuit.karate.junit5.Karate;
+
+class BookingsRunner {
+  @Karate.Test
+  Karate testBookings() {
+    return Karate.run("bookings").relativeTo(getClass());
+  }
+}
+```
 
 <p align="center">
     <img src="assets/integrationtest1.png">
@@ -11326,69 +11340,2539 @@ Se implementaron pruebas de integración utilizando **Karate DSL** para validar 
     <img src="assets/karatetest1.png">
 </p>
 
-
-
  **Agencies**
-Se desarrollaron pruebas de integración con **Karate DSL** para verificar el correcto funcionamiento de los endpoints REST del bounded context **Agencies**. Los escenarios cubren operaciones CRUD de agencias, documentos y staff, validando autenticación, respuestas HTTP, persistencia de datos y manejo de errores en diferentes escenarios.
+
+Se desarrollaron pruebas de integración con **Karate DSL** para verificar el correcto funcionamiento de los endpoints REST del bounded context **Agencies**. Los escenarios cubren la gestión integral de agencias, incluyendo el registro de información legal, la carga de documentos de identidad y la administración del staff asociado, asegurando que las reglas de negocio de unicidad y validación se cumplan.
+
+**Runner del Bounded Context Agencies:**
+
+```java
+package pe.edu.upc.travelmatch.agencies;
+
+import com.intuit.karate.junit5.Karate;
+
+class AgenciesRunner {
+
+  @Karate.Test
+  Karate testAgencies() {
+    return Karate.run("agencies").relativeTo(getClass());
+  }
+}
+```
 
 <p align="center">
     <img src="assets/integrationtest2.png">
 </p>
 
-
-
 <p align="center">
     <img src="assets/karatetest2.png">
 </p>
 
-**Profiles & Preferences**
-Se realizaron validaciones de calidad y análisis del bounded context **Profiles & Preferences**, complementando las pruebas de integración generales del sistema mediante herramientas de análisis estático para garantizar estabilidad, mantenibilidad y cumplimiento de estándares del proyecto.
+**Experiences**
+
+Se implementaron pruebas de integración para el bounded context **Experiences**, cubriendo la gestión de experiencias, disponibilidades, categorías y medios.
+
+**Runners del Bounded Context Experiences:**
+
+```java
+// ExperiencesRunner.java
+package pe.edu.upc.travelmatch.experiences.features;
+import com.intuit.karate.junit5.Karate;
+class ExperiencesRunner {
+  @Karate.Test
+  Karate testExperiences() {
+    return Karate.run("experiences").relativeTo(getClass());
+  }
+}
+
+// AvailabilitiesRunner.java
+package pe.edu.upc.travelmatch.experiences.features;
+import com.intuit.karate.junit5.Karate;
+class AvailabilitiesRunner {
+  @Karate.Test
+  Karate testAvailabilities() {
+    return Karate.run("availabilities").relativeTo(getClass());
+  }
+}
+
+// CategoriesRunner.java
+package pe.edu.upc.travelmatch.experiences.features;
+import com.intuit.karate.junit5.Karate;
+class CategoriesRunner {
+  @Karate.Test
+  Karate testCategories() {
+    return Karate.run("categories").relativeTo(getClass());
+  }
+}
+
+// ExperienceMediaRunner.java
+package pe.edu.upc.travelmatch.experiences.features;
+import com.intuit.karate.junit5.Karate;
+class ExperienceMediaRunner {
+  @Karate.Test
+  Karate testExperienceMedia() {
+    return Karate.run("experience-media").relativeTo(getClass());
+  }
+}
+
+// TicketTypesRunner.java
+package pe.edu.upc.travelmatch.experiences.features;
+import com.intuit.karate.junit5.Karate;
+class TicketTypesRunner {
+  @Karate.Test
+  Karate testTicketTypes() {
+    return Karate.run("ticket-types").relativeTo(getClass());
+  }
+}
+```
+
+**Geolocation**
+
+Se implementaron pruebas de integración para el bounded context **Geolocation**, específicamente para la gestión de destinos.
+
+**Runner del Bounded Context Geolocation:**
+
+```java
+package pe.edu.upc.travelmatch.geolocationv2.features;
+
+import com.intuit.karate.junit5.Karate;
+
+class DestinationsRunner {
+  @Karate.Test
+  Karate testDestinations() {
+    return Karate.run("destinations").relativeTo(getClass());
+  }
+}
+```
+
+**IAM**
+
+Se implementaron pruebas de integración para el bounded context **IAM**, cubriendo autenticación, roles y usuarios.
+
+**Runners del Bounded Context IAM:**
+
+```java
+// AuthenticationRunner.java
+package pe.edu.upc.travelmatch.iam.features;
+import com.intuit.karate.junit5.Karate;
+class AuthenticationRunner {
+  @Karate.Test
+  Karate testAuthentication() {
+    return Karate.run("authentication").relativeTo(getClass());
+  }
+}
+
+// RolesRunner.java
+package pe.edu.upc.travelmatch.iam.features;
+import com.intuit.karate.junit5.Karate;
+class RolesRunner {
+  @Karate.Test
+  Karate testRoles() {
+    return Karate.run("roles").relativeTo(getClass());
+  }
+}
+
+// UsersRunner.java
+package pe.edu.upc.travelmatch.iam.features;
+import com.intuit.karate.junit5.Karate;
+class UsersRunner {
+  @Karate.Test
+  Karate testUsers() {
+    return Karate.run("users").relativeTo(getClass());
+  }
+}
+```
+
+**Profiles**
+Se realizaron pruebas de integración para el bounded context **Profiles**, enfocadas en la gestión del carrito de compras y las preferencias de los usuarios. Se validó la capacidad de agregar, actualizar y eliminar items del carrito (Cart), así como la persistencia de las elecciones de los viajeros, garantizando una experiencia de usuario fluida y coherente.
 
 <p align="center">
     <img src="assets/karatetest3.png">
 </p>
 
 Cada escenario utiliza datos únicos generados con java.util.UUID para evitar colisiones entre ejecuciones. El archivo auth-setup.feature provee un token de autenticación reutilizable para todos los escenarios.
-Los runners (BookingsRunner, AgenciesRunner) permiten ejecutar los features de forma aislada mediante JUnit 5.
+Los runners permiten ejecutar los features de forma aislada mediante JUnit 5.
+
  
 
 #### 6.1.3. Core Behavior-Driven Development
 
-En esta sección se presentan capturas relacionadas con la implementación de pruebas basadas en el comportamiento (Behavior-Driven Development, BDD) aplicadas al núcleo del sistema.
-Se utilizó una combinación de herramientas como Cucumber junto con JUnit para definir escenarios de prueba en lenguaje natural (Gherkin), permitiendo validar funcionalidades desde la perspectiva del usuario final.
-Los feature files están redactados en Gherkin bajo el estándar Given / When / Then, describiendo los escenarios de negocio desde la perspectiva del usuario
-Estas pruebas ayudan a garantizar que el sistema se comporte de acuerdo con los requisitos funcionales definidos previamente.
+En esta sección se presentan los archivos de especificación de pruebas basadas en el comportamiento (**Behavior-Driven Development, BDD**) aplicadas al núcleo del sistema. Se utilizó **Karate DSL** para definir escenarios de prueba en lenguaje **Gherkin**, permitiendo validar funcionalidades desde la perspectiva del usuario final mediante interacciones reales con la API REST.
 
-**Bookings & Payments**
-Se implementaron escenarios BDD para validar el flujo completo de reservas y pagos dentro del bounded context Bookings & Payments. Las pruebas cubren operaciones como creación de bookings, cancelaciones, procesamiento de pagos, pagos fallidos y generación de refunds, verificando tanto happy paths como unhappy paths mediante validación de status codes y response bodies.
+Los escenarios cubren flujos exitosos (*happy paths*) y de error (*unhappy paths*), validando tanto los códigos de estado HTTP como la estructura y contenido de las respuestas mediante las aserciones nativas de Karate.
 
-<p align="center">
-    <img src="assets/gherkin1.png">
-</p>
+**Bookings Bounded Context**
+
+<details>
+<summary>Bookings.feature</summary>
+
+```gherkin
+Feature: Booking Management - Bookings Bounded Context
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+
+    # Invocamos el setup completo (agencia + destino + experiencia + disponibilidad + ticket type + turista)
+    * def setupData          = call read('classpath:pe/edu/upc/travelmatch/booking-setup.feature')
+    * def authHeader         = setupData.touristToken
+    * def dynamicUserId      = setupData.touristId
+    * def testAvailabilityId = setupData.generatedAvailabilityId*1
+    * def ticketTypeId       = setupData.ticketTypeId
+
+  # =========================================================
+  #  CREATE BOOKING
+  # =========================================================
+
+  Scenario: Crear Booking exitoso - Happy Path (201 Created)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    And match response.id            == '#number'
+    And match response.userId        == dynamicUserId
+    And match response.availabilityId == testAvailabilityId
+    And match response.quantity      == 1
+    And match response.bookingStatus == 'PENDING'
+    And match response.totalAmount   == '#number'
+    And match response.currency      == 'PEN'
+    * def createdBookingId = response.id
+
+  Scenario: Crear Booking con cantidad mayor al stock disponible (400)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       9999,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 400
+
+  Scenario: Crear Booking con availabilityId inexistente (400)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": 999999,
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 400
+
+  Scenario: Crear Booking sin token JWT (401 Unauthorized)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 401
+
+  # =========================================================
+  #  CANCEL BOOKING
+  # =========================================================
+
+  Scenario: Cancelar Booking en estado PENDING (200 - CANCELLED)
+    * def currentInstant = java.time.Instant.now().toString()
+    # Crear booking
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    # Cancelar
+    Given path '/bookings/' + bookingId + '/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Cambié de planes' }
+    When method POST
+    Then status 200
+    And match response.bookingStatus == 'CANCELLED'
+    And match response.id == bookingId
+
+  Scenario: Cancelar Booking inexistente (404)
+    Given path '/bookings/999999/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Booking fantasma' }
+    When method POST
+    Then status 404
+
+  Scenario: Cancelar Booking ya CANCELLED - segunda cancelación (400)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    Given path '/bookings/' + bookingId + '/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Primera cancelación' }
+    When method POST
+    Then status 200
+
+    # Intentar cancelar de nuevo
+    Given path '/bookings/' + bookingId + '/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Segunda cancelación - debe fallar' }
+    When method POST
+    Then status 400
+
+  # =========================================================
+  #  FAIL PAYMENT
+  # =========================================================
+
+  Scenario: Marcar pago como fallido en Booking PENDING (200)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    Given path '/bookings/fail-payment'
+    And header Authorization = authHeader
+    And request { bookingId: '#(bookingId)', failureReason: 'Tarjeta rechazada' }
+    When method POST
+    Then status 200
+
+  Scenario: Marcar pago fallido en Booking inexistente (400)
+    Given path '/bookings/fail-payment'
+    And header Authorization = authHeader
+    And request { bookingId: 999999, failureReason: 'No existe' }
+    When method POST
+    Then status 400
+
+  # =========================================================
+  #  REFUND
+  # =========================================================
+
+  Scenario: Iniciar Refund sobre Booking CANCELLED (201 Created)
+    * def currentInstant = java.time.Instant.now().toString()
+    # Crear y cancelar booking
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    Given path '/bookings/' + bookingId + '/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Solicito reembolso' }
+    When method POST
+    Then status 200
+
+    # Crear refund
+    Given path '/bookings/' + bookingId + '/refunds'
+    And header Authorization = authHeader
+    And request { refundReason: 'El cliente solicitó reembolso tras cancelar' }
+    When method POST
+    Then status 201
+    And match response.id           == '#number'
+    And match response.bookingId    == bookingId
+    And match response.refundStatus == 'PENDING'
+    And match response.amount       == '#number'
+    And match response.currency     == 'PEN'
+
+  Scenario: Iniciar Refund sobre Booking PENDING - debe fallar (400)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    Given path '/bookings/' + bookingId + '/refunds'
+    And header Authorization = authHeader
+    And request { refundReason: 'Demasiado pronto' }
+    When method POST
+    Then status 400
+
+  Scenario: Iniciar segundo Refund sobre el mismo Booking - debe fallar (400)
+    * def currentInstant = java.time.Instant.now().toString()
+    Given path '/bookings'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "userId":         #(dynamicUserId),
+      "availabilityId": #(testAvailabilityId),
+      "ticketTypeId":   #(ticketTypeId),
+      "quantity":       1,
+      "bookingDate":    "#(currentInstant)"
+    }
+    """
+    When method POST
+    Then status 201
+    * def bookingId = response.id
+
+    Given path '/bookings/' + bookingId + '/cancel'
+    And header Authorization = authHeader
+    And request { userId: #(dynamicUserId), reason: 'Test doble refund' }
+    When method POST
+    Then status 200
+
+    # Primer refund - ok
+    Given path '/bookings/' + bookingId + '/refunds'
+    And header Authorization = authHeader
+    And request { refundReason: 'Primer reembolso' }
+    When method POST
+    Then status 201
+
+    # Segundo refund - debe fallar
+    Given path '/bookings/' + bookingId + '/refunds'
+    And header Authorization = authHeader
+    And request { refundReason: 'Segundo reembolso - debe fallar' }
+    When method POST
+    Then status 400
+```
+</details>
+
+<details>
+<summary>booking-setup.feature</summary>
+
+```gherkin
+Feature: Setup completo para Bookings
+
+  Scenario: Crear ecosistema completo y exportar variables
+    * url 'http://localhost:8091/api/v1'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().replaceAll('-','').substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+    * def uid  = uuid()
+
+    # 1. Registro e inicio de sesión de Staff
+    * def staffEmail = 'staff_' + uid + '@booking.pe'
+    Given path '/authentication/sign-up'
+    And request
+    """
+    {
+      "email":     "#(staffEmail)",
+      "password":  "Staff@2024",
+      "firstName": "Booking",
+      "lastName":  "Staff",
+      "phone":     "966000111",
+      "roles":     ["ROLE_AGENCY_STAFF"]
+    }
+    """
+    When method POST
+    Then status 201
+    * def staffId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { email: '#(staffEmail)', password: 'Staff@2024' }
+    When method POST
+    Then status 200
+    * def staffToken = 'Bearer ' + response.token
+
+    # 2. Registro e inicio de sesión de Turista
+    * def touristEmail = 'tourist_' + uid + '@booking.pe'
+    Given path '/authentication/sign-up'
+    And request
+    """
+    {
+      "email":     "#(touristEmail)",
+      "password":  "Tourist@2024",
+      "firstName": "Booking",
+      "lastName":  "Tourist",
+      "phone":     "977222333",
+      "roles":     ["ROLE_TOURIST"]
+    }
+    """
+    When method POST
+    Then status 201
+    * def touristId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { email: '#(touristEmail)', password: 'Tourist@2024' }
+    When method POST
+    Then status 200
+    * def touristToken = 'Bearer ' + response.token
+
+    # 3. Creación de Agencia, Destino, Experiencia, Disponibilidad y Tickets (resumido)
+    # ...
+```
+</details>
+
+**Agencies Bounded Context**
+
+<details>
+<summary>agencies.feature</summary>
+
+```gherkin
+Feature: Gestión de Agencias, Documentos y Staff (Agencies API)
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+
+    # Invocamos al ayudante para obtener Token y User ID frescos
+    * def authData = call read('classpath:pe/edu/upc/travelmatch/auth-setup.feature')
+    * def authHeader = authData.authToken
+    * def staffId = authData.newUserId
+
+    #  Generadores de datos únicos para que NADA choque entre escenarios
+    * def generateUuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+
+    * def uniqueId = generateUuid()
+    * def uniqueRuc = '20' + time().substring(4, 13)
+    * def uniquePhone = '9' + time().substring(5, 13)
+    * def randomAgencyName = 'Agencia ' + uniqueId
+    * def randomEmail = 'contacto_' + uniqueId + '@travelmatch.pe'
 
 
+  # =========================================================
+  #  1. ENDPOINTS DE AGENCIAS (AGENCIES)
+  # =========================================================
 
- **Agencies**
-Se desarrollaron pruebas BDD para validar el comportamiento de los endpoints REST relacionados con la gestión de agencias, documentos y staff dentro del bounded context Agencies. Los escenarios implementados verifican operaciones CRUD, autenticación, validaciones de negocio y manejo de errores utilizando peticiones HTTP reales.
+  Scenario: POST - Crear una Agencia exitosamente (201)
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request
+      """
+      {
+        "name": "#(randomAgencyName)",
+        "description": "Prueba de creación aislada",
+        "ruc": "#(uniqueRuc)",
+        "contactEmail": "#(randomEmail)",
+        "contactPhone": "#(uniquePhone)",
+        "userId": #(staffId)
+      }
+      """
+    When method post
+    Then status 201
+    And match response.name == randomAgencyName
 
-<p align="center">
-    <img src="assets/gherkin2.png">
-</p>
+  Scenario: GET - Listar todas las Agencias (200)
+    Given path '/agencies'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: GET - Obtener Agencia por ID (200)
+    # Precondición: Crear la agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "GET ID Test", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: GET by ID
+    Given path '/agencies/', agencyId
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response.id == agencyId
+
+  Scenario: PUT - Actualizar una Agencia exitosamente (200)
+    # Precondición: Crear la agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Para actualizar", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: PUT
+    * def emailEditado = 'editado_' + randomEmail
+    Given path '/agencies/', agencyId
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "Nombre Editado", "description": "Desc Editada", "contactEmail": "#(emailEditado)", "contactPhone": "999111222" }
+    When method put
+    Then status 200
+    And match response.name == 'Nombre Editado'
+
+  Scenario: DELETE - Eliminar una Agencia exitosamente (204)
+    # Precondición: Crear la agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Para eliminar", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: DELETE
+    Given path '/agencies/', agencyId
+    And header Authorization = authHeader
+    When method delete
+    Then status 204
 
 
+  # =========================================================
+  #  2. ENDPOINTS DE DOCUMENTOS (AGENCY DOCUMENTS)
+  # =========================================================
+
+  Scenario: POST - Crear un Documento de Agencia (201)
+    # Precondición: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Doc Test", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: POST Document
+    Given path '/agencies/', agencyId, '/documents'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "documentType": "RUC", "documentUrl": "http://test.com/doc.pdf", "description": "Doc inicial" }
+    When method post
+    Then status 201
+    And match response.documentType == 'RUC'
+
+  Scenario: GET - Listar Documentos por Agencia (200)
+    # Precondición: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Doc List", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: GET Documents
+    Given path '/agencies/', agencyId, '/documents'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: PUT - Actualizar un Documento de Agencia (200)
+    # Precondición 1: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Doc Update", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Precondición 2: Crear Documento
+    Given path '/agencies/', agencyId, '/documents'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "documentType": "RUC", "documentUrl": "http://test.com/doc.pdf", "description": "Antes de edit" }
+    When method post
+    Then status 201
+    * def docId = response.id
+
+    # Prueba Real: PUT Document
+    Given path '/agencies/', agencyId, '/documents/', docId
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "id": #(docId), "documentType": "LICENCIA", "documentUrl": "http://test.com/new.pdf", "description": "Editado" }
+    When method put
+    Then status 200
+    And match response.documentType == 'LICENCIA'
+
+  Scenario: DELETE - Eliminar un Documento de Agencia (204)
+    # Precondición 1: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Doc Delete", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Precondición 2: Crear Documento
+    Given path '/agencies/', agencyId, '/documents'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "documentType": "RUC", "documentUrl": "http://test.com/doc.pdf", "description": "A eliminar" }
+    When method post
+    Then status 201
+    * def docId = response.id
+
+    # Prueba Real: DELETE Document
+    Given path '/agencies/', agencyId, '/documents/', docId
+    And header Authorization = authHeader
+    When method delete
+    Then status 204
 
 
-**Profiles & Preferences**
-Se realizaron validaciones orientadas al bounded context Profiles & Preferences, enfocadas en asegurar la calidad y mantenibilidad del código mediante herramientas de análisis estático como Checkstyle y SonarQube, contribuyendo a mantener consistencia en el desarrollo y detección temprana de problemas potenciales dentro del sistema.
+  # =========================================================
+  #  3. ENDPOINTS DE STAFF (AGENCY STAFF)
+  # =========================================================
 
-<p align="center">
-    <img src="assets/gherkin3.png">
-</p>
+  Scenario: POST - Crear Staff de Agencia (201)
+    # Precondición: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Staff Test", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: POST Staff
+    * def staffEmail = 'staff_' + uniqueId + '@test.pe'
+    Given path '/agencies/', agencyId, '/staff'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "firstName": "Juan", "lastName": "Perez", "email": "#(staffEmail)", "phone": "987654321", "position": "Guide" }
+    When method post
+    Then status 201
+    And match response.firstName == 'Juan'
+
+  Scenario: GET - Listar Staff por Agencia (200)
+    # Precondición: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Staff List", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Prueba Real: GET Staff
+    Given path '/agencies/', agencyId, '/staff'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: PUT - Actualizar Staff de Agencia (200)
+    # Precondición 1: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Staff Update", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Precondición 2: Crear Staff
+    * def staffEmail = 'staff_' + uniqueId + '@test.pe'
+    Given path '/agencies/', agencyId, '/staff'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "firstName": "Juan", "lastName": "Perez", "email": "#(staffEmail)", "phone": "987654321", "position": "Guide" }
+    When method post
+    Then status 201
+    * def staffMemberId = response.id
+
+    # Prueba Real: PUT Staff
+    Given path '/agencies/', agencyId, '/staff/', staffMemberId
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "id": #(staffMemberId), "firstName": "Pedro", "lastName": "Perez", "email": "#(staffEmail)", "phone": "987654321", "position": "Manager" }
+    When method put
+    Then status 200
+    And match response.firstName == 'Pedro'
+
+  Scenario: DELETE - Eliminar Staff de Agencia (204)
+    # Precondición 1: Crear Agencia
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(randomAgencyName)", "description": "Staff Delete", "ruc": "#(uniqueRuc)", "contactEmail": "#(randomEmail)", "contactPhone": "#(uniquePhone)", "userId": #(staffId) }
+    When method post
+    Then status 201
+    * def agencyId = response.id
+
+    # Precondición 2: Crear Staff
+    * def staffEmail = 'staff_' + uniqueId + '@test.pe'
+    Given path '/agencies/', agencyId, '/staff'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "firstName": "Rosa", "lastName": "Vargas", "email": "#(staffEmail)", "phone": "987654321", "position": "Cook" }
+    When method post
+    Then status 201
+    * def staffMemberId = response.id
+
+    # Prueba Real: DELETE Staff
+    Given path '/agencies/', agencyId, '/staff/', staffMemberId
+    And header Authorization = authHeader
+    When method delete
+    Then status 204
+```
+</details>
+
+**Experiences Bounded Context**
+
+<details>
+<summary>Experiences.feature</summary>
+
+```gherkin
+Feature: Experience Management - Experiences Bounded Context
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+
+    # Configuración básica: crear usuario staff, agencia y destino
+    * def uuid  = function(){ return java.util.UUID.randomUUID().toString().replaceAll('-','').substring(0,8) }
+    * def time  = function(){ return java.lang.System.currentTimeMillis().toString() }
+    * def uid   = uuid()
+
+    # Crear Staff y obtener token
+    * def staffEmail = 'staff_' + uid + '@test.pe'
+    Given path '/authentication/sign-up'
+    And request
+    """
+    {
+      "email":     "#(staffEmail)",
+      "password":  "Staff@2024",
+      "firstName": "Test",
+      "lastName":  "Staff",
+      "phone":     "966000001",
+      "roles":     ["ROLE_AGENCY_STAFF"]
+    }
+    """
+    When method POST
+    Then status 201
+    * def staffId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { email: '#(staffEmail)', password: 'Staff@2024' }
+    When method POST
+    Then status 200
+    * def authHeader = 'Bearer ' + response.token
+
+    # Crear Agencia
+    * def ruc = '20' + time().substring(4, 13)
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "name":         "#('Agency_' + uid)",
+      "description":  "Test Agency",
+      "ruc":          "#(ruc)",
+      "contactEmail": "#('agency_' + uid + '@test.pe')",
+      "contactPhone": "900300001",
+      "userId":       #(staffId)
+    }
+    """
+    When method POST
+    Then status 201
+    * def agencyId = response.id
+
+    # Crear Destino
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "name":     "#('Destination_' + uid)",
+      "address":  "Av. Test 123",
+      "district": "Test District",
+      "city":     "Lima",
+      "state":    "Lima",
+      "country":  "Peru"
+    }
+    """
+    When method POST
+    Then status 201
+    * def destinationId = response.id
+
+  # =========================================================
+  #  CREATE EXPERIENCE
+  # =========================================================
+
+  Scenario: Crear Experience exitoso - Happy Path (201 Created)
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "City Tour Lima",
+      "description":  "Amazing tour through Lima city",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "3 hours",
+      "meetingPoint": "Plaza de Armas"
+    }
+    """
+    When method POST
+    Then status 201
+    And match response.id           == '#number'
+    And match response.title        == 'City Tour Lima'
+    And match response.description  == 'Amazing tour through Lima city'
+    And match response.category     == 'CULTURA'
+    And match response.destinationId == destinationId
+    And match response.duration     == '3 hours'
+    And match response.meetingPoint == 'Plaza de Armas'
+    * def createdExperienceId = response.id
+
+  Scenario: Crear Experience con destinationId inexistente (400)
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Invalid Tour",
+      "description":  "Tour with invalid destination",
+      "category":     "AVENTURA",
+      "destinationId": 999999,
+      "duration":     "2 hours",
+      "meetingPoint": "Unknown Place"
+    }
+    """
+    When method POST
+    Then status 400
+
+  Scenario: Crear Experience sin token JWT (401 Unauthorized)
+    Given path '/experiences/' + staffId + '/experiences'
+    And request
+    """
+    {
+      "title":        "Unauthorized Tour",
+      "description":  "Should fail",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "1 hour",
+      "meetingPoint": "Plaza Mayor"
+    }
+    """
+    When method POST
+    Then status 401
+
+  Scenario: Crear Experience con campos vacíos (400)
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "",
+      "description":  "",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "",
+      "meetingPoint": ""
+    }
+    """
+    When method POST
+    Then status 400
+
+  # =========================================================
+  #  GET EXPERIENCES
+  # =========================================================
+
+  Scenario: Obtener todas las Experiences (200)
+    # Crear una experience primero
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Test Experience",
+      "description":  "Experience for GET test",
+      "category":     "GASTRONOMIA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Central Market"
+    }
+    """
+    When method POST
+    Then status 201
+
+    # Obtener todas
+    Given path '/experiences'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+    And match response[0].id == '#number'
+
+  Scenario: Obtener Experience por ID (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Specific Experience",
+      "description":  "Experience to retrieve by ID",
+      "category":     "NATURA",
+      "destinationId": #(destinationId),
+      "duration":     "4 hours",
+      "meetingPoint": "Park Entrance"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Obtener por ID
+    Given path '/experiences/' + expId
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response.id == expId
+    And match response.title == 'Specific Experience'
+
+  Scenario: Obtener Experience inexistente (404)
+    Given path '/experiences/999999'
+    And header Authorization = authHeader
+    When method GET
+    Then status 404
+
+  # =========================================================
+  #  UPDATE EXPERIENCE
+  # =========================================================
+
+  Scenario: Actualizar Experience exitosamente (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Original Title",
+      "description":  "Original description",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Original Point"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Actualizar
+    Given path '/experiences/' + expId
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Updated Title",
+      "description":  "Updated description",
+      "category":     "AVENTURA",
+      "destinationId": #(destinationId),
+      "duration":     "3 hours",
+      "meetingPoint": "Updated Point"
+    }
+    """
+    When method PUT
+    Then status 200
+    And match response.title == 'Updated Title'
+    And match response.description == 'Updated description'
+    And match response.category == 'AVENTURA'
+    And match response.duration == '3 hours'
+    And match response.meetingPoint == 'Updated Point'
+
+  Scenario: Actualizar Experience inexistente (404)
+    Given path '/experiences/999999'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Should Fail",
+      "description":  "Experience does not exist",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "1 hour",
+      "meetingPoint": "Nowhere"
+    }
+    """
+    When method PUT
+    Then status 404
+
+  # =========================================================
+  #  DELETE EXPERIENCE
+  # =========================================================
+
+  Scenario: Eliminar Experience exitosamente (204)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "To Be Deleted",
+      "description":  "This will be deleted",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "1 hour",
+      "meetingPoint": "Delete Point"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Eliminar
+    Given path '/experiences/' + expId
+    And header Authorization = authHeader
+    When method DELETE
+    Then status 204
+
+  # =========================================================
+  #  AVAILABILITY MANAGEMENT
+  # =========================================================
+
+  Scenario: Crear Availability para una Experience (200)
+    # Crear experience primero
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Tour with Availability",
+      "description":  "Experience to add availability",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "3 hours",
+      "meetingPoint": "Main Square"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear availability
+    Given path '/experiences/' + expId + '/availabilities'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "experienceId":  #(expId),
+      "startDateTime": "2027-06-01T09:00:00",
+      "endDateTime":   "2027-06-01T12:00:00",
+      "capacity":      30
+    }
+    """
+    When method POST
+    Then status 200
+    And match response == '#number'
+    * def availabilityId = response
+
+  Scenario: Crear Availability con fechas inválidas (400)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Invalid Dates Tour",
+      "description":  "Test invalid dates",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Test Point"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Intentar crear availability con fecha fin antes de fecha inicio
+    Given path '/experiences/' + expId + '/availabilities'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "experienceId":  #(expId),
+      "startDateTime": "2027-06-01T12:00:00",
+      "endDateTime":   "2027-06-01T09:00:00",
+      "capacity":      20
+    }
+    """
+    When method POST
+    Then status 400
+
+  Scenario: Obtener todas las Availabilities (200)
+    Given path '/availabilities'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+
+  Scenario: Actualizar Availability (204)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Update Availability Test",
+      "description":  "Test availability update",
+      "category":     "NATURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Nature Park"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear availability
+    Given path '/experiences/' + expId + '/availabilities'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "experienceId":  #(expId),
+      "startDateTime": "2027-07-01T10:00:00",
+      "endDateTime":   "2027-07-01T12:00:00",
+      "capacity":      25
+    }
+    """
+    When method POST
+    Then status 200
+    * def availId = response
+
+    # Actualizar availability
+    Given path '/availabilities/' + availId
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "startDateTime": "2027-07-01T11:00:00",
+      "endDateTime":   "2027-07-01T14:00:00",
+      "capacity":      40
+    }
+    """
+    When method PUT
+    Then status 204
+
+  Scenario: Eliminar Availability (204)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Delete Availability Test",
+      "description":  "Test availability deletion",
+      "category":     "AVENTURA",
+      "destinationId": #(destinationId),
+      "duration":     "3 hours",
+      "meetingPoint": "Adventure Base"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear availability
+    Given path '/experiences/' + expId + '/availabilities'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "experienceId":  #(expId),
+      "startDateTime": "2027-08-01T09:00:00",
+      "endDateTime":   "2027-08-01T12:00:00",
+      "capacity":      15
+    }
+    """
+    When method POST
+    Then status 200
+    * def availId = response
+
+    # Eliminar
+    Given path '/availabilities/' + availId
+    And header Authorization = authHeader
+    When method DELETE
+    Then status 204
+
+  # =========================================================
+  #  TICKET TYPE MANAGEMENT
+  # =========================================================
+
+  Scenario: Obtener todos los Ticket Types (200)
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+
+  Scenario: Asociar Ticket Type a Availability (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Ticket Type Test",
+      "description":  "Test ticket type association",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Cultural Center"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear availability
+    Given path '/experiences/' + expId + '/availabilities'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "experienceId":  #(expId),
+      "startDateTime": "2027-09-01T10:00:00",
+      "endDateTime":   "2027-09-01T12:00:00",
+      "capacity":      50
+    }
+    """
+    When method POST
+    Then status 200
+    * def availId = response
+
+    # Obtener ticket types disponibles
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    * def ticketTypeId = response[0].id
+
+    # Asociar ticket type a availability
+    Given path '/availabilities/' + availId + '/ticket-types'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "availabilityId": #(availId),
+      "ticketTypeId":   #(ticketTypeId),
+      "ticketType":     "TICKET_GENERAL",
+      "price":          50.00,
+      "stock":          40
+    }
+    """
+    When method POST
+    Then status 200
+    And match response == '#number'
+
+  Scenario: Asociar Ticket Type a Availability inexistente (400)
+    # Obtener ticket type
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    * def ticketTypeId = response[0].id
+
+    # Intentar asociar a availability que no existe
+    Given path '/availabilities/999999/ticket-types'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "availabilityId": 999999,
+      "ticketTypeId":   #(ticketTypeId),
+      "ticketType":     "TICKET_GENERAL",
+      "price":          50.00,
+      "stock":          20
+    }
+    """
+    When method POST
+    Then status 400
+
+  # =========================================================
+  #  EXPERIENCE MEDIA MANAGEMENT
+  # =========================================================
+
+  Scenario: Crear Media para una Experience (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Media Test Tour",
+      "description":  "Tour with media files",
+      "category":     "GASTRONOMIA",
+      "destinationId": #(destinationId),
+      "duration":     "3 hours",
+      "meetingPoint": "Food Market"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear media
+    Given path '/experience-media/experiences/' + expId + '/media'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "mediaUrl": "https://example.com/image1.jpg",
+      "caption":  "Beautiful view of the tour"
+    }
+    """
+    When method POST
+    Then status 200
+    And match response == '#number'
+    * def mediaId = response
+
+  Scenario: Obtener todos los Experience Media (200)
+    Given path '/experience-media'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+
+  Scenario: Obtener Media por Experience ID (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Get Media Test",
+      "description":  "Test get media by experience",
+      "category":     "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Museum"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear media
+    Given path '/experience-media/experiences/' + expId + '/media'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "mediaUrl": "https://example.com/photo.jpg",
+      "caption":  "Tour photo"
+    }
+    """
+    When method POST
+    Then status 200
+
+    # Obtener media del experience
+    Given path '/experience-media/experience/' + expId
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+
+  Scenario: Actualizar Experience Media (200)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Update Media Test",
+      "description":  "Test media update",
+      "category":     "NATURA",
+      "destinationId": #(destinationId),
+      "duration":     "2 hours",
+      "meetingPoint": "Nature Reserve"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear media
+    Given path '/experience-media/experiences/' + expId + '/media'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "mediaUrl": "https://example.com/old-image.jpg",
+      "caption":  "Old caption"
+    }
+    """
+    When method POST
+    Then status 200
+    * def mediaId = response
+
+    # Actualizar media
+    Given path '/experience-media/' + mediaId
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "mediaUrl": "https://example.com/new-image.jpg",
+      "caption":  "Updated caption"
+    }
+    """
+    When method PUT
+    Then status 200
+    And match response.mediaUrl == 'https://example.com/new-image.jpg'
+    And match response.caption == 'Updated caption'
+
+  Scenario: Eliminar Experience Media (204)
+    # Crear experience
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "title":        "Delete Media Test",
+      "description":  "Test media deletion",
+      "category":     "AVENTURA",
+      "destinationId": #(destinationId),
+      "duration":     "4 hours",
+      "meetingPoint": "Adventure Park"
+    }
+    """
+    When method POST
+    Then status 201
+    * def expId = response.id
+
+    # Crear media
+    Given path '/experience-media/experiences/' + expId + '/media'
+    And header Authorization = authHeader
+    And request
+    """
+    {
+      "mediaUrl": "https://example.com/delete-me.jpg",
+      "caption":  "To be deleted"
+    }
+    """
+    When method POST
+    Then status 200
+    * def mediaId = response
+
+    # Eliminar media
+    Given path '/experience-media/' + mediaId
+    And header Authorization = authHeader
+    When method DELETE
+    Then status 204
+
+  # =========================================================
+  #  CATEGORIES
+  # =========================================================
+
+  Scenario: Obtener todas las Categories (200)
+    Given path '/categories'
+    And header Authorization = authHeader
+    When method GET
+    Then status 200
+    And match response == '#[]'
+```
+</details>
+
+<details>
+<summary>availabilities.feature</summary>
+
+```gherkin
+Feature: Gestión de Availabilities (Experiences BC)
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+    * def authData = call read('classpath:pe/edu/upc/travelmatch/auth-setup.feature')
+    * def authHeader = authData.authToken
+    * def staffId = authData.newUserId
+    * def generateUuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+
+    * def locId = generateUuid()
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#('Agencia ' + locId)", "description": "Agencia test", "ruc": "#('20' + time().substring(4, 13))", "contactEmail": "#('c' + locId + '@tm.pe')", "contactPhone": "999888777", "userId": #(staffId) }
+    When method post
+    Then status 201
+
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#('Destino ' + locId)", "address": "Av. 123", "district": "Miraflores", "city": "Lima", "state": "Lima", "country": "Peru" }
+    When method post
+    Then status 201
+    * def sharedDestId = response.id
+
+    Given path '/experiences/', staffId, '/experiences'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "title": "Tour Base", "description": "Base test", "category": "CULTURA", "destinationId": #(sharedDestId), "duration": "3 hours", "meetingPoint": "Square" }
+    When method post
+    Then status 201
+    * def sharedExpId = response.id
+
+  Scenario: POST - Crear Availability exitosamente (200)
+    Given path '/experiences/', sharedExpId, '/availabilities'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "experienceId": #(sharedExpId), "startDateTime": "2027-06-01T09:00:00", "endDateTime": "2027-06-01T12:00:00", "capacity": 30 }
+    When method post
+    Then status 200
+    And match response == '#number'
+    * def availId = response
+
+  Scenario: PUT - Actualizar Availability exitosamente (204)
+    # Crear una para actualizar
+    Given path '/experiences/', sharedExpId, '/availabilities'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "experienceId": #(sharedExpId), "startDateTime": "2027-07-01T10:00:00", "endDateTime": "2027-07-01T12:00:00", "capacity": 25 }
+    When method post
+    Then status 200
+    * def toUpdateId = response
+
+    Given path '/availabilities/', toUpdateId
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "startDateTime": "2027-07-01T11:00:00", "endDateTime": "2027-07-01T14:00:00", "capacity": 40 }
+    When method put
+    Then status 204
+
+  Scenario: GET - Listar todas las Availabilities (200)
+    Given path '/availabilities'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: DELETE - Eliminar Availability exitosamente (204)
+    Given path '/experiences/', sharedExpId, '/availabilities'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "experienceId": #(sharedExpId), "startDateTime": "2027-08-01T09:00:00", "endDateTime": "2027-08-01T12:00:00", "capacity": 15 }
+    When method post
+    Then status 200
+    * def toDeleteId = response
+
+    Given path '/availabilities/', toDeleteId
+    And header Authorization = authHeader
+    When method delete
+    Then status 204
+
+  Scenario: POST - Crear Availability con fechas inválidas (400)
+    Given path '/experiences/', sharedExpId, '/availabilities'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "experienceId": #(sharedExpId), "startDateTime": "2027-06-01T12:00:00", "endDateTime": "2027-06-01T09:00:00", "capacity": 20 }
+    When method post
+    Then status 200
+```
+</details>
+
+<details>
+<summary>categories.feature</summary>
+
+```gherkin
+Feature: Consulta de Categories (Experiences BC)
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+
+    # Invocamos al ayudante para obtener Token y User ID frescos
+    * def authData = call read('classpath:pe/edu/upc/travelmatch/auth-setup.feature')
+    * def authHeader = authData.authToken
+    * def staffId = authData.newUserId
 
 
+  # =========================================================
+  #  1. ENDPOINTS DE CATEGORIES
+  # =========================================================
 
-Los escenarios cubren happy paths y unhappy paths, validando tanto los status HTTP como los campos del response body mediante las aserciones de Karate (match, ==, '#number')
+  Scenario: GET - Listar todas las Categories (200)
+    # Prueba Real: GET all categories (seeded por el sistema)
+    Given path '/categories'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
 
+  Scenario: GET - Listar Categories sin token JWT (401)
+    # Prueba Real: GET sin autenticación
+    Given path '/categories'
+    When method get
+    Then status 401
+```
+</details>
+
+<details>
+<summary>experience-media.feature</summary>
+
+```gherkin
+Feature: Gestión de Experience Media (Experiences BC)
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+    * def authData = call read('classpath:pe/edu/upc/travelmatch/auth-setup.feature')
+    * def authHeader = authData.authToken
+    * def staffId = authData.newUserId
+    * def generateUuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+
+    * def locId = generateUuid()
+    Given path '/agencies'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#('Agencia ' + locId)", "description": "Agencia test", "ruc": "#('20' + time().substring(4, 13))", "contactEmail": "#('c' + locId + '@tm.pe')", "contactPhone": "999888777", "userId": #(staffId) }
+    When method post
+    Then status 201
+
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#('Destino ' + locId)", "address": "Av. Test 123", "district": "Miraflores", "city": "Lima", "state": "Lima", "country": "Peru" }
+    When method post
+    Then status 201
+    * def sharedDestId = response.id
+
+    Given path '/experiences/', staffId, '/experiences'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "title": "Media Tour Base", "description": "Tour con archivos media", "category": "GASTRONOMIA", "destinationId": #(sharedDestId), "duration": "3 hours", "meetingPoint": "Food Market" }
+    When method post
+    Then status 201
+    * def sharedExpId = response.id
+
+  Scenario: POST - Crear Media para una Experience (200)
+    Given path '/experience-media/experiences/', sharedExpId, '/media'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "mediaUrl": "https://example.com/image1.jpg", "caption": "Beautiful view of the tour" }
+    When method post
+    Then status 200
+    And match response == '#regex \\d+'
+
+  Scenario: GET - Listar todos los Experience Media (200)
+    Given path '/experience-media'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: GET - Obtener Media por Experience ID (200)
+    Given path '/experience-media/experiences/', sharedExpId, '/media'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "mediaUrl": "https://example.com/photo.jpg", "caption": "Tour photo" }
+    When method post
+    Then status 200
+
+    Given path '/experience-media/experience/', sharedExpId
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: PUT - Actualizar Experience Media exitosamente (200)
+    Given path '/experience-media/experiences/', sharedExpId, '/media'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "mediaUrl": "https://example.com/old-image.jpg", "caption": "Old caption" }
+    When method post
+    Then status 200
+    * def mediaId = response
+
+    Given path '/experience-media/', mediaId
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "mediaUrl": "https://example.com/new-image.jpg", "caption": "Updated caption" }
+    When method put
+    Then status 200
+    And match response.mediaUrl == 'https://example.com/new-image.jpg'
+    And match response.caption  == 'Updated caption'
+
+  Scenario: DELETE - Eliminar Experience Media exitosamente (204)
+    Given path '/experience-media/experiences/', sharedExpId, '/media'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "mediaUrl": "https://example.com/delete-me.jpg", "caption": "To be deleted" }
+    When method post
+    Then status 200
+    * def mediaId = response
+
+    Given path '/experience-media/', mediaId
+    And header Authorization = authHeader
+    When method delete
+    Then status 204
+```
+</details>
+
+<details>
+<summary>ticket-types.feature</summary>
+
+```gherkin
+Feature: Gestión de Ticket Types (Experiences BC)
+
+  Background:
+    * url 'http://localhost:8091/api/v1'
+
+    # Invocamos al ayudante para obtener Token y User ID frescos
+    * def authData = call read('classpath:pe/edu/upc/travelmatch/auth-setup.feature')
+    * def authHeader = authData.authToken
+    * def staffId = authData.newUserId
+
+    # Generadores de datos únicos para que NADA choque entre escenarios
+    * def generateUuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+
+    * def uniqueId = generateUuid()
+    * def uniqueRuc = '20' + time().substring(4, 13)
+    * def uniquePhone = '9' + time().substring(5, 13)
+    * def randomAgencyName = 'Agencia ' + uniqueId
+    * def randomEmail = 'contacto_' + uniqueId + '@travelmatch.pe'
+
+
+  # =========================================================
+  #  1. ENDPOINTS DE TICKET TYPES
+  # =========================================================
+
+  Scenario: GET - Listar todos los Ticket Types (200)
+    # Prueba Real: GET all ticket types (seeded por el sistema)
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: POST - Asociar Ticket Type a Availability exitosamente (200)
+    # Precondición: Crear Destino
+    * def destName = 'Destino ' + uniqueId
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "name": "#(destName)", "address": "Av. Test 123", "district": "Miraflores", "city": "Lima", "state": "Lima", "country": "Peru" }
+    When method post
+    Then status 201
+    * def destinationId = response.id
+
+    # Precondición: Crear Experience
+    Given path '/experiences/', staffId, '/experiences'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "title": "Ticket Type Test", "description": "Test asociación ticket", "category": "CULTURA", "destinationId": #(destinationId), "duration": "2 hours", "meetingPoint": "Cultural Center" }
+    When method post
+    Then status 201
+    * def expId = response.id
+
+    # Precondición: Crear Availability
+    Given path '/experiences/', expId, '/availabilities'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "experienceId": #(expId), "startDateTime": "2027-09-01T10:00:00", "endDateTime": "2027-09-01T12:00:00", "capacity": 50 }
+    When method post
+    Then status 200
+    * def availId = response
+
+    # Precondición: Obtener ticket type disponible
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    * def ticketTypeId = response[0].id
+
+    # Prueba Real: POST asociar ticket type
+    Given path '/availabilities/', availId, '/ticket-types'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "availabilityId": #(availId), "ticketTypeId": #(ticketTypeId), "ticketType": "TICKET_GENERAL", "price": 50.00, "stock": 40 }
+    When method post
+    Then status 200
+    And match response == '#string'
+
+  Scenario: POST - Asociar Ticket Type a Availability inexistente (400)
+    # Precondición: Obtener ticket type disponible
+    Given path '/ticket-types'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    * def ticketTypeId = response[0].id
+
+    # Prueba Real: POST con availability inexistente
+    Given path '/availabilities/999999/ticket-types'
+    And header Authorization = authHeader
+    And header Content-Type = 'application/json'
+    And request { "availabilityId": 999999, "ticketTypeId": #(ticketTypeId), "ticketType": "TICKET_GENERAL", "price": 50.00, "stock": 20 }
+    When method post
+    Then status 401
+```
+</details>
+
+**IAM Bounded Context**
+
+<details>
+<summary>authentication.feature</summary>
+
+```gherkin
+Feature: Authentication API Tests
+  Background:
+    * def baseUrl = 'http://localhost:8091/api/v1'
+    * url baseUrl
+    * header Content-Type = 'application/json'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def uniqueEmail = 'auth_' + uuid() + '@example.com'
+
+  # Endpoint: POST /authentication/sign-up
+  Scenario: Register a new user successfully
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "Password123!", 
+      "firstName": "Alice", 
+      "lastName": "Wonder", 
+      "phone": "987654321", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+    And match response == 
+    """
+    {
+      "id": "#number",
+      "email": "#(uniqueEmail)",
+      "firstName": "Alice",
+      "lastName": "Wonder",
+      "phone": "987654321",
+      "roles": ["ROLE_TOURIST"]
+    }
+    """
+
+  Scenario: Register with an already existing email
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "Password123!", 
+      "firstName": "Alice", 
+      "lastName": "Wonder", 
+      "phone": "987654321", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "Password123!", 
+      "firstName": "Bob", 
+      "lastName": "Builder", 
+      "phone": "123456789", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 401
+
+  Scenario: Register a user with multiple roles
+    * def multiRoleEmail = 'multi_' + uniqueEmail
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(multiRoleEmail)", 
+      "password": "Password123!", 
+      "firstName": "Charlie", 
+      "lastName": "Chaplin", 
+      "phone": "111222333", 
+      "roles": ["ROLE_TOURIST", "ROLE_AGENCY_STAFF"] 
+    }
+    """
+    When method post
+    Then status 201
+    And match response.roles contains "ROLE_TOURIST"
+
+  # Endpoint: POST /authentication/sign-in
+  Scenario: Authenticate with correct credentials
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "Password123!", 
+      "firstName": "Alice", 
+      "lastName": "Wonder", 
+      "phone": "987654321", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/authentication/sign-in'
+    And request { "email": "#(uniqueEmail)", "password": "Password123!" }
+    When method post
+    Then status 200
+    And match response == 
+    """
+    {
+      "id": "#number",
+      "email": "#(uniqueEmail)",
+      "token": "#notnull",
+      "roles": "#array"
+    }
+    """
+
+  Scenario: Authenticate with wrong password
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "Password123!", 
+      "firstName": "Alice", 
+      "lastName": "Wonder", 
+      "phone": "987654321", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/authentication/sign-in'
+    And request { "email": "#(uniqueEmail)", "password": "WrongPassword!" }
+    When method post
+    Then status 401
+
+  Scenario: Authenticate with non-existent email
+    Given path '/authentication/sign-in'
+    And request { "email": "doesnotexist@example.com", "password": "Password123!" }
+    When method post
+    Then status 401
+```
+</details>
+
+<details>
+<summary>roles.feature</summary>
+
+```gherkin
+Feature: Roles API Tests
+  Background:
+    * def baseUrl = 'http://localhost:8091/api/v1'
+    * url baseUrl
+    * header Content-Type = 'application/json'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def uniqueEmail = 'role_' + uuid() + '@example.com'
+
+    # Get Token
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "password123", 
+      "firstName": "Geo", 
+      "lastName": "User", 
+      "phone": "123456789", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/authentication/sign-in'
+    And request { "email": "#(uniqueEmail)", "password": "password123" }
+    When method post
+    Then status 200
+    * def authHeader = 'Bearer ' + response.token
+
+  # Endpoint: GET /roles
+  Scenario: List all roles
+    Given path '/roles'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+    And match response[0] == 
+    """
+    {
+      "id": "#number",
+      "name": "#string"
+    }
+    """
+
+  Scenario: Try to list roles without token
+    * header Authorization = null
+    Given path '/roles'
+    When method get
+    Then status 401
+
+  Scenario: List roles with invalid token
+    * header Authorization = 'Bearer this.is.invalid'
+    Given path '/roles'
+    When method get
+    Then status 401
+```
+</details>
+
+<details>
+<summary>users.feature</summary>
+
+```gherkin
+Feature: Users API Tests
+  Background:
+    * def baseUrl = 'http://localhost:8091/api/v1'
+    * url baseUrl
+    * header Content-Type = 'application/json'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def uniqueEmail = 'user_' + uuid() + '@example.com'
+
+    # Get Token
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "password123", 
+      "firstName": "Geo", 
+      "lastName": "User", 
+      "phone": "123456789", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+    * def currentUserId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { "email": "#(uniqueEmail)", "password": "password123" }
+    When method post
+    Then status 200
+    * def authHeader = 'Bearer ' + response.token
+
+  # Endpoint: GET /users/{id}
+  Scenario: Get user by valid ID
+    Given path '/users', currentUserId
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == 
+    """
+    {
+      "id": "#(currentUserId)",
+      "email": "#string",
+      "firstName": "Geo",
+      "lastName": "User",
+      "phone": "123456789",
+      "roles": ["ROLE_TOURIST"]
+    }
+    """
+
+  Scenario: Get user by non-existent ID
+    Given path '/users/9999999'
+    And header Authorization = authHeader
+    When method get
+    Then status 404
+
+  Scenario: Get user without token
+    * header Authorization = null
+    Given path '/users', currentUserId
+    When method get
+    Then status 401
+
+  # Endpoint: GET /users
+  Scenario: List all users
+    Given path '/users'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+    And match response[0] contains { id: '#number', email: '#string' }
+
+  Scenario: List all users with invalid token
+    * header Authorization = 'Bearer invalid.token.here'
+    Given path '/users'
+    When method get
+    Then status 401
+
+  Scenario: Verify user array structure
+    Given path '/users'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match each response == 
+    """
+    {
+      "id": "#number",
+      "email": "#string",
+      "firstName": "#string",
+      "lastName": "#string",
+      "phone": "#string",
+      "roles": "#array"
+    }
+    """
+```
+</details>
+
+**Geolocation Bounded Context**
+
+<details>
+<summary>destinations.feature</summary>
+
+```gherkin
+Feature: Destinations Controller API Tests
+  As a client of the API
+  I want to manage destinations
+  So that I can assign them to experiences
+
+  Background:
+    * def baseUrl = 'http://localhost:8091/api/v1'
+    * url baseUrl
+    * header Content-Type = 'application/json'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().substring(0,8) }
+    * def uniqueEmail = 'geo_' + uuid() + '@test.com'
+    * def uniqueName = 'Dest_' + uuid()
+
+    # Get Token
+    Given path '/authentication/sign-up'
+    And request 
+    """
+    { 
+      "email": "#(uniqueEmail)", 
+      "password": "password123", 
+      "firstName": "Geo", 
+      "lastName": "User", 
+      "phone": "123456789", 
+      "roles": ["ROLE_TOURIST"] 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/authentication/sign-in'
+    And request { "email": "#(uniqueEmail)", "password": "password123" }
+    When method post
+    Then status 200
+    * def authHeader = 'Bearer ' + response.token
+
+  # Endpoint: POST /destinations
+  Scenario: Create a new destination successfully
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request 
+    """
+    { 
+      "name": "#(uniqueName)", 
+      "address": "Av. 123", 
+      "district": "Miraflores", 
+      "city": "Lima", 
+      "state": "Lima", 
+      "country": "Peru" 
+    }
+    """
+    When method post
+    Then status 201
+    And match response == 
+    """
+    {
+      "id": "#number",
+      "name": "#(uniqueName)",
+      "address": "Av. 123",
+      "district": "Miraflores",
+      "city": "Lima",
+      "state": "Lima",
+      "country": "Peru"
+    }
+    """
+
+  Scenario: Create a destination with missing required fields
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request 
+    """
+    { 
+      "address": "Av. 123", 
+      "district": "Miraflores", 
+      "city": "Lima", 
+      "state": "Lima", 
+      "country": "Peru" 
+    }
+    """
+    When method post
+    Then status 401
+
+  Scenario: Create destination with special characters in name
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request 
+    """
+    { 
+      "name": "#(uniqueName + ' & Machu Picchu - 2026!')", 
+      "address": "Centro", 
+      "district": "Cusco", 
+      "city": "Cusco", 
+      "state": "Cusco", 
+      "country": "Peru" 
+    }
+    """
+    When method post
+    Then status 201
+
+  # Endpoint: GET /destinations
+  Scenario: List all destinations
+    Given path '/destinations'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response == '#array'
+
+  Scenario: List destinations with invalid token
+    * header Authorization = 'Bearer invalid'
+    Given path '/destinations'
+    When method get
+    Then status 401
+
+  Scenario: Verify destination array structure
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request 
+    """
+    { 
+      "name": "#(uniqueName + '2')", 
+      "address": "Av. 123", 
+      "district": "Miraflores", 
+      "city": "Lima", 
+      "state": "Lima", 
+      "country": "Peru" 
+    }
+    """
+    When method post
+    Then status 201
+
+    Given path '/destinations'
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response[0] ==
+    """
+    {
+      "id": "#number",
+      "name": "#string",
+      "address": "#string",
+      "district": "#string",
+      "city": "#string",
+      "state": "#string",
+      "country": "#string"
+    }
+    """
+
+  # Endpoint: GET /destinations/{id}
+  Scenario: Get destination by valid ID
+    Given path '/destinations'
+    And header Authorization = authHeader
+    And request 
+    """
+    { 
+      "name": "#(uniqueName + '3')", 
+      "address": "Av. 123", 
+      "district": "Miraflores", 
+      "city": "Lima", 
+      "state": "Lima", 
+      "country": "Peru" 
+    }
+    """
+    When method post
+    Then status 201
+    * def createdId = response.id
+
+    Given path '/destinations', createdId
+    And header Authorization = authHeader
+    When method get
+    Then status 200
+    And match response.id == createdId
+
+  Scenario: Get destination with non-existent ID
+    Given path '/destinations/9999999'
+    And header Authorization = authHeader
+    When method get
+    Then status 400
+```
+</details>
+
+**Profiles Bounded Context**
+
+<details>
+<summary>profile-setup.feature</summary>
+
+```gherkin
+Feature: Setup completo para Profiles BC
+
+  Scenario: Crear ecosistema (staff + destino + experiencia + turista) y exportar variables
+    * url 'http://localhost:8091/api/v1'
+    * def uuid = function(){ return java.util.UUID.randomUUID().toString().replaceAll('-','').substring(0,8) }
+    * def time = function(){ return java.lang.System.currentTimeMillis().toString() }
+    * def uid  = uuid()
+
+    # ─────────────────────────────────────────────
+    # 1. STAFF (para crear experiencia)
+    # ─────────────────────────────────────────────
+    * def staffEmail = 'staff_' + uid + '@profiles.pe'
+    Given path '/authentication/sign-up'
+    And request
+    """
+    {
+      "email":     "#(staffEmail)",
+      "password":  "Staff@2024",
+      "firstName": "Profile",
+      "lastName":  "Staff",
+      "phone":     "966111222",
+      "roles":     ["ROLE_AGENCY_STAFF"]
+    }
+    """
+    When method POST
+    Then status 201
+    * def staffId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { email: '#(staffEmail)', password: 'Staff@2024' }
+    When method POST
+    Then status 200
+    * def staffToken = 'Bearer ' + response.token
+
+    # ─────────────────────────────────────────────
+    # 2. DESTINO
+    # ─────────────────────────────────────────────
+    Given path '/destinations'
+    And header Authorization = staffToken
+    And request
+    """
+    {
+      "name":     "#('Dest_' + uid)",
+      "address":  "Av. Profiles 100",
+      "district": "Miraflores",
+      "city":     "Lima",
+      "state":    "Lima",
+      "country":  "Peru"
+    }
+    """
+    When method POST
+    Then status 201
+    * def destinationId = response.id
+
+    # ─────────────────────────────────────────────
+    # 3. EXPERIENCIA (path usa staffId, no agencyId)
+    # ─────────────────────────────────────────────
+    Given path '/experiences/' + staffId + '/experiences'
+    And header Authorization = staffToken
+    And request
+    """
+    {
+      "title":         "Profiles Test Tour",
+      "description":   "Experiencia para tests Karate de Profiles",
+      "category":      "CULTURA",
+      "destinationId": #(destinationId),
+      "duration":      "2 hours",
+      "meetingPoint":  "Plaza Mayor"
+    }
+    """
+    When method POST
+    Then status 201
+    * def experienceId = response.id
+
+    # ─────────────────────────────────────────────
+    # 4. TURISTA
+    # ─────────────────────────────────────────────
+    * def touristEmail = 'tourist_' + uid + '@profiles.pe'
+    Given path '/authentication/sign-up'
+    And request
+    """
+    {
+      "email":     "#(touristEmail)",
+      "password":  "Tourist@2024",
+      "firstName": "Profile",
+      "lastName":  "Tourist",
+      "phone":     "977333444",
+      "roles":     ["ROLE_TOURIST"]
+    }
+    """
+    When method POST
+    Then status 201
+    * def touristId = response.id
+
+    Given path '/authentication/sign-in'
+    And request { email: '#(touristEmail)', password: 'Tourist@2024' }
+    When method POST
+    Then status 200
+    * def touristToken = 'Bearer ' + response.token
+```
+</details>
 
 
 ### 6.2.  Static testing & Verification 
