@@ -9268,21 +9268,74 @@ La parte del Frontend esta realizada con Angular y la parte del Backend esta rea
 
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims.
 
-#### 8.1.3. Experiment-Ready Questions.
-
-#### Assumptions
+#### 8.1.2.1. Assumptions
 
 ##### Business Outcomes
+TravelMatch como Startup, después del experimento deseamos:
+
+- Mejorar el flujo para realizar reservas en un 40% bimestralmente.
+- Aumentar en 15% la cantidad de usuarios activos detro de la aplicación.
+- Incrementar las ganancias de las agencias registradas en un 15% semestralmente.
 
 ##### User
+##### Turista Nacional
+- Los turistas se podran sentir mucho más comodos navegando dentro de la aplicación si se implementa filtros de búsqueda.
 
-#### User Outcomes
+- Los turistas se podrán sentir mucho más confiados al realizar sus reservas si la plataforma destaca exclusivamente entre la competencia menos calificada.
 
-#### Features
+##### Agencia de Turismo
 
-#### Knowledge Gaps
+- Las agencias de turismo locales se podrán sentir muchos más respaldadas si cuentan con un panel que ayude en la administración para gestionar su catálogo, precios y métricas.
 
-#### Ideas
+
+##### Turista Corporatvo
+- Los viajeros corporativos se podrán sentir mucho más productivos y organizados si la aplicación les ofrece recomendaciones automáticas basadas en su ubicación y agenda laboral disponible durante sus viajes de trabajo.
+
+- Los viajeros corporativos se podrán sentir mucho más satisfechos si la plataforma integra la gestión de comprobantes y facturación automática tras la reserva de actividades.
+
+#### 8.1.2.2 User Outcomes
+Al finalizar el experimento se esperan resultados como:
+
+- Turista Nacional
+  
+  - Acceso a una plataforma que permita compara opciones entre experiencias de manera fluida, eliminando ese temor por la información abrumadora.
+  - Capacidad de encontrar experiencias turísticas que se alinean con sus interese específicos, presupuesto y otros filtros.
+
+- Agencia de Turismo
+
+  - Mayor visibilidad digital de su catálogo frente a nuevos públicos, sin depender exclusivamente de canales informales como redes sociales.
+  - Generación de confianza ante los clientes finales al ser validados y reconocidos como operadores registrados en la plataforma.
+
+- Turista Corporatvo
+    
+    - Optimización de su tiempo libre limitado durante los viajes de negocios mediante recomendaciones personalizadas según su ubicación.
+    - Conveniencia al realizar reservas rápidas y acceder a comprobantes o facturas de manera automática para su gestión administrativa.
+
+
+#### 8.1.2.3. Features
+Durante la realización de nuestro experimento, se debe tener en consideración las siguientes caracteristicas:
+
+- Desarrollar la aplicación para dispositivos móviles.
+- Implementar un sistema de ofertas y promociones reactivo para las agencias.
+- Publicar y mostrar las agencias de turismo locales con mayores reseñas positivas del público.
+
+#### 8.1.2.4. Knowledge Gaps
+- No sabemos cuanto puede influir la temporada en el turismo local.
+- No sabemos las circunstancias que pueden hacer que un turista pueda cambiar o cancelar su reserva en una agencia.
+- No sabemos que tipo de experiencia busca el turista corporativo, por lo que la experiencia pueda verse afectada si se llegase a reservar con antelación.
+- No sabemos cual es las preferencias que tiene el cliente para buscar experiencias.
+
+#### 8.1.2.5. Ideas
+- Implementar filtros avanzados dentro de la búsqueda de agencias o experiencias (presupuestos, tipo de experiencia o duración).
+- Implementar un sistema de valoracion para las agencias para poder generar confianza inmediata con las personas que están buscando.
+
+#### 8.1.2.6. Claims
+
+- Es frustrante navegar por sientos de post en internet para encontrar alguna experiencia que se ajuste a mi presupuesto.
+- Prefiero reservar con agencias formales, pero no se cuales son confiales o cuales son las más cómodas.
+- No me genera confianza que una aplicación no tenga filtros con lo que pueda ajustar una búsqueda de acuerdo a mis preferencias.
+
+#### 8.1.3. Experiment-Ready Questions.
 
 #### 8.1.4. Question Backlog.
 
