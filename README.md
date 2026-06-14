@@ -48,6 +48,7 @@ TP | 14/05/2026 |        Morales Venegas David Joel         | Documentación y p
 TP | 14/05/2026 |         Alejos Jesu, Anyelo Bill          | Documentación y pruebas BDD para experiences, chekstyle para experiences, sonarqube test.
 TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
 TP | 14/05/2026 |       GeronimoQuispe Pablo Antonio       | Documentación, pruebas bounded context agencies,bookings, checkstyle general, sonarqube test.
+TB2 | 14/06/2026 |  Piero Francesco Tenorio Medina | Reducción de la documentacion. Desarrollo de la primera parte del capitulo 8.1.
 <hr>
 
 ## Tabla de Contenidos
@@ -9260,10 +9261,36 @@ StagePropósitoCompile ProjectVerifica que el código compila sin erroresValidat
 
 ### 8.1. Experiment Planning
 #### 8.1.1. As-Is Summary.
+
+TravelMatch surge como una idea que busca facilitar la busqueda de planes turisticos y ayuda a reservar experiencias según el destino elegido, el tipo de actividad y el presupuesto del usuario. Ofrece beneficios tambien a las agencias, quienes registrados en la aplicación, podrán manejar su catálogo y atender a reservas con mayor flexibilidad.
+
+La parte del Frontend esta realizada con Angular y la parte del Backend esta realizado con el lenguaje Java. Dentro de los servicios que ofrece la aplicación podemos encontrar la gestión de experiencias, la reserva de la experiencias entre otras funciones que complementan a la solución.
+
 #### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims.
+
 #### 8.1.3. Experiment-Ready Questions.
+
+#### Assumptions
+
+##### Business Outcomes
+
+##### User
+
+#### User Outcomes
+
+#### Features
+
+#### Knowledge Gaps
+
+#### Ideas
+
 #### 8.1.4. Question Backlog.
+
 #### 8.1.5. Experiment Cards.
+
+
+
+
 
 ### 8.2. Experiment Design
 
