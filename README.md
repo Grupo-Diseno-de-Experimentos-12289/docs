@@ -1985,6 +1985,36 @@ La configuración de despliegue para TravelMatch contempla mecanismos organizado
 
 ---
 
+**Testing del Proyecto**
+
+- **Tecnología:**
+  Java 21, Maven 3.9.15, Jenkins, SonarQube, JaCoCo, Karate Framework, Mockito.
+
+- **Repositorio:**
+  [https://github.com/Grupo-Diseno-de-Experimentos-12289/backend](https://github.com/Grupo-Diseno-de-Experimentos-12289/backend)
+
+- **Plataforma de despliegue:**
+Jenkins (Orquestación de Pipelines).
+
+- **Método de despliegue:**
+
+  - Integración Continua: Cada push a las ramas develop o main dispara un pipeline automático en Jenkins.
+
+  - Validación de Código: El pipeline ejecuta mvn checkstyle:check para verificar el cumplimiento de los estándares de estilo configurados (google_checks.xml).
+
+  - Análisis de Calidad: Se utiliza mvn sonar:sonar para inspeccionar la calidad, seguridad y deuda técnica en el servidor de SonarQube.
+
+- **Ciclo de Pruebas:**
+
+  - Unitarias: Ejecución de pruebas con JUnit 5 y Mockito para validar lógica aislada.
+
+  - API Testing: Ejecución de escenarios de pruebas automatizadas con Karate Framework para validar contratos e integraciones.
+
+  - Quality Gate: JaCoCo audita la cobertura de código, requiriendo un mínimo del 80% para permitir que el proceso continúe.
+
+---
+
+
 **Consideraciones Finales**
 
 - Se documentará el procedimiento de despliegue paso a paso en la wiki del repositorio principal.  
