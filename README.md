@@ -9337,18 +9337,212 @@ Durante la realización de nuestro experimento, se debe tener en consideración 
 
 #### 8.1.3. Experiment-Ready Questions.
 
+En esta sección se transforman las premisas, brechas de conocimiento, ideas y afirmaciones identificadas en el material inicial del experimento en preguntas listas para experimentar. Para ello, se toma como referencia el enfoque de las 5W y 1H, debido a que permite organizar las preguntas alrededor de los hechos básicos que se desean comprender antes de tomar decisiones sobre el producto.
+
+| W/H | Type | Source | Experiment-Ready Question |
+| --- | --- | --- | --- |
+| Who | Belief-led question | Claims, Business Outcomes, User Outcomes | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| What | Belief-led question | Ideas, Claims, User Outcomes | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Where | Exploratory question | Knowledge Gaps, User Outcomes | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| When | Exploratory question | Knowledge Gaps, Claims, User Outcomes | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Why | Belief-led question | Business Outcomes, User Outcomes, Features | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| How | Belief-led question | Business Outcomes, User Outcomes, Features | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+
 #### 8.1.4. Question Backlog.
+
+Para priorizar las preguntas listas para experimentar, se utiliza una matriz basada en los criterios de **Confidence**, **Risk**, **Impact** e **Interest**. Cada criterio se evalúa en una escala de 1 a 10, donde un mayor valor representa mayor relevancia para el experimento.
+
+| Priority | Code | Question | Confidence | Risk | Impact | Interest | Total Score |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Q1 | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? | 8 | 9 | 10 | 9 | 36 |
+| 2 | Q2 | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? | 8 | 8 | 9 | 9 | 34 |
+| 3 | Q3 | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? | 7 | 8 | 9 | 8 | 32 |
+| 4 | Q4 | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? | 7 | 9 | 8 | 8 | 32 |
+| 5 | Q5 | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? | 6 | 8 | 8 | 7 | 29 |
+| 6 | Q6 | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? | 6 | 7 | 7 | 7 | 27 |
+
+De acuerdo con la matriz, las preguntas con mayor prioridad son aquellas relacionadas con la confianza del turista, la búsqueda personalizada y el flujo de reserva. Estas preguntas son críticas porque impactan directamente en la decisión de uso de la plataforma y en la probabilidad de conversión. Las preguntas vinculadas a agencias, disponibilidad y viajeros corporativos también se mantienen en el backlog porque permiten validar la sostenibilidad del modelo de negocio y la utilidad de TravelMatch para sus segmentos objetivo.
 
 #### 8.1.5. Experiment Cards.
 
+**Experiment Card 1**
 
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Why | Es importante conocer si los turistas confiarán más en TravelMatch cuando la plataforma muestre señales visibles de formalidad, reputación y validación de las agencias. |
+| What | Debemos implementar perfiles de agencias con estado de verificación, valoración promedio y reseñas visibles dentro del detalle de cada experiencia. |
+| Hypothesis | Creemos que mostrar agencias verificadas, valoraciones y reseñas aumentará la confianza del turista y su intención de iniciar una reserva. |
+| Measures | Índice de confianza percibida y tasa de intención de reserva. |
+| Conditions | Comparar una versión base del perfil de agencia contra una versión con verificación, valoraciones y reseñas visibles. |
+| Scale | El experimento debe ejecutarse con usuarios del segmento turista que interactúen con perfiles de experiencias antes de iniciar una reserva. |
 
+**Experiment Card 2**
 
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Why | Es importante conocer si los filtros reducen la frustración generada por la búsqueda de experiencias entre muchas opciones dispersas o poco relevantes. |
+| What | Debemos implementar filtros por destino, tipo de experiencia, presupuesto, duración, valoración y disponibilidad. |
+| Hypothesis | Creemos que implementar filtros avanzados permitirá que los turistas encuentren experiencias relevantes en menos tiempo y avancen con mayor frecuencia hacia el detalle o reserva. |
+| Measures | Tasa de búsquedas exitosas con filtros y tiempo promedio hasta seleccionar una experiencia. |
+| Conditions | Comparar una búsqueda básica contra una búsqueda con filtros avanzados visibles y configurables. |
+| Scale | El experimento debe recolectar sesiones de búsqueda suficientes para comparar el comportamiento de usuarios con y sin filtros avanzados. |
+
+**Experiment Card 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Why | Es importante conocer si un proceso de reserva simple y transparente reduce el abandono y permite que el usuario concrete su objetivo dentro de la plataforma. |
+| What | Debemos implementar un flujo de reserva con información clara de precio, duración, cupos disponibles, condiciones de cancelación y confirmación final. |
+| Hypothesis | Creemos que un flujo de reserva simple y con información clara incrementará la cantidad de reservas completadas y reducirá el tiempo requerido para finalizar el proceso. |
+| Measures | Tasa de reservas completadas y tiempo promedio de finalización de reserva. |
+| Conditions | Comparar un flujo de reserva base contra un flujo simplificado con información visible antes de confirmar. |
+| Scale | El experimento debe observar usuarios que inicien el proceso de reserva y registrar finalización, abandono y tiempo de ejecución. |
+
+**Experiment Card 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Why | Es importante conocer si las agencias perciben valor en TravelMatch como canal de gestión y no solo como vitrina digital. |
+| What | Debemos implementar un panel para que las agencias registren experiencias, actualicen disponibilidad, modifiquen precios y configuren promociones. |
+| Hypothesis | Creemos que un panel de gestión simple aumentará la activación de agencias y la actualización de experiencias dentro de TravelMatch. |
+| Measures | Tasa de activación de agencias y tasa de actualización de disponibilidad. |
+| Conditions | Comparar una gestión limitada o manual contra un panel de autogestión para agencias. |
+| Scale | El experimento debe involucrar agencias de turismo locales registradas o interesadas en publicar su catálogo en la plataforma. |
+
+**Experiment Card 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Why | Es importante conocer si la información clara antes de reservar reduce dudas, consultas adicionales y cancelaciones por falta de información. |
+| What | Debemos mostrar disponibilidad actualizada, temporada recomendada, cupos, restricciones y condiciones de cambio o cancelación dentro del detalle de cada experiencia. |
+| Hypothesis | Creemos que mostrar disponibilidad, temporada y condiciones de cambio o cancelación reducirá la incertidumbre del turista antes de reservar. |
+| Measures | Tasa de cancelaciones por información insuficiente y porcentaje de reservas confirmadas sin contacto adicional. |
+| Conditions | Comparar una vista básica de experiencia contra una vista con disponibilidad, temporada y condiciones visibles. |
+| Scale | El experimento debe considerar reservas iniciadas o simuladas en experiencias con disponibilidad variable y registrar dudas o motivos de cancelación. |
+
+**Experiment Card 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Why | Es importante conocer si el viajero corporativo necesita una experiencia distinta a la del turista recreativo, considerando su tiempo limitado y ubicación durante viajes de trabajo. |
+| What | Debemos implementar recomendaciones que consideren ubicación, duración de la experiencia, horario disponible e intereses del viajero corporativo. |
+| Hypothesis | Creemos que las recomendaciones personalizadas para viajeros corporativos aumentarán la aceptación de experiencias sugeridas y el inicio de reservas desde recomendaciones. |
+| Measures | Tasa de aceptación de recomendaciones y tasa de inicio de reserva desde recomendaciones. |
+| Conditions | Comparar un listado general de experiencias contra recomendaciones filtradas por ubicación, duración e intereses. |
+| Scale | El experimento debe ejecutarse con usuarios del segmento corporativo o con escenarios representativos de viajes de trabajo. |
 
 ### 8.2. Experiment Design
 
 #### 8.2.1. Hypotheses.
+
+Para el diseño del experimento se formularon hipótesis basadas en las preguntas priorizadas en la fase de Experiment Planning. Cada hipótesis se plantea como una respuesta tentativa a la pregunta, indicando la evidencia que permitirá observar el resultado y las circunstancias bajo las cuales se considerará útil para tomar decisiones sobre TravelMatch.
+
+**Hypothesis 1**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Belief | Los turistas prefieren reservar con agencias formales, pero no siempre saben cuáles son confiables. Implementar perfiles con verificación, valoraciones y reseñas visibles ayudaría a reducir la incertidumbre antes de reservar. |
+| Hypothesis | Creemos que la respuesta es mostrar agencias verificadas, valoraciones y reseñas dentro del perfil de cada experiencia. La evidencia se reflejará en el índice de confianza percibida y en la intención de reserva después de visualizar el perfil de agencia. Bajo las circunstancias de que la confianza percibida aumente en un 20% y la intención de reserva aumente en un 15%. |
+| Null hypothesis | Creemos que mostrar agencias verificadas, valoraciones y reseñas no será responsable de un incremento en la confianza percibida ni en la intención de reserva. Cualquier variación observada podría explicarse por otros factores externos al perfil de agencia. |
+
+**Hypothesis 2**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Belief | Los turistas necesitan reducir la cantidad de información dispersa al buscar experiencias turísticas. Implementar filtros por destino, tipo de experiencia, precio, duración, valoración y disponibilidad ayudaría a encontrar opciones más relevantes en menos tiempo. |
+| Hypothesis | Creemos que la respuesta es implementar filtros avanzados dentro del flujo de búsqueda de experiencias. La evidencia se reflejará en la tasa de búsquedas exitosas con filtros y en el tiempo promedio para seleccionar una experiencia relevante. Bajo las circunstancias de que la tasa de búsquedas exitosas aumente en un 20% frente a la versión base. |
+| Null hypothesis | Creemos que implementar filtros avanzados no será responsable de una mejora en la tasa de búsquedas exitosas ni en el tiempo de selección de experiencias. Cualquier diferencia observada podría ser resultado de la variación natural del comportamiento de búsqueda. |
+
+**Hypothesis 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Belief | Los turistas pueden abandonar una reserva cuando el proceso es largo, confuso o requiere confirmar información por otros canales. Implementar un flujo de reserva simple y transparente ayudaría a reducir fricción y aumentar reservas completadas. |
+| Hypothesis | Creemos que la respuesta es implementar un flujo de reserva simple con precio, disponibilidad, duración, condiciones de cancelación y confirmación final. La evidencia se reflejará en la tasa de reservas completadas y en el tiempo promedio de finalización. Bajo las circunstancias de que las reservas completadas aumenten en un 15% y el tiempo promedio de reserva disminuya en un 25%. |
+| Null hypothesis | Creemos que implementar un flujo de reserva simple no será responsable de un incremento en reservas completadas ni de una reducción del tiempo promedio de reserva. Cualquier variación observada podría depender de factores ajenos al flujo diseñado. |
+
+**Hypothesis 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Belief | Las agencias de turismo locales buscan mayor visibilidad digital, pero también necesitan herramientas simples para administrar su oferta. Implementar un panel de gestión de catálogo, disponibilidad y promociones ayudaría a incrementar su participación activa. |
+| Hypothesis | Creemos que la respuesta es implementar un panel para que las agencias gestionen experiencias, precios, disponibilidad y promociones. La evidencia se reflejará en la tasa de activación de agencias y en la actualización de disponibilidad dentro de la plataforma. Bajo las circunstancias de que al menos el 60% de agencias registradas publique una experiencia y la actualización de disponibilidad aumente en un 20%. |
+| Null hypothesis | Creemos que implementar un panel de gestión para agencias no será responsable de una mayor activación ni de una mayor actualización del catálogo. Las agencias podrían mantener sus canales actuales o no percibir suficiente valor en la herramienta. |
+
+**Hypothesis 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Belief | Los turistas pueden cancelar o cambiar una reserva cuando encuentran información incompleta, disponibilidad desactualizada o condiciones poco claras. Mostrar disponibilidad, temporada y políticas de cambio o cancelación antes de confirmar ayudaría a reducir incertidumbre. |
+| Hypothesis | Creemos que la respuesta es incluir disponibilidad actualizada, temporada recomendada, cupos y condiciones de cambio o cancelación en el detalle de cada experiencia. La evidencia se reflejará en la tasa de cancelaciones por información insuficiente y en las reservas confirmadas sin contacto adicional. Bajo las circunstancias de que las cancelaciones por información insuficiente disminuyan en un 15%. |
+| Null hypothesis | Creemos que mostrar disponibilidad, temporada y condiciones de cambio o cancelación no será responsable de una reducción en la incertidumbre ni en las cancelaciones por información insuficiente. Cualquier variación podría responder a factores externos como temporada, precio o demanda. |
+
+**Hypothesis 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Belief | Los viajeros corporativos tienen tiempo limitado y necesitan opciones cercanas, rápidas y compatibles con su agenda laboral. Implementar recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudaría a que encuentren experiencias más útiles. |
+| Hypothesis | Creemos que la respuesta es implementar recomendaciones personalizadas para viajeros corporativos considerando ubicación, duración de la experiencia y horario disponible. La evidencia se reflejará en la tasa de aceptación de recomendaciones y en la tasa de inicio de reserva desde recomendaciones. Bajo las circunstancias de que la aceptación de recomendaciones aumente en un 20%. |
+| Null hypothesis | Creemos que implementar recomendaciones personalizadas para viajeros corporativos no será responsable de una mayor aceptación de experiencias ni de un mayor inicio de reservas desde recomendaciones. Cualquier diferencia observada podría ser aleatoria o depender de preferencias externas del usuario. |
+
 #### 8.2.2. Measures.
+
+Las medidas seleccionadas permitirán recolectar evidencia para responder cada pregunta del experimento. Se priorizaron medidas representativas, calculables y proporcionales, de modo que los resultados puedan compararse contra una versión base o condición de control.
+
+**Measure 1**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Measure | Índice de confianza percibida con respecto a la versión base del perfil de agencia. |
+
+**Measure 2**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Measure | Tasa de búsquedas exitosas con filtros con respecto a la versión base sin filtros avanzados. |
+
+**Measure 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Measure | Tasa de reservas completadas con respecto al flujo de reserva base. |
+
+**Measure 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Measure | Tasa de activación de agencias con respecto al total de agencias registradas. |
+
+**Measure 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Measure | Tasa de cancelaciones por información insuficiente con respecto al total de reservas realizadas. |
+
+**Measure 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
+
 #### 8.2.3. Conditions.
 #### 8.2.4. Scale Calculations and Decisions.
 #### 8.2.5. Methods Selection.
