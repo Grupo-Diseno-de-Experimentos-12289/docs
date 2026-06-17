@@ -9569,6 +9569,90 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 
 #### 8.2.2. Domain Business Metrics.
 
+Esta sección define el catálogo único y autoritativo de métricas de dominio que el equipo utilizará para evaluar los experimentos descritos en las secciones 8.1 y 8.2. Su propósito es garantizar trazabilidad entre los Business Outcomes (8.1.2.1), las Hypotheses (8.2.1) y las Measures (8.2.3), evitando vanity metrics o indicadores definidos de forma improvisada dentro de una Experiment Card. **A partir de este punto, ninguna Experiment Card podrá declarar una métrica que no esté listada aquí.**
+
+Cada métrica se describe con: identificador único, fórmula de cálculo, técnica de recolección (alineada con las herramientas seleccionadas en 8.2.6: Google Analytics 4 y Mixpanel, además de consultas directas sobre los repositorios JPA del backend) y meta deseada, calibrada con los umbrales ya definidos en la tabla de Scale Calculations (8.2.5) y con los porcentajes de mejora declarados en cada Hypothesis (8.2.1).
+
+##### A. Métricas Norte por Business Outcome
+
+| Business Outcome| Métrica Norte (North Star) | ID |
+|---|---|---|
+| Mejorar el flujo para realizar reservas en un 40% bimestralmente | Tasa de Reservas Completadas | M-BK-01 |
+| Aumentar en 15% la cantidad de usuarios activos dentro de la aplicación | Usuarios Activos Mensuales (MAU) | M-IAM-03 |
+| Incrementar las ganancias de las agencias registradas en un 15% semestralmente | Tasa de Agencias con Reserva Confirmada | M-AG-03 |
+
+##### B. Bounded Context: IAM (Identity & Access Management)
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-IAM-01 | Tasa de Registro Completado | (Sign-ups con status 201 / Inicios de formulario de registro) × 100 | Evento GA4 `sign_up` vs. `sign_up_started` | ≥ 70% |
+| M-IAM-02 | Tasa de Bloqueo de Acceso No Autorizado | (Solicitudes a endpoints protegidos sin JWT válido devueltas con HTTP 401 / Total de solicitudes sin JWT válido) × 100 | Logs de Spring Security Filter Chain | Aceptable ≥ 70% · Ideal ≥ 95% · Excelente 100% con latencia < 200 ms |
+| M-IAM-03 | Usuarios Activos Mensuales (MAU) | Conteo de `userId` únicos con ≥1 evento de interacción (sign-in, búsqueda, reserva, favorito) en ventana de 30 días | GA4 Active Users / Mixpanel MAU | ↑ 15% respecto al periodo anterior |
+| M-IAM-04 | Tiempo Promedio de Autenticación | Promedio (timestamp respuesta `sign-in` − timestamp solicitud) | APM / logs de backend | < 200 ms |
+
+##### C. Bounded Context: Agencies
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-AG-01 | Tasa de Activación de Agencias | (Agencias con perfil completo + RUC validado + ≥1 `AgencyDocument` aprobado / Total de agencias registradas) × 100 | Query `AgencyRepository` + `AgencyDocumentRepository`; evento Mixpanel `agency_profile_completed` | Aceptable ≥ 20% · Ideal ≥ 40% |
+| M-AG-02 | Tasa de Publicación de Catálogo | (Agencias verificadas con ≥1 `Experience` publicada / Agencias verificadas activas) × 100 | Query `ExperienceRepository` agrupado por `agencyId` | Ideal ≥ 40% (alineado a H4) |
+| M-AG-03 | Tasa de Agencias con Reserva Confirmada | (Agencias verificadas con ≥1 `Booking` en estado `SUCCEEDED` / Agencias verificadas activas) × 100 | Query `BookingRepository` join `Availability`→`Experience`→`Agency` | Excelente ≥ 60% |
+| M-AG-04 | Tasa de Actualización de Disponibilidad | (Actualizaciones de `Availability` en el periodo / `Availabilities` activas de la agencia) × 100 | Timestamp `updatedAt` en `Availability` | ↑ 20% respecto al periodo anterior (alineado a H4) |
+
+##### D. Bounded Context: Experiences
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-EXP-01 | Tasa de Búsquedas Exitosas con Filtros | (Búsquedas con ≥1 filtro aplicado que terminan en clic a detalle de experiencia / Total de búsquedas con filtro) × 100 | GA4 funnel `search_with_filters` → `view_experience_detail` | ↑ 20% frente a la versión base sin filtros (alineado a H2) |
+| M-EXP-02 | Tiempo Promedio de Sesión en Catálogo | Promedio (timestamp salida de vista de experiencias − timestamp entrada) | GA4 Engagement Time por página | Aceptable ≥ 1 min · Ideal ≥ 3 min · Excelente ≥ 5 min |
+| M-EXP-03 | Profundidad de Exploración | Vistas de `view_experience_detail` / Sesiones con ≥1 vista | GA4 evento agrupado por `session_id` | Ideal ≥ 2 experiencias por sesión |
+
+##### E. Bounded Context: Bookings & Payments
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-BK-01 | Tasa de Reservas Completadas | (`Booking.bookingStatus = SUCCEEDED` / `Booking` creados con `bookingStatus = PENDING`) × 100 | Query `BookingRepository`; evento Mixpanel `booking_initiated` → `payment_succeeded` | Aceptable ≥ 25% · Ideal ≥ 50% · Excelente ≥ 70% (alineado a H3) |
+| M-BK-02 | Tiempo Promedio de Finalización de Reserva | Promedio (timestamp `ProcessPayment` − timestamp `CreateBooking`) | Diferencia entre `bookingDate` y evento `payment_succeeded` | ↓ 25% respecto a la versión base (alineado a H3); Excelente < 3 min |
+| M-BK-03 | Tasa de Cancelación Voluntaria | (`Booking.bookingStatus = CANCELLED` / Total de `Booking` creados) × 100 | Query `BookingRepository` | ≤ 15% |
+| M-BK-04 | Tasa de Cancelación por Información Insuficiente | (Cancelaciones cuyo `CancelBookingCommand.reason` se clasifica como "información incompleta/disponibilidad incorrecta" / Total de cancelaciones) × 100 | Clasificación de campo `reason` + micro-encuesta post-cancelación | ↓ 15% respecto a la versión base (alineado a H5) |
+| M-BK-05 | Tasa de Reembolso Exitoso | (`Refund.refundStatus = SUCCEEDED` / `Refund` iniciados) × 100 | Query sobre entidad `Refund` | ≥ 90% |
+
+##### F. Bounded Context: Profiles
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-PR-01 | Índice de Confianza Percibida | Promedio ponderado de encuesta in-app (escala Likert 1–5) tras visualizar el perfil de agencia (verificación + valoración + reseñas) | Micro-encuesta embebida en vista de detalle de agencia | ↑ 20% respecto a la versión base sin verificación visible (alineado a H1) |
+| M-PR-02 | Tasa de Intención de Reserva | (Usuarios que inician `InitiatePayment` tras ver perfil de agencia / Usuarios que visitan el perfil) × 100 | GA4 funnel `view_agency_profile` → `booking_initiated` | ↑ 15% (alineado a H1) |
+| M-PR-03 | Tasa de Conversión Carrito-Reserva | (`CartItem` que derivan en `Booking.bookingStatus = SUCCEEDED` / Total de `CartItem` agregados) × 100 | Evento Mixpanel `cart_item_added` → `booking_succeeded`, correlacionado por `availabilityId` + `userId` | Aceptable ≥ 15% · Ideal ≥ 30% · Excelente ≥ 50% con ≥1 `Review` por reserva |
+| M-PR-04 | Tasa de Uso de Favoritos | (Usuarios activos con ≥1 `Favorite` / Total de usuarios activos) × 100 | Evento Mixpanel `favorite_saved` | ≥ 25% |
+| M-PR-05 | Tasa de Generación de Reseñas | (`Review` creadas / `Booking.bookingStatus = SUCCEEDED`) × 100 | Query `ReviewRepository` join `Booking` | ≥ 50% |
+
+##### G. Bounded Context: Geolocation
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-GEO-01 | Tasa de Búsqueda Filtrada por Destino | (Búsquedas con parámetro `destinationId` / Total de búsquedas) × 100 | GA4 evento `search_performed` con `destination_filter=true` | Aceptable ≥ 15% · Ideal ≥ 40% · Excelente ≥ 60% con ≥1 reserva generada |
+| M-GEO-02 | Tasa de Cobertura Geográfica | (`Destination` con ≥1 `Experience` asociada / Total de `Destination` registrados) × 100 | Query `DestinationRepository` join `ExperienceRepository` | ≥ 70% |
+
+##### H. Métricas para el segmento Viajero Corporativo
+
+| ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
+|---|---|---|---|---|
+| M-COR-01 | Tasa de Aceptación de Recomendaciones | (`recommendation_clicked` / `recommendation_shown`) × 100 | Funnel Mixpanel `recommendation_shown` → `recommendation_clicked` | ↑ 20% respecto a la versión base (alineado a H6) |
+| M-COR-02 | Tasa de Inicio de Reserva desde Recomendación | (`booking_initiated` originado desde `recommendation_clicked` / Total de `recommendation_clicked`) × 100 | Funnel Mixpanel con propiedad `source=recommendation` | ≥ 15% |
+
+##### Matriz de Trazabilidad: Hypotheses ↔ Domain Business Metrics
+
+| Hypothesis  | Pregunta relacionada | Métricas de Dominio aplicadas |
+|---|---|---|
+| H1 | Confianza por agencias verificadas, valoraciones y reseñas | M-PR-01, M-PR-02 |
+| H2 | Filtros avanzados de búsqueda | M-EXP-01, M-EXP-02 |
+| H3 | Flujo de reserva simple y transparente | M-BK-01, M-BK-02 |
+| H4 | Panel de gestión de catálogo, disponibilidad y promociones para agencias | M-AG-01, M-AG-02, M-AG-04 |
+| H5 | Disponibilidad, temporada y condiciones de cambio/cancelación visibles | M-BK-04, M-BK-05 |
+| H6 | Recomendaciones para viajero corporativo (ubicación, intereses, horario) | M-COR-01, M-COR-02 |
+
+
 #### 8.2.3. Measures.
 
 Las medidas seleccionadas permitirán recolectar evidencia para responder cada pregunta del experimento. Se priorizaron medidas representativas, calculables y proporcionales, de modo que los resultados puedan compararse contra una versión base o condición de control.
