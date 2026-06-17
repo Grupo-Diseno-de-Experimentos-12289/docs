@@ -9616,8 +9616,57 @@ Las medidas seleccionadas permitirán recolectar evidencia para responder cada p
 | Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
 
 #### 8.2.4. Conditions.
-#### 8.2.5. Scale Calculations and Decisions.
-#### 8.2.6. Methods Selection.
+#### 8.2.5. Scale Calculations and Decisions
+
+| Scale Calculation | Decisión | Factor Desfavorable | Factor Aceptable | Factor Ideal | Factor Excelente |
+|------------------|----------|--------------------|-----------------|-------------|-----------------|
+|  Creemos que cuando las agencias de turismo locales registren su información y documentos en la plataforma TravelMatch, aumentará su visibilidad digital y la cantidad de reservas recibidas, mediante el uso del módulo de gestión de agencias, cuando los turistas busquen experiencias en destinos específicos. Sabremos que hemos tenido éxito cuando el número de agencias verificadas activas aumente progresivamente. | Implementar el flujo completo de registro de agencia (datos, documentos y staff) con validación automática de RUC y correo único, más una interfaz de gestión de staff. | 1% <= x < 20% de agencias con perfil completo y verificado | >= 20% de agencias con perfil completo | >= 40% de agencias verificadas activas publicando experiencias | >= 60% de agencias verificadas con al menos 1 reserva confirmada |
+| Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de cancelación y reembolso, los turistas completarán sus reservas sin abandonar el proceso, mediante el módulo de Bookings integrado con pagos seguros, cuando seleccionen una experiencia disponible. Sabremos que tuvimos éxito cuando la tasa de conversión de reservas iniciadas a pagadas supere el 50%. | Implementar el ciclo completo de booking: creación, pago con Stripe, cancelación y reembolso con estados claros (PENDING, SUCCEEDED, CANCELLED, FAILED). | 1% <= x < 25% de reservas completadas sobre iniciadas | >= 25% de reservas pagadas exitosamente | >= 50% de tasa de conversión de reservas iniciadas a SUCCEEDED | >= 70% de tasa de conversión con tiempo promedio de pago menor a 3 minutos |
+| Creemos que cuando las agencias publiquen experiencias con disponibilidad, tipos de ticket y multimedia asociada, los turistas podrán tomar decisiones de compra informadas, mediante el catálogo de experiencias con galería y filtros, cuando exploren la plataforma. Sabremos que tuvimos éxito cuando el tiempo promedio de sesión en la vista de experiencias supere los 3 minutos. | Implementar el módulo de Experiences con gestión de disponibilidades, ticket types, categorías y multimedia, más filtros de búsqueda por categoría y destino. | Tiempo promedio < 1 min en vista de experiencias | >= 1 min y al menos 1 experiencia consultada por sesión | >= 3 min promedio y >= 2 experiencias consultadas por sesión | >= 5 min promedio con al menos 1 reserva generada por sesión |
+| Creemos que al implementar un sistema de autenticación con roles diferenciados (turista, staff de agencia), los usuarios accederán únicamente a las funcionalidades que les corresponden, mediante JWT y control de roles, cuando inicien sesión en la plataforma. Sabremos que tuvimos éxito cuando el 95% de los accesos no autorizados sean bloqueados correctamente. | Implementar autenticación con JWT, roles ROLE_TOURIST y ROLE_AGENCY_STAFF, con endpoints protegidos por Spring Security según el rol del usuario. | 1% <= x < 70% de bloqueos correctos de acceso no autorizado | >= 70% de bloqueos correctos | >= 95% de accesos no autorizados bloqueados sin errores | 100% de bloqueos correctos con tiempo de respuesta menor a 200 ms |
+| Creemos que cuando los turistas puedan guardar experiencias en favoritos y agregar opciones al carrito antes de confirmar, la intención de compra aumentará y reducirá el abandono, mediante el módulo de Profiles, cuando naveguen entre experiencias disponibles. Sabremos que tuvimos éxito cuando el 30% de los ítems agregados al carrito se conviertan en reservas confirmadas. | Implementar el módulo de Profiles con gestión de favoritos, carrito de compras con contador dinámico y reseñas post-experiencia. | 1% <= x < 15% de ítems en carrito convertidos a reserva | >= 15% de conversión carrito-reserva | >= 30% de conversión carrito a reserva confirmada | >= 50% de conversión con al menos 1 reseña por reserva completada |
+|Creemos que al asociar experiencias a destinos geográficos específicos del Perú, los turistas encontrarán más fácilmente las opciones relevantes según su zona de interés, mediante el módulo de Geolocation con filtros por destino, cuando busquen actividades en la plataforma. Sabremos que tuvimos éxito cuando el 40% de búsquedas use filtro por destino. | Implementar el módulo de Geolocation con CRUD de destinos y asociación destino-experiencia, más filtros en el catálogo público por ciudad, distrito y país. | 1% <= x < 15% de búsquedas con filtro de destino activo | >= 15% de búsquedas filtradas por destino | >= 40% de búsquedas usan filtro de destino | >= 60% de búsquedas por destino con al menos 1 reserva generada |
+
+
+
+#### 8.2.6. Methods Selection
+
+Para analizar la data generada por la plataforma **TravelMatch** evaluamos las herramientas más relevantes del mercado:
+
+| Herramienta | Google Analytics 4 | Mixpanel | Hotjar |
+|------------|-------------------|----------|--------|
+| **Precio** | Plan gratuito / GA4 360 de pago | Plan gratuito con límite de 20M eventos/mes | Plan gratuito hasta 35 sesiones diarias |
+| **Capacidad de Análisis** | Análisis completo de tráfico web, embudos de conversión y comportamiento por segmento | Análisis de eventos en tiempo real, cohortes y retención de usuarios | Mapas de calor, grabaciones de sesión y análisis de formularios |
+| **Ventajas** | Gran integración con ecosistema Google, reportes exportables, análisis de conversiones y funnels, ideal para medir reservas y flujos de pago | Seguimiento detallado de eventos custom (booking iniciado, pago completado, carrito abandonado), excelente para medir los KPIs de Bookings y Profiles | Permite ver exactamente cómo navegan los usuarios en el catálogo de experiencias, útil para optimizar la UX del módulo Experiences |
+| **Documentación** | Extensa, con comunidad activa y tutoriales oficiales | Regular, con documentación técnica clara para implementación en APIs REST | Buena, con guías de integración para aplicaciones web |
+| **Sencillez** | Aprendizaje sencillo, curva corta para reportes básicos | Dificultad media, requiere definición previa de eventos | Muy sencillo de implementar y leer resultados |
+
+## Herramientas Seleccionadas
+
+Tras evaluar las tres opciones, **TravelMatch** adoptará **Google Analytics 4** como herramienta principal, complementado con **Mixpanel** para el seguimiento de eventos específicos del dominio de negocio.
+
+### Justificación
+
+Esta decisión se basa en que **Google Analytics 4** permite medir:
+
+- El tráfico general de la plataforma.
+- Los embudos de conversión desde la búsqueda de experiencias hasta la reserva confirmada.
+- El comportamiento por tipo de usuario (turista vs. agencia).
+
+Por su parte, **Mixpanel** permite rastrear eventos críticos del negocio como:
+
+- `booking_initiated`
+- `payment_succeeded`
+- `cart_item_added`
+- `favorite_saved`
+
+Estos eventos corresponden directamente a los bounded contexts de **Bookings** y **Profiles**.
+
+Ambas herramientas ofrecen:
+
+- Plan gratuito adecuado para la escala actual del proyecto.
+- Documentación suficiente para su integración.
+- Compatibilidad con el backend **Spring Boot** de TravelMatch mediante eventos enviados desde la capa de interfaces REST.
 
 ## Conclusiones
 
