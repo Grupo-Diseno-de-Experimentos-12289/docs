@@ -2387,39 +2387,4262 @@ El video incluye una descripción general de Travel Match, enfocándose en cómo
 
 ## Capítulo VI:  Product Verification & Validation 
 ### 6.1. Testing Suites & Validation
-## 6.1.1. Core Entities Unit Tests & E2E Testing
+#### 6.1.1. Core Entities Unit Tests
+n esta sección se presentan capturas de pantalla de la implementación de pruebas unitarias realizadas sobre los servicios principales de las entidades del sistema.
+Se implementaron pruebas unitarias para los componentes principales de los bounded contexts Agencies, Bookings, Experiences, Iam, Geolocation y Profiles, siguiendo el patrón AAA (Arrange, Act, Assert) con JUnit 5 y Mockito.
+Se incluyen ejemplos visuales tanto del código de las pruebas como de su ejecución exitosa, con el objetivo de validar el correcto funcionamiento lógico de cada unidad de código.
 
-[cite_start]El proyecto TravelMatch es una plataforma desarrollada en Java con Spring Boot bajo una Arquitectura Orientada a Dominio (DDD)[cite: 573, 576, 630]. [cite_start]A continuación, se presenta la cobertura de pruebas unitarias (implementadas con JUnit 5, Mockito y el patrón AAA) y pruebas integrales E2E (usando Karate DSL y Gherkin) para cada Bounded Context[cite: 188, 469].
+#### Agencies Bounded Context
 
-### 1. Agencies (Mathias Aspajo)
-* [cite_start]**Dominio y Aplicación:** Gestiona la información de agencias de turismo, documentos legales y personal[cite: 577, 578].
-* [cite_start]**Pruebas Unitarias:** Validan la lógica aislada de creación/búsqueda, controlando reglas como correos duplicados y el correcto mapeo de DTOs en los Assemblers[cite: 579, 580].
-* [cite_start]**Pruebas Integrales (E2E):** Verifican endpoints REST con flujos exitosos (200, 201) y simulan errores de seguridad (401 Unauthorized) si falta el Token JWT[cite: 582, 583].
+##### Domain Layer: Aggregates & Entities
+![AgencyTest](assets/AgencyTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Agencies._
 
-### 2. Bookings and Payments (Cesar Linares)
-* [cite_start]**Dominio y Aplicación:** Núcleo transaccional que gestiona el ciclo de vida de reservas y procesamiento de pagos[cite: 584, 585].
-* [cite_start]**Pruebas Unitarias:** Aseguran transiciones de estado complejas (ej. PENDING a SUCCEEDED) usando mocks avanzados para Value Objects anidados[cite: 587, 588, 644].
-* [cite_start]**Pruebas Integrales (E2E):** Simulan el flujo HTTP completo interactuando con la base de datos para la creación y actualización de reservas[cite: 589, 590].
+1. **constructor_allFields_storedCorrectly**(AgencyTest)
 
-### 3. Experiences (Jorge Guevara)
-* [cite_start]**Dominio y Aplicación:** Administra el catálogo de experiencias turísticas, fechas de disponibilidad y tipos de tickets[cite: 612].
-* [cite_start]**Pruebas Unitarias:** Garantizan el cálculo aritmético para reducción de stock y lógica de seeders de categorías[cite: 477].
-* [cite_start]**Pruebas Integrales (E2E):** Comprueban respuestas HTTP en creación y listado del catálogo[cite: 478].
+Esta prueba verifica que el agregado `Agency` almacene correctamente todos los campos proporcionados en su constructor. Valida que el nombre, descripción, RUC, email de contacto, teléfono y el ID de usuario asociado se asignen fielmente al estado interno de la entidad, asegurando la integridad del modelo de dominio desde su creación.
 
-### 4. IAM - Identity and Access Management (Jhon Galvez)
-* [cite_start]**Dominio y Aplicación:** Centraliza la autenticación y autorización de todos los usuarios[cite: 609].
-* [cite_start]**Pruebas Unitarias:** Prueban el flujo de registro y login, validando unicidad de correos y asignación de roles[cite: 480].
-* [cite_start]**ACL Facade:** Validan servicios de salida para que otros módulos consulten la existencia de usuarios de forma segura[cite: 481].
+```java
+@Test
+@DisplayName("Agency stores all construction fields correctly")
+void constructor_allFields_storedCorrectly() {
+  // Arrange – done in @BeforeEach
 
-### 5. Geolocation (Farid Briceño)
-* [cite_start]**Dominio y Aplicación:** Provee servicios basados en ubicación y datos geoespaciales[cite: 614].
-* [cite_start]**Pruebas Unitarias:** Ejercen control en base de datos para evitar destinos turísticos duplicados[cite: 483].
-* [cite_start]**Interfaces:** Verifican que múltiples Value Objects (direcciones, ciudades) se aplanen correctamente al cliente[cite: 484].
+  // Act – just read values
 
-### 6. Profiles and Preferences (Jhon Galvez)
-* [cite_start]**Dominio y Aplicación:** Gestiona perfiles, carritos de compras, favoritos y reseñas[cite: 591, 592].
-* [cite_start]**Pruebas Unitarias:** Validan la adición de ítems al carrito y la consistencia de relaciones entre usuarios y reseñas[cite: 593].
-* [cite_start]**Integración ACL & E2E:** Garantizan (mediante Karate y comunicación inter-módulos) la coherencia del carrito y bloquean acciones sobre experiencias inexistentes[cite: 594, 595].
+  // Assert
+  assertAll(
+      () -> assertEquals("Tour Perú", agency.getName().getName()),
+      () -> assertEquals("Wonderful tours in Peru", agency.getDescription()),
+      () -> assertEquals("12345678901", agency.getRuc()),
+      () -> assertEquals("info@tourperu.com", agency.getContactEmail()),
+      () -> assertEquals("999888777", agency.getContactPhone()),
+      () -> assertEquals(10L, agency.getUserId()));
+}
+```
+
+2. **updateDetails_newName_nameIsUpdated**(AgencyTest)
+
+Valida que el método `updateDetails` del agregado permita actualizar el nombre de la agencia. Comprueba que al proporcionar un nuevo objeto `AgencyName`, el estado de la entidad se modifique para reflejar el cambio, manteniendo la consistencia del objeto de valor.
+
+```java
+@Test
+@DisplayName("updateDetails() replaces name when new AgencyName is provided")
+void updateDetails_newName_nameIsUpdated() {
+  // Arrange
+  AgencyName newName = new AgencyName("New Agency Name");
+
+  // Act
+  agency.updateDetails(newName, null, null, null);
+
+  // Assert
+  assertEquals("New Agency Name", agency.getName().getName());
+}
+```
+
+7. **constructor_validName_nameIsStored**(AgencyNameTest)
+
+Valida que el objeto de valor `AgencyName` se inicialice correctamente con una cadena válida. Es fundamental para asegurar que los nombres de las agencias se manejen como objetos consistentes a través del sistema.
+
+```java
+@Test
+@DisplayName("AgencyName stores the provided name correctly")
+void constructor_validName_nameIsStored() {
+  // Arrange
+  String name = "Tour Perú";
+
+  // Act
+  AgencyName agencyName = new AgencyName(name);
+
+  // Assert
+  assertEquals("Tour Perú", agencyName.getName());
+}
+```
+
+8. **constructor_nullName_throwsIllegalArgument**(AgencyNameTest)
+
+Verifica que el objeto de valor `AgencyName` lance una excepción si se intenta inicializar con un valor nulo, aplicando reglas de validación tempranas en el modelo de dominio.
+
+```java
+@Test
+@DisplayName("AgencyName throws IllegalArgumentException when name is null")
+void constructor_nullName_throwsIllegalArgument() {
+  // Arrange – null name
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> new AgencyName(null));
+}
+```
+
+##### Application Layer: Command Services
+![AgencyCommandServiceImplTest](assets/AgencyCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Agencies._
+
+14. **handle_createAgency_allValid_agencyIsSaved**(AgencyCommandServiceImplTest)
+
+Esta prueba de servicio verifica el flujo exitoso de creación de una agencia. Simula las validaciones contra IAM y la base de datos (RUC, email), y confirma que el objeto `Agency` se persista correctamente a través del repositorio con los valores esperados.
+
+```java
+@Test
+@DisplayName("Debe crear una agencia exitosamente cuando todas las validaciones pasan")
+void handle_createAgency_allValid_agencyIsSaved() {
+  // --- Arrange (Preparar) ---
+  CreateAgencyCommand command =
+      new CreateAgencyCommand(
+          "Tour Perú", "Great tours", "12345678901", "info@tourperu.com", "999888777", 1L);
+  when(agenciesContextFacade.existsUserById(1L)).thenReturn(true);
+  when(agencyRepository.existsByUserId(1L)).thenReturn(false);
+  when(agencyRepository.existsByRuc("12345678901")).thenReturn(false);
+  when(agencyRepository.existsByContactEmail("info@tourperu.com")).thenReturn(false);
+
+  // Usamos un capturador para verificar los datos exactos que se guardan
+  ArgumentCaptor<Agency> agencyCaptor = ArgumentCaptor.forClass(Agency.class);
+  when(agencyRepository.save(agencyCaptor.capture())).thenAnswer(inv -> inv.getArgument(0));
+
+  // --- Act (Ejecutar) ---
+  agencyCommandService.handle(command);
+
+  // --- Assert (Verificar) ---
+  verify(agencyRepository, times(1)).save(any(Agency.class));
+  Agency savedAgency = agencyCaptor.getValue();
+  assertEquals("Tour Perú", savedAgency.getName().getName());
+  assertEquals("12345678901", savedAgency.getRuc());
+}
+```
+
+15. **handle_createAgency_userNotFound_throwsException**(AgencyCommandServiceImplTest)
+
+Valida que el servicio lance una excepción si se intenta crear una agencia para un ID de usuario que no existe en el contexto de IAM, protegiendo la integridad referencial a través de la ACL.
+
+```java
+@Test
+@DisplayName("Debe lanzar excepción al crear si el usuario no existe en IAM")
+void handle_createAgency_userNotFound_throwsException() {
+  // --- Arrange (Preparar) ---
+  CreateAgencyCommand command =
+      new CreateAgencyCommand(
+          "Tour Perú", "desc", "12345678901", "info@tourperu.com", "999888777", 99L);
+  when(agenciesContextFacade.existsUserById(99L)).thenReturn(false);
+
+  // --- Act & Assert (Ejecutar y Verificar) ---
+  IllegalArgumentException exception =
+      assertThrows(IllegalArgumentException.class, () -> agencyCommandService.handle(command));
+
+  assertTrue(exception.getMessage().contains("does not exist in IAM"));
+  verify(agencyRepository, never()).save(any());
+}
+```
+
+16. **handle_createAgency_duplicateUserId_throwsException**(AgencyCommandServiceImplTest)
+
+Asegura que el sistema impida la creación de múltiples agencias asociadas al mismo usuario, cumpliendo con la regla de negocio de relación 1:1 entre usuario staff y su agencia.
+
+```java
+@Test
+@DisplayName("Debe lanzar excepción al crear si el usuario ya tiene una agencia")
+void handle_createAgency_duplicateUserId_throwsException() {
+  // --- Arrange (Preparar) ---
+  CreateAgencyCommand command =
+      new CreateAgencyCommand(
+          "Tour Perú", "desc", "12345678901", "info@tourperu.com", "999888777", 1L);
+  when(agenciesContextFacade.existsUserById(1L)).thenReturn(true);
+  when(agencyRepository.existsByUserId(1L)).thenReturn(true);
+
+  // --- Act & Assert (Ejecutar y Verificar) ---
+  assertThrows(IllegalArgumentException.class, () -> agencyCommandService.handle(command));
+  verify(agencyRepository, never()).save(any());
+}
+```
+
+34. **handle_createDocument_agencyExists_returnsDocument**(AgencyDocumentCommandServiceImplTest)
+
+Esta prueba verifica que el servicio de documentos cree correctamente un nuevo registro si la agencia asociada existe, validando la relación jerárquica.
+
+```java
+@Test
+@DisplayName("Debe crear un documento si la agencia existe")
+void handle_createDocument_agencyExists_returnsDocument() {
+  // --- Arrange ---
+  CreateAgencyDocumentCommand command =
+      new CreateAgencyDocumentCommand(
+          1L, "LICENSE", "http://docs.com/lic.pdf", "Business License");
+  when(agencyRepository.findById(1L)).thenReturn(Optional.of(agency));
+  when(agencyDocumentRepository.save(any(AgencyDocument.class)))
+      .thenAnswer(inv -> inv.getArgument(0));
+
+  // --- Act ---
+  Optional<AgencyDocument> result = agencyDocumentCommandService.handle(command);
+
+  // --- Assert ---
+  assertTrue(result.isPresent(), "El documento debe ser creado exitosamente");
+  verify(agencyDocumentRepository, times(1)).save(any(AgencyDocument.class));
+}
+```
+
+35. **handle_updateDocument_valid_returnsUpdatedDocument**(AgencyDocumentCommandServiceImplTest)
+
+Valida el flujo de actualización de un documento legal, asegurando que los cambios en tipo, URL y descripción se persistan correctamente.
+
+```java
+@Test
+@DisplayName("Debe actualizar el documento exitosamente")
+void handle_updateDocument_valid_returnsUpdatedDocument() {
+  // --- Arrange ---
+  UpdateAgencyDocumentCommand command =
+      new UpdateAgencyDocumentCommand(1L, "NEW_TYPE", "http://docs.com/new.pdf", "New Desc");
+  when(agencyDocumentRepository.findById(1L)).thenReturn(Optional.of(existingDocument));
+  when(agencyDocumentRepository.save(existingDocument)).thenReturn(existingDocument);
+
+  // --- Act ---
+  Optional<AgencyDocument> result = agencyDocumentCommandService.handle(command);
+
+  // --- Assert ---
+  assertTrue(result.isPresent());
+  assertEquals("NEW_TYPE", result.get().getDocumentType());
+  verify(agencyDocumentRepository).save(existingDocument);
+}
+```
+
+43. **handle_createStaff_valid_returnsStaff**(AgencyStaffCommandServiceImplTest)
+
+Esta prueba verifica la creación exitosa de un miembro del staff de la agencia, asegurando que el email no esté duplicado y que la agencia asociada sea válida.
+
+```java
+@Test
+@DisplayName("Debe crear un staff cuando no existe el email")
+void handle_createStaff_valid_returnsStaff() {
+  // --- Arrange ---
+  CreateAgencyStaffCommand command =
+      new CreateAgencyStaffCommand(1L, "Juan", "Perez", "juan@tp.com", "987654321", "Guide");
+  when(agencyRepository.findById(1L)).thenReturn(Optional.of(agency));
+  when(agencyStaffRepository.existsByEmail("juan@tp.com")).thenReturn(false);
+  when(agencyStaffRepository.save(any(AgencyStaff.class))).thenAnswer(inv -> inv.getArgument(0));
+
+  // --- Act ---
+  Optional<AgencyStaff> result = agencyStaffCommandService.handle(command);
+
+  // --- Assert ---
+  assertTrue(result.isPresent());
+  verify(agencyStaffRepository).save(any(AgencyStaff.class));
+}
+```
+
+44. **handle_deleteStaff_exists_deletesSuccessfully**(AgencyStaffCommandServiceImplTest)
+
+Confirma que la eliminación de un miembro del staff sea exitosa si el identificador es correcto.
+
+```java
+@Test
+@DisplayName("Debe eliminar staff correctamente si el ID existe")
+void handle_deleteStaff_exists_deletesSuccessfully() {
+  // --- Arrange ---
+  DeleteAgencyStaffCommand command = new DeleteAgencyStaffCommand(1L);
+  when(agencyStaffRepository.existsById(1L)).thenReturn(true);
+
+  // --- Act ---
+  assertDoesNotThrow(() -> agencyStaffCommandService.handle(command));
+
+  // --- Assert ---
+  verify(agencyStaffRepository).deleteById(1L);
+}
+```
+
+##### Application Layer: Query Services
+![AgencyQueryServiceImplTest](assets/AgencyQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Agencies._
+
+53. **handle_getAllAgencies_returnsList**(AgencyQueryServiceImplTest)
+
+Esta prueba verifica que el servicio de consulta recupere la lista completa de agencias registradas, interactuando correctamente con el repositorio de persistencia.
+
+```java
+@Test
+@DisplayName("Debe retornar la lista completa de agencias")
+void handle_getAllAgencies_returnsList() {
+  // --- Arrange ---
+  GetAllAgenciesQuery query = new GetAllAgenciesQuery();
+  when(agencyRepository.findAll()).thenReturn(List.of(mock(Agency.class), mock(Agency.class)));
+
+  // --- Act ---
+  List<Agency> result = agencyQueryService.handle(query);
+
+  // --- Assert ---
+  assertNotNull(result);
+  assertEquals(2, result.size());
+  verify(agencyRepository, times(1)).findAll();
+}
+```
+
+54. **handle_getAgencyById_returnsOptional**(AgencyQueryServiceImplTest)
+
+Valida la obtención de una agencia individual por su identificador, asegurando que el servicio retorne un `Optional` con la entidad si esta existe.
+
+```java
+@Test
+@DisplayName("Debe retornar una agencia por su ID")
+void handle_getAgencyById_returnsOptional() {
+  // --- Arrange ---
+  GetAgencyByIdQuery query = new GetAgencyByIdQuery(1L);
+  when(agencyRepository.findById(1L)).thenReturn(Optional.of(mock(Agency.class)));
+
+  // --- Act ---
+  Optional<Agency> result = agencyQueryService.handle(query);
+
+  // --- Assert ---
+  assertTrue(result.isPresent());
+  verify(agencyRepository).findById(1L);
+}
+```
+
+59. **handle_getAllDocuments_returnsList**(AgencyDocumentQueryServiceImplTest)
+
+Verifica la recuperación de todos los documentos legales de una agencia específica a través del servicio de consultas.
+
+```java
+@Test
+@DisplayName("Debe retornar lista de documentos por agencia")
+void handle_getAllDocuments_returnsList() {
+  // Arrange
+  GetAllAgencyDocumentsByAgencyIdQuery query = new GetAllAgencyDocumentsByAgencyIdQuery(1L);
+  when(agencyRepository.existsById(1L)).thenReturn(true);
+  when(agencyDocumentRepository.findByAgencyId(1L)).thenReturn(List.of(mock(AgencyDocument.class)));
+
+  // Act
+  List<AgencyDocument> result = agencyDocumentQueryService.handle(query);
+
+  // Assert
+  assertEquals(1, result.size());
+}
+```
+
+60. **handle_getDocumentById_returnsOptional**(AgencyDocumentQueryServiceImplTest)
+
+Valida la obtención de un documento individual por su ID, asegurando la precisión en la búsqueda de archivos legales.
+
+```java
+@Test
+@DisplayName("Debe retornar un documento por ID")
+void handle_getDocumentById_returnsOptional() {
+  // Arrange
+  GetAgencyDocumentByIdQuery query = new GetAgencyDocumentByIdQuery(1L);
+  when(agencyDocumentRepository.findById(1L)).thenReturn(Optional.of(mock(AgencyDocument.class)));
+
+  // Act
+  Optional<AgencyDocument> result = agencyDocumentQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![AgencyControllerTest](assets/AgencyControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Agencies._
+
+65. **createAgency_returnsCreated_whenSuccess**(AgencyControllerTest)
+
+65. **createAgency_returnsCreated_whenSuccess**(AgencyControllerTest)
+
+Verifica que el controlador responda con un estado HTTP 201 (Created) cuando una agencia se registra exitosamente. Valida que el cuerpo de la respuesta contenga los datos de la agencia creada.
+
+```java
+@Test
+void createAgency_returnsCreated_whenSuccess() {
+  CreateAgencyResource resource =
+      new CreateAgencyResource(
+          "Tour Peru", "Description", "12345678901", "tour@peru.com", "987654321", 1L);
+  when(agencyCommandService.handle(any(CreateAgencyCommand.class))).thenReturn(1L);
+  when(agencyQueryService.handle(any(GetAgencyByIdQuery.class))).thenReturn(Optional.of(agency));
+
+  ResponseEntity<AgencyResource> response = agencyController.createAgency(resource);
+
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("Tour Peru", response.getBody().name());
+}
+```
+
+66. **createAgency_returnsInternalServerError_whenQueryReturnsEmpty**(AgencyControllerTest)
+
+Valida que el controlador maneje errores internos de consistencia si tras crear la agencia no es posible recuperarla para devolver el recurso, retornando un error 500.
+
+```java
+@Test
+void createAgency_returnsInternalServerError_whenQueryReturnsEmpty() {
+  CreateAgencyResource resource =
+      new CreateAgencyResource(
+          "Tour Peru", "Description", "12345678901", "tour@peru.com", "987654321", 1L);
+  when(agencyCommandService.handle(any(CreateAgencyCommand.class))).thenReturn(1L);
+  when(agencyQueryService.handle(any(GetAgencyByIdQuery.class))).thenReturn(Optional.empty());
+
+  ResponseEntity<AgencyResource> response = agencyController.createAgency(resource);
+
+  assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+}
+```
+
+75. **createDocument_returnsCreated_whenSuccess**(AgencyDocumentsControllerTest)
+
+Valida que el registro de un documento legal para una agencia devuelva un estado 201 y los detalles del nuevo recurso.
+
+```java
+@Test
+void createDocument_returnsCreated_whenSuccess() {
+  CreateAgencyDocumentResource resource =
+      new CreateAgencyDocumentResource("RUC", "http://example.com/ruc.pdf", "RUC document");
+  when(commandService.handle(any(CreateAgencyDocumentCommand.class)))
+      .thenReturn(Optional.of(document));
+
+  ResponseEntity<AgencyDocumentResource> response = controller.createDocument(1L, resource);
+
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+}
+```
+
+76. **createDocument_returnsInternalServerError_whenServiceReturnsEmpty**(AgencyDocumentsControllerTest)
+
+Maneja fallos inesperados en la creación de documentos, retornando un error 500 si el servicio no logra procesar la solicitud.
+
+```java
+@Test
+void createDocument_returnsInternalServerError_whenServiceReturnsEmpty() {
+  CreateAgencyDocumentResource resource =
+      new CreateAgencyDocumentResource("RUC", "http://example.com/ruc.pdf", "RUC document");
+  when(commandService.handle(any(CreateAgencyDocumentCommand.class)))
+      .thenReturn(Optional.empty());
+
+  ResponseEntity<AgencyDocumentResource> response = controller.createDocument(1L, resource);
+
+  assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+}
+```
+
+77. **createDocument_returnsBadRequest_whenIllegalArgumentThrown**(AgencyDocumentsControllerTest)
+
+Asegura el manejo de errores de validación en la creación de documentos, devolviendo un estado 400 ante datos inválidos.
+
+```java
+@Test
+void createDocument_returnsBadRequest_whenIllegalArgumentThrown() {
+  CreateAgencyDocumentResource resource =
+      new CreateAgencyDocumentResource("RUC", "http://example.com/ruc.pdf", "RUC document");
+  when(commandService.handle(any(CreateAgencyDocumentCommand.class)))
+      .thenThrow(new IllegalArgumentException("Invalid"));
+
+  ResponseEntity<AgencyDocumentResource> response = controller.createDocument(1L, resource);
+
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+88. **createStaff_returnsCreated_whenSuccess**(AgencyStaffControllerTest)
+
+Valida que el registro de personal para una agencia devuelva un estado 201 y los detalles del nuevo miembro del equipo.
+
+```java
+@Test
+void createStaff_returnsCreated_whenSuccess() {
+  CreateAgencyStaffResource resource =
+      new CreateAgencyStaffResource("John", "Doe", "john@peru.com", "987654321", "Manager");
+  when(commandService.handle(any(CreateAgencyStaffCommand.class))).thenReturn(Optional.of(staff));
+
+  ResponseEntity<AgencyStaffResource> response = controller.createStaff(1L, resource);
+
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+}
+```
+
+89. **createStaff_returnsInternalServerError_whenServiceReturnsEmpty**(AgencyStaffControllerTest)
+
+Maneja fallos en la creación de personal, retornando un error 500 si el servicio no logra completar la operación.
+
+```java
+@Test
+void createStaff_returnsInternalServerError_whenServiceReturnsEmpty() {
+  CreateAgencyStaffResource resource =
+      new CreateAgencyStaffResource("John", "Doe", "john@peru.com", "987654321", "Manager");
+  when(commandService.handle(any(CreateAgencyStaffCommand.class))).thenReturn(Optional.empty());
+
+  ResponseEntity<AgencyStaffResource> response = controller.createStaff(1L, resource);
+
+  assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
+}
+```
+
+90. **createStaff_returnsBadRequest_whenIllegalArgumentThrown**(AgencyStaffControllerTest)
+
+Asegura que el controlador capture errores de validación de personal (como emails duplicados) y retorne un estado 400.
+
+```java
+@Test
+void createStaff_returnsBadRequest_whenIllegalArgumentThrown() {
+  CreateAgencyStaffResource resource =
+      new CreateAgencyStaffResource("John", "Doe", "john@peru.com", "987654321", "Manager");
+  when(commandService.handle(any(CreateAgencyStaffCommand.class)))
+      .thenThrow(new IllegalArgumentException("Invalid"));
+
+  ResponseEntity<AgencyStaffResource> response = controller.createStaff(1L, resource);
+
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+105. **handle_getAllByAgencyId_agencyExists_returnsList**(AgencyStaffQueryServiceImplTest)
+
+Valida la obtención de la lista de empleados para una agencia existente a través de la implementación del servicio de consulta.
+
+```java
+@Test
+@DisplayName("Debe retornar lista de staff si la agencia existe")
+void handle_getAllByAgencyId_agencyExists_returnsList() {
+  // --- Arrange ---
+  GetAllAgencyStaffByAgencyIdQuery query = new GetAllAgencyStaffByAgencyIdQuery(1L);
+  when(agencyRepository.existsById(1L)).thenReturn(true);
+  when(agencyStaffRepository.findByAgencyId(1L)).thenReturn(List.of(mock(AgencyStaff.class)));
+
+  // --- Act ---
+  List<AgencyStaff> result = agencyStaffQueryService.handle(query);
+
+  // --- Assert ---
+  assertFalse(result.isEmpty());
+  verify(agencyStaffRepository).findByAgencyId(1L);
+}
+```
+
+106. **handle_getById_exists_returnsOptional**(AgencyStaffQueryServiceImplTest)
+
+Confirma que la recuperación de un empleado por ID sea exitosa en la capa de servicios de aplicación.
+
+```java
+@Test
+@DisplayName("Debe retornar staff por su ID")
+void handle_getById_exists_returnsOptional() {
+  // --- Arrange ---
+  GetAgencyStaffByIdQuery query = new GetAgencyStaffByIdQuery(1L);
+  when(agencyStaffRepository.findById(1L)).thenReturn(Optional.of(mock(AgencyStaff.class)));
+
+  // --- Act ---
+  Optional<AgencyStaff> result = agencyStaffQueryService.handle(query);
+
+  // --- Assert ---
+  assertTrue(result.isPresent());
+  verify(agencyStaffRepository).findById(1L);
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AgencyDocumentResourceAssemblerTests](assets/AgencyDocumentResourceAssemblerTests.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers (Mapping Tests) para el Bounded Context Agencies._
+
+107. **toResourceFromEntity_validAgency_allFieldsMapped**(AgencyResourceAssemblerTests)
+
+Verifica que el ensamblador mapee correctamente todos los campos de la entidad `Agency` al recurso `AgencyResource`, asegurando la correcta exposición de datos en la API.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity() maps all agency fields to AgencyResource correctly")
+void toResourceFromEntity_validAgency_allFieldsMapped() {
+  // Arrange
+  AgencyName name = new AgencyName("Tour Perú");
+  when(agency.getId()).thenReturn(1L);
+  when(agency.getName()).thenReturn(name);
+  when(agency.getDescription()).thenReturn("Great tours");
+  when(agency.getRuc()).thenReturn("12345678901");
+  when(agency.getContactEmail()).thenReturn("info@tp.com");
+  when(agency.getContactPhone()).thenReturn("999888777");
+
+  // Act
+  var resource = AgencyResourceFromAgencyAssembler.toResourceFromEntity(agency);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(1L, resource.id()),
+      () -> assertEquals("Tour Perú", resource.name()),
+      () -> assertEquals("Great tours", resource.description()),
+      () -> assertEquals("12345678901", resource.ruc()),
+      () -> assertEquals("info@tp.com", resource.contactEmail()),
+      () -> assertEquals("999888777", resource.contactPhone()));
+}
+```
+
+109. **toResourceFromEntity_validDocument_allFieldsMapped**(AgencyDocumentResourceAssemblerTests)
+
+Valida el mapeo completo de un `AgencyDocument` a su recurso correspondiente, incluyendo la transformación de la relación con la agencia a un ID plano.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity() maps all document fields to AgencyDocumentResource")
+void toResourceFromEntity_validDocument_allFieldsMapped() {
+  // Arrange
+  when(agencyDocument.getId()).thenReturn(10L);
+  when(agencyDocument.getAgency()).thenReturn(agency);
+  when(agency.getId()).thenReturn(1L);
+  when(agencyDocument.getDocumentType()).thenReturn("RUC");
+  when(agencyDocument.getDocumentUrl()).thenReturn("http://example.com/ruc.pdf");
+  when(agencyDocument.getDescription()).thenReturn("Tax ID document");
+
+  // Act
+  var resource = AgencyDocumentResourceFromEntityAssembler.toResourceFromEntity(agencyDocument);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(10L, resource.id()),
+      () -> assertEquals(1L, resource.agencyId()),
+      () -> assertEquals("RUC", resource.documentType()),
+      () -> assertEquals("http://example.com/ruc.pdf", resource.documentUrl()),
+      () -> assertEquals("Tax ID document", resource.description()));
+}
+```
+
+111. **toResourceFromEntity_validStaff_allFieldsMapped**(AgencyStaffResourceAssemblerTests)
+
+Valida que el personal de la agencia sea transformado correctamente a su recurso REST, asegurando que todos los atributos de contacto y posición se mantengan fieles.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity() maps all staff fields to AgencyStaffResource")
+void toResourceFromEntity_validStaff_allFieldsMapped() {
+  // Arrange
+  when(staffEntity.getId()).thenReturn(5L);
+  when(staffEntity.getAgency()).thenReturn(agency);
+  when(agency.getId()).thenReturn(1L);
+  when(staffEntity.getFirstName()).thenReturn("Juan");
+  when(staffEntity.getLastName()).thenReturn("Pérez");
+  when(staffEntity.getEmail()).thenReturn("juan@tp.com");
+  when(staffEntity.getPhone()).thenReturn("987654321");
+  when(staffEntity.getPosition()).thenReturn("Guide");
+
+  // Act
+  var resource = AgencyStaffResourceFromEntityAssembler.toResourceFromEntity(staffEntity);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(5L, resource.id()),
+      () -> assertEquals(1L, resource.agencyId()),
+      () -> assertEquals("Juan", resource.firstName()),
+      () -> assertEquals("Pérez", resource.lastName()),
+      () -> assertEquals("juan@tp.com", resource.email()),
+      () -> assertEquals("987654321", resource.phone()),
+      () -> assertEquals("Guide", resource.position()));
+}
+```
+
+113. **toCommandFromResource_validResource_allFieldsMapped**(CreateAgencyCommandAssemblerTests)
+
+Verifica que los datos recibidos desde el cliente para crear una agencia se mapeen correctamente al comando interno de la aplicación.
+
+```java
+@Test
+@DisplayName("toCommandFromResource() maps all CreateAgencyResource fields to command")
+void toCommandFromResource_validResource_allFieldsMapped() {
+  // Arrange
+  CreateAgencyResource resource =
+      new CreateAgencyResource(
+          "Tour Perú", "Great tours", "12345678901", "info@tp.com", "999888777", 1L);
+
+  // Act
+  CreateAgencyCommand command =
+      CreateAgencyCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertAll(
+      () -> assertEquals("Tour Perú", command.name()),
+      () -> assertEquals("Great tours", command.description()),
+      () -> assertEquals("12345678901", command.ruc()),
+      () -> assertEquals("info@tp.com", command.contactEmail()),
+      () -> assertEquals("999888777", command.contactPhone()),
+      () -> assertEquals(1L, command.userId()));
+}
+```
+
+115. **toCommandFromResource_validResource_allFieldsMapped**(CreateAgencyDocumentCommandAssemblerTests)
+
+Valida que el recurso de creación de documentos y el ID de la agencia en la URL se integren correctamente en un único comando de aplicación.
+
+```java
+@Test
+@DisplayName("toCommandFromResource() maps all CreateAgencyDocumentResource fields to command")
+void toCommandFromResource_validResource_allFieldsMapped() {
+  // Arrange
+  Long agencyId = 1L;
+  CreateAgencyDocumentResource resource =
+      new CreateAgencyDocumentResource("RUC", "http://example.com/ruc.pdf", "Tax ID");
+
+  // Act
+  CreateAgencyDocumentCommand command =
+      CreateAgencyDocumentCommandFromResourceAssembler.toCommandFromResource(agencyId, resource);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(1L, command.agencyId()),
+      () -> assertEquals("RUC", command.documentType()),
+      () -> assertEquals("http://example.com/ruc.pdf", command.documentUrl()),
+      () -> assertEquals("Tax ID", command.description()));
+}
+```
+
+117. **toCommandFromResource_validResource_allFieldsMapped**(CreateAgencyStaffCommandAssemblerTests)
+
+Verifica el mapeo de los datos del nuevo staff y su vinculación con la agencia correspondiente en un comando unificado.
+
+```java
+@Test
+@DisplayName("toCommandFromResource() maps all CreateAgencyStaffResource fields to command")
+void toCommandFromResource_validResource_allFieldsMapped() {
+  // Arrange
+  Long agencyId = 1L;
+  CreateAgencyStaffResource resource =
+      new CreateAgencyStaffResource("Juan", "Pérez", "juan@tp.com", "987654321", "Guide");
+
+  // Act
+  CreateAgencyStaffCommand command =
+      CreateAgencyStaffCommandFromResourceAssembler.toCommandFromResource(agencyId, resource);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(1L, command.agencyId()),
+      () -> assertEquals("Juan", command.firstName()),
+      () -> assertEquals("Pérez", command.lastName()),
+      () -> assertEquals("juan@tp.com", command.email()),
+      () -> assertEquals("987654321", command.phone()),
+      () -> assertEquals("Guide", command.position()));
+}
+```
+
+119. **toCommandFromResource_validResource_allFieldsMapped**(UpdateAgencyDocumentCommandAssemblerTests)
+
+Valida que el recurso de actualización de documentos se transforme correctamente al comando interno, manteniendo la integridad del ID del documento.
+
+```java
+@Test
+@DisplayName("toCommandFromResource() maps all UpdateAgencyDocumentResource fields to command")
+void toCommandFromResource_validResource_allFieldsMapped() {
+  // Arrange
+  UpdateAgencyDocumentResource resource =
+      new UpdateAgencyDocumentResource(
+          3L, "LICENCIA", "http://example.com/lic.pdf", "Operating license");
+
+  // Act
+  UpdateAgencyDocumentCommand command =
+      UpdateAgencyDocumentCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(3L, command.id()),
+      () -> assertEquals("LICENCIA", command.documentType()),
+      () -> assertEquals("http://example.com/lic.pdf", command.documentUrl()),
+      () -> assertEquals("Operating license", command.description()));
+}
+```
+
+121. **toCommandFromResource_validResource_allFieldsMapped**(UpdateAgencyStaffCommandAssemblerTests)
+
+Valida el mapeo de cambios en el perfil del staff al comando de actualización correspondiente.
+
+```java
+@Test
+@DisplayName("toCommandFromResource() maps all UpdateAgencyStaffResource fields to command")
+void toCommandFromResource_validResource_allFieldsMapped() {
+  // Arrange
+  UpdateAgencyStaffResource resource =
+      new UpdateAgencyStaffResource(
+          5L, "Carlos", "López", "carlos@tp.com", "911111111", "Manager");
+
+  // Act
+  UpdateAgencyStaffCommand command =
+      UpdateAgencyStaffCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertAll(
+      () -> assertEquals(5L, command.id()),
+      () -> assertEquals("Carlos", command.firstName()),
+      () -> assertEquals("López", command.lastName()),
+      () -> assertEquals("carlos@tp.com", command.email()),
+      () -> assertEquals("911111111", command.phone()),
+      () -> assertEquals("Manager", command.position()));
+}
+```
+
+#### Bookings Bounded Context
+
+##### Domain Layer: Aggregates & Entities
+![BookingAggregateTest](assets/BookingAggregateTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Bookings._
+
+1. **markAsSucceeded_fromPending_statusIsSucceeded**(BookingAggregateTest)
+
+Verifica que el estado de una reserva cambie correctamente de `PENDING` a `SUCCEEDED` cuando se marca como exitosa.
+
+```java
+@Test
+@DisplayName("markAsSucceeded() changes status to SUCCEEDED when booking is PENDING")
+void markAsSucceeded_fromPending_statusIsSucceeded() {
+  // Arrange (Preparar) - Booking is PENDING by default in @BeforeEach
+
+  // Act (Ejecutar)
+  booking.markAsSucceeded();
+
+  // Assert (Verificar)
+  assertEquals(BookingStatus.SUCCEEDED, booking.getBookingStatus());
+}
+```
+
+2. **markAsSucceeded_fromCancelled_throwsIllegalState**(BookingAggregateTest)
+
+Asegura que el sistema lance una excepción si se intenta marcar como exitosa una reserva que ya ha sido cancelada, protegiendo el ciclo de vida del agregado.
+
+```java
+@Test
+@DisplayName("markAsSucceeded() throws when booking is already CANCELLED")
+void markAsSucceeded_fromCancelled_throwsIllegalState() {
+  // Arrange
+  booking.markAsCancelled();
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, booking::markAsSucceeded);
+}
+```
+
+3. **markAsCancelled_fromPending_statusIsCancelled**(BookingAggregateTest)
+
+Valida que una reserva pendiente pueda transicionar correctamente al estado cancelado.
+
+```java
+@Test
+@DisplayName("markAsCancelled() changes status to CANCELLED when booking is PENDING")
+void markAsCancelled_fromPending_statusIsCancelled() {
+  // Arrange
+
+  // Act
+  booking.markAsCancelled();
+
+  // Assert
+  assertEquals(BookingStatus.CANCELLED, booking.getBookingStatus());
+}
+```
+
+##### Application Layer: Command Services
+![BookingCommandServiceImplTest](assets/BookingCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Bookings._
+
+23. **handle_CreateBooking_ShouldSaveAndReturnId**(BookingCommandServiceImplTest)
+
+Prueba el flujo de creación de reserva: valida disponibilidad, calcula precios y persiste la reserva pendiente.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) saves and returns booking ID")
+void handle_CreateBooking_ShouldSaveAndReturnId() {
+  // Arrange
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.of(availabilityResource));
+  when(bookingRepository.save(any(Booking.class))).thenAnswer(i -> {
+      Booking b = i.getArgument(0);
+      return b;
+  });
+
+  // Act
+  Long id = bookingCommandService.handle(createBookingCommand);
+
+  // Assert
+  verify(bookingRepository).save(any(Booking.class));
+}
+```
+
+24. **handle_CreateBooking_ThrowsWhenAvailabilityNotFound**(BookingCommandServiceImplTest)
+
+Asegura que falle la creación si la disponibilidad de la experiencia no existe.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) throws when availability not found")
+void handle_CreateBooking_ThrowsWhenAvailabilityNotFound() {
+  // Arrange
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.empty());
+
+  // Act & Assert
+  assertThrows(IllegalArgumentException.class, () -> bookingCommandService.handle(createBookingCommand));
+}
+```
+
+25. **handle_CreateBooking_ThrowsWhenNotEnoughCapacity**(BookingCommandServiceImplTest)
+
+Valida que no se permitan reservas si la cantidad solicitada supera el cupo disponible.
+
+```java
+@Test
+@DisplayName("handle(CreateBookingCommand) throws when capacity is exceeded")
+void handle_CreateBooking_ThrowsWhenNotEnoughCapacity() {
+  // Arrange
+  var lowCapacityResource = new AvailabilityResource(10L, 1L, Instant.now(), Instant.now(), 1, new ArrayList<>());
+  when(externalExperienceService.fetchAvailabilityById(anyLong())).thenReturn(Optional.of(lowCapacityResource));
+
+  // Act & Assert
+  assertThrows(IllegalStateException.class, () -> bookingCommandService.handle(createBookingCommand));
+}
+```
+
+26. **handle_CancelBooking_MarksAsCancelled**(BookingCommandServiceImplTest)
+
+Prueba el servicio de cancelación de reserva, verificando el cambio de estado y actualización de disponibilidad externa.
+
+```java
+@Test
+@DisplayName("handle(CancelBookingCommand) cancels booking and returns it")
+void handle_CancelBooking_MarksAsCancelled() {
+  // Arrange
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(pendingBooking));
+
+  // Act
+  Optional<Booking> result = bookingCommandService.handle(new CancelBookingCommand(1L, "Reason"));
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(BookingStatus.CANCELLED, result.get().getBookingStatus());
+}
+```
+
+##### Application Layer: Query Services
+![BookingQueryServiceImplTest](assets/BookingQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Bookings._
+
+45. **handle_GetBookingById_ReturnsOptional**(BookingQueryServiceImplTest)
+
+Verifica que el servicio de consulta recupere una reserva por su ID, interactuando fielmente con el repositorio de persistencia.
+
+```java
+@Test
+void handle_GetBookingById_ReturnsOptional() {
+  // Arrange
+  GetBookingByIdQuery query = new GetBookingByIdQuery(1L);
+  Booking booking = mock(Booking.class);
+  when(bookingRepository.findById(1L)).thenReturn(Optional.of(booking));
+
+  // Act
+  Optional<Booking> result = bookingQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(booking, result.get());
+  verify(bookingRepository).findById(1L);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![BookingsControllerTest](assets/BookingsControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Bookings._
+
+46. **createBooking_returnsCreated_whenSuccess**(BookingsControllerTest)
+
+Valida que el endpoint REST retorne 201 Created y el recurso DTO al crear exitosamente una reserva.
+
+```java
+@Test
+void createBooking_returnsCreated_whenSuccess() {
+  // Arrange
+  CreateBookingResource resource = new CreateBookingResource(1L, 10L, 1L, 2, Instant.now());
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.of(booking));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(2, response.getBody().quantity());
+}
+```
+
+47. **createBooking_returnsNotFound_whenBookingNotRetrieved**(BookingsControllerTest)
+
+Maneja el escenario donde la reserva se crea pero no puede recuperarse inmediatamente para la respuesta.
+
+```java
+@Test
+void createBooking_returnsNotFound_whenBookingNotRetrieved() {
+  // Arrange
+  when(commandService.handle(any())).thenReturn(1L);
+  when(queryService.handle(any())).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+48. **createBooking_returnsBadRequest_whenIllegalArgumentThrown**(BookingsControllerTest)
+
+Valida que errores de validación de negocio se traduzcan en respuestas 400 Bad Request.
+
+```java
+@Test
+void createBooking_returnsBadRequest_whenIllegalArgumentThrown() {
+  // Arrange
+  when(commandService.handle(any())).thenThrow(new IllegalArgumentException("Invalid"));
+
+  // Act
+  ResponseEntity<BookingResource> response = controller.createBooking(resource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![BookingResourceFromEntityAssemblerTest](assets/BookingResourceFromEntityAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context Bookings._
+
+61. **toResourceFromEntity_ShouldMapCorrectly**(BookingResourceFromEntityAssemblerTest)
+
+Verifica que la entidad `Booking` se transforme fielmente en su recurso REST, incluyendo estatus y precios.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  Booking entity = mock(Booking.class);
+  when(entity.getId()).thenReturn(1L);
+
+  // Act
+  BookingResource resource = BookingResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+}
+```
+
+62. **toCommandFromResource_ShouldMapCorrectly**(CreateBookingCommandFromResourceAssemblerTest)
+
+Valida que el DTO de entrada se convierta correctamente en el comando interno de creación de reserva.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Act
+  CreateBookingCommand command = CreateBookingCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals(2, command.quantity());
+}
+```
+
+
+#### Experiences Bounded Context
+
+
+##### Domain Layer: Aggregates & Entities
+![AvailabilityTest](assets/AvailabilityTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Experiences._
+
+1. **testAvailabilityConstructorAndGetters**(AvailabilityTest)
+
+Verifica que el constructor de `Availability` inicialice correctamente la experiencia, las fechas de inicio/fin y la capacidad, asegurando que la lista de tipos de tickets comience vacía.
+
+```java
+@Test
+void testAvailabilityConstructorAndGetters() {
+  // Arrange
+  LocalDateTime start = LocalDateTime.now();
+  LocalDateTime end = start.plusHours(2);
+  int capacity = 50;
+
+  // Act
+  Availability availability = new Availability(experience, start, end, capacity);
+
+  // Assert
+  assertEquals(experience, availability.getExperience());
+  assertEquals(start, availability.getStartDateTime());
+  assertEquals(end, availability.getEndDateTime());
+  assertEquals(capacity, availability.getCapacity());
+  assertTrue(availability.getTicketTypes().isEmpty());
+}
+```
+
+2. **testAddTicketType_Successfully**(AvailabilityTest)
+
+Valida que se pueda añadir un tipo de ticket a una disponibilidad con su respectivo precio y stock, verificando la correcta persistencia en la colección interna.
+
+```java
+@Test
+void testAddTicketType_Successfully() {
+  // Arrange
+  Availability availability =
+      new Availability(experience, LocalDateTime.now(), LocalDateTime.now().plusHours(1), 20);
+  BigDecimal price = new BigDecimal("100.00");
+  int stock = 10;
+
+  // Act
+  availability.addTicketType(ticketType, price, stock);
+
+  // Assert
+  assertEquals(1, availability.getTicketTypes().size());
+  var addedTicket = availability.getTicketTypes().iterator().next();
+  assertEquals(ticketType, addedTicket.getTicketType());
+  assertEquals(price, addedTicket.getPrice());
+  assertEquals(stock, addedTicket.getStock());
+}
+```
+
+8. **testExperienceConstructorAndGetters**(ExperienceTest)
+
+Verifica la inicialización completa de un agregado `Experience`, incluyendo título, descripción, agencia, categoría y destino.
+
+```java
+@Test
+void testExperienceConstructorAndGetters() {
+  // Arrange
+  String title = "Machu Picchu Tour";
+  String description = "Full day tour to the Inca citadel";
+  String duration = "12 hours";
+  String meetingPoint = "Main Square Cusco";
+
+  // Act
+  Experience experience =
+      new Experience(
+          title, description, agencyId, category, destinationId, duration, meetingPoint);
+
+  // Assert
+  assertEquals(title, experience.getTitle());
+  assertEquals(description, experience.getDescription());
+  assertEquals(agencyId, experience.getAgencyId());
+  assertEquals(category, experience.getCategory());
+  assertEquals(destinationId, experience.getDestinationId());
+  assertEquals(duration, experience.getDuration());
+  assertEquals(meetingPoint, experience.getMeetingPoint());
+  assertTrue(experience.getAvailabilities().isEmpty());
+  assertTrue(experience.getMedia().isEmpty());
+}
+```
+
+9. **testUpdateInfo_Successfully**(ExperienceTest)
+
+Valida la actualización de los metadatos de una experiencia, asegurando que todos los campos modificables se guarden correctamente.
+
+```java
+@Test
+void testUpdateInfo_Successfully() {
+  // Arrange
+  Experience experience =
+      new Experience("Old Title", "Old Desc", agencyId, category, destinationId, "1h", "Point A");
+  String newTitle = "New Title";
+  String newDescription = "New Description updated";
+  String newDuration = "2h";
+  String newMeetingPoint = "Point B";
+
+  // Act
+  experience.updateInfo(
+      newTitle,
+      newDescription,
+      anotherCategory,
+      anotherDestinationId,
+      newDuration,
+      newMeetingPoint);
+
+  // Assert
+  assertEquals(newTitle, experience.getTitle());
+  assertEquals(newDescription, experience.getDescription());
+  assertEquals(anotherCategory, experience.getCategory());
+  assertEquals(anotherDestinationId, experience.getDestinationId());
+  assertEquals(newDuration, experience.getDuration());
+  assertEquals(newMeetingPoint, experience.getMeetingPoint());
+}
+```
+
+12. **testAvailabilityTicketTypeConstructorAndGetters**(AvailabilityTicketTypeTest)
+
+Verifica que la entidad de enlace entre disponibilidad y ticket se cree con los valores correctos de precio y stock inicial.
+
+```java
+@Test
+void testAvailabilityTicketTypeConstructorAndGetters() {
+  // Arrange
+  BigDecimal price = new BigDecimal("49.99");
+  int stock = 20;
+
+  // Act
+  AvailabilityTicketType availabilityTicketType =
+      new AvailabilityTicketType(availability, ticketType, price, stock);
+
+  // Assert
+  assertEquals(availability, availabilityTicketType.getAvailability());
+  assertEquals(ticketType, availabilityTicketType.getTicketType());
+  assertEquals(price, availabilityTicketType.getPrice());
+  assertEquals(stock, availabilityTicketType.getStock());
+}
+```
+
+13. **testReduceStock_Successfully**(AvailabilityTicketTypeTest)
+
+Valida la reducción de stock tras una compra, confirmando que la lógica aritmética sea correcta.
+
+```java
+@Test
+void testReduceStock_Successfully() {
+  // Arrange
+  int initialStock = 10;
+  int quantityToReduce = 4;
+  AvailabilityTicketType availabilityTicketType =
+      new AvailabilityTicketType(availability, ticketType, BigDecimal.TEN, initialStock);
+
+  // Act
+  availabilityTicketType.reduceStock(quantityToReduce);
+
+  // Assert
+  assertEquals(6, availabilityTicketType.getStock());
+}
+```
+
+15. **testCategoryConstructorAndGetters**(CategoryTest)
+
+Valida que el constructor de la entidad `Category` mapee correctamente el enumerado de categorías del dominio.
+
+```java
+@Test
+void testCategoryConstructorAndGetters() {
+  // Arrange
+  Categories expectedName = Categories.CULTURA;
+
+  // Act
+  Category category = new Category(expectedName);
+
+  // Assert
+  assertEquals(expectedName, category.getName());
+}
+```
+
+16. **testGetCategoryName_ReturnsStringRepresentation**(CategoryTest)
+
+Verifica que el método accesor retorne la representación textual correcta del nombre de la categoría.
+
+```java
+@Test
+void testGetCategoryName_ReturnsStringRepresentation() {
+  // Arrange
+  Category category = new Category(Categories.GASTRONOMIA);
+
+  // Act
+  String name = category.getCategoryName();
+
+  // Assert
+  assertEquals("GASTRONOMIA", name);
+}
+```
+
+21. **testExperienceMediaConstructorAndGetters**(ExperienceMediaTest)
+
+Verifica que la entidad multimedia se cree correctamente con su URL, descripción y relación con la experiencia.
+
+```java
+@Test
+void testExperienceMediaConstructorAndGetters() {
+  // Arrange
+  String mediaUrl = "https://example.com/image.jpg";
+  String caption = "Vista panorámica";
+
+  // Act
+  ExperienceMedia media = new ExperienceMedia(experience, mediaUrl, caption);
+
+  // Assert
+  assertEquals(experience, media.getExperience());
+  assertEquals(mediaUrl, media.getMediaUrl());
+  assertEquals(caption, media.getCaption());
+}
+```
+
+22. **testUpdate_Successfully**(ExperienceMediaTest)
+
+Valida que se puedan actualizar la URL y el pie de foto de un recurso multimedia existente.
+
+```java
+@Test
+void testUpdate_Successfully() {
+  // Arrange
+  ExperienceMedia media = new ExperienceMedia(experience, "old-url.com", "Old Caption");
+  String newUrl = "new-url.com";
+  String newCaption = "New Caption";
+
+  // Act
+  media.update(newUrl, newCaption);
+
+  // Assert
+  assertEquals(newUrl, media.getMediaUrl());
+  assertEquals(newCaption, media.getCaption());
+}
+```
+
+25. **testTicketTypeConstructorAndGetters**(TicketTypeTest)
+
+Valida que el constructor de `TicketType` asigne correctamente el tipo de ticket desde el enumerado.
+
+```java
+@Test
+void testTicketTypeConstructorAndGetters() {
+  // Arrange
+  TicketTypes expectedType = TicketTypes.TICKET_VIP;
+
+  // Act
+  TicketType ticketType = new TicketType(expectedType);
+
+  // Assert
+  assertEquals(expectedType, ticketType.getName());
+}
+```
+
+26. **testGetTicketTypeName_ReturnsStringRepresentation**(TicketTypeTest)
+
+Verifica el retorno de la representación en cadena del tipo de ticket para su uso en la capa de interfaces.
+
+```java
+@Test
+void testGetTicketTypeName_ReturnsStringRepresentation() {
+  // Arrange
+  TicketType ticketType = new TicketType(TicketTypes.TICKET_GENERAL);
+
+  // Act
+  String name = ticketType.getTicketTypeName();
+
+  // Assert
+  assertEquals("TICKET_GENERAL", name);
+}
+```
+
+##### Application Layer: Command Services
+![AvailabilityCommandServiceImplTest](assets/AvailabilityCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Experiences._
+
+31. **handle_CreateAvailability_ShouldSave**(AvailabilityCommandServiceImplTest)
+
+Verifica que el servicio de comandos cree una nueva disponibilidad correctamente cuando los datos son válidos, invocando el guardado en el repositorio.
+
+```java
+@Test
+void handle_CreateAvailability_ShouldSave() {
+    // Arrange
+    var command = new CreateAvailabilityCommand(experience, start, end, 50);
+    when(experienceRepository.existsById(any())).thenReturn(true);
+    when(repository.save(any())).thenAnswer(i -> i.getArguments()[0]);
+
+    // Act
+    Long id = service.handle(command);
+
+    // Assert
+    assertNotNull(id);
+    verify(repository).save(any());
+}
+```
+
+32. **handle_CreateAvailability_ShouldThrowException_WhenExperienceNotFound**(AvailabilityCommandServiceImplTest)
+
+Asegura que no se puedan crear disponibilidades para experiencias inexistentes.
+
+```java
+@Test
+void handle_CreateAvailability_ShouldThrowException_WhenExperienceNotFound() {
+    // Arrange
+    var command = new CreateAvailabilityCommand(experience, start, end, 50);
+    when(experienceRepository.existsById(any())).thenReturn(false);
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+35. **handle_AddTicketType_ShouldUpdateAggregate**(AvailabilityTicketTypeCommandServiceImplTest)
+
+Verifica que el servicio de comandos añada correctamente un tipo de ticket a una disponibilidad existente, orquestando la lógica del agregado.
+
+```java
+@Test
+void handle_AddTicketType_ShouldUpdateAggregate() {
+    // Arrange
+    var command = new CreateAvailabilityTicketTypeCommand(1L, 1L, BigDecimal.TEN, 10);
+    when(availabilityRepository.findById(1L)).thenReturn(Optional.of(availability));
+    when(ticketTypeRepository.findById(1L)).thenReturn(Optional.of(ticketType));
+
+    // Act
+    service.handle(command);
+
+    // Assert
+    verify(availabilityRepository).save(availability);
+}
+```
+
+36. **handle_AddTicketType_ShouldThrow_WhenAvailabilityNotFound**(AvailabilityTicketTypeCommandServiceImplTest)
+
+Valida el manejo de errores cuando se intenta asociar un ticket a una disponibilidad que no existe.
+
+```java
+@Test
+void handle_AddTicketType_ShouldThrow_WhenAvailabilityNotFound() {
+    // Arrange
+    var command = new CreateAvailabilityTicketTypeCommand(99L, 1L, BigDecimal.TEN, 10);
+    when(availabilityRepository.findById(99L)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+38. **handle_SeedCategories_CreatesMissing**(CategoryCommandServiceImplTest)
+
+Verifica que el servicio de inicialización cargue las categorías base si no están presentes.
+
+```java
+@Test
+void handle_SeedCategories_CreatesMissing() {
+    // Arrange
+    when(repository.existsByName(any())).thenReturn(false);
+
+    // Act
+    service.handle(new SeedCategoriesCommand());
+
+    // Assert
+    verify(repository, atLeastOnce()).save(any());
+}
+```
+
+39. **handle_SeedCategories_SkipsExisting**(CategoryCommandServiceImplTest)
+
+Asegura la idempotencia del seeder de categorías al saltar las que ya existen.
+
+```java
+@Test
+void handle_SeedCategories_SkipsExisting() {
+    // Arrange
+    when(repository.existsByName(any())).thenReturn(true);
+
+    // Act
+    service.handle(new SeedCategoriesCommand());
+
+    // Assert
+    verify(repository, never()).save(any());
+}
+```
+
+40. **handle_CreateExperience_ShouldSave**(ExperienceCommandServiceImplTest)
+
+Valida que el servicio cree una experiencia correctamente, asociándola a una categoría válida.
+
+```java
+@Test
+void handle_CreateExperience_ShouldSave() {
+    // Arrange
+    var command = new CreateExperienceCommand("Title", "Desc", 1L, "CULTURA", 1L, "1h", "Point");
+    when(categoryRepository.findByName(any())).thenReturn(Optional.of(category));
+
+    // Act
+    Long id = service.handle(command);
+
+    // Assert
+    verify(repository).save(any());
+}
+```
+
+41. **handle_CreateExperience_ShouldThrow_WhenCategoryNotFound**(ExperienceCommandServiceImplTest)
+
+Prueba que falle la creación si la categoría proporcionada no está registrada.
+
+```java
+@Test
+void handle_CreateExperience_ShouldThrow_WhenCategoryNotFound() {
+    // Arrange
+    var command = new CreateExperienceCommand("Title", "Desc", 1L, "INVALID", 1L, "1h", "Point");
+    when(categoryRepository.findByName(any())).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> service.handle(command));
+}
+```
+
+44. **handle_createMedia_experienceExists_mediaIsSaved**(ExperienceMediaCommandServiceImplTest)
+
+Verifica la creación exitosa de un recurso multimedia cuando la experiencia asociada existe.
+
+```java
+@Test
+void handle_createMedia_experienceExists_mediaIsSaved() {
+    // Arrange
+    CreateExperienceMediaCommand command = new CreateExperienceMediaCommand(existingExperience, "url", "caption");
+    when(experienceRepository.findById(any())).thenReturn(Optional.of(existingExperience));
+
+    // Act
+    mediaCommandService.handle(command);
+
+    // Assert
+    verify(mediaRepository).save(any());
+}
+```
+
+45. **handle_createMedia_experienceNotFound_throwsException**(ExperienceMediaCommandServiceImplTest)
+
+Asegura que falle la creación de multimedia si la experiencia referenciada no existe.
+
+```java
+@Test
+void handle_createMedia_experienceNotFound_throwsException() {
+    // Arrange
+    CreateExperienceMediaCommand command = new CreateExperienceMediaCommand(existingExperience, "url", "caption");
+    when(experienceRepository.findById(any())).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThrows(IllegalArgumentException.class, () -> mediaCommandService.handle(command));
+}
+```
+
+48. **testHandleSeedTicketTypesCommand_CreatesMissingTicketTypes**(TicketTypeCommandServiceImplTest)
+
+Verifica que el servicio cargue todos los tipos de tickets definidos en el enumerado si faltan en la DB.
+
+```java
+@Test
+void testHandleSeedTicketTypesCommand_CreatesMissingTicketTypes() {
+    // Arrange
+    when(ticketTypeRepository.existsByName(any())).thenReturn(false);
+
+    // Act
+    ticketTypeCommandService.handle(new SeedTicketTypesCommand());
+
+    // Assert
+    verify(ticketTypeRepository, times(TicketTypes.values().length)).save(any());
+}
+```
+
+49. **testHandleSeedTicketTypesCommand_SkipsExistingTicketTypes**(TicketTypeCommandServiceImplTest)
+
+Asegura que no se dupliquen tipos de tickets si ya están presentes.
+
+```java
+@Test
+void testHandleSeedTicketTypesCommand_SkipsExistingTicketTypes() {
+    // Arrange
+    when(ticketTypeRepository.existsByName(any())).thenReturn(true);
+
+    // Act
+    ticketTypeCommandService.handle(new SeedTicketTypesCommand());
+
+    // Assert
+    verify(ticketTypeRepository, never()).save(any());
+}
+```
+
+##### Application Layer: Query Services
+![AvailabilityQueryServiceImplTest](assets/AvailabilityQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Experiences._
+
+50. **handle_GetAllAvailabilities_ShouldReturnList**(AvailabilityQueryServiceImplTest)
+
+Prueba que el servicio retorne todas las disponibilidades activas consultando al repositorio.
+
+```java
+@Test
+void handle_GetAllAvailabilities_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Availability.class)));
+
+    // Act
+    var result = service.handle(new GetAllAvailabilitiesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+51. **handle_GetAvailabilityById_ShouldReturnOptional**(AvailabilityQueryServiceImplTest)
+
+Verifica la recuperación de una disponibilidad específica por su ID.
+
+```java
+@Test
+void handle_GetAvailabilityById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var result = service.handle(new GetAvailabilityByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+52. **handle_GetAllCategories_ShouldReturnList**(CategoryQueryServiceImplTest)
+
+Valida la obtención del catálogo completo de categorías.
+
+```java
+@Test
+void handle_GetAllCategories_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Category.class)));
+
+    // Act
+    var result = service.handle(new GetAllCategoriesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+53. **handle_GetCategoryById_ShouldReturnOptional**(CategoryQueryServiceImplTest)
+
+Prueba la búsqueda de una categoría individual.
+
+```java
+@Test
+void handle_GetCategoryById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(Category.class)));
+
+    // Act
+    var result = service.handle(new GetCategoryByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+54. **handle_GetAllMedia_ShouldReturnList**(ExperienceMediaQueryServiceImplTest)
+
+Verifica que el servicio liste todos los recursos multimedia registrados.
+
+```java
+@Test
+void handle_GetAllMedia_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var result = service.handle(new GetAllExperienceMediaQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+55. **handle_GetMediaById_ShouldReturnOptional**(ExperienceMediaQueryServiceImplTest)
+
+Prueba la recuperación de un recurso multimedia por su identificador.
+
+```java
+@Test
+void handle_GetMediaById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var result = service.handle(new GetExperienceMediaByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+56. **handle_GetAllExperiences_ShouldReturnList**(ExperienceQueryServiceImplTest)
+
+Valida la consulta masiva de experiencias en el sistema.
+
+```java
+@Test
+void handle_GetAllExperiences_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(Experience.class)));
+
+    // Act
+    var result = service.handle(new GetAllExperiencesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+57. **handle_GetExperienceById_ShouldReturnOptional**(ExperienceQueryServiceImplTest)
+
+Verifica la búsqueda de una experiencia detallada por ID.
+
+```java
+@Test
+void handle_GetExperienceById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(5L)).thenReturn(Optional.of(mock(Experience.class)));
+
+    // Act
+    var result = service.handle(new GetExperienceByIdQuery(5L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+58. **handle_GetAllTicketTypes_ShouldReturnList**(TicketTypeQueryServiceImplTest)
+
+Prueba la obtención de todos los tipos de tickets disponibles.
+
+```java
+@Test
+void handle_GetAllTicketTypes_ShouldReturnList() {
+    // Arrange
+    when(repository.findAll()).thenReturn(List.of(mock(TicketType.class)));
+
+    // Act
+    var result = service.handle(new GetAllTicketTypesQuery());
+
+    // Assert
+    assertEquals(1, result.size());
+}
+```
+
+59. **handle_GetTicketTypeById_ShouldReturnOptional**(TicketTypeQueryServiceImplTest)
+
+Valida la recuperación de un tipo de ticket específico.
+
+```java
+@Test
+void handle_GetTicketTypeById_ShouldReturnOptional() {
+    // Arrange
+    when(repository.findById(1L)).thenReturn(Optional.of(mock(TicketType.class)));
+
+    // Act
+    var result = service.handle(new GetTicketTypeByIdQuery(1L));
+
+    // Assert
+    assertTrue(result.isPresent());
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![AvailabilitiesControllerTest](assets/AvailabilitiesControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Experiences._
+
+60. **testCreateAvailability_Created**(AvailabilitiesControllerTest)
+
+Verifica que el controlador responda 201 Created tras crear exitosamente una disponibilidad.
+
+```java
+@Test
+void testCreateAvailability_Created() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(1L);
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Availability.class)));
+
+    // Act
+    var response = controller.createAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+61. **testCreateAvailability_NotFound**(AvailabilitiesControllerTest)
+
+Asegura un 404 si la disponibilidad no puede recuperarse tras su supuesta creación.
+
+```java
+@Test
+void testCreateAvailability_NotFound() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(1L);
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.createAvailability(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+62. **testGetAllAvailabilities_Ok**(AvailabilitiesControllerTest)
+
+Valida el listado de todas las disponibilidades con un 200 OK.
+
+```java
+@Test
+void testGetAllAvailabilities_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllAvailabilities();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+67. **testGetAllCategories_Ok**(CategoriesControllerTest)
+
+Prueba el listado de categorías vía API.
+
+```java
+@Test
+void testGetAllCategories_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllCategories();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+68. **testGetCategoryById_Ok**(CategoriesControllerTest)
+
+Valida la obtención de categoría por ID vía API.
+
+```java
+@Test
+void testGetCategoryById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(Category.class)));
+
+    // Act
+    var response = controller.getCategoryById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+69. **testCreateMedia_Created**(ExperienceMediaControllerTest)
+
+Verifica la creación de multimedia con respuesta 201.
+
+```java
+@Test
+void testCreateMedia_Created() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(ExperienceMedia.class)));
+
+    // Act
+    var response = controller.createExperienceMedia(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+70. **testCreateMedia_NotFound**(ExperienceMediaControllerTest)
+
+Maneja el error 404 si el recurso no aparece tras crearse.
+
+```java
+@Test
+void testCreateMedia_NotFound() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = controller.createExperienceMedia(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+71. **testGetAllMedia_Ok**(ExperienceMediaControllerTest)
+
+Prueba el listado de recursos multimedia.
+
+```java
+@Test
+void testGetAllMedia_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllExperienceMedia();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+76. **testCreateExperience_Created**(ExperiencesControllerTest)
+
+Verifica la creación de una experiencia con respuesta 201.
+
+```java
+@Test
+void testCreateExperience_Created() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(10L);
+    when(queryService.handle(any())).thenReturn(Optional.of(experience));
+
+    // Act
+    var response = experiencesController.createExperience(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+}
+```
+
+77. **testCreateExperience_NotFound**(ExperiencesControllerTest)
+
+Maneja el 404 si la experiencia no se encuentra tras ser creada.
+
+```java
+@Test
+void testCreateExperience_NotFound() {
+    // Arrange
+    when(commandService.handle(any())).thenReturn(10L);
+    when(queryService.handle(any())).thenReturn(Optional.empty());
+
+    // Act
+    var response = experiencesController.createExperience(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+78. **testGetAllExperiences_Ok**(ExperiencesControllerTest)
+
+Prueba el listado público de experiencias.
+
+```java
+@Test
+void testGetAllExperiences_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of(experience));
+
+    // Act
+    var response = experiencesController.getAllExperiences();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+84. **testGetAllTicketTypes_Ok**(TicketTypesControllerTest)
+
+Prueba el listado de tipos de tickets.
+
+```java
+@Test
+void testGetAllTicketTypes_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(List.of());
+
+    // Act
+    var response = controller.getAllTicketTypes();
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+85. **testGetTicketTypeById_Ok**(TicketTypesControllerTest)
+
+Valida la obtención por ID de tipo de ticket.
+
+```java
+@Test
+void testGetTicketTypeById_Ok() {
+    // Arrange
+    when(queryService.handle(any())).thenReturn(Optional.of(mock(TicketType.class)));
+
+    // Act
+    var response = controller.getTicketTypeById(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AvailabilityResourceFromEntityAssemblerTest](assets/AvailabilityResourceFromEntityAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context Experiences._
+
+86. **toResourceFromEntity_ShouldMapCorrectly**(AvailabilityResourceFromEntityAssemblerTest)
+
+Verifica que la entidad `Availability` se transforme correctamente en su DTO de salida.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(Availability.class);
+    when(entity.getId()).thenReturn(1L);
+
+    // Act
+    var resource = AvailabilityResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals(1L, resource.id());
+}
+```
+
+87. **toResourceFromEntity_ShouldMapCorrectly**(CategoryResourceFromEntityAssemblerTest)
+
+Prueba el mapeo de la entidad `Category` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = new Category(Categories.GASTRONOMIA);
+
+    // Act
+    var resource = CategoryResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("GASTRONOMIA", resource.name());
+}
+```
+
+88. **toCommandFromResource_ShouldMapCorrectly**(CreateAvailabilityCommandFromResourceAssemblerTest)
+
+Valida la conversión del recurso de creación a comando interno para disponibilidad.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateAvailabilityCommandFromResourceAssembler.toCommandFromResource(mock(Experience.class), resource);
+
+    // Assert
+    assertNotNull(command);
+}
+```
+
+89. **toCommandFromResource_ShouldMapCorrectly**(CreateAvailabilityTicketTypeCommandFromResourceAssemblerTest)
+
+Verifica el mapeo para la asociación de tipos de tickets.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateAvailabilityTicketTypeCommandFromResourceAssembler.toCommandFromResource(1L, 1L, resource);
+
+    // Assert
+    assertEquals(1L, command.availabilityId());
+}
+```
+
+90. **toCommandFromResource_ShouldMapCorrectly**(CreateExperienceCommandFromResourceAssemblerTest)
+
+Prueba la transformación del recurso de entrada a comando de creación de experiencia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateExperienceCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals("Title", command.title());
+}
+```
+
+91. **toCommandFromResource_ShouldMapCorrectly**(CreateExperienceMediaCommandFromResourceAssemblerTest)
+
+Valida el mapeo para la creación de recursos multimedia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = CreateExperienceMediaCommandFromResourceAssembler.toCommandFromResource(mock(Experience.class), resource);
+
+    // Assert
+    assertNotNull(command);
+}
+```
+
+92. **toResourceFromEntity_ShouldMapCorrectly**(ExperienceMediaResourceFromEntityAssemblerTest)
+
+Verifica que el recurso multimedia se mapee correctamente para la API.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(ExperienceMedia.class);
+    when(entity.getMediaUrl()).thenReturn("url");
+
+    // Act
+    var resource = ExperienceMediaResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("url", resource.mediaUrl());
+}
+```
+
+93. **toResourceFromEntity_ShouldMapCorrectly**(ExperienceResourceFromEntityAssemblerTest)
+
+Prueba el mapeo integral del agregado `Experience` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = mock(Experience.class);
+    when(entity.getTitle()).thenReturn("Title");
+
+    // Act
+    var resource = ExperienceResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("Title", resource.title());
+}
+```
+
+94. **toResourceFromEntity_ShouldMapCorrectly**(TicketTypeResourceFromEntityAssemblerTest)
+
+Verifica el mapeo de la entidad `TicketType` a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    // Arrange
+    var entity = new TicketType(TicketTypes.TICKET_VIP);
+
+    // Act
+    var resource = TicketTypeResourceFromEntityAssembler.toResourceFromEntity(entity);
+
+    // Assert
+    assertEquals("TICKET_VIP", resource.name());
+}
+```
+
+95. **toCommandFromResource_ShouldMapCorrectly**(UpdateExperienceCommandFromResourceAssemblerTest)
+
+Valida la conversión del recurso de actualización a comando para experiencia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = UpdateExperienceCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals(1L, command.experienceId());
+}
+```
+
+96. **toCommandFromResource_ShouldMapCorrectly**(UpdateExperienceMediaCommandFromResourceAssemblerTest)
+
+Verifica el mapeo para la actualización de recursos multimedia.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    // Act
+    var command = UpdateExperienceMediaCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+    // Assert
+    assertEquals(1L, command.mediaId());
+}
+```
+
+
+#### IAM Bounded Context
+
+
+##### Application Layer: Command Services
+
+1. **handle_SeedRolesCommand_ShouldSaveMissingRoles**(RoleCommandServiceImplTest)
+
+Esta prueba valida que el servicio de inicialización de roles funcione de manera idempotente. Verifica que el sistema identifique qué roles de la enumeración `Roles` (como `ROLE_ADMIN`, `ROLE_TOURIST`, `ROLE_AGENCY_STAFF`) ya existen en la base de datos y proceda a guardar únicamente aquellos que faltan. Esto garantiza que el sistema siempre cuente con los roles base necesarios para su funcionamiento sin generar duplicados.
+
+```java
+@Test
+@DisplayName("handle(SeedRolesCommand) should save all missing roles")
+void handle_SeedRolesCommand_ShouldSaveMissingRoles() {
+  // Arrange
+  final var command = new SeedRolesCommand();
+
+  when(roleRepository.existsByName(Roles.ROLE_ADMIN)).thenReturn(true);
+  when(roleRepository.existsByName(Roles.ROLE_AGENCY_STAFF)).thenReturn(false);
+  when(roleRepository.existsByName(Roles.ROLE_TOURIST)).thenReturn(false);
+
+  // Act
+  roleCommandService.handle(command);
+
+  // Assert
+  verify(roleRepository, atLeastOnce()).existsByName(any());
+  verify(roleRepository, atLeastOnce()).save(any(Role.class));
+}
+```
+
+2. **handle_SignUpCommand_ShouldReturnUser_WhenCreationIsSuccessful**(UserCommandServiceImplTest)
+
+Esta prueba fundamental verifica el flujo completo de registro de un nuevo usuario. Simula un escenario exitoso donde el correo electrónico es único, se recupera el rol de turista por defecto, se cifra la contraseña y finalmente se persiste la entidad. Valida que el objeto retornado coincida con el esperado y que todas las dependencias (repositorios y servicios de seguridad) se invoquen correctamente.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should return User when creation is successful")
+void handle_SignUpCommand_ShouldReturnUser_WhenCreationIsSuccessful() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com", "password123", "John", "Doe", "123456789", new ArrayList<>());
+  var role = new Role(Roles.ROLE_TOURIST);
+  var expectedUser =
+      new User(
+          command.email(),
+          "encodedPassword",
+          command.firstName(),
+          command.lastName(),
+          command.phone(),
+          List.of(role));
+
+  when(userRepository.existsByEmail(command.email())).thenReturn(false);
+  when(roleRepository.findByName(Roles.ROLE_TOURIST)).thenReturn(Optional.of(role));
+  when(hashingService.encode(command.password())).thenReturn("encodedPassword");
+  when(userRepository.findByEmail(command.email())).thenReturn(Optional.of(expectedUser));
+
+  // Act
+  var result = userCommandService.handle(command);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(expectedUser, result.get());
+
+  verify(userRepository).existsByEmail(command.email());
+  verify(roleRepository).findByName(Roles.ROLE_TOURIST);
+  verify(hashingService).encode(command.password());
+  verify(userRepository).save(any(User.class));
+  verify(userRepository).findByEmail(command.email());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+3. **handle_SignUpCommand_ShouldThrowRuntimeException_WhenEmailAlreadyExists**(UserCommandServiceImplTest)
+
+Valida la regla de negocio que impide el registro de múltiples usuarios con la misma dirección de correo electrónico. La prueba asegura que, si el repositorio indica que el email ya existe, el servicio lance una `RuntimeException` con el mensaje adecuado y detenga el proceso inmediatamente sin realizar operaciones costosas como el cifrado de contraseñas.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should throw RuntimeException when email already exists")
+void handle_SignUpCommand_ShouldThrowRuntimeException_WhenEmailAlreadyExists() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com", "password123", "John", "Doe", "123456789", new ArrayList<>());
+  when(userRepository.existsByEmail(command.email())).thenReturn(true);
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "Email already exists");
+
+  verify(userRepository).existsByEmail(command.email());
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+4. **handle_SignUpCommand_ShouldThrowRuntimeException_WhenRoleNotFound**(UserCommandServiceImplTest)
+
+Esta prueba verifica el manejo de errores cuando un rol solicitado no está definido en el sistema. Asegura que la integridad del modelo de seguridad se mantenga, lanzando una excepción si se intenta asignar un rol inexistente, lo que evita la creación de usuarios con privilegios corruptos o incompletos.
+
+```java
+@Test
+@DisplayName("handle(SignUpCommand) should throw RuntimeException when role not found")
+void handle_SignUpCommand_ShouldThrowRuntimeException_WhenRoleNotFound() {
+  // Arrange
+  var command =
+      new SignUpCommand(
+          "john.doe@example.com",
+          "password123",
+          "John",
+          "Doe",
+          "123456789",
+          List.of(new Role(Roles.ROLE_ADMIN)));
+
+  when(userRepository.existsByEmail(command.email())).thenReturn(false);
+  when(roleRepository.findByName(Roles.ROLE_ADMIN)).thenReturn(Optional.empty());
+
+  // Act + Assert
+  assertThrows(
+      RuntimeException.class, () -> userCommandService.handle(command), "Role not found");
+
+  verify(userRepository).existsByEmail(command.email());
+  verify(roleRepository).findByName(Roles.ROLE_ADMIN);
+  verifyNoMoreInteractions(userRepository, roleRepository, hashingService, tokenService);
+}
+```
+
+##### Application Layer: Query Services
+
+8. **handle_GetAllRolesQuery_ShouldReturnListOfRoles**(RoleQueryServiceImplTest)
+
+Verifica que el servicio de consulta pueda recuperar la lista completa de roles del sistema. Esta prueba es vital para funcionalidades de administración y para que el frontend pueda mostrar las opciones de roles disponibles durante el registro o asignación de permisos.
+
+```java
+@Test
+@DisplayName("handle(GetAllRolesQuery) should return a list of roles")
+void handle_GetAllRolesQuery_ShouldReturnListOfRoles() {
+  // Arrange
+  var query = new GetAllRolesQuery();
+  var mockRole = mock(Role.class);
+  var expectedRoles = List.of(mockRole);
+
+  when(roleRepository.findAll()).thenReturn(expectedRoles);
+
+  // Act
+  var result = roleQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedRoles, result);
+
+  verify(roleRepository).findAll();
+  verifyNoMoreInteractions(roleRepository);
+}
+```
+
+9. **handle_GetRoleByIdQuery_ShouldReturnOptionalRole**(RoleQueryServiceImplTest)
+
+Valida la búsqueda de un rol específico mediante su identificador numérico. Asegura que el servicio retorne un `Optional` conteniendo el rol si existe, facilitando la validación de permisos puntuales basados en el ID del rol.
+
+```java
+@Test
+@DisplayName("handle(GetRoleByIdQuery) should return an Optional of role when found")
+void handle_GetRoleByIdQuery_ShouldReturnOptionalRole() {
+  // Arrange
+  var query = new GetRoleByIdQuery(1L);
+  var mockRole = mock(Role.class);
+
+  when(roleRepository.findById(query.roleId())).thenReturn(Optional.of(mockRole));
+
+  // Act
+  var result = roleQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(mockRole, result.get());
+
+  verify(roleRepository).findById(query.roleId());
+  verifyNoMoreInteractions(roleRepository);
+}
+```
+
+10. **handle_GetAllUsersQuery_ShouldReturnListOfUsers**(UserQueryServiceImplTest)
+
+Esta prueba valida que el sistema sea capaz de listar todos los usuarios registrados. Es una operación fundamental para los paneles de administración donde se requiere visualizar y gestionar el directorio completo de usuarios de la plataforma.
+
+```java
+@Test
+@DisplayName("handle(GetAllUsersQuery) should return a list of users")
+void handle_GetAllUsersQuery_ShouldReturnListOfUsers() {
+  // Arrange
+  var query = new GetAllUsersQuery();
+  var mockUser = mock(User.class);
+  var expectedUsers = List.of(mockUser);
+
+  when(userRepository.findAll()).thenReturn(expectedUsers);
+
+  // Act
+  var result = userQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedUsers, result);
+
+  verify(userRepository).findAll();
+  verifyNoMoreInteractions(userRepository);
+}
+```
+
+11. **handle_GetUserByIdQuery_ShouldReturnOptionalUser**(UserQueryServiceImplTest)
+
+Verifica la recuperación de la información detallada de un usuario mediante su identificador único. Valida que el servicio interactúe correctamente con el repositorio y maneje la posibilidad de que el usuario exista o no, retornando un contenedor seguro.
+
+```java
+@Test
+@DisplayName("handle(GetUserByIdQuery) should return an Optional of user when found")
+void handle_GetUserByIdQuery_ShouldReturnOptionalUser() {
+  // Arrange
+  var query = new GetUserByIdQuery(1L);
+  var mockUser = mock(User.class);
+
+  when(userRepository.findById(query.userId())).thenReturn(Optional.of(mockUser));
+
+  // Act
+  var result = userQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(mockUser, result.get());
+
+  verify(userRepository).findById(query.userId());
+  verifyNoMoreInteractions(userRepository);
+}
+```
+
+##### Application Layer: Event Handlers
+
+13. **on_ShouldExecuteSeedRolesCommand**(ApplicationReadyEventHandlerTest)
+
+Verifica que el sistema inicie automáticamente la carga de roles cuando la aplicación está lista (evento `ApplicationReadyEvent`). Esta prueba garantiza que el disparador automático del seeder de roles funcione correctamente al arrancar el servidor, asegurando que la base de datos esté preparada antes de recibir peticiones.
+
+```java
+@Test
+@DisplayName("on should execute SeedRolesCommand")
+void on_ShouldExecuteSeedRolesCommand() {
+  // Arrange
+  when(applicationReadyEvent.getApplicationContext()).thenReturn(applicationContext);
+  when(applicationContext.getId()).thenReturn("TestApplication");
+
+  // Act
+  applicationReadyEventHandler.on(applicationReadyEvent);
+
+  // Assert
+  verify(applicationReadyEvent).getApplicationContext();
+  verify(applicationContext).getId();
+  verify(roleCommandService).handle(any(SeedRolesCommand.class));
+  verifyNoMoreInteractions(roleCommandService, applicationReadyEvent, applicationContext);
+}
+```
+
+##### Interfaces Layer: Anti-Corruption Layer (ACL Facade)
+
+14. **createUser_ShouldReturnZero_WhenEmpty**(IamContextFacadeTest)
+
+Valida que la fachada ACL retorne un valor por defecto (0L) si el servicio de creación de usuarios falla o no puede procesar la solicitud. Esto asegura que los contextos externos (como Perfiles o Reservas) reciban una respuesta controlada en lugar de excepciones inesperadas.
+
+```java
+@Test
+@DisplayName("createUser should return 0L when command service returns empty")
+void createUser_ShouldReturnZero_WhenEmpty() {
+  // Arrange
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.empty());
+
+  // Act
+  Long result =
+      iamContextFacade.createUser(
+          "user@test.com", "pass", "John", "Doe", "999", List.of("ROLE_TOURIST"));
+
+  // Assert
+  assertEquals(0L, result);
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService, userQueryService);
+}
+```
+
+15. **createUser_ShouldReturnUserId_WhenPresent**(IamContextFacadeTest)
+
+Verifica que la fachada ACL propague correctamente el identificador del usuario creado exitosamente hacia los otros contextos. Esta es la vía principal por la cual otros módulos integran la identidad de un nuevo usuario en sus propios modelos de dominio.
+
+```java
+@Test
+@DisplayName("createUser should return user ID when command service returns a user")
+void createUser_ShouldReturnUserId_WhenPresent() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(10L);
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.of(user));
+
+  // Act
+  Long result =
+      iamContextFacade.createUser(
+          "user@test.com", "pass", "John", "Doe", "999", List.of("ROLE_TOURIST"));
+
+  // Assert
+  assertEquals(10L, result);
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService, userQueryService);
+}
+```
+
+16. **fetchUserById_ShouldReturnEmpty_WhenNotFound**(IamContextFacadeTest)
+
+Valida que cuando un contexto externo solicita un usuario por ID que no existe, la fachada retorne un resultado vacío de manera elegante. Asegura que la capa de abstracción maneje las ausencias de datos sin romper el flujo de los módulos clientes.
+
+```java
+@Test
+@DisplayName("fetchUserById should return empty when user is not found")
+void fetchUserById_ShouldReturnEmpty_WhenNotFound() {
+  // Arrange
+  when(userQueryService.handle(new GetUserByIdQuery(99L))).thenReturn(Optional.empty());
+
+  // Act
+  var result = iamContextFacade.fetchUserById(99L);
+
+  // Assert
+  assertTrue(result.isEmpty());
+  verify(userQueryService).handle(new GetUserByIdQuery(99L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+17. **fetchUserById_ShouldReturnResource_WhenFound**(IamContextFacadeTest)
+
+Prueba que la fachada transforme correctamente una entidad de usuario interna en un DTO accesible para otros contextos. Valida que los datos sensibles se filtren o mapeen correctamente al formato de salida compartido, respetando los límites de los bounded contexts.
+
+```java
+@Test
+@DisplayName("fetchUserById should return UserResource when user is found")
+void fetchUserById_ShouldReturnResource_WhenFound() {
+  // Arrange
+  var user = mock(User.class);
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("john@test.com");
+  when(user.getFirstName()).thenReturn("John");
+  when(user.getLastName()).thenReturn("Doe");
+  when(user.getPhone()).thenReturn("999");
+  when(user.getRoles()).thenReturn(Set.of());
+  when(userQueryService.handle(new GetUserByIdQuery(1L))).thenReturn(Optional.of(user));
+
+  // Act
+  var result = iamContextFacade.fetchUserById(1L);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(1L, result.get().id());
+  assertEquals("john@test.com", result.get().email());
+  verify(userQueryService).handle(new GetUserByIdQuery(1L));
+  verifyNoMoreInteractions(userQueryService, userCommandService);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+
+28. **signIn_ShouldReturnOkAndResource_WhenSuccessful**(AuthenticationControllerTest)
+
+Valida el endpoint de autenticación desde el punto de vista del protocolo HTTP. Verifica que, ante credenciales válidas, el controlador responda con un estado 200 OK y un cuerpo que incluya la información del usuario y su token de acceso.
+
+```java
+@Test
+@DisplayName("signIn should return 200 OK and AuthenticatedUserResource")
+void signIn_ShouldReturnOkAndResource_WhenSuccessful() {
+  // Arrange
+  var signInResource = new SignInResource("john.doe@example.com", "password");
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+  var token = "jwt-token";
+  var pair = new ImmutablePair<>(userSpy, token);
+
+  when(userCommandService.handle(any(SignInCommand.class))).thenReturn(Optional.of(pair));
+
+  // Act
+  ResponseEntity<AuthenticatedUserResource> response =
+      authenticationController.signIn(signInResource);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("jwt-token", response.getBody().token());
+
+  verify(userCommandService).handle(any(SignInCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+29. **signIn_ShouldReturnNotFound_WhenFailed**(AuthenticationControllerTest)
+
+Verifica que el controlador de autenticación maneje los fallos de login (por usuario no encontrado o contraseña inválida) retornando un estado 404 Not Found, ocultando detalles técnicos innecesarios para mejorar la seguridad por oscuridad.
+
+```java
+@Test
+@DisplayName("signIn should return 404 Not Found when user does not exist or invalid")
+void signIn_ShouldReturnNotFound_WhenFailed() {
+  // Arrange
+  var signInResource = new SignInResource("john.doe@example.com", "password");
+
+  when(userCommandService.handle(any(SignInCommand.class))).thenReturn(Optional.empty());
+
+  // Act
+  ResponseEntity<AuthenticatedUserResource> response =
+      authenticationController.signIn(signInResource);
+
+  // Assert
+  assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(userCommandService).handle(any(SignInCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+30. **signUp_ShouldReturnCreatedAndResource_WhenSuccessful**(AuthenticationControllerTest)
+
+Prueba el endpoint de registro, asegurando que ante datos válidos el sistema cree el usuario y retorne un estado 201 Created junto con la representación del nuevo usuario, siguiendo las convenciones de APIs RESTful.
+
+```java
+@Test
+@DisplayName("signUp should return 201 Created and UserResource")
+void signUp_ShouldReturnCreatedAndResource_WhenSuccessful() {
+  // Arrange
+  var signUpResource =
+      new SignUpResource(
+          "john.doe@example.com", "password", "John", "Doe", "123", new ArrayList<>());
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+
+  when(userCommandService.handle(any(SignUpCommand.class))).thenReturn(Optional.of(userSpy));
+
+  // Act
+  ResponseEntity<UserResource> response = authenticationController.signUp(signUpResource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("John", response.getBody().firstName());
+
+  verify(userCommandService).handle(any(SignUpCommand.class));
+  verifyNoMoreInteractions(userCommandService);
+}
+```
+
+32. **getAllRoles_ShouldReturnOkAndListOfRoleResource**(RolesControllerTest)
+
+Esta prueba de controlador verifica que la obtención masiva de roles sea exitosa. Valida que se devuelva un estado 200 OK y que el listado de roles esté correctamente estructurado, permitiendo que el cliente visualice todas las opciones de permisos.
+
+```java
+@Test
+@DisplayName("getAllRoles should return 200 OK and list of RoleResource")
+void getAllRoles_ShouldReturnOkAndListOfRoleResource() {
+  // Arrange
+  var roleSpy = spy(new Role(Roles.ROLE_ADMIN));
+  when(roleSpy.getId()).thenReturn(1L);
+
+  when(roleQueryService.handle(any(GetAllRolesQuery.class))).thenReturn(List.of(roleSpy));
+
+  // Act
+  ResponseEntity<List<RoleResource>> response = rolesController.getAllRoles();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+
+  verify(roleQueryService).handle(any(GetAllRolesQuery.class));
+  verifyNoMoreInteractions(roleQueryService);
+}
+```
+
+33. **getAllUsers_ShouldReturnOkAndListOfUserResource**(UsersControllerTest)
+
+Valida el endpoint de listado de usuarios, asegurando que se retorne un estado HTTP 200 OK y una lista correctamente mapeada de recursos de usuario. Es fundamental para la gestión de usuarios por parte de perfiles administrativos.
+
+```java
+@Test
+@DisplayName("getAllUsers should return 200 OK and list of UserResource")
+void getAllUsers_ShouldReturnOkAndListOfUserResource() {
+  // Arrange
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(1L);
+  when(userSpy.getRoles()).thenReturn(Set.of());
+
+  when(userQueryService.handle(any(GetAllUsersQuery.class))).thenReturn(List.of(userSpy));
+
+  // Act
+  ResponseEntity<List<UserResource>> response = usersController.getAllUsers();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+
+  verify(userQueryService).handle(any(GetAllUsersQuery.class));
+  verifyNoMoreInteractions(userQueryService);
+}
+```
+
+34. **getUserById_ShouldReturnOkAndUserResource_WhenFound**(UsersControllerTest)
+
+Prueba la obtención de un usuario individual por su identificador. Verifica que si el usuario existe, el controlador responda con 200 OK y la información detallada del perfil solicitado.
+
+```java
+@Test
+@DisplayName("getUserById should return 200 OK and UserResource when found")
+void getUserById_ShouldReturnOkAndUserResource_WhenFound() {
+  // Arrange
+  var expectedId = 1L;
+  var userSpy = spy(new User("john.doe@example.com", "encoded", "John", "Doe", "123"));
+  when(userSpy.getId()).thenReturn(expectedId);
+  when(userSpy.getRoles()).thenReturn(Set.of());
+
+  when(userQueryService.handle(any(GetUserByIdQuery.class))).thenReturn(Optional.of(userSpy));
+
+  // Act
+  ResponseEntity<UserResource> response = usersController.getUserById(expectedId);
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("John", response.getBody().firstName());
+
+  verify(userQueryService).handle(any(GetUserByIdQuery.class));
+  verifyNoMoreInteractions(userQueryService);
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AuthenticatedUserResourceFromEntityAssemblerTest](assets/AuthenticatedUserResourceFromEntityAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context IAM._
+
+36. **toResourceFromEntity_ShouldMapCorrectly**(AuthenticatedUserResourceFromEntityAssemblerTest)
+
+Esta prueba de mapeo asegura que la transformación de la entidad interna de usuario y su token a un recurso de salida para el cliente se realice sin pérdida de datos, incluyendo la conversión de roles a cadenas de texto planas.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map User and token to AuthenticatedUserResource")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var user = mock(User.class);
+  var role = mock(Role.class);
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("user@example.com");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(role.getStringName()).thenReturn("ROLE_TOURIST");
+
+  var token = "jwt-token-123";
+
+  // Act
+  var resource = AuthenticatedUserResourceFromEntityAssembler.toResourceFromEntity(user, token);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("user@example.com", resource.email());
+  assertEquals("jwt-token-123", resource.token());
+  assertEquals(1, resource.roles().size());
+  assertTrue(resource.roles().contains("ROLE_TOURIST"));
+}
+```
+
+37. **toResourceFromEntity_ShouldMapRoleToRoleResource**(RoleResourceFromEntityAssemblerTest)
+
+Valida el mapeo simple de la entidad `Role` a su recurso de salida `RoleResource`, garantizando que la información del rol sea consistente a través de las capas.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map Role to RoleResource correctly")
+void toResourceFromEntity_ShouldMapRoleToRoleResource() {
+  // Arrange
+  var role = mock(Role.class);
+  when(role.getId()).thenReturn(1L);
+  when(role.getStringName()).thenReturn("ROLE_ADMIN");
+
+  // Act
+  var resource = RoleResourceFromEntityAssembler.toResourceFromEntity(role);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("ROLE_ADMIN", resource.name());
+}
+```
+
+38. **toCommandFromResource_ShouldMapSignInResourceToSignInCommand**(SignInCommandFromResourceAssemblerTest)
+
+Prueba la transformación de la entrada del usuario (recurso de inicio de sesión) hacia el comando interno de la aplicación. Es crucial para que los datos lleguen correctamente a los servicios de autenticación.
+
+```java
+@Test
+@DisplayName("toCommandFromResource should map SignInResource to SignInCommand correctly")
+void toCommandFromResource_ShouldMapSignInResourceToSignInCommand() {
+  // Arrange
+  var resource = new SignInResource("user@example.com", "password");
+
+  // Act
+  var command = SignInCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("user@example.com", command.email());
+  assertEquals("password", command.password());
+}
+```
+
+39. **toCommandFromResource_ShouldMapWithRoles**(SignUpCommandFromResourceAssemblerTest)
+
+Valida que el proceso de registro mapee correctamente la lista de roles proporcionada por el cliente hacia el comando interno de registro, permitiendo la creación de usuarios con perfiles específicos desde la API.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map SignUpResource to SignUpCommand correctly when roles are"
+        + " provided")
+void toCommandFromResource_ShouldMapWithRoles() {
+  // Arrange
+  var resource =
+      new SignUpResource(
+          "user@example.com", "password", "John", "Doe", "123", List.of("ROLE_TOURIST"));
+
+  // Act
+  var command = SignUpCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("user@example.com", command.email());
+  assertEquals("password", command.password());
+  assertEquals("John", command.firstName());
+  assertEquals("Doe", command.lastName());
+  assertEquals("123", command.phone());
+  assertEquals(1, command.roles().size());
+}
+```
+
+41. **toResourceFromEntity_ShouldMapCorrectly**(UserResourceFromEntityAssemblerTest)
+
+Esta prueba final de mapeo valida la transformación general de la entidad `User` a su representación pública `UserResource`. Asegura que todos los campos del perfil (nombres, apellidos, teléfono) se transfieran fielmente para su visualización en el frontend.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map User to UserResource correctly")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var user = mock(User.class);
+  var role = mock(Role.class);
+
+  when(user.getId()).thenReturn(1L);
+  when(user.getEmail()).thenReturn("user@example.com");
+  when(user.getFirstName()).thenReturn("John");
+  when(user.getLastName()).thenReturn("Doe");
+  when(user.getPhone()).thenReturn("123");
+  when(user.getRoles()).thenReturn(Set.of(role));
+  when(role.getStringName()).thenReturn("ROLE_TOURIST");
+
+  // Act
+  var resource = UserResourceFromEntityAssembler.toResourceFromEntity(user);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("user@example.com", resource.email());
+  assertEquals("John", resource.firstName());
+  assertEquals("Doe", resource.lastName());
+  assertEquals("123", resource.phone());
+  assertEquals(1, resource.roles().size());
+  assertEquals("ROLE_TOURIST", resource.roles().get(0));
+}
+```
+
+
+
+#### Geolocation Bounded Context
+
+##### Application Layer: Command Services
+![DestinationCommandServiceImplTest](assets/DestinationCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Geolocation._
+
+1. **handle_CreateDestinationCommand_ShouldReturnId_WhenCreatedSuccessfully**(DestinationCommandServiceImplTest)
+
+Esta prueba valida la creación exitosa de un destino turístico. Verifica que el servicio compruebe la unicidad del nombre del destino antes de proceder con el guardado en el repositorio. Asegura que el flujo de persistencia se active correctamente cuando los datos son válidos y no hay duplicados.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should return destination ID when created successfully")
+void handle_CreateDestinationCommand_ShouldReturnId_WhenCreatedSuccessfully() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(false);
+
+  // Act
+  destinationCommandService.handle(command);
+
+  // Assert
+  verify(destinationRepository).existsByName(name);
+  verify(destinationRepository).save(any(Destination.class));
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+2. **handle_CreateDestinationCommand_ShouldThrowException_WhenNameAlreadyExists**(DestinationCommandServiceImplTest)
+
+Asegura que el sistema no permita la creación de destinos duplicados con el mismo nombre. Valida que se lance una `IllegalArgumentException` cuando el repositorio detecta que el nombre ya está registrado, protegiendo la integridad de los datos geográficos.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should throw IllegalArgumentException when name already"
+        + " exists")
+void handle_CreateDestinationCommand_ShouldThrowException_WhenNameAlreadyExists() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(true);
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Destination with name " + name + " already exists");
+
+  verify(destinationRepository).existsByName(name);
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+3. **handle_CreateDestinationCommand_ShouldThrowException_WhenSaveFails**(DestinationCommandServiceImplTest)
+
+Verifica el manejo de errores robusto cuando ocurre un fallo técnico inesperado durante la persistencia (como un error de base de datos). Valida que el servicio capture la excepción original y la relance como una `IllegalArgumentException` informativa para las capas superiores.
+
+```java
+@Test
+@DisplayName(
+    "handle(CreateDestinationCommand) should throw IllegalArgumentException when save fails")
+void handle_CreateDestinationCommand_ShouldThrowException_WhenSaveFails() {
+  // Arrange
+  var command =
+      new CreateDestinationCommand(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var name = new DestinationName(command.name());
+
+  when(destinationRepository.existsByName(name)).thenReturn(false);
+  when(destinationRepository.save(any(Destination.class)))
+      .thenThrow(new RuntimeException("Database error"));
+
+  // Act + Assert
+  assertThrows(
+      IllegalArgumentException.class,
+      () -> destinationCommandService.handle(command),
+      "Error while saving profile: Database error");
+
+  verify(destinationRepository).existsByName(name);
+  verify(destinationRepository).save(any(Destination.class));
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+##### Application Layer: Query Services
+![DestinationQueryServiceImplTest](assets/DestinationQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Geolocation._
+
+10. **handle_GetAllDestinationsQuery_ShouldReturnListOfDestinations**(DestinationQueryServiceImplTest)
+
+Valida la recuperación masiva de todos los destinos turísticos registrados. Esta consulta es fundamental para que los viajeros puedan explorar todas las opciones de destinos disponibles en la plataforma.
+
+```java
+@Test
+@DisplayName("handle(GetAllDestinationsQuery) should return list of destinations")
+void handle_GetAllDestinationsQuery_ShouldReturnListOfDestinations() {
+  // Arrange
+  var query = new GetAllDestinationsQuery();
+  var destinationMock = mock(Destination.class);
+  var expectedDestinations = List.of(destinationMock);
+
+  when(destinationRepository.findAll()).thenReturn(expectedDestinations);
+
+  // Act
+  var result = destinationQueryService.handle(query);
+
+  // Assert
+  assertNotNull(result);
+  assertEquals(1, result.size());
+  assertEquals(expectedDestinations, result);
+
+  verify(destinationRepository).findAll();
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+11. **handle_GetDestinationByDestinationNameQuery_ShouldReturnDestination_WhenFound**(DestinationQueryServiceImplTest)
+
+Prueba la búsqueda de un destino por su nombre exacto. Valida que el servicio mapee correctamente el nombre del destino a su objeto de valor `DestinationName` y recupere la información correspondiente del repositorio.
+
+```java
+@Test
+@DisplayName("handle(GetDestinationByDestinationNameQuery) should return destination when found")
+void handle_GetDestinationByDestinationNameQuery_ShouldReturnDestination_WhenFound() {
+  // Arrange
+  var query = new GetDestinationByDestinationNameQuery("Paris");
+  var destinationName = new DestinationName(query.name());
+  var destinationMock = mock(Destination.class);
+
+  when(destinationRepository.findByName(destinationName))
+      .thenReturn(Optional.of(destinationMock));
+
+  // Act
+  var result = destinationQueryService.handle(query);
+
+  // Assert
+  assertTrue(result.isPresent());
+  assertEquals(destinationMock, result.get());
+
+  verify(destinationRepository).findByName(destinationName);
+  verifyNoMoreInteractions(destinationRepository);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![DestinationsControllerTest](assets/DestinationsControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Geolocation._
+
+13. **createDestination_ShouldReturnCreatedAndResource_WhenSuccessful**(DestinationsControllerTest)
+
+Valida el endpoint de creación de destinos. Verifica que ante una solicitud válida, el controlador coordine con los servicios de comando y consulta para retornar un estado 201 Created y el recurso del destino recién creado, incluyendo su ID generado.
+
+```java
+@Test
+@DisplayName(
+    "createDestination should return 201 Created and DestinationResource when successful")
+void createDestination_ShouldReturnCreatedAndResource_WhenSuccessful() {
+  // Arrange
+  var createResource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+  var expectedId = 1L;
+  var destinationSpy =
+      spy(
+          new Destination(
+              "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France"));
+  when(destinationSpy.getId()).thenReturn(expectedId);
+
+  when(destinationCommandService.handle(any(CreateDestinationCommand.class)))
+      .thenReturn(expectedId);
+  when(destinationQueryService.handle(any(GetDestinationByIdQuery.class)))
+      .thenReturn(Optional.of(destinationSpy));
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.createDestination(createResource);
+
+  // Assert
+  assertEquals(HttpStatus.CREATED, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals("Paris", response.getBody().name());
+
+  verify(destinationCommandService).handle(any(CreateDestinationCommand.class));
+  verify(destinationQueryService).handle(any(GetDestinationByIdQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+14. **createDestination_ShouldReturnBadRequest_WhenCreationFailed**(DestinationsControllerTest)
+
+Verifica que si la creación del destino falla en la lógica de negocio (por ejemplo, nombre duplicado), el controlador responda con un 400 Bad Request, informando al cliente que la operación no pudo completarse.
+
+```java
+@Test
+@DisplayName("createDestination should return 400 Bad Request when creation fails")
+void createDestination_ShouldReturnBadRequest_WhenCreationFailed() {
+  // Arrange
+  var createResource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  when(destinationCommandService.handle(any(CreateDestinationCommand.class))).thenReturn(0L);
+
+  // Act
+  ResponseEntity<DestinationResource> response =
+      destinationsController.createDestination(createResource);
+
+  // Assert
+  assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+  assertNull(response.getBody());
+
+  verify(destinationCommandService).handle(any(CreateDestinationCommand.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+15. **getAllDestinations_ShouldReturnOkAndList**(DestinationsControllerTest)
+
+Prueba el listado público de destinos a través de la API. Asegura que el controlador transforme correctamente la lista de entidades en una lista de recursos DTO y retorne un estado 200 OK.
+
+```java
+@Test
+@DisplayName("getAllDestinations should return 200 OK and list of DestinationResources")
+void getAllDestinations_ShouldReturnOkAndList() {
+  // Arrange
+  var destinationSpy =
+      spy(
+          new Destination(
+              "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France"));
+  when(destinationSpy.getId()).thenReturn(1L);
+
+  when(destinationQueryService.handle(any(GetAllDestinationsQuery.class)))
+      .thenReturn(List.of(destinationSpy));
+
+  // Act
+  ResponseEntity<List<DestinationResource>> response =
+      destinationsController.getAllDestinations();
+
+  // Assert
+  assertEquals(HttpStatus.OK, response.getStatusCode());
+  assertNotNull(response.getBody());
+  assertEquals(1, response.getBody().size());
+  assertEquals("Paris", response.getBody().get(0).name());
+
+  verify(destinationQueryService).handle(any(GetAllDestinationsQuery.class));
+  verifyNoMoreInteractions(destinationCommandService, destinationQueryService);
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![CreateDestinationCommandFromResourceAssemblerTest](assets/CreateDestinationCommandFromResourceAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers para el Bounded Context Geolocation._
+
+20. **toCommandFromResource_ShouldMapCorrectly**(CreateDestinationCommandFromResourceAssemblerTest)
+
+Verifica la transformación precisa del recurso de entrada para creación hacia el comando interno. Valida que todos los campos geográficos (dirección, distrito, ciudad, etc.) se mapeen correctamente para su procesamiento en la capa de aplicación.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map CreateDestinationResource to CreateDestinationCommand"
+        + " correctly")
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Arrange
+  var resource =
+      new CreateDestinationResource(
+          "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  // Act
+  var command = CreateDestinationCommandFromResourceAssembler.toCommandFromResource(resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals("Paris", command.name());
+  assertEquals("123 Street", command.address());
+  assertEquals("District 1", command.district());
+  assertEquals("Paris", command.city());
+  assertEquals("Ile-de-France", command.state());
+  assertEquals("France", command.country());
+}
+```
+
+21. **toResourceFromEntity_ShouldMapCorrectly**(DestinationResourceFromEntityAssemblerTest)
+
+Esta prueba asegura que la entidad `Destination` (compuesta por múltiples objetos de valor) sea aplanada y mapeada correctamente al recurso de salida `DestinationResource`. Garantiza que los datos mostrados al usuario sean coherentes con el modelo de dominio.
+
+```java
+@Test
+@DisplayName("toResourceFromEntity should map Destination to DestinationResource correctly")
+void toResourceFromEntity_ShouldMapCorrectly() {
+  // Arrange
+  var destination = mock(Destination.class);
+  when(destination.getId()).thenReturn(1L);
+  when(destination.getName()).thenReturn(new DestinationName("Paris"));
+  when(destination.getAddress()).thenReturn(new DestinationAddress("123 Street"));
+  when(destination.getDistrict()).thenReturn(new District("District 1"));
+  when(destination.getCity()).thenReturn(new City("Paris"));
+  when(destination.getState()).thenReturn(new State("Ile-de-France"));
+  when(destination.getCountry()).thenReturn(new Country("France"));
+
+  // Act
+  var resource = DestinationResourceFromEntityAssembler.toResourceFromEntity(destination);
+
+  // Assert
+  assertNotNull(resource);
+  assertEquals(1L, resource.id());
+  assertEquals("Paris", resource.name());
+  assertEquals("123 Street", resource.address());
+  assertEquals("District 1", resource.district());
+  assertEquals("Paris", resource.city());
+  assertEquals("Ile-de-France", resource.state());
+  assertEquals("France", resource.country());
+}
+```
+
+22. **toCommandFromResource_ShouldMapCorrectly**(UpdateDestinationCommandFromResourceAssemblerTest)
+
+Valida el mapeo del recurso de actualización y su ID hacia el comando interno. Asegura que la identidad del destino y sus nuevos atributos se mantengan vinculados correctamente durante la transformación, permitiendo una actualización precisa.
+
+```java
+@Test
+@DisplayName(
+    "toCommandFromResource should map ID and DestinationResource to UpdateDestinationCommand"
+        + " correctly")
+void toCommandFromResource_ShouldMapCorrectly() {
+  // Arrange
+  var resource =
+      new DestinationResource(
+          1L, "Paris", "123 Street", "District 1", "Paris", "Ile-de-France", "France");
+
+  // Act
+  var command = UpdateDestinationCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+
+  // Assert
+  assertNotNull(command);
+  assertEquals(1L, command.destinationId());
+  assertEquals("Paris", command.name());
+  assertEquals("123 Street", command.address());
+  assertEquals("District 1", command.district());
+  assertEquals("Paris", command.city());
+  assertEquals("Ile-de-France", command.state());
+  assertEquals("France", command.country());
+}
+```
+
+
+#### Profiles Bounded Context
+
+##### Domain Layer: Aggregates & Entities
+![CartTest](assets/CartTest.png)
+_Evidencia de ejecución de los tests de Domain Layer: Aggregates & Entities para el Bounded Context Profiles._
+
+1. **testCartConstructorAndGetters**(CartTest)
+
+Verifica que el constructor de la entidad `Cart` inicialice correctamente el `UserId` y que la lista de items comience vacía.
+
+```java
+@Test
+void testCartConstructorAndGetters() {
+    // Arrange
+    UserId userId = new UserId(1L);
+
+    // Act
+    Cart cart = new Cart(userId);
+
+    // Assert
+    assertEquals(userId, cart.getUserId());
+    assertTrue(cart.getItems().isEmpty());
+}
+```
+
+2. **testAddItem_Successfully**(CartTest)
+
+Valida que se pueda añadir un item al carrito y que se establezca la relación bidireccional correctamente invocando `setCart`.
+
+```java
+@Test
+void testAddItem_Successfully() {
+    // Arrange
+    Cart cart = new Cart(new UserId(1L));
+
+    // Act
+    cart.addItem(cartItem);
+
+    // Assert
+    assertEquals(1, cart.getItems().size());
+    assertEquals(cartItem, cart.getItems().get(0));
+    verify(cartItem).setCart(cart);
+}
+```
+
+6. **testFavoriteConstructorAndGetters**(FavoriteTest)
+
+Valida que el agregado `Favorite` almacene correctamente las referencias al usuario y a la experiencia marcada como favorita.
+
+```java
+@Test
+void testFavoriteConstructorAndGetters() {
+    // Act
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    // Assert
+    assertEquals(userId, favorite.getUserId());
+    assertEquals(experienceId, favorite.getExperienceId());
+}
+```
+
+7. **testBelongsTo_ReturnsTrueForMatchingUserId**(FavoriteTest)
+
+Comprueba que el método de lógica de dominio `belongsTo` identifique correctamente al propietario del favorito.
+
+```java
+@Test
+void testBelongsTo_ReturnsTrueForMatchingUserId() {
+    // Arrange
+    Favorite favorite = new Favorite(userId, experienceId);
+
+    // Act & Assert
+    assertTrue(favorite.belongsTo(userId));
+}
+```
+
+9. **testReviewConstructorAndGetters**(ReviewTest)
+
+Verifica la correcta inicialización de una reseña, incluyendo el usuario, la experiencia, la calificación y el comentario textual.
+
+```java
+@Test
+void testReviewConstructorAndGetters() {
+    // Arrange
+    String comment = "Great experience!";
+
+    // Act
+    Review review = new Review(userId, experienceId, rating, comment);
+
+    // Assert
+    assertEquals(userId, review.getUserId());
+    assertEquals(experienceId, review.getExperienceId());
+    assertEquals(rating, review.getRating());
+    assertEquals(comment, review.getComment());
+}
+```
+
+10. **testUpdateRating_Successfully**(ReviewTest)
+
+Valida que se pueda actualizar la calificación de una reseña existente.
+
+```java
+@Test
+void testUpdateRating_Successfully() {
+    // Arrange
+    Review review = new Review(userId, experienceId, rating, "Good");
+
+    // Act
+    review.updateRating(newRating);
+
+    // Assert
+    assertEquals(newRating, review.getRating());
+}
+```
+
+15. **testCartItemConstructorAndGetters**(CartItemTest)
+
+Verifica que la entidad `CartItem` (hijo del agregado Cart) mapee correctamente sus Value Objects internos y comience con referencias nulas a su ID (antes de persistir) y a su carrito padre.
+
+```java
+@Test
+void testCartItemConstructorAndGetters() {
+    // Act
+    CartItem cartItem = new CartItem(availabilityId, quantity, price);
+
+    // Assert
+    assertEquals(availabilityId, cartItem.getAvailabilityId());
+    assertEquals(quantity, cartItem.getQuantity());
+    assertEquals(price, cartItem.getPrice());
+    assertNull(cartItem.getId());
+    assertNull(cartItem.getCart());
+}
+```
+
+16. **testCartItemSetters**(CartItemTest)
+
+Valida la capacidad de modificar la cantidad de un item y asignar su pertenencia a un carrito.
+
+```java
+@Test
+void testCartItemSetters() {
+    // Arrange
+    CartItem cartItem = new CartItem(availabilityId, quantity, price);
+
+    // Act
+    cartItem.setQuantity(newQuantity);
+    cartItem.setCart(newCart);
+
+    // Assert
+    assertEquals(newQuantity, cartItem.getQuantity());
+    assertEquals(newCart, cartItem.getCart());
+}
+```
+
+##### Application Layer: Command Services
+![CartCommandServiceImplTest](assets/CartCommandServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Command Services para el Bounded Context Profiles._
+
+17. **testHandle_CreateCartSuccessfully**(CartCommandServiceImplTest)
+
+Verifica que el servicio cree un carrito exitosamente si el usuario existe en el contexto de IAM.
+
+```java
+@Test
+void testHandle_CreateCartSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    CreateCartCommand command = new CreateCartCommand(userId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(cartRepository.save(any(Cart.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    cartCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(cartRepository, times(1)).save(any(Cart.class));
+}
+```
+
+18. **testHandle_CreateCart_UserNotFound_ThrowsException**(CartCommandServiceImplTest)
+
+Asegura que no se cree un carrito para un usuario inexistente, validando la integridad entre contextos.
+
+```java
+@Test
+void testHandle_CreateCart_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    CreateCartCommand command = new CreateCartCommand(userId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              cartCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("not found"));
+    verify(cartRepository, never()).save(any(Cart.class));
+}
+```
+
+19. **testHandle_ClearCartSuccessfully**(CartCommandServiceImplTest)
+
+Prueba la limpieza completa de todos los items dentro de un carrito de usuario.
+
+```java
+@Test
+void testHandle_ClearCartSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ClearCartCommand command = new ClearCartCommand(userId);
+    Cart cart = new Cart(userId);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(cart));
+    when(cartRepository.save(any(Cart.class))).thenReturn(cart);
+
+    // Act
+    Optional<Cart> result = cartCommandService.handle(command);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertTrue(result.get().getItems().isEmpty());
+    verify(cartRepository, times(1)).findByUserId(userId);
+    verify(cartRepository, times(1)).save(cart);
+}
+```
+
+24. **testHandle_CreateFavoriteSuccessfully**(FavoriteCommandServiceImplTest)
+
+Verifica la creación de un registro de favorito validando la existencia tanto del usuario como de la experiencia en contextos externos.
+
+```java
+@Test
+void testHandle_CreateFavoriteSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(true);
+    when(favoriteRepository.save(any(Favorite.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    favoriteCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(externalExperienceService, times(1)).existsExperienceById(experienceId);
+    verify(favoriteRepository, times(1)).save(any(Favorite.class));
+}
+```
+
+25. **testHandle_CreateFavorite_UserNotFound_ThrowsException**(FavoriteCommandServiceImplTest)
+
+Asegura que no se cree un favorito si el usuario no es reconocido por el sistema IAM.
+
+```java
+@Test
+void testHandle_CreateFavorite_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              favoriteCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("User with id"));
+    verify(externalExperienceService, never()).existsExperienceById(experienceId);
+    verify(favoriteRepository, never()).save(any(Favorite.class));
+}
+```
+
+26. **testHandle_CreateFavorite_ExperienceNotFound_ThrowsException**(FavoriteCommandServiceImplTest)
+
+Impide marcar como favorita una experiencia inexistente en el catálogo global.
+
+```java
+@Test
+void testHandle_CreateFavorite_ExperienceNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    CreateFavoriteCommand command = new CreateFavoriteCommand(userId, experienceId);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              favoriteCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Experience with id"));
+    verify(favoriteRepository, never()).save(any(Favorite.class));
+}
+```
+
+29. **testHandle_CreateReviewSuccessfully**(ReviewCommandServiceImplTest)
+
+Valida la persistencia de una nueva reseña tras verificar las identidades externas del autor y la experiencia.
+
+```java
+@Test
+void testHandle_CreateReviewSuccessfully() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(true);
+    when(reviewRepository.save(any(Review.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+
+    // Act
+    reviewCommandService.handle(command);
+
+    // Assert
+    verify(externalIamService, times(1)).existsUserById(userId);
+    verify(externalExperienceService, times(1)).existsExperienceById(experienceId);
+    verify(reviewRepository, times(1)).save(any(Review.class));
+}
+```
+
+30. **testHandle_CreateReview_UserNotFound_ThrowsException**(ReviewCommandServiceImplTest)
+
+Asegura que solo usuarios registrados en IAM puedan emitir reseñas sobre experiencias.
+
+```java
+@Test
+void testHandle_CreateReview_UserNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              reviewCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("User with id"));
+    verify(externalExperienceService, never()).existsExperienceById(experienceId);
+    verify(reviewRepository, never()).save(any(Review.class));
+}
+```
+
+31. **testHandle_CreateReview_ExperienceNotFound_ThrowsException**(ReviewCommandServiceImplTest)
+
+Impide dejar comentarios sobre experiencias que no forman parte del catálogo oficial.
+
+```java
+@Test
+void testHandle_CreateReview_ExperienceNotFound_ThrowsException() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    Rating rating = new Rating(5);
+    String comment = "Great experience!";
+    CreateReviewCommand command = new CreateReviewCommand(userId, experienceId, rating, comment);
+
+    when(externalIamService.existsUserById(userId)).thenReturn(true);
+    when(externalExperienceService.existsExperienceById(experienceId)).thenReturn(false);
+
+    // Act & Assert
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              reviewCommandService.handle(command);
+            });
+
+    assertTrue(exception.getMessage().contains("Experience with id"));
+    verify(reviewRepository, never()).save(any(Review.class));
+}
+```
+
+##### Application Layer: Query Services
+![CartQueryServiceImplTest](assets/CartQueryServiceImplTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Query Services para el Bounded Context Profiles._
+
+36. **testHandle_GetCartByUserId**(CartQueryServiceImplTest)
+
+Recupera el agregado de carrito asociado a un usuario.
+
+```java
+@Test
+void testHandle_GetCartByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    GetCartByUserIdQuery query = new GetCartByUserIdQuery(userId);
+    Cart expectedCart = new Cart(userId);
+
+    when(cartRepository.findByUserId(userId)).thenReturn(Optional.of(expectedCart));
+
+    // Act
+    Optional<Cart> result = cartQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(userId, result.get().getUserId());
+    verify(cartRepository, times(1)).findByUserId(userId);
+}
+```
+
+37. **testHandle_GetCartItemByUserIdAndAvailabilityId**(CartQueryServiceImplTest)
+
+Busca un item específico dentro del carrito basándose en la disponibilidad vinculada.
+
+```java
+@Test
+void testHandle_GetCartItemByUserIdAndAvailabilityId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    AvailabilityId availabilityId = new AvailabilityId(10L);
+    GetCartItemByUserIdAndAvailabilityIdQuery query =
+        new GetCartItemByUserIdAndAvailabilityIdQuery(userId, availabilityId);
+
+    pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money price =
+        new pe.edu.upc.travelmatch.profiles.domain.model.valueobjects.Money(
+            new BigDecimal("10.0"), "PEN");
+    CartItem expectedCartItem = new CartItem(availabilityId, new Quantity(1), price);
+
+    when(cartRepository.findCartItemByUserIdAndAvailabilityId(userId, availabilityId))
+        .thenReturn(Optional.of(expectedCartItem));
+
+    // Act
+    Optional<CartItem> result = cartQueryService.handle(query);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(availabilityId, result.get().getAvailabilityId());
+    verify(cartRepository, times(1)).findCartItemByUserIdAndAvailabilityId(userId, availabilityId);
+}
+```
+
+39. **testHandle_GetFavoritesByUserId**(FavoriteQueryServiceImplTest)
+
+Lista todas las experiencias marcadas como favoritas por un usuario determinado.
+
+```java
+@Test
+void testHandle_GetFavoritesByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetFavoritesByUserIdQuery query = new GetFavoritesByUserIdQuery(userId);
+    Favorite favorite = new Favorite(userId, experienceId);
+    List<Favorite> expectedFavorites = List.of(favorite);
+
+    when(favoriteRepository.findAllByUserId(userId)).thenReturn(expectedFavorites);
+
+    // Act
+    List<Favorite> result = favoriteQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedFavorites.size(), result.size());
+    assertEquals(userId, result.get(0).getUserId());
+    verify(favoriteRepository, times(1)).findAllByUserId(userId);
+}
+```
+
+40. **testHandle_GetFavoritesByExperienceId**(FavoriteQueryServiceImplTest)
+
+Permite saber qué usuarios han marcado una experiencia específica como favorita (métricas de popularidad).
+
+```java
+@Test
+void testHandle_GetFavoritesByExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetFavoritesByExperienceIdQuery query = new GetFavoritesByExperienceIdQuery(experienceId);
+    Favorite favorite = new Favorite(userId, experienceId);
+    List<Favorite> expectedFavorites = List.of(favorite);
+
+    when(favoriteRepository.findAllByExperienceId(experienceId)).thenReturn(expectedFavorites);
+
+    // Act
+    List<Favorite> result = favoriteQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedFavorites.size(), result.size());
+    assertEquals(experienceId, result.get(0).getExperienceId());
+    verify(favoriteRepository, times(1)).findAllByExperienceId(experienceId);
+}
+```
+
+42. **testHandle_GetReviewsByUserId**(ReviewQueryServiceImplTest)
+
+Lista todo el historial de reseñas redactadas por un usuario.
+
+```java
+@Test
+void testHandle_GetReviewsByUserId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetReviewsByUserIdQuery query = new GetReviewsByUserIdQuery(userId);
+    Review review = new Review(userId, experienceId, new Rating(5), "Great experience!");
+    List<Review> expectedReviews = List.of(review);
+
+    when(reviewRepository.findAllByUserId(userId)).thenReturn(expectedReviews);
+
+    // Act
+    List<Review> result = reviewQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedReviews.size(), result.size());
+    assertEquals(userId, result.get(0).getUserId());
+    verify(reviewRepository, times(1)).findAllByUserId(userId);
+}
+```
+
+43. **testHandle_GetReviewsByExperienceId**(ReviewQueryServiceImplTest)
+
+Recupera el feedback de todos los usuarios para una experiencia concreta.
+
+```java
+@Test
+void testHandle_GetReviewsByExperienceId() {
+    // Arrange
+    UserId userId = new UserId(1L);
+    ExperienceId experienceId = new ExperienceId(10L);
+    GetReviewsByExperienceIdQuery query = new GetReviewsByExperienceIdQuery(experienceId);
+    Review review = new Review(userId, experienceId, new Rating(5), "Great experience!");
+    List<Review> expectedReviews = List.of(review);
+
+    when(reviewRepository.findAllByExperienceId(experienceId)).thenReturn(expectedReviews);
+
+    // Act
+    List<Review> result = reviewQueryService.handle(query);
+
+    // Assert
+    assertEquals(expectedReviews.size(), result.size());
+    assertEquals(experienceId, result.get(0).getExperienceId());
+    verify(reviewRepository, times(1)).findAllByExperienceId(experienceId);
+}
+```
+
+##### Application Layer: Outbound Services (ACL)
+![ExternalExperienceServiceTest](assets/ExternalExperienceServiceTest.png)
+_Evidencia de ejecución de los tests de Application Layer: Outbound Services (ACL) para el Bounded Context Profiles._
+
+45. **testExistsExperienceById_True**(ExternalExperienceServiceTest)
+
+Verifica la integración con el contexto de Experiencias para confirmar que un ID es válido.
+
+```java
+@Test
+void testExistsExperienceById_True() {
+    // Arrange
+    ExperienceId experienceId = new ExperienceId(1L);
+    when(experiencesContextFacade.existsExperienceById(experienceId.experienceId()))
+        .thenReturn(true);
+
+    // Act
+    boolean result = externalExperienceService.existsExperienceById(experienceId);
+
+    // Assert
+    assertTrue(result);
+    verify(experiencesContextFacade, times(1)).existsExperienceById(experienceId.experienceId());
+}
+```
+
+46. **testExistsExperienceById_False**(ExternalExperienceServiceTest)
+
+Confirma el comportamiento cuando el contexto externo de Experiencias indica que el recurso no existe.
+
+```java
+@Test
+void testExistsExperienceById_False() {
+    // Arrange
+    ExperienceId experienceId = new ExperienceId(1L);
+    when(experiencesContextFacade.existsExperienceById(experienceId.experienceId()))
+        .thenReturn(false);
+
+    // Act
+    boolean result = externalExperienceService.existsExperienceById(experienceId);
+
+    // Assert
+    assertFalse(result);
+    verify(experiencesContextFacade, times(1)).existsExperienceById(experienceId.experienceId());
+}
+```
+
+47. **testFetchUserIdByEmail_Found**(ExternalIamServiceTest)
+
+Valida la recuperación del ID de usuario desde IAM mediante su correo electrónico.
+
+```java
+@Test
+void testFetchUserIdByEmail_Found() {
+    // Arrange
+    String email = "test@example.com";
+    Long expectedUserId = 1L;
+    when(iamContextFacade.fetchUserIdByEmail(email)).thenReturn(expectedUserId);
+
+    // Act
+    Optional<UserId> result = externalIamService.fetchUserIdByEmail(email);
+
+    // Assert
+    assertTrue(result.isPresent());
+    assertEquals(expectedUserId, result.get().userId());
+    verify(iamContextFacade, times(1)).fetchUserIdByEmail(email);
+}
+```
+
+48. **testFetchUserIdByEmail_NotFound**(ExternalIamServiceTest)
+
+Maneja el escenario donde el email no corresponde a ninguna cuenta en IAM.
+
+```java
+@Test
+void testFetchUserIdByEmail_NotFound() {
+    // Arrange
+    String email = "test@example.com";
+    when(iamContextFacade.fetchUserIdByEmail(email)).thenReturn(0L);
+
+    // Act
+    Optional<UserId> result = externalIamService.fetchUserIdByEmail(email);
+
+    // Assert
+    assertTrue(result.isEmpty());
+    verify(iamContextFacade, times(1)).fetchUserIdByEmail(email);
+}
+```
+
+49. **testExistsUserByEmailAndIdIsNot_True**(ExternalIamServiceTest)
+
+Verifica si un email ya está en uso por otro usuario diferente al actual (validación de unicidad).
+
+```java
+@Test
+void testExistsUserByEmailAndIdIsNot_True() {
+    // Arrange
+    String email = "test@example.com";
+    Long id = 1L;
+    when(iamContextFacade.existsUserByEmailAndIdIsNot(email, id)).thenReturn(true);
+
+    // Act
+    boolean result = externalIamService.existsUserByEmailAndIdIsNot(email, id);
+
+    // Assert
+    assertTrue(result);
+    verify(iamContextFacade, times(1)).existsUserByEmailAndIdIsNot(email, id);
+}
+```
+
+##### Interfaces Layer: REST Controllers
+![CartsControllerTest](assets/CartsControllerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: REST Controllers para el Bounded Context Profiles._
+
+55. **testCreateCart_Created**(CartsControllerTest)
+
+Valida que el endpoint de creación de carrito responda con 201 Created y el recurso correcto.
+
+```java
+@Test
+void testCreateCart_Created() {
+    // Arrange
+    final CreateCartResource resource = new CreateCartResource(1L);
+    stubCartResourceFields();
+    when(cartCommandService.handle(any(CreateCartCommand.class))).thenReturn(1L);
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.of(cart));
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.createCart(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertNotNull(response.getBody());
+}
+```
+
+56. **testCreateCart_NotFound**(CartsControllerTest)
+
+Verifica el manejo de error 404 cuando el carrito creado no puede ser recuperado inmediatamente.
+
+```java
+@Test
+void testCreateCart_NotFound() {
+    // Arrange
+    CreateCartResource resource = new CreateCartResource(1L);
+    when(cartCommandService.handle(any(CreateCartCommand.class))).thenReturn(1L);
+    when(cartQueryService.handle(any(GetCartByUserIdQuery.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartResource> response = cartsController.createCart(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+57. **testAddItem_Created**(CartsControllerTest)
+
+Añade un item al carrito vía REST y comprueba la estructura del `CartItemResource`.
+
+```java
+@Test
+void testAddItem_Created() {
+    // Arrange
+    var price = BigDecimal.valueOf(49.99);
+    AddCartItemResource resource = new AddCartItemResource(101L, 2, price);
+    cartItem = createCartItem(2);
+    when(cartCommandService.handle(any(AddCartItemCommand.class)))
+        .thenReturn(Optional.of(cartItem));
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.addItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertNotNull(response.getBody());
+    assertEquals(101L, response.getBody().availabilityId());
+}
+```
+
+58. **testAddItem_NotFound**(CartsControllerTest)
+
+Maneja el escenario donde el servicio no encuentra el carrito para añadir el item.
+
+```java
+@Test
+void testAddItem_NotFound() {
+    // Arrange
+    AddCartItemResource resource =
+        new AddCartItemResource(101L, 2, java.math.BigDecimal.valueOf(49.99));
+    when(cartCommandService.handle(any(AddCartItemCommand.class))).thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<CartItemResource> response = cartsController.addItem(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+72. **testCreateFavorite_Created**(FavoritesControllerTest)
+
+Registra una nueva experiencia favorita para el usuario.
+
+```java
+@Test
+void testCreateFavorite_Created() {
+    // Arrange
+    CreateFavoriteResource resource = new CreateFavoriteResource(1L, 10L);
+    when(favoriteCommandService.handle(any(CreateFavoriteCommand.class))).thenReturn(1L);
+    when(favoriteQueryService.handle(any(GetFavoriteByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.of(favorite));
+
+    // Act
+    ResponseEntity<FavoriteResource> response = favoritesController.createFavorite(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertEquals(1L, response.getBody().userId());
+    assertEquals(10L, response.getBody().experienceId());
+}
+```
+
+73. **testCreateFavorite_NotFound**(FavoritesControllerTest)
+
+Maneja errores de post-creación en el endpoint de favoritos.
+
+```java
+@Test
+void testCreateFavorite_NotFound() {
+    // Arrange
+    CreateFavoriteResource resource = new CreateFavoriteResource(1L, 10L);
+    when(favoriteCommandService.handle(any(CreateFavoriteCommand.class))).thenReturn(1L);
+    when(favoriteQueryService.handle(any(GetFavoriteByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<FavoriteResource> response = favoritesController.createFavorite(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+74. **testGetFavoritesByUserId_Ok**(FavoritesControllerTest)
+
+Recupera la lista de favoritos de un usuario mapeada a recursos.
+
+```java
+@Test
+void testGetFavoritesByUserId_Ok() {
+    // Arrange
+    when(favoriteQueryService.handle(any(GetFavoritesByUserIdQuery.class)))
+        .thenReturn(List.of(favorite));
+
+    // Act
+    ResponseEntity<List<FavoriteResource>> response = favoritesController.getFavoritesByUserId(1L);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(1, response.getBody().size());
+}
+```
+
+76. **testCreateReview_Created**(ReviewsControllerTest)
+
+Crea una reseña y califica una experiencia mediante el controlador REST.
+
+```java
+@Test
+void testCreateReview_Created() {
+    // Arrange
+    CreateReviewResource resource = new CreateReviewResource(1L, 10L, 5, "Great!");
+    when(reviewCommandService.handle(any(CreateReviewCommand.class))).thenReturn(1L);
+    when(reviewQueryService.handle(any(GetReviewByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.of(review));
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.createReview(resource);
+
+    // Assert
+    assertEquals(HttpStatus.CREATED, response.getStatusCode());
+    assertEquals(5, response.getBody().rating());
+}
+```
+
+77. **testCreateReview_NotFound**(ReviewsControllerTest)
+
+Control de errores en el flujo de guardado de reseñas.
+
+```java
+@Test
+void testCreateReview_NotFound() {
+    // Arrange
+    CreateReviewResource resource = new CreateReviewResource(1L, 10L, 5, "Great!");
+    when(reviewCommandService.handle(any(CreateReviewCommand.class))).thenReturn(1L);
+    when(reviewQueryService.handle(any(GetReviewByUserIdAndExperienceIdQuery.class)))
+        .thenReturn(Optional.empty());
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.createReview(resource);
+
+    // Assert
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+}
+```
+
+78. **testUpdateReview_Ok**(ReviewsControllerTest)
+
+Actualiza una reseña existente y retorna el recurso modificado.
+
+```java
+@Test
+void testUpdateReview_Ok() {
+    // Arrange
+    UpdateReviewResource resource = new UpdateReviewResource(4, "Good!");
+    Review updatedReview = new Review(userId, experienceId, new Rating(4), "Good!");
+    when(reviewCommandService.handle(any(UpdateReviewCommand.class)))
+        .thenReturn(Optional.of(updatedReview));
+
+    // Act
+    ResponseEntity<ReviewResource> response = reviewsController.updateReview(1L, resource);
+
+    // Assert
+    assertEquals(HttpStatus.OK, response.getStatusCode());
+    assertEquals(4, response.getBody().rating());
+}
+```
+
+##### Interfaces Layer: Resource Assemblers (Mapping Tests)
+![AddCartItemCommandFromResourceAssemblerTest](assets/AddCartItemCommandFromResourceAssemblerTest.png)
+_Evidencia de ejecución de los tests de Interfaces Layer: Resource Assemblers (Mapping Tests) para el Bounded Context Profiles._
+
+82. **toCommandFromResource_ShouldMapCorrectly**(AddCartItemCommandFromResourceAssemblerTest)
+
+Transforma un recurso de entrada en un comando de adición de item al carrito.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new AddCartItemResource(10L, 5, new BigDecimal("10.0"));
+    var command = AddCartItemCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(10L, command.availabilityId().availabilityId());
+}
+```
+
+83. **toResourceFromEntity_ShouldMapCorrectly**(CartItemResourceFromEntityAssemblerTest)
+
+Mapea un item de entidad a su representación de recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    var entity = new CartItem(new AvailabilityId(10L), new Quantity(2), new Money(new BigDecimal(10), "PEN"));
+    var resource = CartItemResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(10L, resource.availabilityId());
+    assertEquals(2, resource.quantity());
+}
+```
+
+84. **toResourceFromEntityMapsEntityToResourceIncludingItems**(CartResourceFromEntityAssemblerTest)
+
+Valida que el agregado Cart se mapee íntegramente incluyendo su colección de items.
+
+```java
+@Test
+void toResourceFromEntityMapsEntityToResourceIncludingItems() {
+    var price = BigDecimal.valueOf(49.99);
+    when(cartItem.getAvailabilityId()).thenReturn(new AvailabilityId(101L));
+    when(cartItem.getQuantity()).thenReturn(new Quantity(2));
+    when(cartItem.getPrice()).thenReturn(new Money(price, "PEN"));
+    when(entity.getId()).thenReturn(10L);
+    when(entity.getUserId()).thenReturn(new UserId(1L));
+    when(entity.getItems()).thenReturn(List.of(cartItem));
+
+    var resource = CartResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(10L, resource.cartId());
+    assertEquals(1, resource.items().size());
+}
+```
+
+85. **toCommandFromResource_ShouldMapCorrectly**(CreateCartCommandFromResourceAssemblerTest)
+
+Mapea la petición de creación de carrito al comando correspondiente.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateCartResource(1L);
+    var command = CreateCartCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+}
+```
+
+86. **toCommandFromResource_ShouldMapCorrectly**(CreateFavoriteCommandFromResourceAssemblerTest)
+
+Mapea la petición de favorito al comando de creación.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateFavoriteResource(1L, 10L);
+    var command = CreateFavoriteCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(10L, command.experienceId().experienceId());
+}
+```
+
+87. **toCommandFromResource_ShouldMapCorrectly**(CreateReviewCommandFromResourceAssemblerTest)
+
+Transforma los datos de una nueva reseña en un comando de dominio.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new CreateReviewResource(1L, 10L, 5, "Great");
+    var command = CreateReviewCommandFromResourceAssembler.toCommandFromResource(resource);
+    assertEquals(1L, command.userId().userId());
+    assertEquals(5, command.rating().rating());
+}
+```
+
+88. **toResourceFromEntity_ShouldMapCorrectly**(FavoriteResourceFromEntityAssemblerTest)
+
+Mapea la entidad Favorite a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntity_ShouldMapCorrectly() {
+    when(entity.getId()).thenReturn(1L);
+    when(entity.getUserId()).thenReturn(new UserId(10L));
+    when(entity.getExperienceId()).thenReturn(new ExperienceId(20L));
+    var resource = FavoriteResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(1L, resource.favoriteId());
+}
+```
+
+89. **toCommandFromResource_ShouldMapCorrectly**(RemoveCartItemCommandFromResourceAssemblerTest)
+
+Genera el comando de eliminación basándose en el recurso recibido.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new RemoveCartItemResource(10L);
+    var command = RemoveCartItemCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(10L, command.availabilityId().availabilityId());
+}
+```
+
+90. **toResourceFromEntityMapsEntityToResource**(ReviewResourceFromEntityAssemblerTest)
+
+Mapea la entidad Review a su recurso REST.
+
+```java
+@Test
+void toResourceFromEntityMapsEntityToResource() {
+    when(entity.getId()).thenReturn(30L);
+    when(entity.getUserId()).thenReturn(new UserId(1L));
+    when(entity.getExperienceId()).thenReturn(new ExperienceId(50L));
+    when(entity.getRating()).thenReturn(new Rating(5));
+    when(entity.getComment()).thenReturn("Great experience");
+
+    var resource = ReviewResourceFromEntityAssembler.toResourceFromEntity(entity);
+    assertEquals(30L, resource.reviewId());
+}
+```
+
+91. **toCommandFromResource_ShouldMapCorrectly**(UpdateCartItemQuantityCommandFromResourceAssemblerTest)
+
+Mapea la actualización de cantidad al comando de aplicación.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new UpdateCartItemQuantityResource(10L, 5);
+    var command = UpdateCartItemQuantityCommandFromResourceAssembler.toCommandFromResource(1L, resource);
+    assertEquals(5, command.quantity().quantity());
+}
+```
+
+92. **toCommandFromResource_ShouldMapCorrectly**(UpdateReviewCommandFromResourceAssemblerTest)
+
+Mapea la actualización de reseña al comando correspondiente.
+
+```java
+@Test
+void toCommandFromResource_ShouldMapCorrectly() {
+    var resource = new UpdateReviewResource(4, "Good");
+    var command = UpdateReviewCommandFromResourceAssembler.toCommandFromResource(10L, resource);
+    assertEquals(4, command.rating().rating());
+}
+```
+
+Resultados: Todos los tests pasan satisfactoriamente con cobertura de instrucciones superior al 80% según el reporte de JaCoCo.
 
 
 
