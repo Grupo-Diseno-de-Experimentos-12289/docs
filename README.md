@@ -177,11 +177,11 @@ TB2 | 14/06/2026 |  Piero Francesco Tenorio Medina | Reducción de la documentac
     - [8.1.5. Experiment Cards](#815-experiment-cards)
 
 - [8.2. Experiment Design](#82-experiment-design)
-    - [8.2.1. Hypotheses](#821-tools-and-practices)
+    - [8.2.1. Hypotheses](#821-hypotheses)
     - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
     - [8.2.3. Measures](#823-measures)
     - [8.2.4. Conditions](#824-conditions)
-    - [8.2.5. Scale Calculations and Decisions](#825-scale)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
     - [8.2.6. Method Selection](#826-method-selection)
 
 [Conclusiones](#conclusiones)
@@ -9567,7 +9567,9 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Hypothesis | Creemos que la respuesta es implementar recomendaciones personalizadas para viajeros corporativos considerando ubicación, duración de la experiencia y horario disponible. La evidencia se reflejará en la tasa de aceptación de recomendaciones y en la tasa de inicio de reserva desde recomendaciones. Bajo las circunstancias de que la aceptación de recomendaciones aumente en un 20%. |
 | Null hypothesis | Creemos que implementar recomendaciones personalizadas para viajeros corporativos no será responsable de una mayor aceptación de experiencias ni de un mayor inicio de reservas desde recomendaciones. Cualquier diferencia observada podría ser aleatoria o depender de preferencias externas del usuario. |
 
-#### 8.2.2. Measures.
+#### 8.2.2. Domain Business Metrics.
+
+#### 8.2.3. Measures.
 
 Las medidas seleccionadas permitirán recolectar evidencia para responder cada pregunta del experimento. Se priorizaron medidas representativas, calculables y proporcionales, de modo que los resultados puedan compararse contra una versión base o condición de control.
 
@@ -9613,10 +9615,9 @@ Las medidas seleccionadas permitirán recolectar evidencia para responder cada p
 | Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
 | Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
 
-#### 8.2.3. Conditions.
-#### 8.2.4. Scale Calculations and Decisions.
-#### 8.2.5. Methods Selection.
-#### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection.
+#### 8.2.4. Conditions.
+#### 8.2.5. Scale Calculations and Decisions.
+#### 8.2.6. Methods Selection.
 
 ## Conclusiones
 
