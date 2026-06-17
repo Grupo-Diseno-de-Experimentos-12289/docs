@@ -35,7 +35,7 @@
 |Jorge Enrique Guevara Tejada | U202316057|
 </div>
 
-<div align="center"> Mayo 2026 </div>
+<div align="center"> Junio 2026 </div>
 
 <hr>
 
@@ -47,8 +47,9 @@ TP | 14/05/2026 |      Tenorio Medina Piero Francesco       | Se cambió y modif
 TP | 14/05/2026 |        Morales Venegas David Joel         | Documentación y pruebas BDD para IAM y Geolocation.
 TP | 14/05/2026 |         Alejos Jesu, Anyelo Bill          | Documentación y pruebas BDD para experiences, chekstyle para experiences, sonarqube test.
 TP | 14/05/2026 |       Jorge Enrique Guevara Tejada        | Documentación, pruebas bounded context profiles, checkstyle general, sonarqube test.
-TP | 14/05/2026 |       GeronimoQuispe Pablo Antonio       | Documentación, pruebas bounded context agencies,bookings, checkstyle general, sonarqube test.
+TP | 14/05/2026 |       Geronimo Quispe Pablo Antonio       | Documentación, pruebas bounded context agencies,bookings, checkstyle general, sonarqube test.
 TB2 | 14/06/2026 |  Piero Francesco Tenorio Medina | Reducción de la documentacion. Desarrollo de la primera parte del capitulo 8.1.
+TB2 | 15/06/2026 | Geronimo Quispe Pablo Antonio  | Realizacion  ,analisis y finalizacion del capitulo 8.2.5 y 8.2.6
 <hr>
 
 ## Tabla de Contenidos
@@ -167,13 +168,29 @@ TB2 | 14/06/2026 |  Piero Francesco Tenorio Medina | Reducción de la documentac
     - [7.3.1. Tools and Practices](#731-tools-and-practices)
     - [7.3.2. Production Deployment Pipeline Components](#732-production-deployemnte-pipeline-component)
 
+[Capitulo VIII: Experiment-Driven Development](#capitulo-viii-experiment-driven-development)
+
+- [8.1. Experiment Planning](#81-experiment-planning)
+    - [8.1.1. As-Is Summary](#811-as-is-summary)
+    - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-build--test-suite-pipeline-components)
+    - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+    - [8.1.4. Question Backlog](#814-question-backlog)
+    - [8.1.5. Experiment Cards](#815-experiment-cards)
+
+- [8.2. Experiment Design](#82-experiment-design)
+    - [8.2.1. Hypotheses](#821-hypotheses)
+    - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+    - [8.2.3. Measures](#823-measures)
+    - [8.2.4. Conditions](#824-conditions)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+    - [8.2.6. Method Selection](#826-method-selection)
+
 [Conclusiones](#conclusiones)
   - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
 
 [Bibliografía](#bibliografía)
 
 [Anexos](#anexos)
-
 
 <hr>
 
@@ -190,8 +207,8 @@ ambientales y sociales.
 
 | <div style="width:100px">Criterio específico</div> | <div align="center" style="width:250px">Acciones Realizadas</div> | <div align="center" style="width:250px">Conclusiones</div> |
 |:-------------------:|-------------------|------------|
-| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts **Bookings & Payments** y **Agencies**, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como **Checkstyle** y **SonarQube** para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo.<br><br>**TP:**<br>**Morales Venegas, David Joel**<br><br>Implementé la suite completa de pruebas de integración con **Karate DSL** para los bounded contexts de **IAM** y **Geolocation**, asegurando que los flujos de autenticación, gestión de destinos y la seguridad de los endpoints se mantengan íntegros. Además, sincronicé la documentación técnica del README con el código real de los features para garantizar transparencia y fidelidad en los reportes de calidad del software.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Implementé herramientas de análisis de calidad para el bounded context **Profiles and Preferences**, utilizando **Checkstyle** para verificar el cumplimiento de convenciones de codificación y **SonarQube** para analizar mantenibilidad, code smells y posibles vulnerabilidades del proyecto. Estas configuraciones ayudaron a asegurar que el código desarrollado siga buenas prácticas de ingeniería de software y mantenga estándares adecuados de calidad.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Me enfoqué en salvaguardar la integridad del sistema y la privacidad de los datos trabajando sobre los dominios de **IAM (Identity and Access Management)** y **Experiences**. Para lograrlo, construí mecanismos de validación automatizada orientados a comprobar la correcta autorización de los usuarios y flujos de negocio. Adicionalmente, apliqué pautas estrictas de revisión estática y formato de código para erradicar deuda técnica, garantizando así que nuestro entregable cumpla en todo momento con normativas de desarrollo limpio y ético. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para esta entrega se desarrolló e integró uno de los trabajos usados por uno de los integrantes del actual equipo. Para ello se revisó detenidamente los elementos usados y la información implementada para su trsalado al nuevo documento. Asi mismo se uso herramientas como Jenkins para la ejecución de los test. Esta sección debe ser presentada a los integrantes del equipo de manera constante para su revisión. Para ello se trata de ser lo más responsable y directo con los resultados obtenidos. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
-| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | **TP:**<br>**Quispe Pablo Antonio, Geronimo**<br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto.<br><br>**TP:**<br>**Morales Venegas, David Joel**<br><br>Analicé críticamente el impacto de la automatización de pruebas en el ciclo de vida del desarrollo, priorizando la cobertura de escenarios críticos de integración en **IAM** y **Geolocation** que afectan directamente la seguridad de la información y la precisión de los datos geográficos. Al integrar estas pruebas en el pipeline de CI/CD, aseguré que las decisiones técnicas consideren la escalabilidad y confiabilidad del sistema ante un despliegue global.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Analicé el impacto que tiene la calidad del software en la experiencia de usuario dentro del bounded context **Profiles and Preferences**, utilizando SonarQube para identificar riesgos de seguridad y problemas de mantenibilidad que podrían afectar la estabilidad del sistema. Además, apliqué Checkstyle para mantener un código uniforme y legible, contribuyendo a facilitar el trabajo colaborativo y la mantenibilidad a largo plazo del proyecto.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Reflexioné sobre las fuertes repercusiones socioeconómicas que un fallo de seguridad o una mala gestión de identidades podría ocasionar tanto a los viajeros como a las empresas turísticas. Por este motivo, prioricé la mitigación de riesgos lógicos en la arquitectura e inspeccioné constantemente el código en busca de posibles brechas o ineficiencias. Estas acciones fomentan un entorno digital transparente, demostrando el compromiso de entregar un producto capaz de operar de manera íntegra y segura en un ecosistema internacional. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para el desarrollo del trabajo , se consideró el impacto que tendría el funcionamiento de una aplicación de este calibre. Como afectaria a los puestos turisticos y cómo impactaría en la economía de un país. Esto se toma a consideración dependiendo del contexto del país y como una solución de este tipo podria impulsar un sector muy importante dentro de nuestra economía. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software | <b>TP:</b><br><b>Quispe Pablo Antonio, Geronimo</b><br><br>Implementé pruebas unitarias utilizando JUnit 5 y Mockito para validar las reglas de negocio críticas de los bounded contexts <b>Bookings & Payments</b> y <b>Agencies</b>, asegurando el correcto manejo de estados, validaciones y restricciones del dominio. Además, desarrollé pruebas de integración con Karate DSL para verificar el comportamiento real de los endpoints REST y la correcta interacción entre los componentes del sistema. Finalmente, configuré herramientas de calidad como <b>Checkstyle</b> y <b>SonarQube</b> para mantener estándares de codificación, detectar vulnerabilidades y garantizar buenas prácticas de desarrollo.<br><br><b>TB2:</b><br><b>Quispe Pablo Antonio, Geronimo</b><br><br>Participé en la definición de las métricas de éxito y escalas de evaluación del proyecto <b>TravelMatch</b>, estableciendo criterios cuantificables para medir el desempeño de funcionalidades relacionadas con agencias, reservas, experiencias, perfiles y geolocalización. Asimismo, evalué y seleccioné herramientas de analítica digital como <b>Google Analytics 4</b> y <b>Mixpanel</b>, justificando su adopción en función de su capacidad para medir conversiones, comportamiento de usuarios y eventos críticos del negocio. Estas actividades promovieron una gestión responsable de la información y contribuyeron a la toma de decisiones basadas en evidencia, respetando principios éticos relacionados con el uso de datos de los usuarios.  <br><br>**TP:**<br>**Morales Venegas, David Joel**<br><br>Implementé la suite completa de pruebas de integración con **Karate DSL** para los bounded contexts de **IAM** y **Geolocation**, asegurando que los flujos de autenticación, gestión de destinos y la seguridad de los endpoints se mantengan íntegros. Además, sincronicé la documentación técnica del README con el código real de los features para garantizar transparencia y fidelidad en los reportes de calidad del software.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Implementé herramientas de análisis de calidad para el bounded context **Profiles and Preferences**, utilizando **Checkstyle** para verificar el cumplimiento de convenciones de codificación y **SonarQube** para analizar mantenibilidad, code smells y posibles vulnerabilidades del proyecto. Estas configuraciones ayudaron a asegurar que el código desarrollado siga buenas prácticas de ingeniería de software y mantenga estándares adecuados de calidad.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Me enfoqué en salvaguardar la integridad del sistema y la privacidad de los datos trabajando sobre los dominios de **IAM (Identity and Access Management)** y **Experiences**. Para lograrlo, construí mecanismos de validación automatizada orientados a comprobar la correcta autorización de los usuarios y flujos de negocio. Adicionalmente, apliqué pautas estrictas de revisión estática y formato de código para erradicar deuda técnica, garantizando así que nuestro entregable cumpla en todo momento con normativas de desarrollo limpio y ético. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para esta entrega se desarrolló e integró uno de los trabajos usados por uno de los integrantes del actual equipo. Para ello se revisó detenidamente los elementos usados y la información implementada para su trsalado al nuevo documento. Asi mismo se uso herramientas como Jenkins para la ejecución de los test. Esta sección debe ser presentada a los integrantes del equipo de manera constante para su revisión. Para ello se trata de ser lo más responsable y directo con los resultados obtenidos. <br><br>**TB2:**<br> **Piero Francesco Tenorio Medina** <br>  Para esta entrega se evalua la privacidad que tiene el usuario, repetando sus gustos y preferencias. Esto se aplica a la hora de establecer las preguntas para los experimentos. También, se considera esto para establecer los assumptions para los segmentos a trabajar. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
+| Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales | <b>TP:</b><br><b>Quispe Pablo Antonio, Geronimo</b><br><br>Analicé la importancia de la calidad y seguridad en un sistema de reservas y pagos turísticos, implementando SonarQube para identificar vulnerabilidades y problemas de mantenibilidad en el código. Asimismo, desarrollé pruebas de integración y unitarias para asegurar la estabilidad del sistema frente a distintos escenarios reales, incluyendo errores de pago, cancelaciones y reembolsos. También utilicé Checkstyle para mantener consistencia y legibilidad en el código fuente del proyecto.<br><br><b>TB2:</b><br><b>Quispe Pablo Antonio, Geronimo</b><br><br>Analicé el impacto de la recopilación y uso de datos dentro de la plataforma <b>TravelMatch</b> mediante la definición de indicadores clave de desempeño (KPIs) y la comparación de herramientas analíticas como <b>Google Analytics 4</b> y <b>Mixpanel</b>. Esta evaluación permitió seleccionar métodos adecuados para medir la interacción de los usuarios y el rendimiento de la plataforma, considerando aspectos económicos, sociales y éticos relacionados con la privacidad de los datos y la mejora continua de la experiencia turística. Asimismo, las decisiones tomadas contribuyen a generar información confiable para optimizar los servicios ofrecidos por las agencias y fortalecer la competitividad del sector turístico. <br><br>**TP:**<br>**Morales Venegas, David Joel**<br><br>Analicé críticamente el impacto de la automatización de pruebas en el ciclo de vida del desarrollo, priorizando la cobertura de escenarios críticos de integración en **IAM** y **Geolocation** que afectan directamente la seguridad de la información y la precisión de los datos geográficos. Al integrar estas pruebas en el pipeline de CI/CD, aseguré que las decisiones técnicas consideren la escalabilidad y confiabilidad del sistema ante un despliegue global.<br><br>**TP:**<br>**Guevarra Tejada, Jorge Enrique**<br><br>Analicé el impacto que tiene la calidad del software en la experiencia de usuario dentro del bounded context **Profiles and Preferences**, utilizando SonarQube para identificar riesgos de seguridad y problemas de mantenibilidad que podrían afectar la estabilidad del sistema. Además, apliqué Checkstyle para mantener un código uniforme y legible, contribuyendo a facilitar el trabajo colaborativo y la mantenibilidad a largo plazo del proyecto.<br><br>**TP:**<br>**Alejos Jesus Anyelo Bill**<br><br>Reflexioné sobre las fuertes repercusiones socioeconómicas que un fallo de seguridad o una mala gestión de identidades podría ocasionar tanto a los viajeros como a las empresas turísticas. Por este motivo, prioricé la mitigación de riesgos lógicos en la arquitectura e inspeccioné constantemente el código en busca de posibles brechas o ineficiencias. Estas acciones fomentan un entorno digital transparente, demostrando el compromiso de entregar un producto capaz de operar de manera íntegra y segura en un ecosistema internacional. <br><br>**TP:**<br> **Piero Francesco Tenorio Medina** <br> Para el desarrollo del trabajo , se consideró el impacto que tendría el funcionamiento de una aplicación de este calibre. Como afectaria a los puestos turisticos y cómo impactaría en la economía de un país. Esto se toma a consideración dependiendo del contexto del país y como una solución de este tipo podria impulsar un sector muy importante dentro de nuestra economía.<br><br>**TB2:**<br> **Piero Francesco Tenorio Medina** <br>  Para esta entrega se evalua las distintas opciones que se pudo implementar para poder mejorar la experiencia que tiene el usuario usando la aplicación. Con esto, se establece las metas del experimento a implementar. | La aplicación de pruebas automatizadas, integración continua y herramientas de análisis de calidad permitió desarrollar un software más confiable, seguro y mantenible. Las decisiones tomadas durante el desarrollo ayudaron a prevenir errores críticos en procesos relacionados con reservas, pagos, perfiles, accesos y gestión de agencias, fortaleciendo la estabilidad del sistema y la confianza de los usuarios finales. |
 <hr>
 
 ## Capítulo I: Introducción 
@@ -1537,9 +1554,32 @@ Los mock-ups de la Landing Page de TravelMatch representan la traducción visual
 </p>
 
 #### 4.6.4. Web Applications User Flow Diagrams
-<p align="center">
-    <img src="assets/recursos/TravelMatchFrontendWireflow.png" alt="travelmatch-frontend-mockup-wireflow" width=80%/>
-</p>
+
+#### User Goal 1: Registro, inicio de sesión y acceso al aplicativo
+En esta meta, ambos tipos de usuarios (turista o agencia) deberán registrarse seleccionando su rol correspondiente, completando el formulario con su información personal o corporativa y, en el caso de las agencias, verificando su perfil para obtener acceso a las herramientas de gestión y visibilidad.
+
+<img src="assets/flow/Flow1.png">
+
+#### User Goal 2: Exploración, filtrado y personalización de experiencias
+En esta meta, el turista podrá realizar búsquedas inteligentes utilizando filtros avanzados (ubicación, presupuesto, tipo de actividad, fecha) para encontrar experiencias que se adapten a sus intereses específicos, logrando visualizar fotos, videos y descripciones detalladas antes de decidir.
+
+<img src="assets/flow/Flow2.png">
+
+#### User Goal 3: Gestión del proceso de reserva y confirmación de pago
+En esta meta, el turista podrá gestionar su carrito de compras, comparar múltiples tours y realizar el proceso de reserva mediante pagos seguros.
+
+<img src="assets/flow/Flow3.png">
+
+#### User Goal 4: Gestión de catálogo y disponibilidad para agencias
+En esta meta, el administrador de la agencia podrá publicar nuevas experiencias, editar los detalles de las mismas y actualizar su calendario de disponibilidad en tiempo real para evitar sobre-reservas y mantener su oferta competitiva.
+
+<img src="assets/flow/Flow4.png">
+
+#### User Goal 5:Seguimiento, analítica y feedback post-experiencia
+En esta meta, los usuarios podrán interactuar tras la actividad: los turistas publicando reseñas y calificaciones para generar confianza, mientras que las agencias podrán acceder a paneles de analítica para medir su rendimiento y enviar encuestas de satisfacción para mejorar su servicio.
+
+<img src="assets/flow/Flow5.png">
+
 
 Enlace al Figma de desarrollo de Web Application: https://www.figma.com/design/GYNFGzIxOsYoaH4UDZpRne/TravelMatch---Frontend?node-id=2039-83&t=MJXW7lJoEYDmKuW2-1
 
@@ -1944,6 +1984,36 @@ La configuración de despliegue para TravelMatch contempla mecanismos organizado
   - El archivo `environment.ts` de producción incluirá la URL pública del backend para permitir integración total.
 
 ---
+
+**Testing del Proyecto**
+
+- **Tecnología:**
+  Java 21, Maven 3.9.15, Jenkins, SonarQube, JaCoCo, Karate Framework, Mockito.
+
+- **Repositorio:**
+  [https://github.com/Grupo-Diseno-de-Experimentos-12289/backend](https://github.com/Grupo-Diseno-de-Experimentos-12289/backend)
+
+- **Plataforma de despliegue:**
+Jenkins (Orquestación de Pipelines).
+
+- **Método de despliegue:**
+
+  - Integración Continua: Cada push a las ramas develop o main dispara un pipeline automático en Jenkins.
+
+  - Validación de Código: El pipeline ejecuta mvn checkstyle:check para verificar el cumplimiento de los estándares de estilo configurados (google_checks.xml).
+
+  - Análisis de Calidad: Se utiliza mvn sonar:sonar para inspeccionar la calidad, seguridad y deuda técnica en el servidor de SonarQube.
+
+- **Ciclo de Pruebas:**
+
+  - Unitarias: Ejecución de pruebas con JUnit 5 y Mockito para validar lógica aislada.
+
+  - API Testing: Ejecución de escenarios de pruebas automatizadas con Karate Framework para validar contratos e integraciones.
+
+  - Quality Gate: JaCoCo audita la cobertura de código, requiriendo un mínimo del 80% para permitir que el proceso continúe.
+
+---
+
 
 **Consideraciones Finales**
 
@@ -5114,29 +5184,225 @@ Durante la realización de nuestro experimento, se debe tener en consideración 
 
 #### 8.1.3. Experiment-Ready Questions.
 
+En esta sección se transforman las premisas, brechas de conocimiento, ideas y afirmaciones identificadas en el material inicial del experimento en preguntas listas para experimentar. Para ello, se toma como referencia el enfoque de las 5W y 1H, debido a que permite organizar las preguntas alrededor de los hechos básicos que se desean comprender antes de tomar decisiones sobre el producto.
+
+| W/H | Type | Source | Experiment-Ready Question |
+| --- | --- | --- | --- |
+| Who | Belief-led question | Claims, Business Outcomes, User Outcomes | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| What | Belief-led question | Ideas, Claims, User Outcomes | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Where | Exploratory question | Knowledge Gaps, User Outcomes | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| When | Exploratory question | Knowledge Gaps, Claims, User Outcomes | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Why | Belief-led question | Business Outcomes, User Outcomes, Features | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| How | Belief-led question | Business Outcomes, User Outcomes, Features | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+
 #### 8.1.4. Question Backlog.
+
+Para priorizar las preguntas listas para experimentar, se utiliza una matriz basada en los criterios de **Confidence**, **Risk**, **Impact** e **Interest**. Cada criterio se evalúa en una escala de 1 a 10, donde un mayor valor representa mayor relevancia para el experimento.
+
+| Priority | Code | Question | Confidence | Risk | Impact | Interest | Total Score |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Q1 | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? | 8 | 9 | 10 | 9 | 36 |
+| 2 | Q2 | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? | 8 | 8 | 9 | 9 | 34 |
+| 3 | Q3 | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? | 7 | 8 | 9 | 8 | 32 |
+| 4 | Q4 | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? | 7 | 9 | 8 | 8 | 32 |
+| 5 | Q5 | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? | 6 | 8 | 8 | 7 | 29 |
+| 6 | Q6 | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? | 6 | 7 | 7 | 7 | 27 |
+
+De acuerdo con la matriz, las preguntas con mayor prioridad son aquellas relacionadas con la confianza del turista, la búsqueda personalizada y el flujo de reserva. Estas preguntas son críticas porque impactan directamente en la decisión de uso de la plataforma y en la probabilidad de conversión. Las preguntas vinculadas a agencias, disponibilidad y viajeros corporativos también se mantienen en el backlog porque permiten validar la sostenibilidad del modelo de negocio y la utilidad de TravelMatch para sus segmentos objetivo.
 
 #### 8.1.5. Experiment Cards.
 
+**Experiment Card 1**
 
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Why | Es importante conocer si los turistas confiarán más en TravelMatch cuando la plataforma muestre señales visibles de formalidad, reputación y validación de las agencias. |
+| What | Debemos implementar perfiles de agencias con estado de verificación, valoración promedio y reseñas visibles dentro del detalle de cada experiencia. |
+| Hypothesis | Creemos que mostrar agencias verificadas, valoraciones y reseñas aumentará la confianza del turista y su intención de iniciar una reserva. |
+| Measures | Índice de confianza percibida y tasa de intención de reserva. |
+| Conditions | Comparar una versión base del perfil de agencia contra una versión con verificación, valoraciones y reseñas visibles. |
+| Scale | El experimento debe ejecutarse con usuarios del segmento turista que interactúen con perfiles de experiencias antes de iniciar una reserva. |
 
+**Experiment Card 2**
 
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Why | Es importante conocer si los filtros reducen la frustración generada por la búsqueda de experiencias entre muchas opciones dispersas o poco relevantes. |
+| What | Debemos implementar filtros por destino, tipo de experiencia, presupuesto, duración, valoración y disponibilidad. |
+| Hypothesis | Creemos que implementar filtros avanzados permitirá que los turistas encuentren experiencias relevantes en menos tiempo y avancen con mayor frecuencia hacia el detalle o reserva. |
+| Measures | Tasa de búsquedas exitosas con filtros y tiempo promedio hasta seleccionar una experiencia. |
+| Conditions | Comparar una búsqueda básica contra una búsqueda con filtros avanzados visibles y configurables. |
+| Scale | El experimento debe recolectar sesiones de búsqueda suficientes para comparar el comportamiento de usuarios con y sin filtros avanzados. |
+
+**Experiment Card 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Why | Es importante conocer si un proceso de reserva simple y transparente reduce el abandono y permite que el usuario concrete su objetivo dentro de la plataforma. |
+| What | Debemos implementar un flujo de reserva con información clara de precio, duración, cupos disponibles, condiciones de cancelación y confirmación final. |
+| Hypothesis | Creemos que un flujo de reserva simple y con información clara incrementará la cantidad de reservas completadas y reducirá el tiempo requerido para finalizar el proceso. |
+| Measures | Tasa de reservas completadas y tiempo promedio de finalización de reserva. |
+| Conditions | Comparar un flujo de reserva base contra un flujo simplificado con información visible antes de confirmar. |
+| Scale | El experimento debe observar usuarios que inicien el proceso de reserva y registrar finalización, abandono y tiempo de ejecución. |
+
+**Experiment Card 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Why | Es importante conocer si las agencias perciben valor en TravelMatch como canal de gestión y no solo como vitrina digital. |
+| What | Debemos implementar un panel para que las agencias registren experiencias, actualicen disponibilidad, modifiquen precios y configuren promociones. |
+| Hypothesis | Creemos que un panel de gestión simple aumentará la activación de agencias y la actualización de experiencias dentro de TravelMatch. |
+| Measures | Tasa de activación de agencias y tasa de actualización de disponibilidad. |
+| Conditions | Comparar una gestión limitada o manual contra un panel de autogestión para agencias. |
+| Scale | El experimento debe involucrar agencias de turismo locales registradas o interesadas en publicar su catálogo en la plataforma. |
+
+**Experiment Card 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Why | Es importante conocer si la información clara antes de reservar reduce dudas, consultas adicionales y cancelaciones por falta de información. |
+| What | Debemos mostrar disponibilidad actualizada, temporada recomendada, cupos, restricciones y condiciones de cambio o cancelación dentro del detalle de cada experiencia. |
+| Hypothesis | Creemos que mostrar disponibilidad, temporada y condiciones de cambio o cancelación reducirá la incertidumbre del turista antes de reservar. |
+| Measures | Tasa de cancelaciones por información insuficiente y porcentaje de reservas confirmadas sin contacto adicional. |
+| Conditions | Comparar una vista básica de experiencia contra una vista con disponibilidad, temporada y condiciones visibles. |
+| Scale | El experimento debe considerar reservas iniciadas o simuladas en experiencias con disponibilidad variable y registrar dudas o motivos de cancelación. |
+
+**Experiment Card 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Why | Es importante conocer si el viajero corporativo necesita una experiencia distinta a la del turista recreativo, considerando su tiempo limitado y ubicación durante viajes de trabajo. |
+| What | Debemos implementar recomendaciones que consideren ubicación, duración de la experiencia, horario disponible e intereses del viajero corporativo. |
+| Hypothesis | Creemos que las recomendaciones personalizadas para viajeros corporativos aumentarán la aceptación de experiencias sugeridas y el inicio de reservas desde recomendaciones. |
+| Measures | Tasa de aceptación de recomendaciones y tasa de inicio de reserva desde recomendaciones. |
+| Conditions | Comparar un listado general de experiencias contra recomendaciones filtradas por ubicación, duración e intereses. |
+| Scale | El experimento debe ejecutarse con usuarios del segmento corporativo o con escenarios representativos de viajes de trabajo. |
 
 ### 8.2. Experiment Design
 
 #### 8.2.1. Hypotheses.
-#### 8.2.2. Measures.
-#### 8.2.3. Conditions.
+
+Para el diseño del experimento se formularon hipótesis basadas en las preguntas priorizadas en la fase de Experiment Planning. Cada hipótesis se plantea como una respuesta tentativa a la pregunta, indicando la evidencia que permitirá observar el resultado y las circunstancias bajo las cuales se considerará útil para tomar decisiones sobre TravelMatch.
+
+**Hypothesis 1**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Belief | Los turistas prefieren reservar con agencias formales, pero no siempre saben cuáles son confiables. Implementar perfiles con verificación, valoraciones y reseñas visibles ayudaría a reducir la incertidumbre antes de reservar. |
+| Hypothesis | Creemos que la respuesta es mostrar agencias verificadas, valoraciones y reseñas dentro del perfil de cada experiencia. La evidencia se reflejará en el índice de confianza percibida y en la intención de reserva después de visualizar el perfil de agencia. Bajo las circunstancias de que la confianza percibida aumente en un 20% y la intención de reserva aumente en un 15%. |
+| Null hypothesis | Creemos que mostrar agencias verificadas, valoraciones y reseñas no será responsable de un incremento en la confianza percibida ni en la intención de reserva. Cualquier variación observada podría explicarse por otros factores externos al perfil de agencia. |
+
+**Hypothesis 2**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Belief | Los turistas necesitan reducir la cantidad de información dispersa al buscar experiencias turísticas. Implementar filtros por destino, tipo de experiencia, precio, duración, valoración y disponibilidad ayudaría a encontrar opciones más relevantes en menos tiempo. |
+| Hypothesis | Creemos que la respuesta es implementar filtros avanzados dentro del flujo de búsqueda de experiencias. La evidencia se reflejará en la tasa de búsquedas exitosas con filtros y en el tiempo promedio para seleccionar una experiencia relevante. Bajo las circunstancias de que la tasa de búsquedas exitosas aumente en un 20% frente a la versión base. |
+| Null hypothesis | Creemos que implementar filtros avanzados no será responsable de una mejora en la tasa de búsquedas exitosas ni en el tiempo de selección de experiencias. Cualquier diferencia observada podría ser resultado de la variación natural del comportamiento de búsqueda. |
+
+**Hypothesis 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Belief | Los turistas pueden abandonar una reserva cuando el proceso es largo, confuso o requiere confirmar información por otros canales. Implementar un flujo de reserva simple y transparente ayudaría a reducir fricción y aumentar reservas completadas. |
+| Hypothesis | Creemos que la respuesta es implementar un flujo de reserva simple con precio, disponibilidad, duración, condiciones de cancelación y confirmación final. La evidencia se reflejará en la tasa de reservas completadas y en el tiempo promedio de finalización. Bajo las circunstancias de que las reservas completadas aumenten en un 15% y el tiempo promedio de reserva disminuya en un 25%. |
+| Null hypothesis | Creemos que implementar un flujo de reserva simple no será responsable de un incremento en reservas completadas ni de una reducción del tiempo promedio de reserva. Cualquier variación observada podría depender de factores ajenos al flujo diseñado. |
+
+**Hypothesis 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Belief | Las agencias de turismo locales buscan mayor visibilidad digital, pero también necesitan herramientas simples para administrar su oferta. Implementar un panel de gestión de catálogo, disponibilidad y promociones ayudaría a incrementar su participación activa. |
+| Hypothesis | Creemos que la respuesta es implementar un panel para que las agencias gestionen experiencias, precios, disponibilidad y promociones. La evidencia se reflejará en la tasa de activación de agencias y en la actualización de disponibilidad dentro de la plataforma. Bajo las circunstancias de que al menos el 60% de agencias registradas publique una experiencia y la actualización de disponibilidad aumente en un 20%. |
+| Null hypothesis | Creemos que implementar un panel de gestión para agencias no será responsable de una mayor activación ni de una mayor actualización del catálogo. Las agencias podrían mantener sus canales actuales o no percibir suficiente valor en la herramienta. |
+
+**Hypothesis 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Belief | Los turistas pueden cancelar o cambiar una reserva cuando encuentran información incompleta, disponibilidad desactualizada o condiciones poco claras. Mostrar disponibilidad, temporada y políticas de cambio o cancelación antes de confirmar ayudaría a reducir incertidumbre. |
+| Hypothesis | Creemos que la respuesta es incluir disponibilidad actualizada, temporada recomendada, cupos y condiciones de cambio o cancelación en el detalle de cada experiencia. La evidencia se reflejará en la tasa de cancelaciones por información insuficiente y en las reservas confirmadas sin contacto adicional. Bajo las circunstancias de que las cancelaciones por información insuficiente disminuyan en un 15%. |
+| Null hypothesis | Creemos que mostrar disponibilidad, temporada y condiciones de cambio o cancelación no será responsable de una reducción en la incertidumbre ni en las cancelaciones por información insuficiente. Cualquier variación podría responder a factores externos como temporada, precio o demanda. |
+
+**Hypothesis 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Belief | Los viajeros corporativos tienen tiempo limitado y necesitan opciones cercanas, rápidas y compatibles con su agenda laboral. Implementar recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudaría a que encuentren experiencias más útiles. |
+| Hypothesis | Creemos que la respuesta es implementar recomendaciones personalizadas para viajeros corporativos considerando ubicación, duración de la experiencia y horario disponible. La evidencia se reflejará en la tasa de aceptación de recomendaciones y en la tasa de inicio de reserva desde recomendaciones. Bajo las circunstancias de que la aceptación de recomendaciones aumente en un 20%. |
+| Null hypothesis | Creemos que implementar recomendaciones personalizadas para viajeros corporativos no será responsable de una mayor aceptación de experiencias ni de un mayor inicio de reservas desde recomendaciones. Cualquier diferencia observada podría ser aleatoria o depender de preferencias externas del usuario. |
+
+#### 8.2.2. Domain Business Metrics.
+
+#### 8.2.3. Measures.
+
+Las medidas seleccionadas permitirán recolectar evidencia para responder cada pregunta del experimento. Se priorizaron medidas representativas, calculables y proporcionales, de modo que los resultados puedan compararse contra una versión base o condición de control.
+
+**Measure 1**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Measure | Índice de confianza percibida con respecto a la versión base del perfil de agencia. |
+
+**Measure 2**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Measure | Tasa de búsquedas exitosas con filtros con respecto a la versión base sin filtros avanzados. |
+
+**Measure 3**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Measure | Tasa de reservas completadas con respecto al flujo de reserva base. |
+
+**Measure 4**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Measure | Tasa de activación de agencias con respecto al total de agencias registradas. |
+
+**Measure 5**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Measure | Tasa de cancelaciones por información insuficiente con respecto al total de reservas realizadas. |
+
+**Measure 6**
+
+| Element | Description |
+| --- | --- |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
+
+#### 8.2.4. Conditions.
 #### 8.2.5. Scale Calculations and Decisions
 
 | Scale Calculation | Decisión | Factor Desfavorable | Factor Aceptable | Factor Ideal | Factor Excelente |
 |------------------|----------|--------------------|-----------------|-------------|-----------------|
-| **Hipótesis 1 – Agencies**: Creemos que cuando las agencias de turismo locales registren su información y documentos en la plataforma TravelMatch, aumentará su visibilidad digital y la cantidad de reservas recibidas, mediante el uso del módulo de gestión de agencias, cuando los turistas busquen experiencias en destinos específicos. Sabremos que hemos tenido éxito cuando el número de agencias verificadas activas aumente progresivamente. | Implementar el flujo completo de registro de agencia (datos, documentos y staff) con validación automática de RUC y correo único, más una interfaz de gestión de staff. | 1% <= x < 20% de agencias con perfil completo y verificado | >= 20% de agencias con perfil completo | >= 40% de agencias verificadas activas publicando experiencias | >= 60% de agencias verificadas con al menos 1 reserva confirmada |
-| **Hipótesis 2 – Bookings**: Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de cancelación y reembolso, los turistas completarán sus reservas sin abandonar el proceso, mediante el módulo de Bookings integrado con pagos seguros, cuando seleccionen una experiencia disponible. Sabremos que tuvimos éxito cuando la tasa de conversión de reservas iniciadas a pagadas supere el 50%. | Implementar el ciclo completo de booking: creación, pago con Stripe, cancelación y reembolso con estados claros (PENDING, SUCCEEDED, CANCELLED, FAILED). | 1% <= x < 25% de reservas completadas sobre iniciadas | >= 25% de reservas pagadas exitosamente | >= 50% de tasa de conversión de reservas iniciadas a SUCCEEDED | >= 70% de tasa de conversión con tiempo promedio de pago menor a 3 minutos |
-| **Hipótesis 3 – Experiences**: Creemos que cuando las agencias publiquen experiencias con disponibilidad, tipos de ticket y multimedia asociada, los turistas podrán tomar decisiones de compra informadas, mediante el catálogo de experiencias con galería y filtros, cuando exploren la plataforma. Sabremos que tuvimos éxito cuando el tiempo promedio de sesión en la vista de experiencias supere los 3 minutos. | Implementar el módulo de Experiences con gestión de disponibilidades, ticket types, categorías y multimedia, más filtros de búsqueda por categoría y destino. | Tiempo promedio < 1 min en vista de experiencias | >= 1 min y al menos 1 experiencia consultada por sesión | >= 3 min promedio y >= 2 experiencias consultadas por sesión | >= 5 min promedio con al menos 1 reserva generada por sesión |
-| **Hipótesis 4 – IAM (Autenticación)**: Creemos que al implementar un sistema de autenticación con roles diferenciados (turista, staff de agencia), los usuarios accederán únicamente a las funcionalidades que les corresponden, mediante JWT y control de roles, cuando inicien sesión en la plataforma. Sabremos que tuvimos éxito cuando el 95% de los accesos no autorizados sean bloqueados correctamente. | Implementar autenticación con JWT, roles ROLE_TOURIST y ROLE_AGENCY_STAFF, con endpoints protegidos por Spring Security según el rol del usuario. | 1% <= x < 70% de bloqueos correctos de acceso no autorizado | >= 70% de bloqueos correctos | >= 95% de accesos no autorizados bloqueados sin errores | 100% de bloqueos correctos con tiempo de respuesta menor a 200 ms |
-| **Hipótesis 5 – Profiles (Favoritos y Carrito)**: Creemos que cuando los turistas puedan guardar experiencias en favoritos y agregar opciones al carrito antes de confirmar, la intención de compra aumentará y reducirá el abandono, mediante el módulo de Profiles, cuando naveguen entre experiencias disponibles. Sabremos que tuvimos éxito cuando el 30% de los ítems agregados al carrito se conviertan en reservas confirmadas. | Implementar el módulo de Profiles con gestión de favoritos, carrito de compras con contador dinámico y reseñas post-experiencia. | 1% <= x < 15% de ítems en carrito convertidos a reserva | >= 15% de conversión carrito-reserva | >= 30% de conversión carrito a reserva confirmada | >= 50% de conversión con al menos 1 reseña por reserva completada |
-| **Hipótesis 6 – Geolocation (Destinos)**: Creemos que al asociar experiencias a destinos geográficos específicos del Perú, los turistas encontrarán más fácilmente las opciones relevantes según su zona de interés, mediante el módulo de Geolocation con filtros por destino, cuando busquen actividades en la plataforma. Sabremos que tuvimos éxito cuando el 40% de búsquedas use filtro por destino. | Implementar el módulo de Geolocation con CRUD de destinos y asociación destino-experiencia, más filtros en el catálogo público por ciudad, distrito y país. | 1% <= x < 15% de búsquedas con filtro de destino activo | >= 15% de búsquedas filtradas por destino | >= 40% de búsquedas usan filtro de destino | >= 60% de búsquedas por destino con al menos 1 reserva generada |
+|  Creemos que cuando las agencias de turismo locales registren su información y documentos en la plataforma TravelMatch, aumentará su visibilidad digital y la cantidad de reservas recibidas, mediante el uso del módulo de gestión de agencias, cuando los turistas busquen experiencias en destinos específicos. Sabremos que hemos tenido éxito cuando el número de agencias verificadas activas aumente progresivamente. | Implementar el flujo completo de registro de agencia (datos, documentos y staff) con validación automática de RUC y correo único, más una interfaz de gestión de staff. | 1% <= x < 20% de agencias con perfil completo y verificado | >= 20% de agencias con perfil completo | >= 40% de agencias verificadas activas publicando experiencias | >= 60% de agencias verificadas con al menos 1 reserva confirmada |
+| Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de cancelación y reembolso, los turistas completarán sus reservas sin abandonar el proceso, mediante el módulo de Bookings integrado con pagos seguros, cuando seleccionen una experiencia disponible. Sabremos que tuvimos éxito cuando la tasa de conversión de reservas iniciadas a pagadas supere el 50%. | Implementar el ciclo completo de booking: creación, pago con Stripe, cancelación y reembolso con estados claros (PENDING, SUCCEEDED, CANCELLED, FAILED). | 1% <= x < 25% de reservas completadas sobre iniciadas | >= 25% de reservas pagadas exitosamente | >= 50% de tasa de conversión de reservas iniciadas a SUCCEEDED | >= 70% de tasa de conversión con tiempo promedio de pago menor a 3 minutos |
+| Creemos que cuando las agencias publiquen experiencias con disponibilidad, tipos de ticket y multimedia asociada, los turistas podrán tomar decisiones de compra informadas, mediante el catálogo de experiencias con galería y filtros, cuando exploren la plataforma. Sabremos que tuvimos éxito cuando el tiempo promedio de sesión en la vista de experiencias supere los 3 minutos. | Implementar el módulo de Experiences con gestión de disponibilidades, ticket types, categorías y multimedia, más filtros de búsqueda por categoría y destino. | Tiempo promedio < 1 min en vista de experiencias | >= 1 min y al menos 1 experiencia consultada por sesión | >= 3 min promedio y >= 2 experiencias consultadas por sesión | >= 5 min promedio con al menos 1 reserva generada por sesión |
+| Creemos que al implementar un sistema de autenticación con roles diferenciados (turista, staff de agencia), los usuarios accederán únicamente a las funcionalidades que les corresponden, mediante JWT y control de roles, cuando inicien sesión en la plataforma. Sabremos que tuvimos éxito cuando el 95% de los accesos no autorizados sean bloqueados correctamente. | Implementar autenticación con JWT, roles ROLE_TOURIST y ROLE_AGENCY_STAFF, con endpoints protegidos por Spring Security según el rol del usuario. | 1% <= x < 70% de bloqueos correctos de acceso no autorizado | >= 70% de bloqueos correctos | >= 95% de accesos no autorizados bloqueados sin errores | 100% de bloqueos correctos con tiempo de respuesta menor a 200 ms |
+| Creemos que cuando los turistas puedan guardar experiencias en favoritos y agregar opciones al carrito antes de confirmar, la intención de compra aumentará y reducirá el abandono, mediante el módulo de Profiles, cuando naveguen entre experiencias disponibles. Sabremos que tuvimos éxito cuando el 30% de los ítems agregados al carrito se conviertan en reservas confirmadas. | Implementar el módulo de Profiles con gestión de favoritos, carrito de compras con contador dinámico y reseñas post-experiencia. | 1% <= x < 15% de ítems en carrito convertidos a reserva | >= 15% de conversión carrito-reserva | >= 30% de conversión carrito a reserva confirmada | >= 50% de conversión con al menos 1 reseña por reserva completada |
+|Creemos que al asociar experiencias a destinos geográficos específicos del Perú, los turistas encontrarán más fácilmente las opciones relevantes según su zona de interés, mediante el módulo de Geolocation con filtros por destino, cuando busquen actividades en la plataforma. Sabremos que tuvimos éxito cuando el 40% de búsquedas use filtro por destino. | Implementar el módulo de Geolocation con CRUD de destinos y asociación destino-experiencia, más filtros en el catálogo público por ciudad, distrito y país. | 1% <= x < 15% de búsquedas con filtro de destino activo | >= 15% de búsquedas filtradas por destino | >= 40% de búsquedas usan filtro de destino | >= 60% de búsquedas por destino con al menos 1 reserva generada |
 
 
 
@@ -5178,7 +5444,6 @@ Ambas herramientas ofrecen:
 - Plan gratuito adecuado para la escala actual del proyecto.
 - Documentación suficiente para su integración.
 - Compatibilidad con el backend **Spring Boot** de TravelMatch mediante eventos enviados desde la capa de interfaces REST.
-#### 8.2.6. Data Analytics: Goals, KPIs and Metrics Selection.
 
 ## Conclusiones
 
