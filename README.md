@@ -3997,15 +3997,145 @@ El objetivo de estas condiciones es comparar el comportamiento de los usuarios f
 
 #### 8.2.5. Scale Calculations and Decisions
 
-| Scale Calculation | Decisión | Factor Desfavorable | Factor Aceptable | Factor Ideal | Factor Excelente |
-|------------------|----------|--------------------|-----------------|-------------|-----------------|
-|  Creemos que cuando las agencias de turismo locales registren su información y documentos en la plataforma TravelMatch, aumentará su visibilidad digital y la cantidad de reservas recibidas, mediante el uso del módulo de gestión de agencias, cuando los turistas busquen experiencias en destinos específicos. Sabremos que hemos tenido éxito cuando el número de agencias verificadas activas aumente progresivamente. | Implementar el flujo completo de registro de agencia (datos, documentos y staff) con validación automática de RUC y correo único, más una interfaz de gestión de staff. | 1% <= x < 20% de agencias con perfil completo y verificado | >= 20% de agencias con perfil completo | >= 40% de agencias verificadas activas publicando experiencias | >= 60% de agencias verificadas con al menos 1 reserva confirmada |
-| Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de cancelación y reembolso, los turistas completarán sus reservas sin abandonar el proceso, mediante el módulo de Bookings integrado con pagos seguros, cuando seleccionen una experiencia disponible. Sabremos que tuvimos éxito cuando la tasa de conversión de reservas iniciadas a pagadas supere el 50%. | Implementar el ciclo completo de booking: creación, pago con Stripe, cancelación y reembolso con estados claros (PENDING, SUCCEEDED, CANCELLED, FAILED). | 1% <= x < 25% de reservas completadas sobre iniciadas | >= 25% de reservas pagadas exitosamente | >= 50% de tasa de conversión de reservas iniciadas a SUCCEEDED | >= 70% de tasa de conversión con tiempo promedio de pago menor a 3 minutos |
-| Creemos que cuando las agencias publiquen experiencias con disponibilidad, tipos de ticket y multimedia asociada, los turistas podrán tomar decisiones de compra informadas, mediante el catálogo de experiencias con galería y filtros, cuando exploren la plataforma. Sabremos que tuvimos éxito cuando el tiempo promedio de sesión en la vista de experiencias supere los 3 minutos. | Implementar el módulo de Experiences con gestión de disponibilidades, ticket types, categorías y multimedia, más filtros de búsqueda por categoría y destino. | Tiempo promedio < 1 min en vista de experiencias | >= 1 min y al menos 1 experiencia consultada por sesión | >= 3 min promedio y >= 2 experiencias consultadas por sesión | >= 5 min promedio con al menos 1 reserva generada por sesión |
-| Creemos que al implementar un sistema de autenticación con roles diferenciados (turista, staff de agencia), los usuarios accederán únicamente a las funcionalidades que les corresponden, mediante JWT y control de roles, cuando inicien sesión en la plataforma. Sabremos que tuvimos éxito cuando el 95% de los accesos no autorizados sean bloqueados correctamente. | Implementar autenticación con JWT, roles ROLE_TOURIST y ROLE_AGENCY_STAFF, con endpoints protegidos por Spring Security según el rol del usuario. | 1% <= x < 70% de bloqueos correctos de acceso no autorizado | >= 70% de bloqueos correctos | >= 95% de accesos no autorizados bloqueados sin errores | 100% de bloqueos correctos con tiempo de respuesta menor a 200 ms |
-| Creemos que cuando los turistas puedan guardar experiencias en favoritos y agregar opciones al carrito antes de confirmar, la intención de compra aumentará y reducirá el abandono, mediante el módulo de Profiles, cuando naveguen entre experiencias disponibles. Sabremos que tuvimos éxito cuando el 30% de los ítems agregados al carrito se conviertan en reservas confirmadas. | Implementar el módulo de Profiles con gestión de favoritos, carrito de compras con contador dinámico y reseñas post-experiencia. | 1% <= x < 15% de ítems en carrito convertidos a reserva | >= 15% de conversión carrito-reserva | >= 30% de conversión carrito a reserva confirmada | >= 50% de conversión con al menos 1 reseña por reserva completada |
-|Creemos que al asociar experiencias a destinos geográficos específicos del Perú, los turistas encontrarán más fácilmente las opciones relevantes según su zona de interés, mediante el módulo de Geolocation con filtros por destino, cuando busquen actividades en la plataforma. Sabremos que tuvimos éxito cuando el 40% de búsquedas use filtro por destino. | Implementar el módulo de Geolocation con CRUD de destinos y asociación destino-experiencia, más filtros en el catálogo público por ciudad, distrito y país. | 1% <= x < 15% de búsquedas con filtro de destino activo | >= 15% de búsquedas filtradas por destino | >= 40% de búsquedas usan filtro de destino | >= 60% de búsquedas por destino con al menos 1 reserva generada |
+Esta sección define los criterios de escala que permitirán interpretar los resultados obtenidos en cada experimento. Para mantener trazabilidad con las secciones anteriores, cada fila se vincula directamente con una hipótesis definida en **8.2.1 Hypotheses**, con sus medidas asociadas en **8.2.3 Measures** y con las condiciones descritas en **8.2.4 Conditions**.
 
+Los factores se clasifican en cuatro niveles: **Desfavorable**, cuando la evidencia no es suficiente para sostener la hipótesis; **Aceptable**, cuando existe una mejora inicial pero todavía limitada; **Ideal**, cuando se alcanza el umbral esperado por la hipótesis; y **Excelente**, cuando el resultado supera el umbral esperado y refuerza la decisión de implementación.
+
+<table>
+    <thead>
+        <tr>
+            <th>Related Hypothesis</th>
+            <th>Scale Calculation</th>
+            <th>Decision</th>
+            <th>Factor Desfavorable</th>
+            <th>Factor Aceptable</th>
+            <th>Factor Ideal</th>
+            <th>Factor Excelente</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>H1 - Confianza por agencias verificadas, valoraciones y reseñas</b></td>
+            <td>
+                Creemos que mostrar agencias verificadas, valoraciones y reseñas incrementará la confianza del turista antes de reservar.<br><br>
+                Sabremos que hemos tenido éxito cuando el Índice de Confianza Percibida (M-PR-01) aumente progresivamente.
+            </td>
+            <td>
+                Implementar la visualización de insignias de verificación, valoración promedio y reseñas dentro del perfil de la agencia y sus experiencias.
+            </td>
+            <td>Incremento &lt; 10% en confianza percibida.</td>
+            <td>Incremento ≥ 10% en confianza percibida.</td>
+            <td>Incremento ≥ 20% en confianza percibida.</td>
+            <td>
+                Incremento ≥ 30% en confianza percibida y un aumento de intención de reserva (M-PR-02) ≥ 15%.
+            </td>
+        </tr>
+        <tr>
+            <td><b>H2 - Filtros avanzados de búsqueda</b></td>
+            <td>
+                Creemos que al ofrecer filtros avanzados, los turistas encontrarán experiencias alineadas a sus intereses rápidamente.<br><br>
+                Sabremos que tuvimos éxito cuando la Tasa de Búsquedas Exitosas con Filtros (M-EXP-01) aumente frente a la versión base.
+            </td>
+            <td>
+                Implementar filtros avanzados por destino, categoría, presupuesto y disponibilidad dentro del catálogo de experiencias.
+            </td>
+            <td>Mejora &lt; 10% en búsquedas exitosas con filtros.</td>
+            <td>Mejora ≥ 10% en búsquedas exitosas con filtros.</td>
+            <td>Mejora ≥ 20% en búsquedas exitosas con filtros.</td>
+            <td>
+                Mejora ≥ 30% en búsquedas exitosas y reducción visible del tiempo promedio de selección.
+            </td>
+        </tr>
+        <tr>
+            <td><b>H3 - Flujo de reserva simple y transparente</b></td>
+            <td>
+                Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de pago, los turistas no abandonarán el proceso.<br><br>
+                Sabremos que tuvimos éxito cuando la Tasa de Reservas Completadas (M-BK-01) supere el 50%.
+            </td>
+            <td>
+                Implementar el ciclo completo de booking simplificado, con integración de pagos (Stripe) y visibilidad de precios y condiciones.
+            </td>
+            <td>
+                1% ≤ x &lt; 25% de reservas iniciadas terminan siendo completadas.
+            </td>
+            <td>
+                ≥ 25% de reservas iniciadas terminan siendo completadas.
+            </td>
+            <td>
+                ≥ 50% de reservas completadas y el tiempo promedio de finalización disminuye en 25%.
+            </td>
+            <td>
+                ≥ 70% de reservas completadas con un tiempo promedio de pago menor a 3 minutos.
+            </td>
+        </tr>
+        <tr>
+            <td><b>H4 - Panel de gestión de catálogo, disponibilidad y promociones para agencias</b></td>
+            <td>
+                Creemos que cuando las agencias utilicen el panel de gestión para publicar experiencias, aumentará su visibilidad digital.<br><br>
+                Sabremos que hemos tenido éxito cuando la Tasa de Publicación de Catálogo (M-AG-02) supere el 40%.
+            </td>
+            <td>
+                Implementar el panel de autogestión para que las agencias registren perfil, publiquen experiencias y actualicen disponibilidad.
+            </td>
+            <td>
+                &lt; 20% de agencias registradas completan su perfil o publican.
+            </td>
+            <td>
+                ≥ 20% de agencias registradas completan su perfil y validan información.
+            </td>
+            <td>
+                ≥ 40% de agencias verificadas publican una experiencia y actualizan disponibilidad.
+            </td>
+            <td>
+                ≥ 60% de agencias verificadas mantienen catálogo activo y logran al menos 1 reserva confirmada.
+            </td>
+        </tr>
+        <tr>
+            <td><b>H5 - Disponibilidad, temporada y condiciones de cambio/cancelación visibles</b></td>
+            <td>
+                Creemos que mostrar disponibilidad actualizada y condiciones claras reducirá la incertidumbre del turista antes de reservar.<br><br>
+                Sabremos que tuvimos éxito cuando la Tasa de Cancelación por Información Insuficiente (M-BK-04) se reduzca en un 15%.
+            </td>
+            <td>
+                Mostrar disponibilidad actualizada en tiempo real, temporada recomendada, cupos y políticas de cancelación antes del checkout.
+            </td>
+            <td>
+                Reducción &lt; 5% en cancelaciones por información insuficiente.
+            </td>
+            <td>
+                Reducción ≥ 5% en cancelaciones por información insuficiente.
+            </td>
+            <td>
+                Reducción ≥ 15% en cancelaciones por información insuficiente.
+            </td>
+            <td>
+                Reducción ≥ 25% en cancelaciones y Tasa de Reembolso Exitoso (M-BK-05) ≥ 90% cuando aplique.
+            </td>
+        </tr>
+        <tr>
+            <td><b>H6 - Recomendaciones para viajero corporativo</b></td>
+            <td>
+                Creemos que las recomendaciones personalizadas ayudarán al viajero corporativo a encontrar experiencias compatibles con su agenda.<br><br>
+                Sabremos que tuvimos éxito cuando la Tasa de Aceptación de Recomendaciones (M-COR-01) aumente en un 20%.
+            </td>
+            <td>
+                Implementar recomendaciones in-app considerando ubicación, intereses, duración de experiencia y disponibilidad horaria.
+            </td>
+            <td>
+                Incremento &lt; 10% en aceptación de recomendaciones.
+            </td>
+            <td>
+                Incremento ≥ 10% en aceptación de recomendaciones.
+            </td>
+            <td>
+                Incremento ≥ 20% en aceptación de recomendaciones.
+            </td>
+            <td>
+                Incremento ≥ 25% en aceptación de recomendaciones y al menos 15% de inicio de reservas desde recomendación (M-COR-02).
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 
 #### 8.2.6. Methods Selection
