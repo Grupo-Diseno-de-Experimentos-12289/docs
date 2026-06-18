@@ -3878,7 +3878,80 @@ Las medidas seleccionadas permitirán recolectar evidencia para responder cada p
 | Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
 | Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
 
+
 #### 8.2.4. Conditions.
+
+En esta sección se definen las condiciones bajo las cuales se ejecutará cada experimento. Para mantener consistencia con las hipótesis planteadas, cada experimento tendrá una **Control condition**, que representa la versión base o actual del flujo, y una **Experimental condition**, que representa la intervención diseñada para recolectar evidencia a favor de la hipótesis propuesta.
+
+El objetivo de estas condiciones es comparar el comportamiento de los usuarios frente a dos escenarios equivalentes, cambiando únicamente el elemento que se desea evaluar. De esta manera, los resultados obtenidos podrán relacionarse con la hipótesis correspondiente y no con factores externos como temporada, promociones, tráfico irregular o diferencias entre segmentos de usuarios.
+
+**Condition 1 - Trust in verified agencies**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H1 - Mostrar agencias verificadas, valoraciones y reseñas aumentará la confianza del turista y su intención de iniciar una reserva. |
+| Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
+| Control condition | El usuario visualiza un perfil de experiencia con información básica de la agencia, sin destacar estado de verificación, valoración promedio ni reseñas de otros usuarios. |
+| Experimental condition | El usuario visualiza un perfil de experiencia donde se muestra de forma visible el estado de agencia verificada, valoración promedio, reseñas y datos básicos de formalidad. |
+| Measurement context | La medición se realizará después de que el usuario observe el perfil de una experiencia y antes de iniciar o abandonar el proceso de reserva. |
+| Expected evidence | La condición experimental debe mostrar un mayor índice de confianza percibida y una mayor intención de reserva respecto a la condición de control. |
+
+**Condition 2 - Advanced filters in experience search**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H2 - Implementar filtros avanzados permitirá que los turistas encuentren experiencias relevantes en menos tiempo. |
+| Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
+| Control condition | El usuario realiza la búsqueda de experiencias usando una versión base con búsqueda simple o filtros limitados, como destino o categoría general. |
+| Experimental condition | El usuario realiza la búsqueda usando filtros avanzados por destino, tipo de experiencia, presupuesto, duración, valoración y disponibilidad. |
+| Measurement context | La medición se realizará durante la sesión de búsqueda, desde que el usuario inicia la búsqueda hasta que abre el detalle de una experiencia o inicia una reserva. |
+| Expected evidence | La condición experimental debe presentar una mayor tasa de búsquedas exitosas y un menor tiempo promedio para seleccionar una experiencia relevante frente a la condición de control. |
+
+**Condition 3 - Simplified booking flow**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H3 - Un flujo de reserva simple y transparente incrementará las reservas completadas y reducirá el tiempo de finalización. |
+| Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
+| Control condition | El usuario realiza la reserva mediante un flujo base donde la información de precio, disponibilidad, duración y condiciones se encuentra distribuida en diferentes pasos o secciones. |
+| Experimental condition | El usuario realiza la reserva mediante un flujo simplificado que muestra precio, duración, disponibilidad, cupos, condiciones de cancelación y confirmación final en una secuencia clara. |
+| Measurement context | La medición se realizará desde el inicio de la reserva hasta la confirmación, abandono o cancelación del proceso. |
+| Expected evidence | La condición experimental debe aumentar la tasa de reservas completadas y reducir el tiempo promedio de finalización respecto al flujo base. |
+
+**Condition 4 - Agency management panel**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H4 - Un panel de gestión simple aumentará la activación de agencias y la actualización de experiencias dentro de TravelMatch. |
+| Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
+| Control condition | La agencia gestiona su información de manera limitada o manual, dependiendo de coordinación externa para registrar experiencias, precios, disponibilidad o promociones. |
+| Experimental condition | La agencia utiliza un panel de autogestión para registrar experiencias, modificar precios, actualizar disponibilidad y configurar promociones dentro de la plataforma. |
+| Measurement context | La medición se realizará durante el proceso de registro, publicación y actualización de experiencias por parte de agencias locales. |
+| Expected evidence | La condición experimental debe generar una mayor tasa de activación de agencias y una mayor actualización de disponibilidad frente a la condición de control. |
+
+**Condition 5 - Updated availability and cancellation information**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H5 - Mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reducirá la incertidumbre antes de reservar. |
+| Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
+| Control condition | El usuario visualiza una experiencia con información básica, sin disponibilidad actualizada, temporada recomendada, cupos visibles ni condiciones claras de cambio o cancelación. |
+| Experimental condition | El usuario visualiza una experiencia con disponibilidad actualizada, temporada recomendada, cupos, restricciones y condiciones de cambio o cancelación antes de confirmar la reserva. |
+| Measurement context | La medición se realizará antes y después de iniciar la reserva, considerando consultas previas, abandono y cancelaciones asociadas a falta de información. |
+| Expected evidence | La condición experimental debe reducir las cancelaciones por información insuficiente y aumentar las reservas confirmadas sin contacto adicional con la agencia. |
+
+**Condition 6 - Corporate traveler recommendations**
+
+| Element | Description |
+| --- | --- |
+| Related hypothesis | H6 - Las recomendaciones personalizadas para viajeros corporativos aumentarán la aceptación de experiencias y el inicio de reservas desde recomendaciones. |
+| Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
+| Control condition | El viajero corporativo visualiza un listado general de experiencias, ordenado por destino, categoría o popularidad, sin considerar su agenda ni ubicación específica. |
+| Experimental condition | El viajero corporativo visualiza recomendaciones filtradas por ubicación, duración de la experiencia, horario disponible e intereses declarados. |
+| Measurement context | La medición se realizará durante sesiones de exploración de usuarios del segmento corporativo o escenarios representativos de viaje laboral. |
+| Expected evidence | La condición experimental debe aumentar la tasa de aceptación de recomendaciones y el inicio de reservas desde experiencias recomendadas frente a la condición de control. |
+
+
 #### 8.2.5. Scale Calculations and Decisions
 
 | Scale Calculation | Decisión | Factor Desfavorable | Factor Aceptable | Factor Ideal | Factor Excelente |
