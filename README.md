@@ -3478,8 +3478,388 @@ Reliability: análisis de posibles NullPointerExceptions y manejo de Optional.
 
 Las exclusiones están justificadas porque los DTOs, Value Objects y configuraciones de infraestructura son difíciles de probar de forma aislada y no contienen lógica de negocio.
 
+### 6.3 Validation Interviews
+
+#### 6.3.1. Diseño de Entrevistas
+
+Para realizar las entrevistas de validación, primero se han planteado 7 preguntas para cada segmento de acuerdo a lo que se quiere saber del usuario para así tener un análisis más enfocado.
+
+### Segmento 1: Agencias de turismo locales
+
+1. ¿Considera que la plataforma facilitó la gestión y recepción de reservas para su agencia?
+2. ¿Le resultó sencillo publicar y actualizar sus tours o servicios en la plataforma?
+3. ¿La visibilidad que obtuvo su agencia a través del producto cumplió con sus expectativas?
+4. ¿El sistema de notificaciones y alertas fue útil para gestionar a tiempo sus reservas?
+5. ¿Recomendaría el uso de esta plataforma a otras agencias de turismo? ¿Por qué?
+6. ¿Sintió que las herramientas de análisis y métricas le ayudaron a mejorar su oferta?
+7. ¿Qué tan satisfecho está con el soporte o atención brindada por la plataforma?
+
+### Segmento 2: Turistas nacionales e internacionales
+
+1. ¿Encontró fácilmente actividades o experiencias que se ajustaran a sus intereses y presupuesto?
+2. ¿La información presentada sobre los tours y agencias le generó confianza al reservar?
+3. ¿El proceso de reserva y pago fue rápido y libre de complicaciones?
+4. ¿Las recomendaciones personalizadas de la plataforma fueron relevantes para usted?
+5. ¿Qué tan satisfecho/a está con la experiencia general de uso de la plataforma?
+6. ¿Considera que la plataforma le ahorró tiempo en la planificación de su viaje?
+7. ¿Repetiría el uso de la plataforma para futuros viajes o la recomendaría a amigos?
+
+### Semento 3: Viajeros por trabajo (Turismo corporativo)
+
+1. ¿La plataforma le ayudó a encontrar actividades compatibles con sus horarios laborales?
+2. ¿Pudo aprovechar mejor su tiempo libre durante viajes de trabajo gracias a la plataforma?
+3. ¿Las opciones de reserva rápida y confirmación inmediata fueron satisfactorias?
+4. ¿Sintió que las recomendaciones se adaptaron a sus preferencias y necesidades corporativas?
+5. ¿La opción de generar comprobantes o facturas funcionó correctamente y fue útil?
+6. ¿Considera que la plataforma facilitó la organización de actividades para usted o su equipo?
+7. ¿Qué tan probable es que utilice nuevamente la plataforma en su próximo viaje de trabajo?
+
+#### 6.3.2. Registro de Entrevistas
+<!-- Segmento objetivo 1: AGENCIAS DE TURISMO LOCALES -->
+
+**Entrevista 1:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-leo.jpg" alt="Entrevista Jose Guerrero" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Jose Guerrero |
+|----|-----|
+|Edad|24|
+|Residencia|San Miguel|
+|Segmento|Agencias de turismo locales|
+|Enlace de la entrevista| [https://youtu.be/US-9zURN3JY](https://youtu.be/US-9zURN3JY)|
+
+</div>
+
+_Resumen:_ José Guerrero mostró una satisfacción completa con la plataforma, respondiendo positivamente a todas las preguntas de validación. Destacó que la herramienta facilitó significativamente la gestión de reservas, permitiéndole captar más clientes y responder más rápido sin depender de canales tradicionales. Valoró especialmente la facilidad para publicar y actualizar tours, el aumento de visibilidad que les permitió llegar a un público más amplio, y el sistema de notificaciones en tiempo real que mejoró sus tiempos de respuesta. Las herramientas de análisis le ayudaron a entender mejor las preferencias de los turistas y ajustar su oferta, mientras que el soporte técnico recibió una calificación excelente por su rapidez y efectividad. José recomendaría la plataforma a otras agencias por ser una herramienta eficaz para aumentar visibilidad y facilitar el contacto directo con turistas, confirmando que el producto está generando valor real en su negocio.
+
+---
+
+**Entrevista 2:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-luis.png" alt="Entrevista Luis Ramirez" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Luis Ramirez |
+|----|-----|
+|Edad|23|
+|Residencia|San Miguel|
+|Segmento|Agencias de turismo locales|
+|Enlace de la entrevista| [https://youtu.be/pKZUF_4XPss](https://youtu.be/pKZUF_4XPss)|
+
+</div>
+
+_Resumen:_ El entrevistado mostró una respuesta muy positiva hacia la plataforma, aunque con algunas reservas menores debido a su experiencia en desarrollo. Destacó que la herramienta mejoró significativamente la organización de su trabajo al centralizar la gestión de reservas, superando el uso disperso de WhatsApp y correos. Aunque inicialmente tuvo una curva de aprendizaje para entender cómo agregar fotos y precios, después encontró el proceso sencillo. La plataforma cumplió sus expectativas de visibilidad, atrayendo varios clientes nuevos que antes solo llegaban por redes sociales, y valoró especialmente el sistema de notificaciones que les evitó perder reservas de último minuto. Luis recomendaría la plataforma por su practicidad y porque hace ver más profesional su agencia. Las herramientas de análisis aún representan un área de oportunidad para él, ya que está aprendiendo a usarlas, pero reconoce su utilidad para entender qué tours generan más interés. El soporte técnico recibió una calificación satisfactoria por su rapidez al resolver problemas, confirmando que la plataforma aporta valor real especialmente para usuarios menos experimentados en el sector.
+
+---
+
+<!-- Segmento objetivo 2: TURISTAS NACIONALES E INTERNACIONALES -->
+
+**Entrevista 4:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-adrian.png" alt="entrevista-adrian" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Adrian Yañez Mendez |
+|----|-----|
+|Edad|20|
+|Residencia|Lima|
+|Segmento|Turista Nacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=9PeHOlGE6K8](https://www.youtube.com/watch?v=9PeHOlGE6K8)|
+
+</div>
+
+_Resumen:_ El entrevistado organiza sus viajes con anticipación, priorizando experiencias personalizadas como tours culturales y fotografía. Encontró fácilmente opciones que se ajustaban a su presupuesto gracias a los filtros. Valoró la confianza que le generó la información clara y las reseñas. Destacó la rapidez del proceso de reserva desde la plataforma de escritorio y la utilidad de las recomendaciones personalizadas. Afirmó que le ahorró tiempo en la planificación y se mostró muy satisfecho con la experiencia general. Repetiría el uso y la recomendaría por su practicidad. Sugiere incluir un chat directo con las agencias y más filtros de búsqueda.
+
+---
+
+**Entrevista 5:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-sebastian.png" alt="entrevista-sebastian" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Sebastian Arevalo Torres |
+|----|-----|
+|Edad|23|
+|Residencia|Chile|
+|Segmento|Turista Internacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=yZrnMb7zTxI](https://www.youtube.com/watch?v=yZrnMb7zTxI)|
+
+</div>
+
+_Resumen:_ El entrevistado busca experiencias auténticas y fuera del turismo convencional, como actividades culturales y gastronómicas. Usó la plataforma para comparar precios y duraciones fácilmente, lo que considera esencial. Encontró la información confiable y valoró especialmente las reseñas de otros viajeros. Las recomendaciones personalizadas fueron relevantes y le permitieron organizarse sin complicaciones desde su laptop. Quedó satisfecho con la experiencia y resaltó el ahorro de tiempo. Recomendaría la plataforma a otros viajeros independientes. Como mejora, sugiere itinerarios sugeridos y más contenido visual.
+
+---
+
+**Entrevista 6:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-diego.png" alt="entrevista-diego" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Diego Santiago Lima |
+|----|-----|
+|Edad|21|
+|Residencia|Arequipa|
+|Segmento|Turista Nacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=ezpu8HV7a0I](https://www.youtube.com/watch?v=ezpu8HV7a0I)|
+
+</div>
+
+_Resumen:_ El entrevistado viaja como mochilero, improvisando sobre la marcha. Usó TravelMatch desde escritorio para encontrar actividades económicas y culturales, sin necesidad de itinerario fijo. Apreció poder comparar precios y ver valoraciones de otros mochileros. La información le generó confianza y destacó la utilidad de las recomendaciones personalizadas según ubicación. Considera que la plataforma le ahorró tiempo en cada destino. Repetiría el uso y la recomendaría a quienes viajan de forma espontánea. Sugiere integrar un mapa interactivo para facilitar la exploración de actividades cercanas.
 
 
+<!-- Segmento objetivo 3: TURISTAS CORPORATIVOS  falta la entrevista 7 y 9-->
+---
+
+**Entrevista 7:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-abigail2.png" alt="entrevista-abigail" width=30% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Abigail Goñe |
+|----|-----|
+|Edad| 19 |
+|Residencia|Lima|
+|Enlace de la entrevista| [https://youtu.be/YrlhmgWoWvE](https://youtu.be/YrlhmgWoWvE)|
+
+</div>
+
+_Resumen:_ La entrevistada, quien realiza viajes laborales frecuentes, utilizó la plataforma para encontrar y organizar actividades rápidas y cercanas a su alojamiento, lo que le permitió optimizar sus pausas laborales. Valoró la capacidad de filtrar por actividades rápidas y por cercanía al hotel, así como la eficiencia de las opciones de reserva rápida y confirmación inmediata. Las recomendaciones se adaptaron bien a su agenda corporativa y destacó la utilidad de la facturación automática. Considera que la plataforma facilitó enormemente su organización personal de actividades y la califica como muy probable para usarla nuevamente en futuros viajes de trabajo, dada su eficiencia y la capacidad de aprovechar al máximo su tiempo.
+
+**Entrevista 8:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-eduardo.jpg" alt="entrevista-eduardo" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Eduardo Montalvo |
+|----|-----|
+|Edad| 25 |
+|Residencia|Lima|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=p_GXlAOSaIU](https://www.youtube.com/watch?v=p_GXlAOSaIU)|
+
+</div>
+
+_Resumen:_ El entrevistado realiza viajes laborales frecuentes dentro del país y dispone de poco tiempo libre. Usó la plataforma para encontrar actividades rápidas y cercanas a su alojamiento, logrando optimizar sus pausas laborales. Valoró la velocidad de reserva y la confirmación inmediata desde escritorio. Las recomendaciones se adaptaron a su agenda y la facturación automática fue especialmente útil para su trabajo. Considera que la plataforma facilitó la organización de actividades de forma eficiente. Planea volver a usarla y la recomendaría a otros viajeros de negocios. Sugiere integrar una agenda corporativa y reportes automáticos de gastos.
+
+---
+
+
+#### 6.3.3. Evaluación según heuristicas
+
+
+**UX Heuristics & Principles Evaluation**
+
+**Usability – Inclusive Design – Information Architecture**
+
+CARRERA: Ingeniería de Software
+
+CURSO: Desarrollo de Aplicaciones Open Source
+
+SECCIÓN: 4328
+
+PROFESORES: Juan Antonio Flores Moroco
+
+AUDITOR: Pandora
+
+CLIENTE(S): Luis Ramirez, Jose Guerrero, Leonardo Pilco, Adrian Yañez, Sebastian Arevalo, Diego Santiago, Eduardo Montalvo
+
+**SITE o APP A EVALUAR:**
+
+TravelMatch
+
+**TAREAS A EVALUAR:**
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Registro de un usuario nuevo
+
+2. Publicación de un post
+
+3. Búsqueda de un paquete turístico
+
+4. Reserva de un viaje
+
+5. Cancelación de una reserva
+
+6. Agregar ítems a un pedido
+
+7. Pago de un paquete turístico
+
+8. Gestión y recepción de reservas (para agencias)
+
+9. Publicación y actualización de tours/servicios (para agencias)
+
+10. Recepción de notificaciones (para agencias y usuarios)
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1. Compartir reservas entre usuarios
+
+2. Presentar ofertas de último minuto
+
+3. Administrar puntos del programa de fidelización de viajes
+
+4. Guardar “alerta de paquetes”
+
+5. Integración de agenda corporativa
+
+6. Reportes automáticos de gastos
+
+**ESCALA DE SEVERIDAD:**
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
+
+|**Nivel**|**Descripción**|
+| :- | :- |
+|**1**|**Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.**|
+|**2**|**Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release**|
+|**3**|**Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta.**|
+|**4**|**Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.**|
+
+**TABLA RESUMEN:**
+
+|**#**|**Problema**|**Escala de severidad**|**Heurística/Principio violada(o)**|
+| :- | :- | :- | :- |
+|**1**|**Necesidad de chat directo con agencias**|**2**|**Usability: Ayuda y documentación**|
+|**2**|**Falta de filtros de búsqueda adicionales**|**2**|**Usability: Flexibilidad y eficiencia de uso**|
+|**3**|**Ausencia de itinerarios sugeridos**|**2**|**Information Architecture: Is it findable?**|
+|**4**|**Poca cantidad de contenido visual**|**2**|**Inclusive Design: Proporciona experiencias comparables**|
+|**5**|**Falta de mapa interactivo para actividades cercanas**|**2**|**Information Architecture: Is it findable?**|
+|**6**|**Falta de integración de agenda corporativa y reportes automáticos de gastos**|**2**|**Usability: Flexibilidad y eficiencia de uso**|
+|**7**|**Necesidad de más características, como gráficos de ventas diarios/semanales/mensuales**|**2**|**Usability: Reconocimiento antes que recuerdo / Flexibilidad y eficiencia de uso**|
+|**8**|**Ausencia de alertas de notificación para confirmación de acciones**|**2**|**Usability: Visibilidad del estado del sistema**|
+|**9**|**Dificultad inicial para entender cómo agregar fotos y precios de tours (para agencias)**|**2**|**Usability: Consistencia y estándares / Reconocimiento antes que recuerdo**|
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1:** Necesidad de chat directo con agencias
+
+**Severidad:** 2
+
+**Heurística violada:** Usabilidad - Ayuda y documentación
+
+**Problema:**
+El entrevistado 1 sugiere la inclusión de un chat directo con las agencias, lo que indica que, a pesar de la información clara y las reseñas, existe un deseo de comunicación más inmediata y personalizada para resolver dudas o coordinar detalles que la plataforma actual no ofrece directamente. Esto podría mejorar la confianza y la eficiencia en la planificación de los viajes para algunos usuarios.
+
+**Recomendación:**
+Implementar una función de chat en vivo o mensajería directa entre usuarios y agencias dentro de la plataforma para facilitar la comunicación y resolución de consultas en tiempo real.
+
+**PROBLEMA #2:** Falta de filtros de búsqueda adicionales
+
+**Severidad:** 2
+
+**Heurística violada:** Usabilidad - Flexibilidad y eficiencia de uso
+
+**Problema:**
+El entrevistado 1 menciona la necesidad de incluir más filtros de búsqueda, lo que sugiere que los filtros actuales, aunque útiles, no son lo suficientemente granulares o variados para cubrir todas las necesidades o preferencias de los usuarios que buscan experiencias muy específicas.
+
+**Recomendación:**
+Ampliar las opciones de filtrado en la búsqueda, incluyendo categorías más detalladas, opciones de personalización (ej. tipo de comida, nivel de actividad física, etc.) o la posibilidad de combinar múltiples filtros para afinar los resultados.
+
+**PROBLEMA #3:** Ausencia de itinerarios sugeridos
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture - Is it findable?
+
+**Problema:**
+El entrevistado 2 sugiere la inclusión de itinerarios sugeridos, lo que indica que, si bien la plataforma ayuda a organizar y encontrar actividades, los usuarios podrían beneficiarse de estructuras o rutas predefinidas que les faciliten aún más la planificación, especialmente a quienes buscan experiencias completas sin tener que armar todo desde cero.
+
+**Recomendación:**
+Desarrollar y ofrecer itinerarios predefinidos o sugeridos basados en temáticas, duraciones o tipos de viajero, que incluyan una secuencia lógica de actividades y faciliten la decisión del usuario.
+
+**PROBLEMA #4:** Poca cantidad de contenido visual
+
+**Severidad:** 2
+
+**Heurística violada:** Inclusive Design - Proporciona experiencias comparables
+
+**Problema:**
+El entrevistado 2 menciona la necesidad de más contenido visual. Si bien la plataforma es funcional, una mayor riqueza visual podría mejorar la experiencia inmersiva del usuario, ayudándolo a tomar decisiones más informadas y a sentirse más conectado con la oferta.
+
+**Recomendación:**
+Aumentar la cantidad y calidad de las imágenes y videos de los tours y servicios, incluyendo vistas panorámicas, detalles de las actividades y testimonios visuales, para enriquecer la experiencia del usuario y proporcionar una mejor comprensión de lo que se ofrece.
+
+**PROBLEMA #5:** Falta de mapa interactivo para actividades cercanas
+
+**Severidad:** 2
+
+**Heurística violada:** Information Architecture - Is it findable?
+
+**Problema:**
+El entrevistado 3, un mochilero que improvisa, sugiere integrar un mapa interactivo para facilitar la exploración de actividades cercanas. Esto indica que la actual forma de visualizar o encontrar actividades no es tan eficiente para usuarios que priorizan la espontaneidad y la cercanía geográfica.
+
+**Recomendación:**
+Integrar un mapa interactivo que muestre la ubicación de las actividades y permita a los usuarios explorar opciones cercanas a su posición actual o a un punto de interés específico, facilitando la planificación espontánea.
+
+**PROBLEMA #6:** Falta de integración de agenda corporativa y reportes automáticos de gastos
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Flexibilidad y eficiencia de uso
+
+**Problema:**
+El entrevistado 4, un viajero de negocios, sugiere integrar una agenda corporativa y reportes automáticos de gastos. Esto indica una oportunidad para mejorar la utilidad de la plataforma para un segmento de usuarios que necesitan funcionalidades específicas para la gestión de viajes laborales, más allá de la simple reserva de actividades.
+
+**Recomendación:**
+Explorar la posibilidad de integrar funcionalidades específicas para viajes corporativos, como la sincronización con calendarios empresariales o la generación automática de informes de gastos, para atender las necesidades de este segmento de usuarios.
+
+**PROBLEMA #7:** Necesidad de más características, como gráficos de ventas diarios/semanales/mensuales
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Reconocimiento antes que recuerdo / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El entrevistado 5 menciona que la aplicación puede mejorar y que espera más características, como la visualización de una gráfica de la cantidad de ventas diarias en intervalos de una semana y mes. Esto indica una necesidad por parte de los usuarios (probablemente agencias o administradores) de herramientas de análisis y reporte más visuales e inmediatas.
+
+**Recomendación:**
+Desarrollar y añadir paneles de control o secciones de métricas con gráficos visuales que muestren datos relevantes como la cantidad de ventas por día, semana y mes, facilitando la comprensión y el seguimiento del rendimiento.
+
+**PROBLEMA #8:** Ausencia de alertas de notificación para confirmación de acciones
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema
+
+**Problema:**
+El entrevistado 5 comenta que le gustaría que haya alertas de notificación para cuando se realice alguna acción la aplicación le brinde una confirmación. Esto sugiere que el sistema actual no siempre proporciona una retroalimentación clara e inmediata sobre la finalización exitosa de ciertas operaciones, lo que puede generar incertidumbre en el usuario.
+
+**Recomendación:**
+Implementar notificaciones claras y visibles (ej. mensajes pop-up, banners) que confirmen al usuario la realización exitosa de una acción, como una reserva, una publicación, o la actualización de datos.
+
+**PROBLEMA #9:** Dificultad inicial para entender cómo agregar fotos y precios de tours (para agencias)
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Consistencia y estándares / Reconocimiento antes que recuerdo
+
+**Problema:**
+El entrevistado 7 (Luis Ramírez) menciona que al principio le tomó un poco entender cómo se agregaban las fotos y los precios. Aunque luego fue fácil, este punto inicial de dificultad sugiere que el proceso de carga de contenido podría ser más intuitivo o que la interfaz no sigue completamente los patrones esperados.
+
+**Recomendación:**
+Revisar la interfaz de usuario para la carga de fotos y precios para asegurar que sea más intuitiva y siga convenciones de diseño conocidas. Podría incluir mejoras en la denominación de campos, la disposición visual o la provisión de pequeñas guías o tooltips en los pasos iniciales.
 
  
 ## Capítulo VII: DevOps Practices 
@@ -3547,7 +3927,109 @@ StagePropósitoCompile ProjectVerifica que el código compila sin erroresValidat
 
 ### 7.2. Continuous Delivery
 #### 7.2.1. Tools and Practices.
+El Continuous Delivery (CD) nos ayuda a uutomatizar la entrega de versiones de nuestra aplicación, garantizando de que cada cambio sea validado de manera confiable. Dado al tipo de datos que se manjean, la automatización reduce el riesgo de errores en el proceso de despliegue.
+
+Para nuestra aplicación se ha utilizado las siguientes herramientas:
+
+- **Jenkins:** Encargado de manejar el pipeline definido en el JenkinsFile.
+- **Maven:** Se utilizó maven para poder manejar las dependecias y para la construcción de la parte backend del proyecto.
+- **SonarQube:** Esta herramienta nos permite analizar de manera estática el código. Asegura que la calidad y la seguridad de las pruebas sean viables antes del despliegue.
+- **Docker:** Garantiza que la aplicación pueda ser portable y reporducible en cualquier entorno. Nos permite desplegar las distintas partes de nuestro trabajo como el JEnkins, el SonarQube y la imagen generada.
+
 #### 7.2.2. Stages Deployment Pipeline Components.
+Establecemos nuestro pipeline para podrucir distintas etapas. Anteriormente se establecieron etapas como el checkstyle, que nos permitió verificar la correcta nomenclatura dentro del proyecto. Ahora se añadió la verificación de calidad por SonaQube y el despliegue de la imagen en Docker.
+
+```
+pipeline {
+    agent any
+
+    tools {
+        maven 'MAVEN_3_9_15'
+        jdk 'JAVA_HOME'
+    }
+
+    environment {
+
+            IMAGE_NAME = "travel-match"
+            TAG        = "${env.BUILD_NUMBER}"
+        }
+
+    stages {
+        stage('Compile Project') {
+            steps {
+                withMaven(maven: 'MAVEN_3_9_15') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Validate Checkstyle') {
+            steps {
+                withMaven(maven: 'MAVEN_3_9_15') {
+                    sh 'mvn checkstyle:check'
+                }
+            }
+        }
+
+        stage('Validate Unit Tests') {
+            steps {
+                withMaven(maven: 'MAVEN_3_9_15') {
+                    sh 'mvn test'
+                }
+            }
+        }
+
+        stage('Validate Test Coverage') {
+            steps {
+                withMaven(maven: 'MAVEN_3_9_15') {
+                    sh 'mvn jacoco:report'
+                }
+            }
+        }
+
+        stage('Package Application') {
+            steps {
+                withMaven(maven: 'MAVEN_3_9_15') {
+                    sh 'mvn package'
+                }
+            }
+        }
+
+        stage('SonarQube Analysis'){
+            steps{
+                withSonarQubeEnv('TravelSonarServer') {
+                    sh 'mvn clean verify sonar:sonar -Dsonar.projectkey=travelMatch -Dsonar.javascript.exclusions=**/*'
+                }
+
+                script {
+                    timeout(time:10, unit: 'MINUTES'){
+                        def qg = waitForQualityGate()
+
+                        if(qg.status != 'OK'){
+                            error "El pipeline se ha detenido porque no se superó el Quality Gate. Estado: ${qg.status}"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Construir Imagen Docker') {
+                    steps {
+                        script {
+                            echo "Iniciando la construcción de la imagen de Docker: ${IMAGE_NAME}:${TAG}"
+
+        					echo "Construyendo imagen híbrida/compatible con servidores de producción (AMD64)..."
+        					sh "docker buildx build --platform linux/amd64 -t ${IMAGE_NAME}:${TAG} --load ."
+        					sh "docker buildx build --platform linux/amd64 -t ${IMAGE_NAME}:latest --load ."
+
+                            echo "Imagen construida exitosamente."
+                        }
+                    }
+                }
+    }
+}
+```
+
 
 ## Capitulo VII: Experiment-Driven Development
 
