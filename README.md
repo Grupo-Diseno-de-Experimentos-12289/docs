@@ -4706,7 +4706,94 @@ Ambas herramientas ofrecen:
 
 #### 8.3.1. To-Be User Stories
 
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-01 |
+| **User** | Turista |
+| **Priority** | High |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Visualización de agencias verificadas con valoraciones y reseñas |
+| **Description** | Como turista, quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más en la experiencia antes de realizar una reserva. |
+| **Acceptance Criteria** | **Scenario 1:** Agencia verificada.<br><br>**GIVEN** que el turista ingresa al detalle de una experiencia.<br>**WHEN** visualiza el perfil de la agencia.<br>**THEN** el sistema mostrará insignia de verificación, rating promedio y reseñas de usuarios.<br><br>**Scenario 2:** Agencia no verificada.<br><br>**GIVEN** que el turista accede a una experiencia.<br>**WHEN** visualiza el perfil de la agencia.<br>**THEN** el sistema indicará que la agencia no está verificada. |
+
+---
+---
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-02 |
+| **User** | Turista |
+| **Priority** | High |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Implementación de filtros avanzados para búsqueda de experiencias |
+| **Description** | Como turista, quiero utilizar filtros avanzados para encontrar experiencias que coincidan con mis intereses, presupuesto y disponibilidad. |
+| **Acceptance Criteria** | **Scenario 1:** Filtros aplicados correctamente.<br><br>**GIVEN** que el usuario está en la pantalla de búsqueda.<br>**WHEN** aplica filtros por categoría, precio, duración, ubicación y valoración.<br>**THEN** el sistema mostrará resultados que cumplan los criterios seleccionados.<br><br>**Scenario 2:** Sin resultados.<br><br>**GIVEN** filtros muy restrictivos.<br>**WHEN** ejecuta la búsqueda.<br>**THEN** el sistema mostrará mensaje de “sin resultados disponibles”. |
+
+---
+---
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-03 |
+| **User** | Turista |
+| **Priority** | High |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Generación de itinerarios personalizados |
+| **Description** | Como turista, quiero recibir un itinerario personalizado según mis preferencias para optimizar la planificación de mi viaje. |
+| **Acceptance Criteria** | **Scenario 1:** Itinerario generado.<br><br>**GIVEN** que el turista ha ingresado sus preferencias de viaje.<br>**WHEN** solicita un itinerario.<br>**THEN** el sistema genera un plan con experiencias recomendadas.<br><br>**Scenario 2:** Datos insuficientes.<br><br>**GIVEN** que el usuario no ha completado sus preferencias.<br>**WHEN** solicita un itinerario.<br>**THEN** el sistema solicita completar información antes de generar resultados. |
+
+---
+---
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-04 |
+| **User** | Turista |
+| **Priority** | High |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Flujo simplificado de reserva |
+| **Description** | Como turista, quiero completar mi reserva en menos pasos para agilizar el proceso de compra. |
+| **Acceptance Criteria** | **Scenario 1:** Reserva exitosa.<br><br>**GIVEN** que el usuario selecciona una experiencia.<br>**WHEN** confirma los datos de reserva.<br>**THEN** el sistema completa la reserva y muestra confirmación.<br><br>**Scenario 2:** Datos incompletos.<br><br>**GIVEN** que faltan datos obligatorios.<br>**WHEN** intenta confirmar la reserva.<br>**THEN** el sistema solicita completar los campos requeridos. |
+
+---
+---
+
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-05 |
+| **User** | Turista |
+| **Priority** | Medium |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Visualización de disponibilidad y políticas de cancelación |
+| **Description** | Como turista, quiero ver la disponibilidad y políticas de cancelación antes de reservar para tomar decisiones informadas. |
+| **Acceptance Criteria** | **Scenario 1:** Información disponible.<br><br>**GIVEN** que el usuario consulta una experiencia.<br>**WHEN** abre el detalle.<br>**THEN** el sistema muestra disponibilidad y políticas de cancelación.<br><br>**Scenario 2:** Sin disponibilidad.<br><br>**GIVEN** que no hay cupos.<br>**WHEN** intenta reservar.<br>**THEN** el sistema indica no disponibilidad y sugiere alternativas. |
+
+---
+---
+
+| **Field** | **Value** |
+|------------|-----------|
+| **ID** | US-06 |
+| **User** | Viajero corporativo |
+| **Priority** | High |
+| **Epic** | EP02 – Búsqueda y Reserva |
+| **Title** | Recomendaciones personalizadas para viajeros corporativos |
+| **Description** | Como viajero corporativo, quiero recibir recomendaciones basadas en mi ubicación, intereses y horario para optimizar mi agenda laboral. |
+| **Acceptance Criteria** | **Scenario 1:** Recomendaciones personalizadas.<br><br>**GIVEN** que el usuario tiene perfil corporativo configurado.<br>**WHEN** accede a recomendaciones.<br>**THEN** el sistema muestra experiencias compatibles con su agenda.<br><br>**Scenario 2:** Sin perfil configurado.<br><br>**GIVEN** que no hay datos de usuario.<br>**WHEN** accede a recomendaciones.<br>**THEN** el sistema muestra recomendaciones generales y solicita completar perfil. |
+
 #### 8.3.2. To-Be Product Backlog
+
+
+| To-Be Product Backlog#Orden | Código | Título | Descripción | Story Point (1/2/3/5/8) |
+|-----------------------------|--------|--------|--------------|--------------------------|
+| 1 | US-01 | Visualización de agencias verificadas con valoraciones y reseñas | Como turista quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más en la experiencia antes de realizar una reserva. | 8 |
+| 2 | US-02 | Implementación de filtros avanzados para búsqueda de experiencias | Como turista quiero utilizar filtros avanzados para encontrar experiencias que coincidan con mis intereses, presupuesto y disponibilidad. | 8 |
+| 3 | US-03 | Generación de itinerarios personalizados | Como turista quiero recibir un itinerario personalizado según mis preferencias para optimizar la planificación de mi viaje. | 5 |
+| 4 | US-04 | Flujo simplificado de reserva | Como turista quiero completar mi reserva en menos pasos para agilizar el proceso de compra. | 5 |
+| 5 | US-05 | Disponibilidad y políticas de cancelación visibles | Como turista quiero ver la disponibilidad y políticas de cancelación antes de reservar para tomar decisiones informadas. | 3 |
+| 6 | US-06 | Recomendaciones personalizadas para viajeros corporativos | Como viajero corporativo quiero recibir recomendaciones según mi ubicación, intereses y horario para optimizar mi agenda laboral. | 5 |
 
 #### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle 
 ##### 8.3.3.1. To-Be Sprint Backlogs 
