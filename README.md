@@ -35,7 +35,7 @@
 |Jorge Enrique Guevara Tejada | U202316057|
 </div>
 
-<div align="center"> Junio 2026 </div>
+<div align="center"> Julio 2026 </div>
 
 <hr>
 
@@ -51,6 +51,8 @@ TP | 14/05/2026 |       Geronimo Quispe Pablo Antonio       | Documentación, pr
 TB2 | 14/06/2026 |      Piero Francesco Tenorio Medina       | Reducción de la documentacion. Desarrollo de la primera parte del capitulo 8.1.
 TB2 | 15/06/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  ,analisis y finalizacion del capitulo 8.2.5 y 8.2.6
 TB2 | 15/06/2026 |         Anyelo Bill Alejos jesus          | Realizacion  ,analisis y finalizacion del capitulo 8.2.3 y 8.2.4
+TF | 3/07/2026| Piero Francesco Tenorio Medina | Correccion de Errores en el Delivery, falta de pruebas.
+TF | 3/07/2026| Piero Francesco Tenorio Medina | Integracion de User Stories en la seccion de Experiments
 <hr>
 
 ## Project Report Collaboration Insights  
