@@ -2430,7 +2430,7 @@ Estrategia de colaboración empleada
 
 
 ### 5.3. Video About-the-Product
-n esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
+En esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
 
 El video incluye una descripción general de Travel Match, enfocándose en cómo nuestra plataforma conecta a turistas con agencias locales, facilitando la búsqueda, comparación y reserva de experiencias turísticas. Se presenta el proceso de uso de la aplicación, destacando la facilidad de navegación y la eficiencia en la gestión de viajes. Además, hemos incluido un testimonio positivo de un usuario que participó en nuestras entrevistas de validación, resaltando su experiencia favorable con la plataforma.
 
@@ -4046,7 +4046,33 @@ pipeline {
     }
 }
 ```
+#### Evidencias de lo Impelemntado
 
+##### Contenedores
+En la imagen podemos presenciar los contenedores de Jenkins y SonarQube desplegados dentro de Docker de escritorio.
+
+<img src="assets/delivery/docker1.png" alt="docker1">
+
+##### Jenkins
+Lo que se muestra en la imagen es la prueba de que se ha implementado el proyecto y se ha ejecutado dentro de Jenkins.
+
+<img src="assets/delivery/jenkins1.png" alt="docker1">
+
+
+Aqui podemos ver el ultimo intento del proyecto al ser ejecutado.
+
+<img src="assets/delivery/jenkins2.png" alt="docker2">
+
+
+##### Sonarqube
+Podemos ver que se ha probado la aplicacion en sonarqube.
+<img src="assets/delivery/sonarqube.png" alt="sonar">
+
+
+##### Imagenes
+Lo que se muestra es el despligue de nuestra imagen de proyecto como hemos configurado dentro del Pipeline.
+
+<img src="assets/delivery/docker2.png" alt="docker2">
 
 ## Capitulo VII: Experiment-Driven Development
 
@@ -4692,7 +4718,187 @@ Ambas herramientas ofrecen:
 
 #### 8.3.4. To-Be Validation Interviews 
 ##### 8.3.4.1. Diseño de Entrevistas. 
+Para realizar las entrevistas de validación, primero se han planteado 7 preguntas para cada segmento de acuerdo a lo que se quiere saber del usuario para así tener un análisis más enfocado.
+
+### Segmento 1: Agencias de turismo locales
+
+1. ¿Considera que la plataforma facilitó la gestión y recepción de reservas para su agencia?
+2. ¿Le resultó sencillo publicar y actualizar sus tours o servicios en la plataforma?
+3. ¿La visibilidad que obtuvo su agencia a través del producto cumplió con sus expectativas?
+4. ¿El sistema de notificaciones y alertas fue útil para gestionar a tiempo sus reservas?
+5. ¿Recomendaría el uso de esta plataforma a otras agencias de turismo? ¿Por qué?
+6. ¿Sintió que las herramientas de análisis y métricas le ayudaron a mejorar su oferta?
+7. ¿Qué tan satisfecho está con el soporte o atención brindada por la plataforma?
+
+### Segmento 2: Turistas nacionales e internacionales
+
+1. ¿Encontró fácilmente actividades o experiencias que se ajustaran a sus intereses y presupuesto?
+2. ¿La información presentada sobre los tours y agencias le generó confianza al reservar?
+3. ¿El proceso de reserva y pago fue rápido y libre de complicaciones?
+4. ¿Las recomendaciones personalizadas de la plataforma fueron relevantes para usted?
+5. ¿Qué tan satisfecho/a está con la experiencia general de uso de la plataforma?
+6. ¿Considera que la plataforma le ahorró tiempo en la planificación de su viaje?
+7. ¿Repetiría el uso de la plataforma para futuros viajes o la recomendaría a amigos?
+
+### Semento 3: Viajeros por trabajo (Turismo corporativo)
+
+1. ¿La plataforma le ayudó a encontrar actividades compatibles con sus horarios laborales?
+2. ¿Pudo aprovechar mejor su tiempo libre durante viajes de trabajo gracias a la plataforma?
+3. ¿Las opciones de reserva rápida y confirmación inmediata fueron satisfactorias?
+4. ¿Sintió que las recomendaciones se adaptaron a sus preferencias y necesidades corporativas?
+5. ¿La opción de generar comprobantes o facturas funcionó correctamente y fue útil?
+6. ¿Considera que la plataforma facilitó la organización de actividades para usted o su equipo?
+7. ¿Qué tan probable es que utilice nuevamente la plataforma en su próximo viaje de trabajo?
+
 ##### 8.3.4.2. Registro de Entrevistas. 
+
+**Entrevista 1:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-leo.jpg" alt="Entrevista Jose Guerrero" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Jose Guerrero |
+|----|-----|
+|Edad|24|
+|Residencia|San Miguel|
+|Segmento|Agencias de turismo locales|
+|Enlace de la entrevista| [https://youtu.be/US-9zURN3JY](https://youtu.be/US-9zURN3JY)|
+
+</div>
+
+_Resumen:_ José Guerrero mostró una satisfacción completa con la plataforma, respondiendo positivamente a todas las preguntas de validación. Destacó que la herramienta facilitó significativamente la gestión de reservas, permitiéndole captar más clientes y responder más rápido sin depender de canales tradicionales. Valoró especialmente la facilidad para publicar y actualizar tours, el aumento de visibilidad que les permitió llegar a un público más amplio, y el sistema de notificaciones en tiempo real que mejoró sus tiempos de respuesta. Las herramientas de análisis le ayudaron a entender mejor las preferencias de los turistas y ajustar su oferta, mientras que el soporte técnico recibió una calificación excelente por su rapidez y efectividad. José recomendaría la plataforma a otras agencias por ser una herramienta eficaz para aumentar visibilidad y facilitar el contacto directo con turistas, confirmando que el producto está generando valor real en su negocio.
+
+---
+
+**Entrevista 2:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-luis.png" alt="Entrevista Luis Ramirez" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Luis Ramirez |
+|----|-----|
+|Edad|23|
+|Residencia|San Miguel|
+|Segmento|Agencias de turismo locales|
+|Enlace de la entrevista| [https://youtu.be/pKZUF_4XPss](https://youtu.be/pKZUF_4XPss)|
+
+</div>
+
+_Resumen:_ El entrevistado mostró una respuesta muy positiva hacia la plataforma, aunque con algunas reservas menores debido a su experiencia en desarrollo. Destacó que la herramienta mejoró significativamente la organización de su trabajo al centralizar la gestión de reservas, superando el uso disperso de WhatsApp y correos. Aunque inicialmente tuvo una curva de aprendizaje para entender cómo agregar fotos y precios, después encontró el proceso sencillo. La plataforma cumplió sus expectativas de visibilidad, atrayendo varios clientes nuevos que antes solo llegaban por redes sociales, y valoró especialmente el sistema de notificaciones que les evitó perder reservas de último minuto. Luis recomendaría la plataforma por su practicidad y porque hace ver más profesional su agencia. Las herramientas de análisis aún representan un área de oportunidad para él, ya que está aprendiendo a usarlas, pero reconoce su utilidad para entender qué tours generan más interés. El soporte técnico recibió una calificación satisfactoria por su rapidez al resolver problemas, confirmando que la plataforma aporta valor real especialmente para usuarios menos experimentados en el sector.
+
+---
+
+<!-- Segmento objetivo 2: TURISTAS NACIONALES E INTERNACIONALES -->
+
+**Entrevista 4:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-adrian.png" alt="entrevista-adrian" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Adrian Yañez Mendez |
+|----|-----|
+|Edad|20|
+|Residencia|Lima|
+|Segmento|Turista Nacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=9PeHOlGE6K8](https://www.youtube.com/watch?v=9PeHOlGE6K8)|
+
+</div>
+
+_Resumen:_ El entrevistado organiza sus viajes con anticipación, priorizando experiencias personalizadas como tours culturales y fotografía. Encontró fácilmente opciones que se ajustaban a su presupuesto gracias a los filtros. Valoró la confianza que le generó la información clara y las reseñas. Destacó la rapidez del proceso de reserva desde la plataforma de escritorio y la utilidad de las recomendaciones personalizadas. Afirmó que le ahorró tiempo en la planificación y se mostró muy satisfecho con la experiencia general. Repetiría el uso y la recomendaría por su practicidad. Sugiere incluir un chat directo con las agencias y más filtros de búsqueda.
+
+---
+
+**Entrevista 5:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-sebastian.png" alt="entrevista-sebastian" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Sebastian Arevalo Torres |
+|----|-----|
+|Edad|23|
+|Residencia|Chile|
+|Segmento|Turista Internacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=yZrnMb7zTxI](https://www.youtube.com/watch?v=yZrnMb7zTxI)|
+
+</div>
+
+_Resumen:_ El entrevistado busca experiencias auténticas y fuera del turismo convencional, como actividades culturales y gastronómicas. Usó la plataforma para comparar precios y duraciones fácilmente, lo que considera esencial. Encontró la información confiable y valoró especialmente las reseñas de otros viajeros. Las recomendaciones personalizadas fueron relevantes y le permitieron organizarse sin complicaciones desde su laptop. Quedó satisfecho con la experiencia y resaltó el ahorro de tiempo. Recomendaría la plataforma a otros viajeros independientes. Como mejora, sugiere itinerarios sugeridos y más contenido visual.
+
+---
+
+**Entrevista 6:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-diego.png" alt="entrevista-diego" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Diego Santiago Lima |
+|----|-----|
+|Edad|21|
+|Residencia|Arequipa|
+|Segmento|Turista Nacional|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=ezpu8HV7a0I](https://www.youtube.com/watch?v=ezpu8HV7a0I)|
+
+</div>
+
+_Resumen:_ El entrevistado viaja como mochilero, improvisando sobre la marcha. Usó TravelMatch desde escritorio para encontrar actividades económicas y culturales, sin necesidad de itinerario fijo. Apreció poder comparar precios y ver valoraciones de otros mochileros. La información le generó confianza y destacó la utilidad de las recomendaciones personalizadas según ubicación. Considera que la plataforma le ahorró tiempo en cada destino. Repetiría el uso y la recomendaría a quienes viajan de forma espontánea. Sugiere integrar un mapa interactivo para facilitar la exploración de actividades cercanas.
+
+
+<!-- Segmento objetivo 3: TURISTAS CORPORATIVOS  falta la entrevista 7 y 9-->
+---
+
+**Entrevista 7:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-abigail2.png" alt="entrevista-abigail" width=30% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Abigail Goñe |
+|----|-----|
+|Edad| 19 |
+|Residencia|Lima|
+|Enlace de la entrevista| [https://youtu.be/YrlhmgWoWvE](https://youtu.be/YrlhmgWoWvE)|
+
+</div>
+
+_Resumen:_ La entrevistada, quien realiza viajes laborales frecuentes, utilizó la plataforma para encontrar y organizar actividades rápidas y cercanas a su alojamiento, lo que le permitió optimizar sus pausas laborales. Valoró la capacidad de filtrar por actividades rápidas y por cercanía al hotel, así como la eficiencia de las opciones de reserva rápida y confirmación inmediata. Las recomendaciones se adaptaron bien a su agenda corporativa y destacó la utilidad de la facturación automática. Considera que la plataforma facilitó enormemente su organización personal de actividades y la califica como muy probable para usarla nuevamente en futuros viajes de trabajo, dada su eficiencia y la capacidad de aprovechar al máximo su tiempo.
+
+**Entrevista 8:**
+
+<p align="center">
+    <img src="assets/entrevistas/entrevista-eduardo.jpg" alt="entrevista-eduardo" width=60% >
+</p>
+
+<div align="center">
+
+| Entrevistado | Eduardo Montalvo |
+|----|-----|
+|Edad| 25 |
+|Residencia|Lima|
+|Enlace de la entrevista| [https://www.youtube.com/watch?v=p_GXlAOSaIU](https://www.youtube.com/watch?v=p_GXlAOSaIU)|
+
+</div>
+
+_Resumen:_ El entrevistado realiza viajes laborales frecuentes dentro del país y dispone de poco tiempo libre. Usó la plataforma para encontrar actividades rápidas y cercanas a su alojamiento, logrando optimizar sus pausas laborales. Valoró la velocidad de reserva y la confirmación inmediata desde escritorio. Las recomendaciones se adaptaron a su agenda y la facturación automática fue especialmente útil para su trabajo. Considera que la plataforma facilitó la organización de actividades de forma eficiente. Planea volver a usarla y la recomendaría a otros viajeros de negocios. Sugiere integrar una agenda corporativa y reportes automáticos de gastos.
+
+---
+
 
 ### 8.4. Experiment Aftermath & Analysis 
 #### 8.4.1. Analysis and Interpretation of Results 
@@ -4703,6 +4909,19 @@ Ambas herramientas ofrecen:
 
 ### 8.6. To-Be Software Platform Pre-launch 
 ##### 8.6.1. About-the-Product Intro Video
+En esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
+
+El video incluye una descripción general de Travel Match, enfocándose en cómo nuestra plataforma conecta a turistas con agencias locales, facilitando la búsqueda, comparación y reserva de experiencias turísticas. Se presenta el proceso de uso de la aplicación, destacando la facilidad de navegación y la eficiencia en la gestión de viajes. Además, hemos incluido un testimonio positivo de un usuario que participó en nuestras entrevistas de validación, resaltando su experiencia favorable con la plataforma.
+
+<p align="center">
+    <img src="assets/images/about-the-product.png" alt="About The Product" width=60% >
+</p>
+
+- URL en Microsoft Stream: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202323270_upc_edu_pe/EdUp0DAimbJJqBXb20Iorl0B-SvwXoGJ4HidDpyC_jcd_g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=wDMOaB
+
+- URL en YouTube (para incrustar en Landing Page): https://youtu.be/zy340YfRT58
+
+- Duración del Video: [00:02:57]
 
 ## Conclusiones
 
