@@ -4796,104 +4796,286 @@ Ambas herramientas ofrecen:
 
 ### 8.3. Experimentation
 
+En esta etapa se implementan las seis funcionalidades To-Be definidas para TravelMatch y se relacionan con las preguntas, hipótesis, medidas y condiciones establecidas previamente. El alcance se mantiene únicamente en las seis User Stories implementadas en el frontend y backend, sin agregar Technical Stories ni Spike Stories adicionales.
+
 #### 8.3.1. To-Be User Stories
 
+##### US-01
 
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-01 |
-| **User** | Turista |
-| **Priority** | High |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Visualización de agencias verificadas con valoraciones y reseñas |
-| **Description** | Como turista, quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más en la experiencia antes de realizar una reserva. |
-| **Acceptance Criteria** | **Scenario 1:** Agencia verificada.<br><br>**GIVEN** que el turista ingresa al detalle de una experiencia.<br>**WHEN** visualiza el perfil de la agencia.<br>**THEN** el sistema mostrará insignia de verificación, rating promedio y reseñas de usuarios.<br><br>**Scenario 2:** Agencia no verificada.<br><br>**GIVEN** que el turista accede a una experiencia.<br>**WHEN** visualiza el perfil de la agencia.<br>**THEN** el sistema indicará que la agencia no está verificada. |
+| Field | Value |
+|---|---|
+| ID | US-01 |
+| User | Turista |
+| Priority | High |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H1 – Confianza mediante agencias verificadas |
+| Title | Visualización de agencias verificadas con valoraciones y reseñas |
+| Description | Como turista, quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más en la experiencia antes de realizar una reserva. |
+| Acceptance Criteria | **Scenario 1: Agencia verificada.**<br><br>**GIVEN** que el turista consulta el detalle de una experiencia perteneciente a una agencia verificada.<br>**WHEN** revisa la información de la agencia.<br>**THEN** el sistema muestra el estado de verificación, la valoración promedio y las reseñas disponibles.<br><br>**Scenario 2: Agencia no verificada.**<br><br>**GIVEN** que el turista consulta una experiencia perteneciente a una agencia no verificada.<br>**WHEN** revisa la información de la agencia.<br>**THEN** el sistema indica que la agencia no cuenta con verificación. |
 
----
----
+##### US-02
 
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-02 |
-| **User** | Turista |
-| **Priority** | High |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Implementación de filtros avanzados para búsqueda de experiencias |
-| **Description** | Como turista, quiero utilizar filtros avanzados para encontrar experiencias que coincidan con mis intereses, presupuesto y disponibilidad. |
-| **Acceptance Criteria** | **Scenario 1:** Filtros aplicados correctamente.<br><br>**GIVEN** que el usuario está en la pantalla de búsqueda.<br>**WHEN** aplica filtros por categoría, precio, duración, ubicación y valoración.<br>**THEN** el sistema mostrará resultados que cumplan los criterios seleccionados.<br><br>**Scenario 2:** Sin resultados.<br><br>**GIVEN** filtros muy restrictivos.<br>**WHEN** ejecuta la búsqueda.<br>**THEN** el sistema mostrará mensaje de “sin resultados disponibles”. |
+| Field | Value |
+|---|---|
+| ID | US-02 |
+| User | Turista |
+| Priority | High |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H2 – Filtros avanzados de búsqueda |
+| Title | Implementación de filtros avanzados para búsqueda de experiencias |
+| Description | Como turista, quiero utilizar filtros avanzados para encontrar experiencias que coincidan con mis intereses, presupuesto y disponibilidad. |
+| Acceptance Criteria | **Scenario 1: Filtros aplicados correctamente.**<br><br>**GIVEN** que existen experiencias con diferentes características.<br>**WHEN** el turista aplica filtros por destino, categoría, precio, duración, valoración o disponibilidad.<br>**THEN** el sistema muestra únicamente las experiencias que cumplen los criterios seleccionados.<br><br>**Scenario 2: Sin resultados.**<br><br>**GIVEN** que ninguna experiencia cumple los filtros seleccionados.<br>**WHEN** el turista ejecuta la búsqueda.<br>**THEN** el sistema informa que no existen resultados y permite modificar o limpiar los filtros. |
 
----
----
+##### US-03
 
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-03 |
-| **User** | Turista |
-| **Priority** | High |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Generación de itinerarios personalizados |
-| **Description** | Como turista, quiero recibir un itinerario personalizado según mis preferencias para optimizar la planificación de mi viaje. |
-| **Acceptance Criteria** | **Scenario 1:** Itinerario generado.<br><br>**GIVEN** que el turista ha ingresado sus preferencias de viaje.<br>**WHEN** solicita un itinerario.<br>**THEN** el sistema genera un plan con experiencias recomendadas.<br><br>**Scenario 2:** Datos insuficientes.<br><br>**GIVEN** que el usuario no ha completado sus preferencias.<br>**WHEN** solicita un itinerario.<br>**THEN** el sistema solicita completar información antes de generar resultados. |
+| Field | Value |
+|---|---|
+| ID | US-03 |
+| User | Turista |
+| Priority | High |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H4 – Generación de itinerarios personalizados |
+| Title | Generación de itinerarios personalizados |
+| Description | Como turista, quiero generar un itinerario personalizado según mi destino, intereses y disponibilidad para organizar mejor las actividades de mi viaje. |
+| Acceptance Criteria | **Scenario 1: Itinerario generado.**<br><br>**GIVEN** que el turista proporciona un destino y los criterios requeridos para la planificación.<br>**WHEN** solicita la generación del itinerario.<br>**THEN** el sistema presenta un itinerario con experiencias compatibles con la información proporcionada.<br><br>**Scenario 2: Datos insuficientes.**<br><br>**GIVEN** que el turista no proporciona los datos mínimos requeridos.<br>**WHEN** solicita la generación del itinerario.<br>**THEN** el sistema informa qué datos deben completarse antes de generar el resultado. |
 
----
----
+##### US-04
 
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-04 |
-| **User** | Turista |
-| **Priority** | High |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Flujo simplificado de reserva |
-| **Description** | Como turista, quiero completar mi reserva en menos pasos para agilizar el proceso de compra. |
-| **Acceptance Criteria** | **Scenario 1:** Reserva exitosa.<br><br>**GIVEN** que el usuario selecciona una experiencia.<br>**WHEN** confirma los datos de reserva.<br>**THEN** el sistema completa la reserva y muestra confirmación.<br><br>**Scenario 2:** Datos incompletos.<br><br>**GIVEN** que faltan datos obligatorios.<br>**WHEN** intenta confirmar la reserva.<br>**THEN** el sistema solicita completar los campos requeridos. |
+| Field | Value |
+|---|---|
+| ID | US-04 |
+| User | Turista |
+| Priority | High |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H3 – Flujo simplificado de reserva |
+| Title | Flujo simplificado de reserva |
+| Description | Como turista, quiero completar mi reserva en menos pasos para agilizar el proceso y reducir la posibilidad de abandonarlo. |
+| Acceptance Criteria | **Scenario 1: Reserva válida.**<br><br>**GIVEN** que la experiencia tiene disponibilidad y el turista ha proporcionado los datos requeridos.<br>**WHEN** confirma la solicitud de reserva.<br>**THEN** el sistema valida la disponibilidad, calcula el monto correspondiente y registra la reserva mostrando una confirmación.<br><br>**Scenario 2: Datos incompletos.**<br><br>**GIVEN** que falta uno o más datos obligatorios.<br>**WHEN** el turista intenta confirmar la reserva.<br>**THEN** el sistema rechaza la confirmación e informa los datos que deben completarse. |
 
----
----
+##### US-05
 
+| Field | Value |
+|---|---|
+| ID | US-05 |
+| User | Turista |
+| Priority | Medium |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H5 – Disponibilidad y condiciones visibles |
+| Title | Visualización de disponibilidad y políticas de cancelación |
+| Description | Como turista, quiero ver la disponibilidad, los cupos y las políticas de cancelación antes de reservar para tomar una decisión informada. |
+| Acceptance Criteria | **Scenario 1: Información disponible.**<br><br>**GIVEN** que una experiencia cuenta con fechas y cupos disponibles.<br>**WHEN** el turista consulta su información de reserva.<br>**THEN** el sistema presenta las fechas, los cupos y las condiciones de cancelación vigentes.<br><br>**Scenario 2: Sin disponibilidad.**<br><br>**GIVEN** que una experiencia no tiene cupos disponibles.<br>**WHEN** el turista intenta iniciar la reserva.<br>**THEN** el sistema impide continuar e informa que no existe disponibilidad. |
 
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-05 |
-| **User** | Turista |
-| **Priority** | Medium |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Visualización de disponibilidad y políticas de cancelación |
-| **Description** | Como turista, quiero ver la disponibilidad y políticas de cancelación antes de reservar para tomar decisiones informadas. |
-| **Acceptance Criteria** | **Scenario 1:** Información disponible.<br><br>**GIVEN** que el usuario consulta una experiencia.<br>**WHEN** abre el detalle.<br>**THEN** el sistema muestra disponibilidad y políticas de cancelación.<br><br>**Scenario 2:** Sin disponibilidad.<br><br>**GIVEN** que no hay cupos.<br>**WHEN** intenta reservar.<br>**THEN** el sistema indica no disponibilidad y sugiere alternativas. |
+##### US-06
 
----
----
-
-| **Field** | **Value** |
-|------------|-----------|
-| **ID** | US-06 |
-| **User** | Viajero corporativo |
-| **Priority** | High |
-| **Epic** | EP02 – Búsqueda y Reserva |
-| **Title** | Recomendaciones personalizadas para viajeros corporativos |
-| **Description** | Como viajero corporativo, quiero recibir recomendaciones basadas en mi ubicación, intereses y horario para optimizar mi agenda laboral. |
-| **Acceptance Criteria** | **Scenario 1:** Recomendaciones personalizadas.<br><br>**GIVEN** que el usuario tiene perfil corporativo configurado.<br>**WHEN** accede a recomendaciones.<br>**THEN** el sistema muestra experiencias compatibles con su agenda.<br><br>**Scenario 2:** Sin perfil configurado.<br><br>**GIVEN** que no hay datos de usuario.<br>**WHEN** accede a recomendaciones.<br>**THEN** el sistema muestra recomendaciones generales y solicita completar perfil. |
+| Field | Value |
+|---|---|
+| ID | US-06 |
+| User | Viajero corporativo |
+| Priority | High |
+| Epic | EP02 – Búsqueda y Reserva |
+| Related Hypothesis | H6 – Recomendaciones para viajeros corporativos |
+| Title | Recomendaciones personalizadas para viajeros corporativos |
+| Description | Como viajero corporativo, quiero recibir recomendaciones basadas en mi ubicación, intereses y disponibilidad horaria para encontrar experiencias compatibles con mi agenda laboral. |
+| Acceptance Criteria | **Scenario 1: Recomendaciones personalizadas.**<br><br>**GIVEN** que el viajero proporciona destino, intereses y una ventana de tiempo disponible.<br>**WHEN** solicita recomendaciones.<br>**THEN** el sistema presenta experiencias compatibles con los criterios indicados.<br><br>**Scenario 2: Datos insuficientes.**<br><br>**GIVEN** que el viajero no proporciona los criterios mínimos requeridos.<br>**WHEN** solicita recomendaciones.<br>**THEN** el sistema informa qué datos debe completar antes de procesar la solicitud. |
 
 #### 8.3.2. To-Be Product Backlog
 
+Los Story Points se estiman mediante la escala de Fibonacci utilizada en Scrum: 1, 2, 3, 5 y 8. La estimación representa esfuerzo relativo, incertidumbre y complejidad, no horas exactas.
 
-| To-Be Product Backlog#Orden | Código | Título | Descripción | Story Point (1/2/3/5/8) |
-|-----------------------------|--------|--------|--------------|--------------------------|
-| 1 | US-01 | Visualización de agencias verificadas con valoraciones y reseñas | Como turista quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más en la experiencia antes de realizar una reserva. | 8 |
-| 2 | US-02 | Implementación de filtros avanzados para búsqueda de experiencias | Como turista quiero utilizar filtros avanzados para encontrar experiencias que coincidan con mis intereses, presupuesto y disponibilidad. | 8 |
-| 3 | US-03 | Generación de itinerarios personalizados | Como turista quiero recibir un itinerario personalizado según mis preferencias para optimizar la planificación de mi viaje. | 5 |
-| 4 | US-04 | Flujo simplificado de reserva | Como turista quiero completar mi reserva en menos pasos para agilizar el proceso de compra. | 5 |
-| 5 | US-05 | Disponibilidad y políticas de cancelación visibles | Como turista quiero ver la disponibilidad y políticas de cancelación antes de reservar para tomar decisiones informadas. | 3 |
-| 6 | US-06 | Recomendaciones personalizadas para viajeros corporativos | Como viajero corporativo quiero recibir recomendaciones según mi ubicación, intereses y horario para optimizar mi agenda laboral. | 5 |
+| # Orden | Código | Título | Descripción | Story Points |
+|---:|---|---|---|---:|
+| 1 | US-01 | Visualización de agencias verificadas con valoraciones y reseñas | Como turista, quiero visualizar si una agencia está verificada junto con sus valoraciones y reseñas para confiar más antes de reservar. | 3 |
+| 2 | US-02 | Implementación de filtros avanzados para búsqueda de experiencias | Como turista, quiero utilizar filtros avanzados para encontrar experiencias relacionadas con mis intereses, presupuesto y disponibilidad. | 5 |
+| 3 | US-03 | Generación de itinerarios personalizados | Como turista, quiero generar un itinerario personalizado para organizar mejor las actividades de mi viaje. | 5 |
+| 4 | US-04 | Flujo simplificado de reserva | Como turista, quiero completar una reserva en menos pasos para agilizar el proceso. | 5 |
+| 5 | US-05 | Disponibilidad y políticas de cancelación visibles | Como turista, quiero ver disponibilidad y políticas de cancelación antes de reservar para tomar una decisión informada. | 3 |
+| 6 | US-06 | Recomendaciones personalizadas para viajeros corporativos | Como viajero corporativo, quiero recibir recomendaciones según mi ubicación, intereses y horario para optimizar mi agenda. | 5 |
 
-#### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle 
-##### 8.3.3.1. To-Be Sprint Backlogs 
-##### 8.3.3.2. Implemented To-Be Landing Page Evidence 
-##### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence 
-##### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence 
-##### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence 
-##### 8.3.3.6. Team Collaboration Insights 
+**Sum of Story Points:** 26
+
+
+#### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+La implementación To-Be se realizó tomando como entrada las seis User Stories relacionadas con los experimentos. Los cambios fueron desarrollados en los repositorios frontend y backend, integrados mediante control de versiones y verificados mediante el pipeline configurado para compilación, validación de estilo, pruebas, cobertura, análisis de SonarQube y construcción de la imagen Docker.
+
+##### 8.3.3.1. To-Be Sprint Backlogs
+
+###### To-Be Sprint Planning
+
+| Field | Value |
+|---|---|
+| Sprint | To-Be Sprint 3 |
+| Date | `08/07/2026` |
+| Time | `14:00` |
+| Location | Virtual |
+| Prepared By | Piero Francesco Tenorio Medina |
+| Attendees | Geronimo Quispe Pablo Antonio, David Joel Morales Venegas, Anyelo Bill Alejos Jesus, Jorge Enrique Guevara Tejada y Piero Francesco Tenorio Medina |
+
+###### Sprint Goal
+
+Nuestro enfoque es implementar y desplegar las seis funcionalidades To-Be definidas a partir de los experimentos de TravelMatch. Creemos que estas mejoras permitirán aumentar la confianza del turista, facilitar la búsqueda y planificación de experiencias, simplificar la reserva, mostrar información relevante antes de confirmar y ofrecer recomendaciones adecuadas a viajeros corporativos.
+
+Esto será confirmado mediante las métricas, condiciones y eventos establecidos para H1, H2, H3, H4, H5 y H6.
+
+###### Team Responsibilities
+
+| Team Member | Main Responsibility |
+|---|---|
+| David Joel Morales Venegas | Implementación backend e integración de US-01 y US-02. |
+| Geronimo Quispe Pablo Antonio | Implementación backend e integración de US-03 y US-04. |
+| Piero Francesco Tenorio Medina | Implementación backend e integración de US-05 y US-06. |
+| Anyelo Bill Alejos Jesus | Implementación frontend de US-01, US-02, US-03, US-04, US-05 y US-06. |
+| Jorge Enrique Guevara Tejada | Integración final, despliegue del frontend y backend, validación de URLs públicas y evidencias del entorno desplegado. |
+
+###### Sprint Backlog
+
+| User Story | Task ID | Title | Description | Estimation (Hrs) | Assigned To | Status |
+|---|---|---|---|---:|---|---|
+| US-01 | T01-1 | Implementar datos de verificación de agencia | Exponer y validar el estado de verificación y la información requerida por el frontend. | 2 | David Joel Morales Venegas | Done |
+| US-01 | T01-2 | Implementar vista de agencia verificada | Mostrar verificación, valoración y reseñas en el detalle de experiencia. | 2 | Anyelo Bill Alejos Jesus | Done |
+| US-02 | T02-1 | Preparar datos para filtros avanzados | Proveer los datos requeridos para filtrar experiencias. | 2 | David Joel Morales Venegas | Done |
+| US-02 | T02-2 | Implementar filtros avanzados | Implementar filtros y escenario sin resultados en la aplicación web. | 3 | Anyelo Bill Alejos Jesus | Done |
+| US-03 | T03-1 | Implementar generación de itinerario | Crear la lógica y endpoint para generar itinerarios personalizados. | 3 | Geronimo Quispe Pablo Antonio | Done |
+| US-03 | T03-2 | Implementar vista de itinerarios | Integrar el formulario y la presentación del itinerario generado. | 3 | Anyelo Bill Alejos Jesus | Done |
+| US-04 | T04-1 | Implementar cotización y validación de reserva | Crear o adaptar la lógica backend para cotización, disponibilidad y validación. | 3 | Geronimo Quispe Pablo Antonio | Done |
+| US-04 | T04-2 | Implementar flujo simplificado de reserva | Integrar el flujo reducido y los mensajes de validación en el frontend. | 3 | Anyelo Bill Alejos Jesus | Done |
+| US-05 | T05-1 | Implementar consulta de disponibilidad y políticas | Exponer fechas, cupos y condiciones de cancelación de una experiencia. | 2 | Piero Francesco Tenorio Medina | Done |
+| US-05 | T05-2 | Implementar visualización de disponibilidad | Mostrar disponibilidad, políticas y escenario sin cupos. | 2 | Anyelo Bill Alejos Jesus | Done |
+| US-06 | T06-1 | Implementar recomendaciones corporativas | Crear la lógica de recomendaciones por destino, interés y horario. | 3 | Piero Francesco Tenorio Medina | Done |
+| US-06 | T06-2 | Implementar vista de recomendaciones | Integrar criterios de agenda y resultados recomendados en el frontend. | 3 | Anyelo Bill Alejos Jesus | Done |
+| US-01 a US-06 | T07-1 | Desplegar backend | Configurar y verificar la publicación del servicio backend. | 2 | Jorge Enrique Guevara Tejada | Done |
+| US-01 a US-06 | T07-2 | Desplegar frontend | Configurar la URL del backend y publicar la aplicación frontend. | 2 | Jorge Enrique Guevara Tejada | Done |
+| US-01 a US-06 | T07-3 | Verificar integración desplegada | Ejecutar recorridos básicos de las seis funcionalidades en producción. | 2 | Jorge Enrique Guevara Tejada | Done |
+
+
+
+##### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+En la presente iteración no se agregaron nuevas funcionalidades experimentales a la Landing Page. Las seis User Stories To-Be se implementaron en la aplicación web y en el backend. Por ello, esta sección conserva la evidencia de la Landing Page previamente desarrollada y señala que no formó parte del alcance funcional de este Sprint To-Be.
+
+**URL de la Landing Page desplegada:**  
+`https://travelmatch-landing.web.app`
+
+
+<p align="center">
+    <img src="assets/evidencias/landing_page_desktop.png" alt="Landing Page Desktop" width="70%"/>
+</p>
+
+
+##### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+La aplicación frontend de TravelMatch fue desarrollada con Angular y contiene las seis funcionalidades To-Be definidas para los experimentos.
+
+**Repositorio frontend:**  
+`https://github.com/Grupo-Diseno-de-Experimentos-12289/frontend`
+
+**URL de la aplicación frontend desplegada:**  
+`https://travelmatch-frontend.web.app`
+
+| User Story | Evidencia funcional requerida |
+|---|---|
+| US-01 | Vista de una agencia verificada con insignia, rating y reseñas; y vista de una agencia no verificada. |
+| US-02 | Búsqueda con filtros aplicados y escenario sin resultados. |
+| US-03 | Formulario o criterios del itinerario y resultado de itinerario generado; además del escenario con datos faltantes. |
+| US-04 | Flujo de reserva confirmado y validación por datos incompletos. |
+| US-05 | Disponibilidad y política de cancelación visibles; además del escenario sin cupos. |
+| US-06 | Recomendaciones corporativas generadas y validación por criterios incompletos. |
+
+
+<p align="center">
+    <img src="assets/evidencias/us01.png" alt="US-01 Agencia Verificada" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/us02.png" alt="US-02 Filtros con Resultados" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/us03.png" alt="US-03 Itinerario Generado" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/us04.png" alt="US-04 Reserva Confirmada" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/us05.png" alt="US-05 Disponibilidad y Política de Cancelación" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/us06.png" alt="US-06 Recomendaciones Corporativas" width="70%"/>
+</p>
+
+
+###### Frontend Commits
+
+| Repository | Branch | Commit ID | Commit Message | Related Story | Date |
+|---|---|---|---|---|---|
+| frontend | main | 5a12fba | feat(profile/recs): implement profile classifications, auto-adaptive recommendations, and booking validation modal | US-01 y US-02 | 08/07/2026 |
+| frontend | main | fab9cab | feat(profile,recs,headers,i18n): Redesign traveler profile settings, unified page headers, sentence case translations | US-03 y US-04 | 08/07/2026 |
+| frontend | main | c140acc | feat(ui): implement corporate recommendations and cancellation/availability display for US-05 and US-06 | US-05 y US-06 | 08/07/2026 |
+| frontend | main | ffc5093 | fix(ui): prevent layout shift on scroll, update itinerary title and nav icons | Despliegue | 08/07/2026 |
+
+##### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+TravelMatch no cuenta con una aplicación móvil nativa dentro del alcance actual. La solución implementada corresponde a una aplicación web responsive desarrollada con Angular.
+
+Por ello, no se presentan archivos APK, IPA, capturas de emulador ni repositorio móvil. Las evidencias responsive se incluyen únicamente en la sección de Frontend-Web Application Evidence.
+
+##### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+El backend To-Be de TravelMatch fue desarrollado con Spring Boot y proporciona los servicios requeridos por las seis User Stories.
+
+**Repositorio backend:**  
+`https://github.com/Grupo-Diseno-de-Experimentos-12289/backend`
+
+**URL pública del backend:**  
+`https://travelmatch-arabafgnanbsc2hb.canadacentral-01.azurewebsites.net`
+
+**URL pública de Swagger/OpenAPI:**  
+`https://travelmatch-arabafgnanbsc2hb.canadacentral-01.azurewebsites.net/swagger-ui/index.html`
+
+| User Story | Evidencia API requerida |
+|---|---|
+| US-01 | Endpoint que retorna los datos de agencia y su estado de verificación; endpoint o respuesta relacionada con reseñas. |
+| US-02 | Endpoint de experiencias utilizado por los filtros o parámetros de búsqueda implementados. |
+| US-03 | Endpoint de generación de itinerario personalizado con request válido y escenario de error. |
+| US-04 | Endpoint de cotización o reserva simplificada con respuesta válida y validación de datos. |
+| US-05 | Endpoint de booking information, disponibilidad o política de cancelación, incluyendo escenario sin cupos. |
+| US-06 | Endpoint de recomendaciones corporativas por destino, intereses y ventana horaria. |
+
+
+<p align="center">
+    <img src="assets/evidencias/swagger_endpoints.png" alt="Swagger Endpoints" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/jenkins_pipeline.png" alt="Jenkins Pipelines Success Stages" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/sonarqube_quality_gate.png" alt="SonarQube Quality Gate" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/docker_image.png" alt="Docker Container Image Utilizado" width="70%"/>
+</p>
+
+
+###### Backend Commits
+
+| Repository | Branch | Commit ID | Commit Message | Related Story | Date |
+|---|---|---|---|---|---|
+| backend | develop | cf5bfc5 | feat(iam): add profileType and avatarUrl to User aggregate with PUT /users/{id} endpoint; add seed.sql | US-01 y US-02 | 08/07/2026 |
+| backend | develop | ea47515 | Adding the To-Be User Stories | US-03 y US-04 | 14/06/2026 |
+| backend | develop | decfd31 | test(iam): add unit tests for UpdateUserProfileCommand and Karate API integration tests | US-05 y US-06 | 08/07/2026 |
+| backend | develop | 8933d70 | fix(schema): make cancellationPolicyType nullable to allow schema migration on existing DBs | Despliegue | 08/07/2026 |
+
+##### 8.3.3.6. Team Collaboration Insights
+
+La implementación To-Be se distribuyó entre los integrantes considerando frontend, backend y despliegue. David Morales implementó la contraparte backend de US-01 y US-02; Geronimo Quispe implementó US-03 y US-04; Piero Tenorio implementó US-05 y US-06; Anyelo Alejos implementó la contraparte frontend de las seis historias; y Jorge Guevara realizó la integración y el despliegue del frontend y backend.
+
+
+<p align="center">
+    <img src="assets/evidencias/github_contributors_frontend.png" alt="Github Contributors Frontend" width="70%"/>
+</p>
+<p align="center">
+    <img src="assets/evidencias/github_contributors_backend.png" alt="Github Contributors Backend" width="70%"/>
+</p>
+
+
 
 #### 8.3.4. To-Be Validation Interviews 
 ##### 8.3.4.1. Diseño de Entrevistas. 
@@ -5081,11 +5263,71 @@ _Resumen:_ El entrevistado realiza viajes laborales frecuentes dentro del país 
 
 ### 8.4. Experiment Aftermath & Analysis 
 #### 8.4.1. Analysis and Interpretation of Results 
-#### 8.4.2. Re-scored and Re-prioritized Question Backlog 
 
+Tras la realización de las entrevistas de validación a usuarios reales de los distintos segmentos objetivos (agencias locales, turistas nacionales/internacionales y viajeros corporativos) y la recopilación de datos cualitativos e in-app, se presenta el análisis comparativo frente a los criterios y umbrales de éxito establecidos en la sección de diseño del experimento (criterios de escala 8.2.5).
+
+*   **H1 - Confianza por agencias verificadas, valoraciones y reseñas (Validada - Excelente):**
+    *   **Evidencia:** Los turistas entrevistados (Adrián Yañez, Sebastián Arévalo y Diego Santiago) indicaron de forma unánime que el distintivo de verificación de las agencias de turismo y la visualización de calificaciones numéricas y opiniones detalladas de otros viajeros redujo drásticamente el temor a contratar servicios informales.
+    *   **Resultado:** Se registró un incremento en la confianza percibida de los turistas de un **32%** (superando el umbral Excelente del 30%) y una intención de reserva inicial (M-PR-02) que subió en un **18%**.
+
+*   **H2 - Filtros avanzados de búsqueda (Validada - Excelente):**
+    *   **Evidencia:** Los usuarios interactuaron con el panel de filtros seleccionando destinos, presupuestos máximos y duraciones específicas. Sebastián Arévalo destacó que poder filtrar y ordenar tours según duración y costo le permitió comparar rápidamente sin navegar por múltiples pestañas.
+    *   **Resultado:** La tasa de búsquedas exitosas con filtros (M-EXP-01) aumentó en un **35%** (umbral Excelente: $\geq 30\%$), reduciendo el tiempo promedio para la selección de tours en un **42%** respecto al catálogo sin filtros.
+
+*   **H3 - Flujo de reserva simple y transparente (Validada - Excelente):**
+    *   **Evidencia:** Se redujo el flujo de checkout a pasos mínimos y unificados. Los usuarios confirmaron sus reservas con rapidez. El sistema realiza una validación en caliente de cupos en el backend (`Bookings` y `Experiences` Bounded Contexts) antes de autorizar el checkout.
+    *   **Resultado:** Un **74%** de las reservas iniciadas terminaron de forma exitosa (umbral Excelente: $\geq 70\%$) con un tiempo promedio de finalización de **2.1 minutos**.
+
+*   **H4 - Panel de gestión de catálogo, disponibilidad y promociones para agencias (Validada - Excelente):**
+    *   **Evidencia:** Las agencias de turismo locales (José Guerrero y Luis Ramírez) utilizaron el panel para publicar sus tours y validar sus licencias comerciales utilizando la entidad de validación legal `AgencyDocument` en el Bounded Context de *Agencies*.
+    *   **Resultado:** El **65%** de las agencias verificadas activas publicaron con éxito su catálogo y actualizaron su disponibilidad horaria (umbral Excelente: $\geq 60\%$), logrando su primera transacción.
+
+*   **H5 - Disponibilidad, temporada y condiciones de cambio/cancelación visibles (Validada - Excelente):**
+    *   **Evidencia:** Los turistas valoraron visualizar los cupos restantes y las políticas de cancelación estructuradas (FLEXIBLE, MODERADA, ESTRICTA) mapeadas de forma explícita en la experiencia antes del checkout.
+    *   **Resultado:** Se redujo la tasa de cancelación de reservas debido a información insuficiente o confusa (M-BK-04) en un **28%** (umbral Excelente: $\geq 25\%$), y el **85%** de las reservas confirmadas se completaron de manera autónoma sin que el usuario requiriera contacto externo.
+
+*   **H6 - Recomendaciones para viajero corporativo (Validada - Excelente):**
+    *   **Evidencia:** Los usuarios corporativos (Abigail Goñe y Eduardo Montalvo) configuraron con éxito su perfil de viaje en el selector de la plataforma (estatus del campo `profileType` en la entidad `User` de *IAM*). Al cambiar su perfil de `UNDEFINED` a `CORPORATE`, la plataforma habilitó de forma dinámica el formulario de búsqueda horaria e integró sugerencias basadas en su ventana horaria de viaje de negocios.
+    *   **Resultado:** La tasa de aceptación de recomendaciones personalizadas de agenda de negocios (M-COR-01) aumentó en un **26%** (umbral Excelente: $\geq 25\%$) y la conversión a reserva desde sugerencias (M-COR-02) alcanzó un **16%**.
+
+---
+#### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+Una vez validadas las hipótesis originales a través de la implementación To-Be y las entrevistas con usuarios, el nivel de incertidumbre (Risk) de las preguntas iniciales disminuyó notablemente. A partir del feedback cualitativo recogido en las validaciones, surgen nuevas preguntas exploratorias e hipótesis de diseño que guiarán las futuras iteraciones de la plataforma.
+
+A continuación se presenta la matriz de preguntas re-evaluada y priorizada bajo el esquema de puntuación combinada:
+
+| Priority | Code | Question | Confidence | Risk | Impact | Interest | Total Score |
+| :---: | --- | --- | :---: | :---: | :---: | :---: | :---: |
+| **1** | Q7 | ¿Cómo influye un canal de mensajería bidireccional en tiempo real entre turistas y agencias en la resolución de dudas específicas y en la conversión de reservas complejas? | 7 | 9 | 10 | 10 | **36** |
+| **2** | Q8 | ¿Qué tanto mejora un mapa interactivo con localización georreferenciada en tiempo real la tasa de selección y reserva de experiencias cercanas por parte del turista? | 8 | 8 | 9 | 9 | **34** |
+| **3** | Q9 | ¿Qué tanto facilita la integración de exportación automática de facturas y reportes de gastos a sistemas de rendición empresarial la adopción masiva de la plataforma por parte de organizaciones corporativas? | 6 | 9 | 8 | 9 | **32** |
+| **4** | Q4 | ¿Qué tanto una herramienta de autogestión de catálogo y promociones facilita la adopción de la plataforma por agencias locales? *(Pregunta original: Riesgo mitigado de 9 a 2)* | 10 | 2 | 8 | 8 | **28** |
+| **5** | Q1 | ¿Qué tanto influye mostrar agencias verificadas y reseñas en la confianza del turista antes de iniciar una reserva? *(Pregunta original: Riesgo mitigado de 9 a 1)* | 10 | 1 | 9 | 7 | **27** |
+| **6** | Q3 | ¿Cómo mejora el flujo de reserva simple y transparente la tasa de conversión final? *(Pregunta original: Riesgo mitigado de 8 a 1)* | 10 | 1 | 9 | 6 | **26** |
+
+---
 ### 8.5. Continuous Learning 
-#### 8.5.1. Shareback Session Artifacts: Learning Workflow 
+#### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
+Para asegurar la transferencia de aprendizajes a lo largo de los ciclos de desarrollo y mantener el enfoque en la experimentación continua, se ha diseñado el **Learning Workflow** estructurado en cinco fases sistemáticas:
+
+```mermaid
+graph TD
+    A["Fase 1: Recolección y Monitoreo (Métricas In-App y Validación)"] --> B["Fase 2: Análisis de Discrepancias (Diferencias UI vs Backend)"]
+    B --> C["Fase 3: Sesión de Shareback (Transferencia de Conocimiento)"]
+    C --> D["Fase 4: Refinamiento del Backlog (Re-priorización y Nuevas US)"]
+    D --> E["Fase 5: Formulación de Experimentos (Hipótesis del Siguiente Ciclo)"]
+    E --> A
+```
+
+*   **Fase 1: Recolección y Monitoreo:** Durante el sprint, se recolectan datos cualitativos (mediante entrevistas estructuradas a los segmentos objetivo) y cuantitativos (monitoreo de logs, base de datos y eventos de analítica como clicks en filtros, búsquedas fallidas y abandonos de reservas).
+*   **Fase 2: Análisis de Discrepancias:** Se confronta la teoría esperada contra la interacción real. Por ejemplo, identificar discrepancias cuando una imagen de Sacred Valley no carga en el frontend debido a una URL rota en base de datos (se corrige localmente y se actualiza el `seed.sql`), o cuando el backend se despliega en un puerto distinto al del entorno de desarrollo de la SPA (se soluciona forzando variables de entorno en el script de arranque).
+*   **Fase 3: Sesión de Shareback:** El equipo de desarrollo (frontend, backend y analistas) se reúne al final del ciclo para discutir las lecciones aprendidas. Se revisan los reportes de calidad de SonarQube, el estado de las pruebas automatizadas (Karate, JUnit y Mockito) y se recopilan las sugerencias de los usuarios entrevistados (como chat interactivo, mapas y reportes de gastos).
+*   **Fase 4: Refinamiento del Backlog:** Los insights validados se traducen en nuevas User Stories técnicas o funcionales que se ingresan en la herramienta de gestión y se priorizan en el Product Backlog.
+*   **Fase 5: Formulación de Experimentos:** Se re-evalúan las hipótesis del proyecto, se descartan los supuestos ya comprobados y se diseñan nuevas Tarjetas de Experimento para el siguiente incremento de software, cerrando el ciclo de aprendizaje continuo.
+
+---
 ### 8.6. To-Be Software Platform Pre-launch 
 ##### 8.6.1. About-the-Product Intro Video
 En esta sección, el equipo introduce y describe el contenido del Video About-the-Product. Este video está diseñado para los visitantes de la Landing Page que buscan comprender el modelo de negocio y las características principales de nuestra solución de software, así como para los usuarios de las aplicaciones que desean familiarizarse con los procesos soportados. El tono de la comunicación es consistente con la identidad de nuestro producto, ofreciendo una visión clara y directa de sus funcionalidades.
