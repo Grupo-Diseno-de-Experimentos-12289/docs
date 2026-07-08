@@ -4076,7 +4076,7 @@ Lo que se muestra es el despligue de nuestra imagen de proyecto como hemos confi
 
 <img src="assets/delivery/docker2.png" alt="docker2">
 
-## Capitulo VII: Experiment-Driven Development
+## Capítulo VIII: Experiment-Driven Development
 
 ### 8.1. Experiment Planning
 #### 8.1.1. As-Is Summary.
@@ -4269,7 +4269,7 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
 | Belief | Los turistas prefieren reservar con agencias formales, pero no siempre saben cuáles son confiables. Implementar perfiles con verificación, valoraciones y reseñas visibles ayudaría a reducir la incertidumbre antes de reservar. |
 | Hypothesis | Creemos que la respuesta es mostrar agencias verificadas, valoraciones y reseñas dentro del perfil de cada experiencia. La evidencia se reflejará en el índice de confianza percibida y en la intención de reserva después de visualizar el perfil de agencia. Bajo las circunstancias de que la confianza percibida aumente en un 20% y la intención de reserva aumente en un 15%. |
-| Null hypothesis | Creemos que mostrar agencias verificadas, valoraciones y reseñas no será responsable de un incremento en la confianza percibida ni en la intención de reserva. Cualquier variación observada podría explicarse por otros factores externos al perfil de agencia. |
+| Null hypothesis | Creemos que el índice de confianza percibida podría aumentar en un 20% y la intención de reserva podría aumentar en un 15%. Sin embargo, mostrar agencias verificadas, valoraciones y reseñas no sería necesariamente responsable de estos resultados. El incremento podría deberse a otros factores como el precio de la experiencia, la popularidad previa de la agencia, la calidad de las fotografías o el conocimiento anterior que los participantes tenían de la agencia. |
 
 **Hypothesis 2**
 
@@ -4278,7 +4278,7 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
 | Belief | Los turistas necesitan reducir la cantidad de información dispersa al buscar experiencias turísticas. Implementar filtros por destino, tipo de experiencia, precio, duración, valoración y disponibilidad ayudaría a encontrar opciones más relevantes en menos tiempo. |
 | Hypothesis | Creemos que la respuesta es implementar filtros avanzados dentro del flujo de búsqueda de experiencias. La evidencia se reflejará en la tasa de búsquedas exitosas con filtros y en el tiempo promedio para seleccionar una experiencia relevante. Bajo las circunstancias de que la tasa de búsquedas exitosas aumente en un 20% frente a la versión base. |
-| Null hypothesis | Creemos que implementar filtros avanzados no será responsable de una mejora en la tasa de búsquedas exitosas ni en el tiempo de selección de experiencias. Cualquier diferencia observada podría ser resultado de la variación natural del comportamiento de búsqueda. |
+| Null hypothesis | Creemos que la tasa de búsquedas exitosas podría aumentar en un 20% y el tiempo necesario para seleccionar una experiencia podría disminuir. Sin embargo, los filtros avanzados no serían necesariamente responsables de estos resultados. La mejora podría deberse a que los participantes ya conocían el destino, tenían una experiencia específica en mente o encontraron un catálogo con una menor cantidad de opciones durante la prueba. |
 
 **Hypothesis 3**
 
@@ -4287,7 +4287,7 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
 | Belief | Los turistas pueden abandonar una reserva cuando el proceso es largo, confuso o requiere confirmar información por otros canales. Implementar un flujo de reserva simple y transparente ayudaría a reducir fricción y aumentar reservas completadas. |
 | Hypothesis | Creemos que la respuesta es implementar un flujo de reserva simple con precio, disponibilidad, duración, condiciones de cancelación y confirmación final. La evidencia se reflejará en la tasa de reservas completadas y en el tiempo promedio de finalización. Bajo las circunstancias de que las reservas completadas aumenten en un 15% y el tiempo promedio de reserva disminuya en un 25%. |
-| Null hypothesis | Creemos que implementar un flujo de reserva simple no será responsable de un incremento en reservas completadas ni de una reducción del tiempo promedio de reserva. Cualquier variación observada podría depender de factores ajenos al flujo diseñado. |
+| Null hypothesis | Creemos que la cantidad de reservas completadas podría aumentar en un 15% y el tiempo promedio de finalización podría disminuir en un 25%. Sin embargo, el flujo de reserva simplificado no sería necesariamente responsable de estos resultados. La variación podría deberse a que los participantes ya conocían los datos de la reserva, utilizaron experiencias con precios más atractivos o tuvieron mayor familiaridad con la plataforma durante la segunda ejecución. |
 
 **Hypothesis 4**
 
@@ -4296,7 +4296,7 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
 | Belief | Las agencias de turismo locales buscan mayor visibilidad digital, pero también necesitan herramientas simples para administrar su oferta. Implementar un panel de gestión de catálogo, disponibilidad y promociones ayudaría a incrementar su participación activa. |
 | Hypothesis | Creemos que la respuesta es implementar un panel para que las agencias gestionen experiencias, precios, disponibilidad y promociones. La evidencia se reflejará en la tasa de activación de agencias y en la actualización de disponibilidad dentro de la plataforma. Bajo las circunstancias de que al menos el 60% de agencias registradas publique una experiencia y la actualización de disponibilidad aumente en un 20%. |
-| Null hypothesis | Creemos que implementar un panel de gestión para agencias no será responsable de una mayor activación ni de una mayor actualización del catálogo. Las agencias podrían mantener sus canales actuales o no percibir suficiente valor en la herramienta. |
+| Null hypothesis | Creemos que al menos el 60% de las agencias registradas podría publicar una experiencia y que la actualización de disponibilidad podría aumentar en un 20%. Sin embargo, el panel de gestión no sería necesariamente responsable de estos resultados. El incremento podría deberse a capacitaciones previas, campañas dirigidas a las agencias, una mayor demanda durante el periodo evaluado o incentivos externos para mantener actualizado el catálogo. |
 
 **Hypothesis 5**
 
@@ -4305,7 +4305,7 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
 | Belief | Los turistas pueden cancelar o cambiar una reserva cuando encuentran información incompleta, disponibilidad desactualizada o condiciones poco claras. Mostrar disponibilidad, temporada y políticas de cambio o cancelación antes de confirmar ayudaría a reducir incertidumbre. |
 | Hypothesis | Creemos que la respuesta es incluir disponibilidad actualizada, temporada recomendada, cupos y condiciones de cambio o cancelación en el detalle de cada experiencia. La evidencia se reflejará en la tasa de cancelaciones por información insuficiente y en las reservas confirmadas sin contacto adicional. Bajo las circunstancias de que las cancelaciones por información insuficiente disminuyan en un 15%. |
-| Null hypothesis | Creemos que mostrar disponibilidad, temporada y condiciones de cambio o cancelación no será responsable de una reducción en la incertidumbre ni en las cancelaciones por información insuficiente. Cualquier variación podría responder a factores externos como temporada, precio o demanda. |
+| Null hypothesis | Creemos que la tasa de cancelaciones por información insuficiente podría disminuir en un 15%. Sin embargo, mostrar la disponibilidad, temporada, cupos y condiciones de cambio o cancelación no sería necesariamente responsable de esta disminución. El resultado podría deberse a una menor demanda, precios más convenientes, experiencias con condiciones más flexibles o una temporada con menor cantidad de cambios y cancelaciones. |
 
 **Hypothesis 6**
 
@@ -4313,8 +4313,8 @@ Para el diseño del experimento se formularon hipótesis basadas en las pregunta
 | --- | --- |
 | Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
 | Belief | Los viajeros corporativos tienen tiempo limitado y necesitan opciones cercanas, rápidas y compatibles con su agenda laboral. Implementar recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudaría a que encuentren experiencias más útiles. |
-| Hypothesis | Creemos que la respuesta es implementar recomendaciones personalizadas para viajeros corporativos considerando ubicación, duración de la experiencia y horario disponible. La evidencia se reflejará en la tasa de aceptación de recomendaciones y en la tasa de inicio de reserva desde recomendaciones. Bajo las circunstancias de que la aceptación de recomendaciones aumente en un 20%. |
-| Null hypothesis | Creemos que implementar recomendaciones personalizadas para viajeros corporativos no será responsable de una mayor aceptación de experiencias ni de un mayor inicio de reservas desde recomendaciones. Cualquier diferencia observada podría ser aleatoria o depender de preferencias externas del usuario. |
+| Hypothesis | Creemos que la respuesta es implementar recomendaciones personalizadas para viajeros corporativos considerando ubicación, duración de la experiencia y horario disponible. La evidencia se reflejará en la tasa de aceptación de recomendaciones y en la tasa de inicio de reserva desde recomendaciones. Bajo las circunstancias de que la aceptación de recomendaciones aumente en un 20% y la tasa de inicio de reserva desde recomendación alcance al menos un 15%. |
+| Null hypothesis | Creemos que la tasa de aceptación de recomendaciones podría aumentar en un 20%. Sin embargo, las recomendaciones basadas en ubicación, intereses y disponibilidad horaria no serían necesariamente responsables de este incremento. La mejora podría deberse a una mayor cantidad de experiencias disponibles, mejores precios, cercanía de las actividades al alojamiento o preferencias previas de los participantes por las experiencias mostradas. |
 
 #### 8.2.2. Domain Business Metrics.
 
@@ -4353,7 +4353,7 @@ Cada métrica se describe con: identificador único, fórmula de cálculo, técn
 | ID | Métrica | Fórmula de Cálculo | Técnica de Recolección | Meta Deseada |
 |---|---|---|---|---|
 | M-EXP-01 | Tasa de Búsquedas Exitosas con Filtros | (Búsquedas con ≥1 filtro aplicado que terminan en clic a detalle de experiencia / Total de búsquedas con filtro) × 100 | GA4 funnel `search_with_filters` → `view_experience_detail` | ↑ 20% frente a la versión base sin filtros (alineado a H2) |
-| M-EXP-02 | Tiempo Promedio de Sesión en Catálogo | Promedio (timestamp salida de vista de experiencias − timestamp entrada) | GA4 Engagement Time por página | Aceptable ≥ 1 min · Ideal ≥ 3 min · Excelente ≥ 5 min |
+| M-EXP-02 | Tiempo Promedio hasta Seleccionar una Experiencia | Promedio (timestamp clic en detalle de experiencia − timestamp inicio de búsqueda) | GA4 funnel `search_started` → `view_experience_detail` por sesión | Reducción respecto a la versión base sin filtros (alineado a H2) |
 | M-EXP-03 | Profundidad de Exploración | Vistas de `view_experience_detail` / Sesiones con ≥1 vista | GA4 evento agrupado por `session_id` | Ideal ≥ 2 experiencias por sesión |
 
 ##### E. Bounded Context: Bookings & Payments
@@ -4398,7 +4398,7 @@ Cada métrica se describe con: identificador único, fórmula de cálculo, técn
 | H2 | Filtros avanzados de búsqueda | M-EXP-01, M-EXP-02 |
 | H3 | Flujo de reserva simple y transparente | M-BK-01, M-BK-02 |
 | H4 | Panel de gestión de catálogo, disponibilidad y promociones para agencias | M-AG-01, M-AG-02, M-AG-04 |
-| H5 | Disponibilidad, temporada y condiciones de cambio/cancelación visibles | M-BK-04, M-BK-05 |
+| H5 | Disponibilidad, temporada y condiciones de cambio/cancelación visibles | M-BK-04 |
 | H6 | Recomendaciones para viajero corporativo (ubicación, intereses, horario) | M-COR-01, M-COR-02 |
 
 
@@ -4411,42 +4411,42 @@ Las medidas seleccionadas permitirán recolectar evidencia para responder cada p
 | Element | Description |
 | --- | --- |
 | Question | ¿Qué tanto influye mostrar agencias verificadas, valoraciones y reseñas en la confianza del turista antes de iniciar una reserva? |
-| Measure | Índice de confianza percibida con respecto a la versión base del perfil de agencia. |
+| Measure | Índice de confianza percibida (M-PR-01) y tasa de intención de reserva (M-PR-02), ambos con respecto a la versión base del perfil de agencia. |
 
 **Measure 2**
 
 | Element | Description |
 | --- | --- |
 | Question | ¿Qué tanto ayudan los filtros avanzados a que los turistas encuentren experiencias alineadas con sus intereses, presupuesto y disponibilidad? |
-| Measure | Tasa de búsquedas exitosas con filtros con respecto a la versión base sin filtros avanzados. |
+| Measure | Tasa de búsquedas exitosas con filtros (M-EXP-01) y tiempo promedio hasta seleccionar una experiencia (M-EXP-02), ambos con respecto a la versión base sin filtros avanzados. |
 
 **Measure 3**
 
 | Element | Description |
 | --- | --- |
 | Question | ¿Cómo mejora el flujo de reserva cuando el usuario puede completar el proceso desde una interfaz simple, rápida y con información clara de precio, disponibilidad y condiciones? |
-| Measure | Tasa de reservas completadas con respecto al flujo de reserva base. |
+| Measure | Tasa de reservas completadas (M-BK-01) y tiempo promedio de finalización de reserva (M-BK-02), ambos con respecto al flujo de reserva base. |
 
 **Measure 4**
 
 | Element | Description |
 | --- | --- |
 | Question | ¿Qué tanto una herramienta de gestión de catálogo, disponibilidad y promociones facilita la adopción de TravelMatch por parte de las agencias de turismo locales? |
-| Measure | Tasa de activación de agencias con respecto al total de agencias registradas. |
+| Measure | Tasa de activación de agencias (M-AG-01), tasa de publicación de catálogo (M-AG-02) y tasa de actualización de disponibilidad (M-AG-04), con respecto al total de agencias registradas. |
 
 **Measure 5**
 
 | Element | Description |
 | --- | --- |
 | Question | ¿Qué tanto mostrar disponibilidad actualizada, temporada y condiciones de cambio o cancelación reduce la incertidumbre del turista antes de reservar? |
-| Measure | Tasa de cancelaciones por información insuficiente con respecto al total de reservas realizadas. |
+| Measure | Tasa de cancelaciones por información insuficiente (M-BK-04) con respecto al total de reservas realizadas. |
 
 **Measure 6**
 
 | Element | Description |
 | --- | --- |
 | Question | ¿Qué tanto las recomendaciones basadas en ubicación, intereses y disponibilidad horaria ayudan al viajero corporativo a encontrar experiencias compatibles con su agenda? |
-| Measure | Tasa de aceptación de recomendaciones con respecto al total de recomendaciones mostradas. |
+| Measure | Tasa de aceptación de recomendaciones (M-COR-01) y tasa de inicio de reserva desde recomendación (M-COR-02), con respecto al total de recomendaciones mostradas. |
 
 
 #### 8.2.4. Conditions.
@@ -4576,11 +4576,11 @@ Los factores se clasifican en cuatro niveles: **Desfavorable**, cuando la eviden
         <tr>
             <td><b>H3 - Flujo de reserva simple y transparente</b></td>
             <td>
-                Creemos que al ofrecer un flujo de reserva claro con confirmación en tiempo real y soporte de pago, los turistas no abandonarán el proceso.<br><br>
-                Sabremos que tuvimos éxito cuando la Tasa de Reservas Completadas (M-BK-01) supere el 50%.
+                Creemos que al ofrecer un flujo de reserva claro con confirmación y visibilidad de precios, disponibilidad y condiciones, los turistas no abandonarán el proceso.<br><br>
+                Sabremos que tuvimos éxito cuando la Tasa de Reservas Completadas (M-BK-01) aumente en un 15% respecto a la versión base y el tiempo promedio de finalización (M-BK-02) disminuya en un 25%.
             </td>
             <td>
-                Implementar el ciclo completo de booking simplificado, con integración de pagos (Stripe) y visibilidad de precios y condiciones.
+                Implementar el ciclo completo de booking simplificado, con visibilidad de precios, disponibilidad y condiciones de cancelación.
             </td>
             <td>
                 1% ≤ x &lt; 25% de reservas iniciadas terminan siendo completadas.
@@ -4589,17 +4589,17 @@ Los factores se clasifican en cuatro niveles: **Desfavorable**, cuando la eviden
                 ≥ 25% de reservas iniciadas terminan siendo completadas.
             </td>
             <td>
-                ≥ 50% de reservas completadas y el tiempo promedio de finalización disminuye en 25%.
+                ≥ 50% de reservas completadas y el tiempo promedio de finalización disminuye en un 25% respecto a la versión base.
             </td>
             <td>
-                ≥ 70% de reservas completadas con un tiempo promedio de pago menor a 3 minutos.
+                ≥ 70% de reservas completadas con un tiempo promedio de finalización menor a 3 minutos.
             </td>
         </tr>
         <tr>
             <td><b>H4 - Panel de gestión de catálogo, disponibilidad y promociones para agencias</b></td>
             <td>
                 Creemos que cuando las agencias utilicen el panel de gestión para publicar experiencias, aumentará su visibilidad digital.<br><br>
-                Sabremos que hemos tenido éxito cuando la Tasa de Publicación de Catálogo (M-AG-02) supere el 40%.
+                Sabremos que hemos tenido éxito cuando la Tasa de Publicación de Catálogo (M-AG-02) alcance al menos el 40% de agencias verificadas activas (nivel Ideal), y la actualización de disponibilidad (M-AG-04) aumente en un 20%.
             </td>
             <td>
                 Implementar el panel de autogestión para que las agencias registren perfil, publiquen experiencias y actualicen disponibilidad.
@@ -4636,7 +4636,7 @@ Los factores se clasifican en cuatro niveles: **Desfavorable**, cuando la eviden
                 Reducción ≥ 15% en cancelaciones por información insuficiente.
             </td>
             <td>
-                Reducción ≥ 25% en cancelaciones y Tasa de Reembolso Exitoso (M-BK-05) ≥ 90% cuando aplique.
+                Reducción ≥ 25% en cancelaciones por información insuficiente y ≥ 80% de reservas confirmadas sin contacto adicional con la agencia.
             </td>
         </tr>
         <tr>
@@ -4655,7 +4655,7 @@ Los factores se clasifican en cuatro niveles: **Desfavorable**, cuando la eviden
                 Incremento ≥ 10% en aceptación de recomendaciones.
             </td>
             <td>
-                Incremento ≥ 20% en aceptación de recomendaciones.
+                Incremento ≥ 20% en aceptación de recomendaciones y tasa de inicio de reserva desde recomendación (M-COR-02) ≥ 15%.
             </td>
             <td>
                 Incremento ≥ 25% en aceptación de recomendaciones y al menos 15% de inicio de reservas desde recomendación (M-COR-02).
