@@ -5102,6 +5102,27 @@ El video incluye una descripción general de Travel Match, enfocándose en cómo
 
 - Duración del Video: [00:02:57]
 
+
+
+
+#  Matriz de Evaluación Ética y de Impacto
+
+La matriz permite demostrar la capacidad de reconocer las responsabilidades éticas y profesionales, y emitir juicios informados considerando el impacto de la solución de ingeniería de software. Se busca evitar el "sentido mercenario de la ingeniería" (donde solo se busca lograr un fin contratado sin cuestionarse el fin en sí mismo) y evidenciar un pensamiento crítico y reflexivo.
+
+**Proyecto:** *"TravelMatch" (Plataforma SaaS que conecta turistas con agencias de turismo locales para explorar y reservar experiencias).*
+
+| Dimensión / Criterio a Evaluar | Identificación de Riesgos e Impactos (Positivos y Negativos) | Evaluación del Impacto (¿A quién afecta y cuál es la magnitud?) | Estrategias de Mitigación y Acciones de Diseño |
+|--------------------------------|--------------------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------|
+| **1. Salud Pública y Seguridad** | **Negativo:** Agencias no verificadas podrían ofrecer experiencias turísticas peligrosas, sin seguros médicos o sin medidas de seguridad adecuadas.<br><br>**Positivo:** Promueve un turismo organizado, seguro y validado. | **Afectados:** Los turistas/viajeros (riesgo a su integridad física y vida) y la reputación del destino turístico. | **Acciones:** Establecer un control estricto en el Bounded Context de *Agencies* exigiendo la validación obligatoria de documentos legales y licencias (AgencyDocument). Integrar un botón de alerta o reporte de agencias inseguras. |
+| **2. Inclusión y Accesibilidad** | **Negativo:** La plataforma podría ser difícil de navegar para adultos mayores o turistas con discapacidades, excluyéndolos de ciertas experiencias.<br><br>**Positivo:** Democratiza el acceso a la digitalización para pequeñas agencias. | **Afectados:** Turistas con discapacidades visuales o de movilidad, y adultos mayores que buscan planificar viajes. | **Acciones:** Implementar filtros en las búsquedas para "Experiencias Accesibles" (ej. aptas para sillas de ruedas). Diseñar la interfaz web con estándares de accesibilidad WCAG y compatibilidad con lectores de pantalla. |
+| **3. Impacto Social y Cultural** | **Negativo:** El sistema de recomendaciones podría generar "sobreturismo" (overtourism) en destinos específicos, gentrificando zonas y alterando la vida de la comunidad local.<br><br>**Positivo:** Promueve la cultura y genera valor local. | **Afectados:** Las comunidades locales residentes en los destinos turísticos, su cohesión social y el patrimonio cultural. | **Acciones:** Modificar el algoritmo de recomendaciones en el módulo de *Profiles* para diversificar sugerencias, promocionando rutas menos congestionadas y distribuyendo el flujo de turistas de forma equilibrada. |
+| **4. Impacto Económico** | **Negativo:** Comisiones abusivas podrían asfixiar a los pequeños negocios turísticos, dándole monopolio a las grandes agencias.<br><br>**Positivo:** Aumenta las reservas y las ganancias de emprendedores locales. | **Afectados:** Pequeñas y medianas agencias de turismo locales, y la economía regional de la zona de destino. | **Acciones:** Establecer un modelo de suscripción o comisiones escalonadas y justas (Payment Bounded Context). Dar visibilidad equitativa a los pequeños emprendimientos mediante métricas de calidad (Reviews) y no solo por pauta publicitaria. |
+| **5. Impacto Ambiental (Antrópico)** | **Negativo:** Promover masivamente actividades turísticas en áreas naturales protegidas sin considerar su capacidad de carga, aumentando la huella de carbono y degradando el ecosistema. | **Afectados:** El medio ambiente, ecosistemas frágiles, flora, fauna y la sostenibilidad del destino turístico a largo plazo. | **Acciones:** Integrar en el dominio de las reservas (Bookings) límites de aforo (cupos) en zonas ecológicamente sensibles. Implementar etiquetas de "Turismo Sostenible o Eco-amigable" para incentivar las reservas de bajo impacto. |
+| **6. Enfoque Global** | **Negativo:** Al ser una plataforma para turistas de todo el mundo, la exposición de datos personales y de pagos a legislaciones locales laxas podría generar conflictos legales y de privacidad. | **Afectados:** La privacidad financiera y los datos personales (pasaportes, ubicación) de usuarios a nivel mundial. | **Acciones:** Cumplir estrictamente con normativas internacionales de protección de datos (como el GDPR). Asegurar el procesamiento de pagos de forma segura y usar JWT (IAM) robustos para la protección de sesiones. |
+| **7. Revelación de Peligros y Responsabilidad** | **Riesgo:** Una vulnerabilidad en el Bounded Context de *Geolocation* o en la base de datos de reservas podría exponer la ubicación exacta y el itinerario de los turistas a terceros malintencionados. | **Afectados:** La seguridad física, privacidad digital de los viajeros y la confianza absoluta en el ecosistema de TravelMatch. | **Acciones:** Mantener inspecciones de calidad continuas y auditorías de seguridad automatizadas (ej. SonarQube). Ante cualquier brecha, suspender las funciones de geolocalización, notificar de inmediato a los afectados y parchear el sistema antes de restablecer el servicio. |
+
+
+
 ## Conclusiones
 
 ### Conclusiones y Recomendaciones
