@@ -53,6 +53,7 @@ TB2 | 15/06/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  ,ana
 TB2 | 15/06/2026 |         Anyelo Bill Alejos jesus          | Realizacion  ,analisis y finalizacion del capitulo 8.2.3 y 8.2.4
 TF | 3/07/2026| Piero Francesco Tenorio Medina | Correccion de Errores en el Delivery, falta de pruebas.
 TF | 3/07/2026| Piero Francesco Tenorio Medina | Integracion de User Stories en la seccion de Experiments
+TF | 7/07/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  y finalizacion de la US-03 y US-04
 <hr>
 
 ## Project Report Collaboration Insights  
