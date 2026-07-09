@@ -51,9 +51,10 @@ TP | 14/05/2026 |       Geronimo Quispe Pablo Antonio       | Documentación, pr
 TB2 | 14/06/2026 |      Piero Francesco Tenorio Medina       | Reducción de la documentacion. Desarrollo de la primera parte del capitulo 8.1.
 TB2 | 15/06/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  ,analisis y finalizacion del capitulo 8.2.5 y 8.2.6
 TB2 | 15/06/2026 |         Anyelo Bill Alejos jesus          | Realizacion  ,analisis y finalizacion del capitulo 8.2.3 y 8.2.4
-TF | 3/07/2026| Piero Francesco Tenorio Medina | Correccion de Errores en el Delivery, falta de pruebas.
-TF | 3/07/2026| Piero Francesco Tenorio Medina | Integracion de User Stories en la seccion de Experiments
+TF | 3/07/2026|      Piero Francesco Tenorio Medina       | Correccion de Errores en el Delivery, falta de pruebas.
+TF | 3/07/2026|      Piero Francesco Tenorio Medina       | Integracion de User Stories en la seccion de Experiments
 TF | 7/07/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  y finalizacion de la US-03 y US-04
+TF | 8/07/2026 |         Anyelo Bi ll Alejos Jesus         | Implementacion e integracion de funcionalidades del backend al fronted
 TF | 8/07/2026 |        Morales Venegas David Joel         | Implementación y pruebas de US-01, US-02. Formulación y corrección de Hypotheses y Measures del Capítulo VIII.
 <hr>
 
@@ -303,7 +304,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Me enfoqué en salvaguardar la integridad del sistema y la privacidad de los datos trabajando sobre los dominios de <b>IAM (Identity and Access Management)</b> y <b>Experiences</b>. Para lograrlo, construí mecanismos de validación automatizada orientados a comprobar la correcta autorización de los usuarios y flujos de negocio. Adicionalmente, apliqué pautas estrictas de revisión estática y formato de código para erradicar deuda técnica, garantizando así que nuestro entregable cumpla en todo momento con normativas de desarrollo limpio y ético.</li>
           <li><b>TB2:</b> Asumí la responsabilidad ética y profesional en la fase de Experiment-Driven Development definiendo métricas objetivas (A/B testing y Scale Calculations). Esto garantizó que las decisiones sobre TravelMatch se basaran en evidencia real y no en sesgos del equipo, asegurando la entrega de un software transparente y centrado en las verdaderas necesidades de los usuarios.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Desarrollé e integré el módulo de autorización para Experiences e IAM: definí roles y permisos, añadí validaciones y pruebas (unitarias e integración) y documenté los flujos y la política de privacidad. Incluí ejemplos de uso y notas de despliegue para facilitar su adopción por el equipo.</li>
         </ul>
         <hr>
         <p><b>Piero Francesco Tenorio Medina</b></p>
@@ -345,7 +346,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Reflexioné sobre las fuertes repercusiones socioeconómicas que un fallo de seguridad o una mala gestión de identidades podría ocasionar tanto a los viajeros como a las empresas turísticas. Por este motivo, prioricé la mitigación de riesgos lógicos en la arquitectura e inspeccioné constantemente el código en busca de posibles brechas o ineficiencias. Estas acciones fomentan un entorno digital transparente, demostrando el compromiso de entregar un producto capaz de operar de manera íntegra y segura en un ecosistema internacional.</li>
           <li><b>TB2:</b> Analicé el impacto social y económico de TravelMatch mediante el diseño riguroso de experimentos. Al definir los umbrales de éxito (Scale Calculations), emitiendo juicios informados sobre qué funcionalidades justifican la inversión técnica, asegurando que la plataforma realmente impulse la confianza del turista y la competitividad del sector turístico peruano de forma sostenible.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Analicé alternativas de seguridad (tokens vs sesiones, revocación) y propuse controles de acceso que reducen la exposición de datos sin afectar la experiencia de usuario. Documenté conclusiones y recomendaciones prácticas, e incluí métricas sencillas (incidentes mensuales, latencia de autorizaciones) para evaluar la eficacia y guiar mejoras futuras.</li>
         </ul>
         <hr>
         <p><b>Piero Francesco Tenorio Medina</b></p>
