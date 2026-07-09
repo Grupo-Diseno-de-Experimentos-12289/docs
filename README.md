@@ -311,7 +311,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Para esta entrega se desarrolló e integró uno de los trabajos usados por uno de los integrantes del actual equipo. Para ello se revisó detenidamente los elementos usados y la información implementada para su traslado al nuevo documento. Asi mismo se uso herramientas como Jenkins para la ejecución de los test. Esta sección debe ser presentada a los integrantes del equipo de manera constante para su revisión. Para ello se trata de ser lo más responsable y directo con los resultados obtenidos.</li>
           <li><b>TB2:</b> Para esta entrega se evalúa la privacidad que tiene el usuario, respetando sus gustos y preferencias. Esto se aplica a la hora de establecer las preguntas para los experimentos. También, se considera esto para establecer los assumptions para los segmentos a trabajar.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Pare esta entrega se desarrollo la parte de integracion con aplicaciones de estadistica como prometheus o grafana que nos ayudan a verificar e implementar un control sobre la aplicación. Además, se ayudó y complementó con el avance del proyecto, integrando funcionalidades que pueden atender a la problemática de los usuarios sin descruidar el core original del proyecto.</li>
         </ul>
       </td>
       <td>
@@ -353,7 +353,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Para el desarrollo del trabajo, se consideró el impacto que tendría el funcionamiento de una aplicación de este calibre. Cómo afectaría a los puestos turísticos y cómo impactaría en la economía de un país. Esto se toma a consideración dependiendo del contexto del país y cómo una solución de este tipo podría impulsar un sector muy importante dentro de nuestra economía.</li>
           <li><b>TB2:</b> Para esta entrega se evalúa las distintas opciones que se pudo implementar para poder mejorar la experiencia que tiene el usuario usando la aplicación. Con esto, se establece las metas del experimento a implementar.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Para esta entrega se consideró que cada servicio y/o funcionalidad agregada dentro de la aplicación son de vital importancia para atender a las necesidades del usuario. Con esto, queremos probar que nuestras hipótesis son correctas al horientar el proyecto de este lado, considerando el impacto que tendrá sobre las agencias como tambien en los usuarios turisticos. </li>
         </ul>
       </td>
       <td>
@@ -4166,6 +4166,64 @@ Podemos ver que se ha probado la aplicacion en sonarqube.
 Lo que se muestra es el despligue de nuestra imagen de proyecto como hemos configurado dentro del Pipeline.
 
 <img src="assets/delivery/docker2.png" alt="docker2">
+
+#### Docker Hub
+<img src="assets/delivery/dockerHub.png" alt="docker3">
+
+
+### 7.4. Continuous Monitoring
+#### 7.4.1. Tools and Practices
+El *Continuous Monitoring* es una práctica esencial en DevOps que permite supervisar continuamente el estado, rendimiento y salud de las aplicaciones en producción. Nuestra implementación se basa en una arquitectura de contenedores orquestada, garantizando visibilidad en tiempo real.
+
+**Herramientas principales:**
+* **Spring Boot Actuator:** Expone endpoints (`/actuator/prometheus`) para métricas de salud y rendimiento.
+* **Prometheus:** Sistema de series temporales para recolección y almacenamiento de métricas.
+* **Grafana:** Plataforma de visualización para dashboards interactivos.
+* **Jenkins:** Monitoreo del estado de pipelines y despliegues.
+
+**Prácticas clave:**
+* **Monitoreo Proactivo:** Configuración de alertas basadas en umbrales históricos.
+* **Health Checks:** Verificación constante de la conectividad con la base de datos (PostgreSQL).
+* **Infraestructura como Código:** Despliegue de los servicios de monitoreo mediante contenedores Docker, asegurando consistencia entre entornos.
+
+#### 7.4.2. Monitoring Pipeline Components
+El pipeline de monitoreo sigue un ciclo de retroalimentación constante:
+
+1. **Collection (Recopilación):** Spring Boot Actuator expone las métricas, las cuales son extraídas por Prometheus mediante un proceso de *scraping* activo.
+2. **Storage:** Los datos se almacenan en la base de datos de series temporales de Prometheus, persistiendo la configuración mediante volúmenes Docker.
+3. **Processing:** Utilización de consultas **PromQL** para la agregación y análisis de datos en tiempo real.
+4. **Visualization:** Grafana consume los datos de Prometheus vía red interna (`http://prometheus-server:9090`), transformando las métricas en dashboards operativos.
+
+#### 7.4.3. Alerting Pipeline Components 
+El sistema de alertas utiliza el **Prometheus Alertmanager** para notificar anomalías de forma proactiva:
+
+* **Reglas de Alerta (`prometheus.yml`):** Definición de umbrales críticos (ej. `up{job="spring-app"} == 0` para caídas de servicio o latencia elevada).
+* **Alertmanager:** Encargado de la **deduplicación** y el agrupamiento de alertas, evitando el ruido por notificaciones redundantes.
+* **Enrutamiento:** Las alertas se clasifican por severidad; incidentes críticos en la base de datos o el backend activan notificaciones inmediatas a través de *webhooks*.
+
+#### 7.4.4. Notification Pipeline Components
+La comunicación de eventos asegura que el equipo esté alineado con el estado del sistema:
+
+| Componente | Descripción |
+| :--- | :--- |
+| **Fuentes** | Jenkins (CI/CD status), Prometheus/Alertmanager (alertas), Eventos de app. |
+| **Agregación** | *Batching* de despliegues para evitar spam en los canales de comunicación. |
+| **Canales** | Integración con Slack/Discord para notificaciones en tiempo real y dashboards de Grafana para estado visual. |
+| **Enrutamiento** | Basado en roles: alertas técnicas a desarrollo, métricas de negocio a *stakeholders*. |
+
+---
+---
+#### Pruebas del despliegue
+
+#### Promteheus
+<img src="assets/monitoring/prometheus.png" alt="prometheus">
+
+#### Grafana
+<img src="assets/monitoring/grafana.png" alt="grafana">
+
+#### Contenedores en Docker
+<img src="assets/monitoring/dockerM.png" alt="dockerM">
+
 
 ## Capítulo VIII: Experiment-Driven Development
 
