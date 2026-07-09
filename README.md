@@ -4970,7 +4970,7 @@ La aplicación frontend de TravelMatch fue desarrollada con Angular y contiene l
 `https://github.com/Grupo-Diseno-de-Experimentos-12289/frontend`
 
 **URL de la aplicación frontend desplegada:**  
-`https://travelmatch-frontend.web.app`
+`https://a50e0c9f.frontend-38o.pages.dev`
 
 | User Story | Evidencia funcional requerida |
 |---|---|
@@ -5025,10 +5025,10 @@ El backend To-Be de TravelMatch fue desarrollado con Spring Boot y proporciona l
 `https://github.com/Grupo-Diseno-de-Experimentos-12289/backend`
 
 **URL pública del backend:**  
-`https://travelmatch-arabafgnanbsc2hb.canadacentral-01.azurewebsites.net`
+`https://travelmatch-backend-f71j.onrender.com`
 
 **URL pública de Swagger/OpenAPI:**  
-`https://travelmatch-arabafgnanbsc2hb.canadacentral-01.azurewebsites.net/swagger-ui/index.html`
+`https://travelmatch-backend-f71j.onrender.com/swagger-ui/index.html`
 
 | User Story | Evidencia API requerida |
 |---|---|
@@ -5043,15 +5043,7 @@ El backend To-Be de TravelMatch fue desarrollado con Spring Boot y proporciona l
 <p align="center">
     <img src="assets/evidencias/swagger_endpoints.png" alt="Swagger Endpoints" width="70%"/>
 </p>
-<p align="center">
-    <img src="assets/evidencias/jenkins_pipeline.png" alt="Jenkins Pipelines Success Stages" width="70%"/>
-</p>
-<p align="center">
-    <img src="assets/evidencias/sonarqube_quality_gate.png" alt="SonarQube Quality Gate" width="70%"/>
-</p>
-<p align="center">
-    <img src="assets/evidencias/docker_image.png" alt="Docker Container Image Utilizado" width="70%"/>
-</p>
+
 
 
 ###### Backend Commits
