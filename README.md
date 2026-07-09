@@ -297,7 +297,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Implementé herramientas de análisis de calidad para el bounded context <b>Profiles and Preferences</b>, utilizando <b>Checkstyle</b> para verificar el cumplimiento de convenciones de codificación y <b>SonarQube</b> para analizar mantenibilidad, code smells y posibles vulnerabilidades del proyecto. Estas configuraciones ayudaron a asegurar que el código desarrollado siga buenas prácticas de ingeniería de software y mantenga estándares adecuados de calidad.</li>
           <li><b>TB2:</b> Asumí la responsabilidad profesional de implementar y documentar el pipeline de despliegue continuo (Continuous Delivery) dentro del marco de prácticas DevOps para la aplicación. Aseguré que el flujo automatizado de integración y entrega valide de forma exhaustiva la calidad, seguridad y el correcto empaquetado del software antes de ser liberado al entorno de producción, garantizando así la entrega de un producto estable, seguro y confiable para los usuarios finales.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Para esta entrega se realizó el despliegue de las distintas partes de la aplicación. Con esto, se reconoce que el impacto de la aplicación está en un punto necesario para poder suplir las necesidades de los distintos usuarios a los que estamos atendiendo dentro del proyecto. Además, de implementar funcionalidades pertinentes para que los usuarios se sientan comodos al utilizar el proyecto TravelMatch </li>
         </ul>
         <hr>
         <p><b>Alejos Jesus, Anyelo Bill</b></p>
@@ -339,7 +339,7 @@ Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en
         <ul>
           <li><b>TP:</b> Analicé el impacto que tiene la calidad del software en la experiencia de usuario dentro del bounded context <b>Profiles and Preferences</b>, utilizando SonarQube para identificar riesgos de seguridad y problemas de mantenibilidad que podrían afectar la estabilidad del sistema. Además, apliqué Checkstyle para mantener un código uniforme y legible, contribuyendo a facilitar el trabajo colaborativo y la mantenibilidad a largo plazo del proyecto.</li>
           <li><b>TB2:</b> Analicé el impacto socioeconómico y operativo de establecer un flujo automatizado de Continuous Delivery (CD) en la plataforma. Evalué cómo la reducción de los tiempos de despliegue y la minimización de errores manuales en la entrega de software optimizan los costos de operación y permiten responder con mayor agilidad a las necesidades del mercado global, asegurando que las actualizaciones de la aplicación no interrumpan el servicio de las agencias de turismo y turistas.</li>
-          <li><b>TF:</b> </li>
+          <li><b>TF:</b> Durante el desarrollo del proyecto, se consideró el impacto de la aplicación en los distintos negocio de agencias de turismo. Queremos que el proyecto no genere problemas y se use de manera adecuada como una herramienta en la que ambas partes salen ganando.</li>
         </ul>
         <hr>
         <p><b>Alejos Jesus, Anyelo Bill</b></p>
