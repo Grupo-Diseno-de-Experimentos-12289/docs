@@ -54,7 +54,7 @@ TB2 | 15/06/2026 |         Anyelo Bill Alejos jesus          | Realizacion  ,ana
 TF | 3/07/2026| Piero Francesco Tenorio Medina | Correccion de Errores en el Delivery, falta de pruebas.
 TF | 3/07/2026| Piero Francesco Tenorio Medina | Integracion de User Stories en la seccion de Experiments
 TF | 7/07/2026 |       Geronimo Quispe Pablo Antonio       | Realizacion  y finalizacion de la US-03 y US-04
-TF | 8/07/2026 |       Geronimo Quispe Pablo Antonio       | Implementacion e integracion de funcionalidades del backend al fronted
+TF | 8/07/2026 |       Anyelo Bill Alejos Jesus       | Implementacion e integracion de funcionalidades del backend al fronted
 TF | 8/07/2026 |        Morales Venegas David Joel         | Implementación y pruebas de US-01, US-02. Formulación y corrección de Hypotheses y Measures del Capítulo VIII.
 <hr>
 
